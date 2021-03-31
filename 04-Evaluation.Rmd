@@ -1,0 +1,13 @@
+# Evaluation
+
+Forecasts will be evaluated at each site and forecast horizon (i.e., time-step into the future), and a summary score will be assigned evaluating overall performance of all forecast submissions across sites.  Forecasts will also be compared to a null model.
+
+Forecast evaluation results will be presented for all submitted models together and separately for each team category: undergraduate student only team, graduate student only team, post-doc only team, single institution team, multi-institution team, international team (team with individuals from at least two countries).
+
+## Results
+
+## Continuous Ranked Probability Score
+
+## Null forecast
+
+## Forecast Submission Visualization and Leaderboard
