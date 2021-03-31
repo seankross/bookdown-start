@@ -2,6 +2,11 @@ book_filename: "bookdown-start"
 chapter_name: "Chapter "
 repo: https://github.com/seankross/bookdown-start
 output_dir: docs
-rmd_files: ["index.Rmd", "01-Themes.Rmd", "02-Participation.Rmd", "03-Shared-Forecast-Drivers.Rmd", "04-Evaluation.Rmd"]
+rmd_files: ["index.Rmd", "01-Themes.Rmd", "02-Participation.Rmd", "03-Shared-Forecast-Drivers.Rmd", "04-Evaluation.Rmd", "05-Theme-Details.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
+config:
+    toc:
+      before: |
+        <img src="images/EFI_Logo-1.jpg" width="270" height="270">
+

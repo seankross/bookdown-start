@@ -5,7 +5,7 @@ bookdown::gitbook:
     toc:
       collapse: subsection
       before: |
-        <li><a href="./">A Minimal Bookdown Book</a></li>
+        <li><a href="./">NEON Ecological Forecasting Challenge</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 bookdown::pdf_book:

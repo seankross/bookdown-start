@@ -1,15 +1,20 @@
 --- 
-title: "A Minimal Bookdown Book"
-author: "Sean Kross"
+title: "NEON Ecological Forecasting Challenge"
+author: "Ecological Forecasting Initative Research Coordination Network"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: seankross/bookdown-start
+github-repo: eco4cast/neon4cast-docs
 url: 'http\://seankross.com/bookdown-start/'
-description: "Everything you need (and nothing more) to start a bookdown book."
+description: "Documentation for the NEON Ecological Forecasting Challenge"
+header-includes:
+  - \usepackage{titling}
+  - \pretitle{\begin{center}
+    \includegraphics[width=2in,height=2in]{images/EFI_Logo-1.jpg}\LARGE\\}
+  - \posttitle{\end{center}}
 ---
 
 # Preface {-}
