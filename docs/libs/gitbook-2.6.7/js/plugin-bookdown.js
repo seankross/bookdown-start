@@ -1,4 +1,4 @@
-require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
+gitbook.require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
 
   var gs = gitbook.storage;
 
@@ -16,6 +16,31 @@ require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
       }
     });
 
+    // add the History button (file history on Github)
+    var history = config.history;
+    if (history && history.link) gitbook.toolbar.createButton({
+      icon: 'fa fa-history',
+      label: history.text || 'History',
+      position: 'left',
+      onClick: function(e) {
+        e.preventDefault();
+        window.open(history.link);
+      }
+    });
+
+    // add the View button (file view on Github)
+    var view = config.view;
+    if (view && view.link) gitbook.toolbar.createButton({
+      icon: 'fa fa-eye',
+      label: view.text || 'View Source',
+      position: 'left',
+      onClick: function(e) {
+        e.preventDefault();
+        window.open(view.link);
+      }
+    });
+
+    // add the Download button
     var down = config.download;
     var normalizeDownload = function() {
       if (!down || !(down instanceof Array) || down.length === 0) return;
@@ -52,9 +77,28 @@ require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
       });
     }
 
+    // add the Information button
+    var info = ['Keyboard shortcuts (<> indicates arrow keys):',
+      '<left>/<right>: navigate to previous/next page',
+      's: Toggle sidebar'];
+    if (config.search !== false) info.push('f: Toggle search input ' +
+      '(use <up>/<down>/Enter in the search input to navigate through search matches; ' +
+      'press Esc to cancel search)');
+    if (config.info !== false) gitbook.toolbar.createButton({
+      icon: 'fa fa-info',
+      label: 'Information about the toolbar',
+      position: 'left',
+      onClick: function(e) {
+        e.preventDefault();
+        window.alert(info.join('\n\n'));
+      }
+    });
+
     // highlight the current section in TOC
     var href = window.location.pathname;
     href = href.substr(href.lastIndexOf('/') + 1);
+    // accentuated characters need to be decoded (#819)
+    href = decodeURIComponent(href);
     if (href === '') href = 'index.html';
     var li = $('a[href^="' + href + location.hash + '"]').parent('li.chapter').first();
     var summary = $('ul.summary'), chaps = summary.find('li.chapter');
@@ -103,7 +147,7 @@ require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
     if (typeof pos !== 'undefined') summary.scrollTop(pos);
 
     // highlight the TOC item that has same text as the heading in view as scrolling
-    if (toc && toc.scroll_highlight !== false) (function() {
+    if (toc && toc.scroll_highlight !== false && li.length > 0) (function() {
       // scroll the current TOC item into viewport
       var ht = $(window).height(), rect = li[0].getBoundingClientRect();
       if (rect.top >= ht || rect.top <= 0 || rect.bottom <= 0) {
@@ -175,32 +219,39 @@ require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
   });
 
   var bookBody = $('.book-body'), bookInner = bookBody.find('.body-inner');
+  var chapterTitle = function() {
+    return bookInner.find('.page-inner').find('h1,h2').first().text();
+  };
   var saveScrollPos = function(e) {
     // save scroll position before page is reloaded
     gs.set('bodyScrollTop', {
       body: bookBody.scrollTop(),
       inner: bookInner.scrollTop(),
-      title: bookInner.find('.page-inner').find('h1,h2').first().text()
+      focused: document.hasFocus(),
+      title: chapterTitle()
     });
   };
   $(document).on('servr:reload', saveScrollPos);
 
-  // check if the page is loaded in the RStudio preview window
-  var inRStudio = function() {
+  // check if the page is loaded in an iframe (e.g. the RStudio preview window)
+  var inIFrame = function() {
     var inIframe = true;
     try { inIframe = window.self !== window.top; } catch (e) {}
-    if (!inIframe) return false;
-    return /^\/rmd_output\/[0-9]+\/.*$/.test(window.location.pathname);
+    return inIframe;
   };
-  if (inRStudio()) $(window).on('blur', saveScrollPos);
-  if (inRStudio()) $(window).on('unload', saveScrollPos);
+  if (inIFrame()) {
+    $(window).on('blur unload', saveScrollPos);
+  }
 
-  $(document).ready(function(e) {
+  $(function(e) {
     var pos = gs.get('bodyScrollTop');
-    if (pos && pos.title === bookInner.find('.page-inner').find('h1,h2').first().text()) {
-      if (pos.body !== 0) bookBody.scrollTop(pos.body);
-      if (pos.inner !== 0) bookInner.scrollTop(pos.inner);
+    if (pos) {
+      if (pos.title === chapterTitle()) {
+        if (pos.body !== 0) bookBody.scrollTop(pos.body);
+        if (pos.inner !== 0) bookInner.scrollTop(pos.inner);
+      }
     }
+    if ((pos && pos.focused) || !inIFrame()) bookInner.find('.page-wrapper').focus();
     // clear book body scroll position
     gs.remove('bodyScrollTop');
   });

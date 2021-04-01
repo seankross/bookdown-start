@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>NEON Ecological Forecasting Challenge</title>
+  <title>Chapter 2 Participation | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="NEON Ecological Forecasting Challenge" />
+  <meta property="og:title" content="Chapter 2 Participation | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://seankross.com/bookdown-start/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="eco4cast/neon4cast-docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="NEON Ecological Forecasting Challenge" />
+  <meta name="twitter:title" content="Chapter 2 Participation | NEON Ecological Forecasting Challenge" />
   
   <meta name="twitter:description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="theme-aquatic-ecosystems.html"/>
+<link rel="prev" href="theme-aquatic-ecosystems.html"/>
+<link rel="next" href="shared-forecast-drivers.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -201,30 +201,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">NEON Ecological Forecasting Challenge</h1>
-<p class="author"><em>Ecological Forecasting Initative Research Coordination Network</em></p>
-<p class="date"><em>2021-04-01</em></p>
+<div id="participation" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Participation</h1>
+<div id="participation-guidance" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Participation guidance</h2>
+<div id="how-to-participate" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> HOW TO PARTICIPATE:</h3>
+<p>Participation requires that teams:
+1) Complete a REGISTRATION for each forecast theme you are participating in and each model you are contributing within a theme
+2) Agree to the participation agreement below
+3) Submit forecast netCDF or csv file(s)
+4) Provide the metadata xml file documenting the forecast</p>
+<p>One contact person should register on behalf of their team. That contact person will be asked to provide the group members’ names, emails, and affiliations so that everyone in the group can receive an invitation to join the Challenge theme Slack channel and access group resources. Teams are allowed and encouraged to join the challenge after the start date of each Challenge theme because there are multiple deadlines to submit forecasts. However, only forecasts submitted by each submission deadline will be officially scored.</p>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<center>
-<img src="images/EFI_Logo-1.jpg" title="fig:" alt="Caption for the picture." />
-</center>
-<p>The NSF funded EFI Research Coordination Network (EFI-RCN) is hosting a NEON Ecological Forecast Challenge with the goal to create a community of practice that builds capacity for ecological forecasting by leveraging NEON data products. The Challenge revolves around the five theme areas listed below that span aquatic and terrestrial systems, and population, community, and ecosystem processes across a broad range of ecoregions that uses data collected by NEON.</p>
-<p>As a community, we are excited to learn more about the predictability of ecological processes by forecasting NEON data prior to its release. What modeling frameworks, mechanistic processes, and statistical approaches best capture community, population, and ecosystem dynamics? These questions are answerable by a community generating a diverse array of forecasts. The Challenge is open to any individual or team that wants to submit forecasts and includes categories for different career stages. Individuals or team contacts can register to submit forecasts HERE.</p>
-<p>The design of the Challenge is the result of contributions of over 200 participants in the May 2020 virtual EFI-RCN meeting, including partner organizations, and the hard work from the Design Teams that have developed the protocols for each of the themes.</p>
-<p>Computational resources are supported by NSF funded CyVerse, Jetstream, and XSEDE.</p>
-<p>Here are videos from the December 9, 2020 AGU EFI Town Hall providing an overview of 1) of the Challenge, 2) the Challenge cyberinfrastructure, and 3) the NEON data streams.</p>
+<div id="teams" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> TEAMS:</h3>
+<p>Teams can be individuals or groups. They can represent institutions or organizations. You will have 25 characters for a team name (e.g., “EFI Null Model”) and 10 characters for the team name ID (no spaces allowed; e.g., “EFI_Null”).</p>
+<p>The registration includes team categories (e.g., undergraduate only, graduate only, multi-institution, etc). Please check all that apply.</p>
+<p>If your team wants to submit multiple forecasts, please register a team for each model as only one forecast model per cycle per team is allowed. If there are two different time steps in a challenge theme (e.g., the terrestrial carbon flux theme has a 30-minute and 1-day option), register each as separate teams.</p>
+</div>
+<div id="slack-and-github-communication" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> SLACK AND GITHUB COMMUNICATION</h3>
+<p>We strongly encourage participants to use the Challenge theme Slack channels to ask questions, discuss ideas and challenges, and share resources. Overall, we strongly encourage a collegial approach to the Challenge – this is a friendly competition to move the field forward and bring more people into the community, not a cutthroat competition to win by denying other teams useful information.</p>
+<p>GitHub repositories for each Challenge theme will be available with helper code and an example workflow (null models). We encourage teams to contribute code to these repositories (via Pull Request) if they develop additional helper code. This is especially important if an individual or group is going to add additional data constraints to their forecast. Remember, the use of data external to NEON is allowed and encouraged so long as it is publicly available and other teams are notified about it. Also, while most anything could be used to calibrate parameters and constrain initial conditions, only other forecasts (e.g. weather) can be used as drivers/covariates during the actual forecast period.</p>
+</div>
+</div>
+<div id="submission-instructions" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Submission instructions</h2>
+</div>
+<div id="participation-agreement" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Participation agreement</h2>
+<p>All participants agree to have their forecast posted in real-time on the NEON Ecological Forecast Challenge Output RShiny app (in development) and potentially published in a scientific journal. The manuscripts describing the accuracy of forecasts across teams will be coordinated by the Ecological Forecasting Initiative Research Coordination Network and extend authorship to members of each team with an opt-in policy.</p>
+<p>If a publication is generated by a forecast team, we ask that the manuscript acknowledge the Ecological Forecasting Initiative Research Coordination Network and its support from the National Science Foundation (DEB-1926388).</p>
+</div>
+<div id="neon-data-use" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> NEON Data Use</h2>
+<p>NEON data products, software, and derivatives thereof are freely available for use when accompanied by appropriate disclaimers, acknowledgments, and data citations, defined in the NEON data use policy.</p>
+</div>
+<div id="additional-data-options" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Additional data options</h2>
+<p>Individuals and groups may create forecasts that use other publicly available data in addition to the NEON data, so long as other teams participating in the challenge are notified about the existence of the data via the Challenge theme’s Slack channel. Teams are encouraged to make available the code they are using to access, download, and process any additional data constraints they are using, ideally via a pull request to each Challenge Github repo.</p>
+<p>When considering the use of data in forecasts it is important to distinguish data that are being used as drivers/covariates during each forecast from data being used to constrain model structure, parameters, initial conditions, and error distributions. While the latency of NEON data requires that some of our forecast will be (fully or partly) hindcasts, all forecasts should be run as if they are true forecasts – you cannot use any observed data as a driver/covariate or constraint during the forecast period itself as that info would not have been available at the forecast start date. For example, if you find that a particular variable is a useful covariate during the model development &amp; calibration period (e.g. soil temperature) then you would need to find or make a forecast of that variable if you want to use it as a covariate. Teams using meteorological covariates should use the shared meteorological driver data provided by EFI (see Shared Forecast Drivers).</p>
+<p>As an example of potentially useful external data, each NEON site has subsets of various remote sensing products that are hosted on the ORNL DAAC (ORNL DAAC subsets). These include:
+MODIS collection 6: LAI, FPAR, burned area, surface reflectance, land surface temperature, vegetation indices (NDVI, EVI), modeled ET, GPP, NPP.</p>
+<p>VIIRS collection 1: surface reflectance, vegetation indices, LAI, FPAR, land surface temperature,</p>
+<p>SMAP: modeled NEE, GPP, Rh, SOC</p>
+<p>Daymet: daily surface weather data</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="theme-aquatic-ecosystems.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="theme-aquatic-ecosystems.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="shared-forecast-drivers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
