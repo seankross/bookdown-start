@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>NEON Ecological Forecasting Challenge</title>
+  <title>Chapter 3 Shared Forecast Drivers | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="NEON Ecological Forecasting Challenge" />
+  <meta property="og:title" content="Chapter 3 Shared Forecast Drivers | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://seankross.com/bookdown-start/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="eco4cast/neon4cast-docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="NEON Ecological Forecasting Challenge" />
+  <meta name="twitter:title" content="Chapter 3 Shared Forecast Drivers | NEON Ecological Forecasting Challenge" />
   
   <meta name="twitter:description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="theme-aquatic-ecosystems.html"/>
+<link rel="prev" href="participation.html"/>
+<link rel="next" href="evaluation.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -201,30 +201,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">NEON Ecological Forecasting Challenge</h1>
-<p class="author"><em>Ecological Forecasting Initative Research Coordination Network</em></p>
-<p class="date"><em>2021-04-01</em></p>
+<div id="shared-forecast-drivers" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Shared Forecast Drivers</h1>
+<p>We are downloading, subsetting, and processing forecasted meteorology drivers for each NEON site. Currently, we have NOAA’s Global Ensemble Forecasting System V12 output available at the 1 hr time resolution for each NEON site. For forecasts generated at midnight (00) UTC, the forecasts extend 35-days in the future. For forecasts generated at 06, 12, and 18 UTC, the forecasts extend 16-days in the future. There are 31 ensemble members for each forecast. Each ensemble member is available as a separate netcdf file. The following meteorological variables are included: air temperature, air pressure, wind speed, precipitation, downwelling longwave radiation, downwelling shortwave radiation, relative humidity, specific humidity, and total cloud cover.</p>
+<p>The weather forecasts are available through an s3 bucket (see Meteorology: NOAA Global Ensemble Forecasting System below) with multiple ways to access them: You can click on a file in the browser, you can directly download individual files from the command line using the file address, or you can download multiple files using aws.s3 commands. We provide an example using the <code>aws.s3</code> package in R for downloading all the ensemble members for particular location, forecast cycle (00, 06, 12, or 18), and NEON site at:</p>
+<p><a href="https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/download_noaa_files_s3.R" class="uri">https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/download_noaa_files_s3.R</a></p>
+<p>Additionally we provide example code in R for converting the netcdf files to csv files</p>
+<p><a href="https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read_example.R" class="uri">https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read_example.R</a></p>
+<p><a href="https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read.R" class="uri">https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read.R</a></p>
+<div id="meteorology-noaa-global-ensemble-forecasting-system" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Meteorology: NOAA Global Ensemble Forecasting System</h2>
+<p><a href="https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/">1 Hour NOAA Drivers</a></p>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<center>
-<img src="images/EFI_Logo-1.jpg" title="fig:" alt="Caption for the picture." />
-</center>
-<p>The NSF funded EFI Research Coordination Network (EFI-RCN) is hosting a NEON Ecological Forecast Challenge with the goal to create a community of practice that builds capacity for ecological forecasting by leveraging NEON data products. The Challenge revolves around the five theme areas listed below that span aquatic and terrestrial systems, and population, community, and ecosystem processes across a broad range of ecoregions that uses data collected by NEON.</p>
-<p>As a community, we are excited to learn more about the predictability of ecological processes by forecasting NEON data prior to its release. What modeling frameworks, mechanistic processes, and statistical approaches best capture community, population, and ecosystem dynamics? These questions are answerable by a community generating a diverse array of forecasts. The Challenge is open to any individual or team that wants to submit forecasts and includes categories for different career stages. Individuals or team contacts can register to submit forecasts HERE.</p>
-<p>The design of the Challenge is the result of contributions of over 200 participants in the May 2020 virtual EFI-RCN meeting, including partner organizations, and the hard work from the Design Teams that have developed the protocols for each of the themes.</p>
-<p>Computational resources are supported by NSF funded CyVerse, Jetstream, and XSEDE.</p>
-<p>Here are videos from the December 9, 2020 AGU EFI Town Hall providing an overview of 1) of the Challenge, 2) the Challenge cyberinfrastructure, and 3) the NEON data streams.</p>
+<div id="meteorology-neon-observed" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Meteorology: NEON Observed</h2>
+<p>In development through collaboration with NEON and NCAR.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="theme-aquatic-ecosystems.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="participation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="evaluation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
