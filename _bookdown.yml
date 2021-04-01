@@ -2,7 +2,7 @@ book_filename: "bookdown-start"
 chapter_name: "Chapter "
 repo: https://github.com/seankross/bookdown-start
 output_dir: docs
-rmd_files: ["index.Rmd", "01-Themes.Rmd", "02-Participation.Rmd", "03-Shared-Forecast-Drivers.Rmd", "04-Evaluation.Rmd", "05-Theme-Details.Rmd"]
+rmd_files: ["index.Rmd", "01-Theme1.Rmd", "02-Participation.Rmd", "03-Shared-Forecast-Drivers.Rmd", "04-Evaluation.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
 config:
