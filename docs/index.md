@@ -18,11 +18,13 @@ header-includes:
 ---
 
 
-# Preface {-}
+# Introduction {-}
 
 <center>
-![Caption for the picture.](images/EFI_Logo-1.jpg)
+![Caption for the picture.](images/EFI_Logo-1.jpg){width=25%} 
+![](images/nsf-neon-logo.v3.png){width=25%} 
 </center>
+
 
 The NSF funded EFI Research Coordination Network (EFI-RCN) is hosting a NEON Ecological Forecast Challenge with the goal to create a community of practice that builds capacity for ecological forecasting by leveraging NEON data products. The Challenge revolves around the five theme areas listed below that span aquatic and terrestrial systems, and population, community, and ecosystem processes across a broad range of ecoregions that uses data collected by NEON.
 
