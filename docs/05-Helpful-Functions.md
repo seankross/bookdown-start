@@ -1,4 +1,4 @@
 # Helpful functions
 
-Adding examples of helpful functions
+Pending: Adding examples of helpful functions
 

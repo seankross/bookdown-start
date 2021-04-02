@@ -41,7 +41,7 @@ A file with previously released NEON data that has been processed into targets i
 
 Here is the format of the target file
 
-```{r}
+```{r message = FALSE}
 readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz")
 ```
 

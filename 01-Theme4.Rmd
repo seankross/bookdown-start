@@ -32,23 +32,63 @@ Submissions of forecast and metadata will be through https://data.ecoforecast.or
 
 Forecasts will be scored and compared using the Continuous Ranked Probability Score, a metric that combines accuracy and uncertainty estimation (Gneiting, T., & Raftery, A. E., 2007). 
 
-## Data: Training and Evaluation:
+## Data: Targets:
 
 The challenge uses the following NEON data products:
-DP1.00033.001: Phenology images
 
-## Data: Targets
+DP1.00033.001: Phenology images
 
 A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. Before the Phenology challenge begins, a processing script will be available in the neon4cast-phenology GitHub repository.
 
-## Detailed protocol  
+### Green chromatic coordinate (gcc)
 
-Details of the targets, how they are calculated, descriptions of the target files, and examples of other environmental variables that could be used in the Challenge are HERE. 
+**Definition**
 
-Access Targets HERE
+The ratio of the green digital number to the sum of the red, green, blue digital numbers from a digital camera
 
-Download an example of a forecast output format for submission in netcdf format using ensemble members is here: HERE
-Download an example of a forecast output format for submission in csv format using summary statistics is here: HERE
+**Motivation**
+
+Quantitative metrics of vegetation color extracted from PhenoCam imagery provide data that are consistent with ground observations of phenology and as well as other conventional vegetation indices across ecosystems. 
+
+### Focal sites
+
+| Site Name       | Site (and PhenoCam) ID     | NEON Domain     | Latitude  |  Longitude | Dominant Species |
+| :------------- | :----------: | -----------: | -----------: | -----------: | -----------: |
+|  [Harvard Forest, MA](https://www.neonscience.org/field-sites/harv) | NEON.D01.HARV.DP1.00033  | D01: Northeast    | 42.537 | -72.173 | *Quercus rubra*, *Acer rubrum*, *Aralia nudicaulis* | 
+|  [Bartlett Experimental Forest, NH](https://www.neonscience.org/field-sites/bart) | NEON.D01.BART.DP1.00033  | D01: Northeast    | 44.0639 | -71.2874 | *Liriodendron tulipifera*, *Microstegium vimineum*, *Juglans nigra* | 
+|  [Steigerwaldt Land Services, WI](https://www.neonscience.org/field-sites/stei)  | NEON.D05.STEI.DP1.00033  | D05: Great Lakes | 45.509 | -89.586 | *Populus tremuloides*, *Abies balsamea*, *Acer rubrum* | 
+|  [The University of Kansas Field Station, KS](https://www.neonscience.org/field-sites/ukfs) | NEON.D06.UKFS.DP1.00033  | D06: Prairie Peninsula    | 39.040 | -95.192 | *Symphoricarpos orbiculatus*, *Celtis occidentalis*, *Carya ovata* | 
+|  [Great Smoky Mountains National Park, TN](https://www.neonscience.org/field-sites/grsm) | NEON.D07.GRSM.DP1.00033  | D07: Appalachians and Cumberland Plateau   | 35.689 | -83.502 | *Liriodendron tulipifera*, *Acer rubrum*, *Acer pensylvanicum* | 
+|  [Dead Lake, AL](https://www.neonscience.org/field-sites/dela) | NEON.D08.DELA.DP1.00033  | D08: Ozarks Complex    | 32.542 | -87.804 | *Celtis laevigata*, *Ligustrum sinense*, *Liquidambar styraciflua* | 
+|  [National Grassland, TX](https://www.neonscience.org/field-sites/clbj) | NEON.D11.CLBJ.DP1.00033  | D11: Southern Plains    | 33.401 | -97.570 | *Quercus marilandica*, *Schizachyrium scoparium* | 
+
+
+### Target data calulation
+
+Digital cameras mounted above forests are pointed at the forest canopy.  Images are collected every half hour.
+
+The images are a set of pixels values in red, blue, and blue color channels (RGB).  A pixel value is an 8-bit digital number (DN). Because internal processing (including exposure control) and external factors affecting scene illumination (weather and atmospheric effects) both influence the retrieved RGB signature, we calculate a number of vegetation indices that are effective at suppressing this unwanted variation and maximizing the underlying phenological signal. Most important among these is the green chromatic coordinate (GCC), calculated as GCC = GDN / (RDN + GDN + BDN).
+ 
+For additional details, see Richardson et al. (2018) Scientific Data, and Richardson (2019) New Phytologist.
+
+PhenoCam data are processed and posted daily and the low latency of the PhenoCam data allows for a unique opportunity to evaluate forecasts in real-time.
+
+Each image has a defined “region of interest’ (ROI).  An ROI is a set of pixels that isolates particular features in the image (i.e., a set of deciduous trees in a mixed forest). The ROI of “DB_1000” for the below top-of-canopy PhenoCams will be used to assess the forecasts’ accuracy.  The mid-day (noon) mean GCC and GCC standard deviation for the “DB_1000” ROI will be used for evaluation.
+
+All data in the supplied file is available to build and evaluate models before submitting a forecast to challenge.  Once new data becomes, the data are appended to the existing file.  Within the challenge scoring, only the new data are used to evaluate previously submitted forecasts.
+
+### Target file
+
+- `time`: YYYY-MM-DD
+- `statistic`: variable name (“mean” or “sd”)
+- `gcc_90`: 
+- `siteID`: NEON site code (e.g., BART)
+
+Here is the format of the target file
+
+```{r message = FALSE}
+readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz", guess_max = 1e6)
+```
 
 ## Timeline
 

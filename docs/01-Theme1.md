@@ -47,22 +47,6 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ```
 
 ```
-## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   time = col_date(format = ""),
-##   siteID = col_character(),
-##   oxygen = col_double(),
-##   temperature = col_double(),
-##   oxygen_sd = col_double(),
-##   temperature_sd = col_double(),
-##   depth_oxygen = col_double(),
-##   depth_temperature = col_double(),
-##   neon_product_ids = col_character()
-## )
-```
-
-```
 ## # A tibble: 2,556 x 9
 ##    time       siteID oxygen temperature oxygen_sd temperature_sd depth_oxygen
 ##    <date>     <chr>   <dbl>       <dbl>     <dbl>          <dbl>        <dbl>
