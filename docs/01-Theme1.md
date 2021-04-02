@@ -1,17 +1,17 @@
 # Theme: Aquatic Ecosystems
 
-**WHAT:** Freshwater temperature and dissolved oxygen 
+**What:** Freshwater temperature and dissolved oxygen 
 
-**WHERE:** 1 lake and 1 river NEON sites. Click to expand the image in a new tab.
+**Where:** 1 lake and 1 river NEON sites. Click to expand the image in a new tab.
 ![](images/Barco Posey Sites.png)
 
-**WHEN:** Daily forecasts with a 7-day forecast horizon at the beginning of the month and submitted monthly from May 31-August 2021; later submissions after the May 31 start are permissible
+**When:** Daily forecasts with a 7-day forecast horizon at the beginning of the month and submitted monthly from May 31-August 2021; later submissions after the May 31 start are permissible
 
-**WHY:** Temperature and oxygen are critical for life in aquatic environments and can represent the health of the system
+**Why:** Temperature and oxygen are critical for life in aquatic environments and can represent the health of the system
 
-**WHO:** Open to any individual or team that registers
+**Who:** Open to any individual or team that registers
 
-**HOW:** REGISTER your team and submit forecast
+**How:** [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ) your team and submit forecast
 
 ## Overview
 
@@ -25,28 +25,62 @@ This design challenge asks teams to produce forecasts of mean daily surface wate
 
 Teams are asked to submit their 7 day forecasts of NEON surface water temperature and/or dissolved oxygen measurements along with uncertainty estimates and metadata. Any NEON surface water temperature and/or dissolved oxygen data prior to the 7 days being forecasted will be provided and may be used to build and improve the forecast models. Other data (other than temperature and/or dissolved oxygen data provided from NEON) can be used so long as they are not from the 7 days being forecasted at the beginning of each month, that they are publicly available, and that teams provide access (minimum of URL, but ideally a script) to all teams in the challenge.
 
-Submissions of forecast and metadata will be through https://data.ecoforecast.org/minio/submissions/ using prescribed file formats described in the challenge theme documentation (PENDING).
+Submissions of forecast and metadata will be through https://data.ecoforecast.org/minio/submissions/ using prescribed file formats described in the challenge theme documentation
 
 Forecasts will be scored and compared using the Continuous Ranked Probability Score, a metric that combines accuracy and uncertainty estimation (Gneiting, T., & Raftery, A. E., 2007). 
 
 ## Data: Training and Evaluation
+
 The R script for generating the evaluation and training data can be found at: https://github.com/eco4cast/neon4cast-aquatics
 
 The challenge uses the following NEON data products:
-DP1.20264.001: Temperature at specific depth in surface water
-DP1.20288.001: Water quality
+[DP1.20264.001](https://data.neonscience.org/data-products/DP1.20264.001): Temperature at specific depth in surface water
+[DP1.20288.001](https://data.neonscience.org/data-products/DP1.20288.001): Water quality
 
 ## Data: Targets
 
-A file with previously released NEON data that has been processed into “targets” is provided below. The target script can be found here. The same processing will be applied to new data that are used for forecast evaluation. Before the Aquatics challenge begins, a processing script will be available in the neon4cast-aquatics GitHub repository.
+A file with previously released NEON data that has been processed into “targets” is provided below. The target script can be found here. The same processing will be applied to new data that are used for forecast evaluation. Before the Aquatics challenge begins, a [processing script](https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R) is available in the neon4cast-aquatics GitHub repository.
 
-## Detailed Protocol
+Here is the format of the target file
 
-Details of the targets, how they are calculated, descriptions of the target files, and examples of other environmental variables that could be used in the Challenge are HERE. 
 
-Access Targets
+```r
+readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz")
+```
 
-Download an example of a forecast output format for submission HERE
+```
+## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   time = col_date(format = ""),
+##   siteID = col_character(),
+##   oxygen = col_double(),
+##   temperature = col_double(),
+##   oxygen_sd = col_double(),
+##   temperature_sd = col_double(),
+##   depth_oxygen = col_double(),
+##   depth_temperature = col_double(),
+##   neon_product_ids = col_character()
+## )
+```
+
+```
+## # A tibble: 2,556 x 9
+##    time       siteID oxygen temperature oxygen_sd temperature_sd depth_oxygen
+##    <date>     <chr>   <dbl>       <dbl>     <dbl>          <dbl>        <dbl>
+##  1 2017-10-20 BARC     6.01        26.4   0.0114        0.00104          1.19
+##  2 2017-10-21 BARC     6.06        26.3   0.00717       0.000986         1.20
+##  3 2017-10-22 BARC     6.13        26.4   0.00721       0.00119          1.19
+##  4 2017-10-23 BARC     6.43        26.6   0.00765       0.000944         1.16
+##  5 2017-10-24 BARC     6.31        26.4   0.00746       0.00118          1.11
+##  6 2017-10-25 BARC     6.27        25.9   0.00737       0.00107          1.13
+##  7 2017-10-26 BARC     6.30        25.0   0.00743       0.00105          1.19
+##  8 2017-10-27 BARC     6.41        24.3   0.00762       0.00104          1.22
+##  9 2017-10-28 BARC     6.48        24.1   0.00766       0.00111          1.17
+## 10 2017-10-29 BARC     6.64        23.8   0.00783       0.00101          1.10
+## # … with 2,546 more rows, and 2 more variables: depth_temperature <dbl>,
+## #   neon_product_ids <chr>
+```
 
 ## Timeline
 The timeline is determined by the data latency provided by NEON. NEON data is released in month long sets, 2 weeks after the month ends. 

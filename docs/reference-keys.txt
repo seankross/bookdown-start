@@ -3,7 +3,6 @@ overview
 challenge
 data-training-and-evaluation
 data-targets
-detailed-protocol
 timeline
 design-team
 partners
@@ -18,7 +17,7 @@ overview-1
 challenge-1
 data-training-and-evaluation-1
 data-targets-1
-detailed-protocol-1
+detailed-protocol
 timeline-1
 design-team-1
 partners-1
@@ -28,7 +27,7 @@ overview-2
 challenge-2
 data-training-and-evaluation-2
 data-targets-2
-detailed-protocol-2
+detailed-protocol-1
 timeline-2
 design-team-2
 partners-2
@@ -38,7 +37,7 @@ overview-3
 challenge-3
 data-training-and-evaluation-3
 data-targets-3
-detailed-protocol-3
+detailed-protocol-2
 timeline-3
 design-team-3
 partners-3
@@ -48,7 +47,7 @@ overview-4
 challenge-4
 data-training-and-evaluation-4
 data-targets-4
-detailed-protocol-4
+detailed-protocol-3
 timeline-4
 design-team-4
 partners-4
@@ -59,6 +58,16 @@ how-to-participate
 teams
 slack-and-github-communication
 submission-instructions
+forecast-format
+terrestrial
+beetles
+aquatics
+phenology
+ticks
+metadata-format
+submission-process
+archiving-models
+computational-reesources
 participation-agreement
 neon-data-use
 additional-data-options
@@ -73,3 +82,5 @@ exploring-the-scoring-surface
 crps-from-the-normal-distribution
 null-forecast
 forecast-submission-visualization-and-leaderboard
+helpful-functions
+frequently-asked-questions
