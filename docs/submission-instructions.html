@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Theme: Beetle Communities | NEON Ecological Forecasting Challenge</title>
+  <title>7 Submission instructions | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Theme: Beetle Communities | NEON Ecological Forecasting Challenge" />
+  <meta property="og:title" content="7 Submission instructions | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://seankross.com/bookdown-start/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="eco4cast/neon4cast-docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Theme: Beetle Communities | NEON Ecological Forecasting Challenge" />
+  <meta name="twitter:title" content="7 Submission instructions | NEON Ecological Forecasting Challenge" />
   
   <meta name="twitter:description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="theme-phenology.html"/>
-<link rel="next" href="participation.html"/>
+<link rel="prev" href="participation.html"/>
+<link rel="next" href="shared-forecast-drivers.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -255,85 +255,144 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="theme-beetle-communities" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Theme: Beetle Communities</h1>
-<p><strong>What:</strong> Beetle abundance and species richness from the National Ecological Observatory Network</p>
-<p><strong>Where:</strong> 47 terrestrial NEON sites that span the diverse ecosystems of the U.S.</p>
-<p><strong>When:</strong> Weekly forecasts for 20 months in the future starting June 30-December 31, 2021; later submissions after the June 30 start are permissible</p>
-<p><strong>Why:</strong> Improve understanding of habitat quality, conservation potential, land-use sustainability, and biodiversity change in response to global change and ecological disturbances</p>
-<p><strong>Who</strong>: Open to any individual or team that registers</p>
-<p><strong>How</strong>: REGISTER your team and submit forecast</p>
-<div id="overview-4" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Overview</h2>
-<p>Biodiversity monitoring is critical for understanding environmental quality, evaluating the sustainability of land-use practices, and forecasting future impacts of global change on ecosystems. Sentinel species give forewarning of environmental risk to humans, so are particularly useful for such monitoring and forecasting efforts because they can provide surrogates for other co-located components of biodiversity (Sauberer et al. 2004).</p>
-<p>Ground beetles (Family: Carabidae) are appropriate candidates for biodiversity monitoring and ecological forecasting as they are well-studied sentinel species that are geographically widespread, and their community dynamics are particularly congruent with the diversity of other invertebrates (Holland 2002; Lundgren &amp; McCravy 2011; Bousquet 2012; Hoekman et al. 2017). Therefore, monitoring carabid communities and forecasting changes in their species richness and abundance can be useful in studying edge effects and habitat quality (Magura 2002), conservation potential (Butterfield 1995), land-use sustainability (Pearce &amp; Venier 2006) and biodiversity change in response to global change and ecological disturbances (Koivula 2011). Most ecological forecasting models are limited in the geographic scale and also suffer from scarcity of temporally extensive data. Further, most existing forecasting efforts focus on a single species (Humphries et al. 2018) with limited community-wide forecasts at the continental scale. Developing forecasts for community-scale metrics (i.e., species richness, abundance) and evaluating such models for accuracy and generalizability can help test our scientific knowledge of spatial (geographical turnover) and temporal (seasonal, inter-annual) carabid community dynamics (Dietze et al. 2018). Such forecasting models can inform regional or local habitat management, identify where biodiversity monitoring efforts should be prioritized, and shed light on what data or modelling techniques are needed to build the best forecasts of ecological dynamics (e.g., can we predict richness or abundance better and why?) (Johansson et al. 2019).</p>
-<p>With the long-term, community-wide, continental-scale data collection through the National Ecological Observatory Network (NEON), 181 data products are available for 81 sites in the US (47 terrestrial, at which carabids are sampled, and 34 aquatic). Fully initiated in 2019, this sampling will continue for 30 years (Schimel et al. 2007; 2011). NEON has effectively removed the previous barriers to community-scale forecasting across a broader geographical realm.</p>
+<div id="submission-instructions" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Submission instructions</h1>
+<div id="forecast-format" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> Forecast format</h3>
+<p>Teams will submit their forecasts as a single netCDF or csv file with the following naming convention:</p>
+<p><code>theme_name-year-month-day-team_name_ID.csv</code></p>
+<p>or</p>
+<p><code>theme_name-year-month-day-team_name_ID.nc</code></p>
+<p>Where <code>year</code>, <code>month</code>, and <code>day</code> are the year, month, and day for the first day of the submitted forecast and the <code>team_name_ID</code> is the code for the team name that is specified in the registration (<code>team_name_ID</code> is a 10 character name with no spaces in it).</p>
+<p>The <code>theme_name</code> options are: <code>terrestrial_daily</code>, <code>terrestrial_30min</code>, <code>aquatics</code>, <code>beetles</code>, <code>ticks</code>, or <code>phenology</code>.</p>
+<p>Forecast netCDF or csv files should have the following columns (csv) or variables (netcdf) that correspond to the columns.</p>
+<div id="terrestrial" class="section level4" number="7.0.1.1">
+<h4><span class="header-section-number">7.0.1.1</span> Terrestrial</h4>
+<ul>
+<li><code>time</code>: YYYY-MM-DD HH:MM UTC of the start of the 30-minute value or YYYY-MM-DD for daily forecasts</li>
+<li><code>siteID</code>: NEON code for site</li>
+<li><code>ensemble</code>*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)</li>
+<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
+<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
+<li><code>nee</code>: net ecosystem exchange (umol CO2 m-2 s-1)</li>
+<li><code>le</code>: latent heat (W m-2)</li>
+<li><code>vswc</code>: volumetric soil water content (%)</li>
+</ul>
 </div>
-<div id="challenge-4" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Challenge</h2>
-<p>This is an open ecological forecasting challenge to forecast carabid species richness, defined as the total number of species, and abundance, defined as the total number of carabid individuals. The forecasts should be done weekly per site for all NEON terrestrial sites with richness being absolute and abundance scaled by the sampling effort. Contributing teams are required to submit a forecast for May-Dec 2021 and Jan-Dec 2022 on June 30, 2021. However, teams are encouraged to update their forecasts on the last day of each month, ending on December 31, 2021, as NEON validation data are released. NEON releases carabid sampling data weekly and no sooner than 60 days after collection, so a model submitted on June 30 can include a forecast for the first week of May, and so forth. Teams may use any open data products as drivers of richness and abundance so long as they are not from the month being forecast, and are made publicly available (minimum of URL, but ideally a script). Potential driver data sources include: NEON site data (Soil and sediment data, Terrestrial Plant data, weather data), NOAA forecasts, and beyond.</p>
-<p>Submissions of forecast and metadata will be through <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a> using prescribed file formats described in the challenge theme documentation (PENDING).</p>
-<p>Forecasts will be scored and compared using the Continuous Ranked Probability Score, a metric that combines accuracy and uncertainty estimation (Gneiting, T., &amp; Raftery, A. E., 2007). Only weeks for which data are collected will be included in scoring.</p>
+<div id="beetles" class="section level4" number="7.0.1.2">
+<h4><span class="header-section-number">7.0.1.2</span> Beetles</h4>
+<ul>
+<li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted)</li>
+<li><code>siteID</code>: NEON code for site</li>
+<li><code>ensemble</code>*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)</li>
+<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
+<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
+<li><code>abundance</code>: abundance of beetles</li>
+<li><code>richness</code>: species richness of beetles</li>
+</ul>
 </div>
-<div id="data-training-and-evaluation-3" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Data: Training and Evaluation:</h2>
-<p>The challenge uses the following NEON data product:
-DP1.10022.001: Ground beetles sampled from pitfall traps</p>
+<div id="aquatics" class="section level4" number="7.0.1.3">
+<h4><span class="header-section-number">7.0.1.3</span> Aquatics</h4>
+<ul>
+<li><code>time</code>: YYYY-MM-DD of forecast</li>
+<li><code>siteID</code>: NEON code for site</li>
+<li><code>ensemble</code>*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)</li>
+<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
+<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
+<li><code>oxygen</code>: dissolved oxygen (ug/L)</li>
+<li><code>temp</code>: water temperature (C)</li>
+</ul>
+<p>Here is an example of a forecast file that meets the standard for the aquatics theme</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="submission-instructions.html#cb4-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   time = col_date(format = &quot;&quot;),
+##   ensemble = col_double(),
+##   siteID = col_character(),
+##   oxygen = col_double(),
+##   temperature = col_double(),
+##   obs_flag = col_double(),
+##   forecast = col_double(),
+##   data_assimilation = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 28,000 x 8
+##    time       ensemble siteID oxygen temperature obs_flag forecast
+##    &lt;date&gt;        &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1 2021-03-01        1 BARC     8.98        19.1        2        1
+##  2 2021-03-01        2 BARC     8.67        21.6        2        1
+##  3 2021-03-01        3 BARC     8.73        28.9        2        1
+##  4 2021-03-01        4 BARC     8.12        28.2        2        1
+##  5 2021-03-01        5 BARC     8.18        17.6        2        1
+##  6 2021-03-01        6 BARC     8.70        34.1        2        1
+##  7 2021-03-01        7 BARC     8.83        14.9        2        1
+##  8 2021-03-01        8 BARC     8.25        23.7        2        1
+##  9 2021-03-01        9 BARC     8.47        15.0        2        1
+## 10 2021-03-01       10 BARC     8.68        26.3        2        1
+## # … with 27,990 more rows, and 1 more variable: data_assimilation &lt;dbl&gt;</code></pre>
 </div>
-<div id="data-targets-4" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Data: Targets</h2>
-<p>A file with previously released NEON data that has been processed into the aggregate “target” variables (richness and abundance) is provided below. The same processing will be applied to new data that are used for forecast evaluation. Further information about data structure, initial code for processing, and example null forecasts is provided in the neon4cast-beetles GitHub repository.</p>
+<div id="phenology" class="section level4" number="7.0.1.4">
+<h4><span class="header-section-number">7.0.1.4</span> Phenology</h4>
+<ul>
+<li><code>time</code>: YYYY-MM-DD</li>
+<li><code>siteID</code>: NEON code for site</li>
+<li><code>ensemble</code>*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)</li>
+<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
+<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
+<li><code>gcc_90</code>: green chromatic coordinate</li>
+</ul>
+<p>Here is an example of a forecast file that meets the standard for the phenology theme</p>
 </div>
-<div id="detailed-protocol-3" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Detailed protocol</h2>
-<p>Details of the targets, how they are calculated, descriptions of the target files, and examples of other environmental variables that could be used in the Challenge are HERE.</p>
-<p>Access Targets HERE</p>
-<p>Download an example of a forecast output format for submission HERE</p>
+<div id="ticks" class="section level4" number="7.0.1.5">
+<h4><span class="header-section-number">7.0.1.5</span> Ticks</h4>
+<ul>
+<li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted)</li>
+<li><code>siteID</code>: NEON code for site</li>
+<li><code>plotID</code>: NEON plotID</li>
+<li><code>ensemble</code>*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)</li>
+<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
+<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
+<li><code>amblyomma_americanum</code>: Number of <em>Amblyomma americanum</em> nymphs per plot per week</li>
+<li><code>ixodes_scapularis</code>: Number of <em>Ixodes scapularis</em> nymphs per plot per week</li>
+</ul>
+<p>*Teams that are NOT using ensemble-based forecast methods should replace the ensemble column with a statistic column. Multiple statistics can be reported using a long format in a csv or adding a statistic dimension in netCDF. The required options for this column are <code>mean</code> and <code>sd</code> (standard deviation). You can also include <code>Conf_interv_02.5</code>, <code>Conf_interv_97.5</code>, <code>Pred_interval_02.5</code>, and <code>Pred_interval_97.5</code> to describe uncertainty but these are optional. The numbers in the last four options indicate equal-tail quantiles for a 95% interval estimate and <code>Conf_</code>=confidence and <code>Pred_</code>=predictive. If statistics are reported we will make a Gaussian assumption when calculating error scores. The Continuous Ranked Probability Score is based on the predictive distribution so reported <code>sd</code> should be for the predictive distribution.</p>
+<p>For those using netCDF, the order of dimensions on forecast variables should be: <code>time</code>, <code>site</code>, <code>plot</code> [ticks only], and <code>ensemble</code>. In practice using a netCDF for the forecast forecast with the <code>statistic</code> rather than <code>ensemble</code> is not ideal.</p>
+<p>Additional detail about file formats can be found in the EFI Forecast Standard Documentation.</p>
 </div>
-<div id="timeline-4" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Timeline</h2>
-<p>The timeline is determined by the data latency provided by NEON. NEON carabid pitfall trap data is released weekly with a latency of at least 60 days after collection. Weekly forecasts were chosen to best match up with NEON’s weekly release of carabid data.</p>
-<p>The challenge will begin June 30, 2021 at 11:59 Eastern Standard Time (UTC−05:00) and run through December 31, 2021. Subsequent forecasts are due at 11:59 EST on the final day of each month.</p>
-<p>As an example, carabid pitfall trap data released in the last week of June would include data as recent as the last week of April. Thus, a model submitted in the last week of June could include forecasts from May onwards. Then, the forecast update submitted at the end of July can use new May data to help refine June forecasts, or forecasts following June, depending on what drivers are used. The July forecast update is due by 11:59 pm EST on July 31. Forecasts updates will not be considered for weeks where NEON validation data has already been released (i.e., no May forecast updates may be submitted on July 31) or for weeks when no NEON carabid data is available.</p>
-<p><img src="images/June2021_Calendar.jpg" />
-<img src="images/July2021_Calendar.jpg" />
-Pitfall traps are collected and reset every 2 weeks throughout the growing season. Due to weather and conditions beyond the field team’s control, this collection schedule may not be followed. Thus, the exact collection dates cannot be known until they have happened. Field data are made publicly available on the data portal as the bet_fielddata dataframe no sooner than 14 days after collection. Teams can use bet_fielddata to inform the actual collection schedule. Data with parataxonomist identifications are made publicly available on the data portal as the bet_sorting dataframe no sooner than 60 days after collection. Data are released on the NEON data portal weekly, but may be released on any day of the week. The forecast schedule follows the ISO week standard with weeks starting on Mondays.</p>
 </div>
-<div id="design-team-4" class="section level2" number="5.7">
-<h2><span class="header-section-number">5.7</span> Design team</h2>
-<p>Anna Spiers, University of Colorado, Boulder<br />
-Carl Boettiger, University of California, Berkeley<br />
-Tad Dallas, Louisiana State University<br />
-Nico Franz, NEON Biorepository at Arizona State University<br />
-Kari Norman, University of California, Berkeley<br />
-Thilina Surasinghe, Bridgewater State University<br />
-Brett Melbourne, University of Colorado, Boulder<br />
-Eric Sokol, NEON<br />
-Kelsey Yule, NEON Biorepository at Arizona State University</p>
+<div id="metadata-format" class="section level3" number="7.0.2">
+<h3><span class="header-section-number">7.0.2</span> Metadata format</h3>
+<p>Each submission requires a metadata file to be submitted. The metadata file must have the same name as the submitted forecast, but with the .xml extension. Model descriptions can be uploaded to <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a></p>
+<p><code>theme_name-year-month-day-team_name_ID.xml</code></p>
+<p>The metadata standard has been designed by the Ecological Forecasting Initiative and is build off the widely used Ecological Metadata Language (EML).</p>
+<p>The following components are required:
+- Title<br />
+- pubDate: date that forecast is generated<br />
+- License: See below for details<br />
+- Creator(s)<br />
+- Spatial and temporal coverage<br />
+- File descriptions<br />
+- Model timestep<br />
+- forecast_horizon (length)<br />
+- forecast_issue_time<br />
+- forecast_iteration_id<br />
+- forecast_project_id: team_name_ID (e.g., <code>EFI_NULL</code>)<br />
+- model_description which includes: forecast_model_id, model name, type (statistical, process-based, machine-learning, etc), and repository (url or DOI).<br />
+- Info on model structure and uncertainty (standards section 2.1.2)</p>
+<p>The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., <a href="https://creativecommons.org/licenses/by/4.0/" class="uri">https://creativecommons.org/licenses/by/4.0/</a>)</p>
+<p>We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the example vignettes, which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at <a href="mailto:eco4cast.initaitive@gmail.com" class="email">eco4cast.initaitive@gmail.com</a>.</p>
+<p>The Ecological Forecasting Initiative has provided R scripts to assist in generating the metadata XML file. The scripts can be found at the GitHub repository for the standard: <a href="https://github.com/eco4cast/EFIstandards" class="uri">https://github.com/eco4cast/EFIstandards</a> as well as the EML validator. Teams are encouraged to check the validity of their metadata before submission.</p>
 </div>
-<div id="partners-4" class="section level2" number="5.8">
-<h2><span class="header-section-number">5.8</span> Partners</h2>
-<p>The challenge is hosted by the Ecological Forecasting Initiative (EFI; <a href="https://ecoforecast.org/" class="uri">https://ecoforecast.org/</a>) and its U.S. National Science Foundation sponsored Research Coordination Network (EFI-RCN; <a href="https://ecoforecast.org/rcn/" class="uri">https://ecoforecast.org/rcn/</a>).</p>
-<p>Data used in the challenge from National Ecological Observatory Network (NEON): <a href="https://www.neonscience.org/" class="uri">https://www.neonscience.org/</a>.</p>
-</div>
-<div id="references-4" class="section level2" number="5.9">
-<h2><span class="header-section-number">5.9</span> References</h2>
-<p>Bousquet, Y. (2012) Catalogue of Geadephaga (Coleoptera: Adephaga) of America, north of Mexico. ZooKeys 245: 1-1722. <a href="https://doi.org/10.3897/zookeys.245.3416" class="uri">https://doi.org/10.3897/zookeys.245.3416</a></p>
-<p>Butterfield, J., Luff, M., Baines, M., Eyre, M. (1995) Carabid beetle communities as indicators of conservation potential in upland forests. Forest Ecology and Management 79, 63-77.
-<a href="https://doi.org/10.1016/0378-1127(95)03620-2" class="uri">https://doi.org/10.1016/0378-1127(95)03620-2</a></p>
-<p>Dietze, M.C., Fox, A., Beck-Johnson, L.M., Betancourt, J.L., Hooten, M.B., Jarnevich, C.S., Keitt, T.H., Kenney, M.A., Laney, C.M., Larsen, L.G. (2018) Iterative near-term ecological forecasting: Needs, opportunities, and challenges. Proceedings of the National Academy of Sciences 115, 1424-1432. <a href="https://doi.org/10.1073/pnas.1710231115" class="uri">https://doi.org/10.1073/pnas.1710231115</a></p>
-<p>Gneiting, T., &amp; Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. Journal of the American Statistical Association, 102(477), 359–378. <a href="https://doi.org/10.1198/016214506000001437" class="uri">https://doi.org/10.1198/016214506000001437</a></p>
-<p>Hoekman, D., LeVan, K.E., Gibson, C., Ball, G.E., Browne, R.A., Davidson, R.L., Eriwin, T.L., Knisley, C.B., LaBonte, J.R., Lundgren, J., Maddison, D.R., Moore, W., Niemela, J., Ober, K.A., Pearson, D.L. Spence, J.R., Will, K., Work, T. (2017) Design for ground beetle abundance and diversity sampling within the National Ecological Observatory Network. Ecosphere, 8(4), e01744. <a href="https://doi.org/10.1002/ecs2.1744" class="uri">https://doi.org/10.1002/ecs2.1744</a></p>
-<p>Holland, J.M. (2002) The agroecology of carabid beetles. Intercept Limited, Andover.</p>
-<p>Humphries, G.R., Che-Castaldo, C., Bull, P., Lipstein, G., Ravia, A., Carrión, B., Bolton, T., Ganguly, A., Lynch, H.J. (2018) Predicting the future is hard and other lessons from a population time series data science competition. Ecological Informatics 48, 1-11. <a href="https://doi.org/10.1016/j.ecoinf.2018.07.004" class="uri">https://doi.org/10.1016/j.ecoinf.2018.07.004</a></p>
-<p>Johansson, M.A., Apfeldorf, K.M., Dobson, S., Devita, J., Buczak, A.L., Baugher, B., Moniz, L.J., Bagley, T., Babin, S.M., Guven, E. (2019) An open challenge to advance probabilistic forecasting for dengue epidemics. Proceedings of the National Academy of Sciences 116, 24268-24274. <a href="https://doi.org/10.1073/pnas.1909865116" class="uri">https://doi.org/10.1073/pnas.1909865116</a></p>
-<p>Koivula, M.J. (2011) Useful model organisms, indicators, or both? Ground beetles (Coleoptera, Carabidae) reflecting environmental conditions. ZooKeys, 287-317. <a href="https://doi.org/10.3897/zookeys.100.1533" class="uri">https://doi.org/10.3897/zookeys.100.1533</a></p>
-<p>Lundgren, J., McCravy, K. (2011) Carabid beetles (Coleoptera: Carabidae) of the Midwestern United States: A review and synthesis of recent research. Terrestrial arthropod reviews 4, 63-94. <a href="https://doi.org/10.1163/187498311X565606" class="uri">https://doi.org/10.1163/187498311X565606</a></p>
-<p>Magura, T. (2002) Carabids and forest edge: spatial pattern and edge effect. Forest Ecology and Management 157, 23-37. <a href="https://doi.org/10.1016/S0378-1127(00)00654-X" class="uri">https://doi.org/10.1016/S0378-1127(00)00654-X</a></p>
-<p>Pearce, J.L., Venier, L.A. (2006) The use of ground beetles (Coleoptera: Carabidae) and spiders (Araneae) as bioindicators of sustainable forest management: A review. Ecological Indicators 6, 780-793. <a href="https://doi.org/10.1016/j.ecolind.2005.03.005" class="uri">https://doi.org/10.1016/j.ecolind.2005.03.005</a></p>
-<p>Sauberer, N., Zulka, K.P., Abensperg-Traun, M., Berg, H.-M., Bieringer, G., Milasowszky, N., Moser, D., Plutzar, C., Pollheimer, M., Storch, C. (2004) Surrogate taxa for biodiversity in agricultural landscapes of eastern Austria. Biological Conservation 117, 181-190. <a href="https://doi.org/10.1016/S0006-3207(03)00291-X" class="uri">https://doi.org/10.1016/S0006-3207(03)00291-X</a></p>
-<p>Schimel, D., Hargrove, W., Hoffman, F., MacMahon, J. (2007) NEON: a hierarchically designed national ecological network. Frontiers in Ecology and the Environment 5, 59-59. <a href="https://doi.org/10.1890/1540-9295(2007)5%5B59:NAHDNE%5D2.0.CO;2" class="uri">https://doi.org/10.1890/1540-9295(2007)5[59:NAHDNE]2.0.CO;2</a></p>
-<p>Schimel, D., Keller, M., Berukoff, S., Hufft, R., Loescher, H., Powell, H., Kampe, T., Moore, D., Gram, W. (2011) NEON Science Strategy: Enabling Continental-Scale Ecological Forecasting. <a href="https://www.neonscience.org/sites/default/files/basic-page-files/NEON_Strategy_2011u2_0.pdf" class="uri">https://www.neonscience.org/sites/default/files/basic-page-files/NEON_Strategy_2011u2_0.pdf</a></p>
+<div id="submission-process" class="section level3" number="7.0.3">
+<h3><span class="header-section-number">7.0.3</span> Submission process</h3>
+<p>Individual forecast (csv, netCDF) and metadate (xml) files can be uploaded any time before the specific deadlines as defined by each theme. Only the most recent files will be scored.</p>
+<p>Teams will submit their forecast netCDF or csv files through the challenge website. You can manually submit your forecast through the <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a> website using the red plus on the bottom left. You can submit from an R script using the following:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="submission-instructions.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span> <span class="ot">=</span> <span class="st">&quot;data&quot;</span>,</span>
+<span id="cb7-2"><a href="submission-instructions.html#cb7-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;AWS_S3_ENDPOINT&quot;</span> <span class="ot">=</span> <span class="st">&quot;ecoforecast.org&quot;</span>)</span>
+<span id="cb7-3"><a href="submission-instructions.html#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="submission-instructions.html#cb7-4" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span></code></pre></div>
+<p>Submissions need to adhere to the forecast format that is provided above, including the file naming convention. Our cyberinfastructure automatically evaluates forecasts and relies on the expected formatting. Contact <a href="mailto:eco4cast.initiative@gmail.com" class="email">eco4cast.initiative@gmail.com</a> if you experience technical issues with submitting.</p>
+<p>Note: If you have used AWS in the past you might have credential files in an .aws folder in your home directory that will cause an error when you try to upload to a non-AWS bucket. If you encounter this error you may need to rename your credentials files so put_object doesn’t try to read them.</p>
 
 </div>
 </div>
@@ -342,8 +401,8 @@ Kelsey Yule, NEON Biorepository at Arizona State University</p>
           </div>
         </div>
       </div>
-<a href="theme-phenology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="participation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="participation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="shared-forecast-drivers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

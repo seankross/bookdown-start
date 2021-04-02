@@ -1,7 +1,7 @@
 book_filename: "bookdown-start"
 repo: https://github.com/eco4cast/neon4cast-docs
 output_dir: docs
-rmd_files: ["index.Rmd", "01-Theme1.Rmd", "01-Theme2.Rmd", "01-Theme3.Rmd","01-Theme4.Rmd","01-Theme5.Rmd","02-Participation.Rmd", "03-Shared-Forecast-Drivers.Rmd", "04-Evaluation.Rmd", "05-Helpful-Functions.Rmd","06-FAQ.Rmd"]
+rmd_files: ["index.Rmd", "01-Theme1.Rmd", "01-Theme2.Rmd", "01-Theme3.Rmd","01-Theme4.Rmd","01-Theme5.Rmd","02-Participation.Rmd","02-Submission-Instructions.Rmd","03-Shared-Forecast-Drivers.Rmd", "04-Evaluation.Rmd", "05-Helpful-Functions.Rmd","06-FAQ.Rmd"]
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
 
