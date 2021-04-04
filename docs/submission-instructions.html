@@ -24,7 +24,7 @@
 <meta name="author" content="Ecological Forecasting Initative Research Coordination Network" />
 
 
-<meta name="date" content="2021-04-02" />
+<meta name="date" content="2021-04-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -232,9 +232,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="submission-instructions.html"><a href="submission-instructions.html"><i class="fa fa-check"></i><b>7</b> Submission instructions</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="submission-instructions.html"><a href="submission-instructions.html#forecast-format"><i class="fa fa-check"></i><b>7.0.1</b> Forecast format</a></li>
-<li class="chapter" data-level="7.0.2" data-path="submission-instructions.html"><a href="submission-instructions.html#metadata-format"><i class="fa fa-check"></i><b>7.0.2</b> Metadata format</a></li>
-<li class="chapter" data-level="7.0.3" data-path="submission-instructions.html"><a href="submission-instructions.html#submission-process"><i class="fa fa-check"></i><b>7.0.3</b> Submission process</a></li>
+<li class="chapter" data-level="7.1" data-path="submission-instructions.html"><a href="submission-instructions.html#forecast-format"><i class="fa fa-check"></i><b>7.1</b> Forecast format</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="submission-instructions.html"><a href="submission-instructions.html#terrestrial"><i class="fa fa-check"></i><b>7.1.1</b> Terrestrial</a></li>
+<li class="chapter" data-level="7.1.2" data-path="submission-instructions.html"><a href="submission-instructions.html#beetles"><i class="fa fa-check"></i><b>7.1.2</b> Beetles</a></li>
+<li class="chapter" data-level="7.1.3" data-path="submission-instructions.html"><a href="submission-instructions.html#aquatics"><i class="fa fa-check"></i><b>7.1.3</b> Aquatics</a></li>
+<li class="chapter" data-level="7.1.4" data-path="submission-instructions.html"><a href="submission-instructions.html#phenology"><i class="fa fa-check"></i><b>7.1.4</b> Phenology</a></li>
+<li class="chapter" data-level="7.1.5" data-path="submission-instructions.html"><a href="submission-instructions.html#ticks"><i class="fa fa-check"></i><b>7.1.5</b> Ticks</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="submission-instructions.html"><a href="submission-instructions.html#metadata-format"><i class="fa fa-check"></i><b>7.2</b> Metadata format</a></li>
+<li class="chapter" data-level="7.3" data-path="submission-instructions.html"><a href="submission-instructions.html#submission-process"><i class="fa fa-check"></i><b>7.3</b> Submission process</a></li>
+<li class="chapter" data-level="7.4" data-path="submission-instructions.html"><a href="submission-instructions.html#validating-submission"><i class="fa fa-check"></i><b>7.4</b> Validating submission</a></li>
+<li class="chapter" data-level="7.5" data-path="submission-instructions.html"><a href="submission-instructions.html#visualizing-submissions"><i class="fa fa-check"></i><b>7.5</b> Visualizing submissions</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="shared-forecast-drivers.html"><a href="shared-forecast-drivers.html"><i class="fa fa-check"></i><b>8</b> Shared Forecast Drivers</a>
 <ul>
@@ -277,8 +286,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="submission-instructions" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> Submission instructions</h1>
-<div id="forecast-format" class="section level3" number="7.0.1">
-<h3><span class="header-section-number">7.0.1</span> Forecast format</h3>
+<div id="forecast-format" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Forecast format</h2>
 <p>Teams will submit their forecasts as a single netCDF or csv file with the following naming convention:</p>
 <p><code>theme_name-year-month-day-team_name_ID.csv</code></p>
 <p>or</p>
@@ -286,8 +295,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Where <code>year</code>, <code>month</code>, and <code>day</code> are the year, month, and day for the first day of the submitted forecast and the <code>team_name_ID</code> is the code for the team name that is specified in the registration (<code>team_name_ID</code> is a 10 character name with no spaces in it).</p>
 <p>The <code>theme_name</code> options are: <code>terrestrial_daily</code>, <code>terrestrial_30min</code>, <code>aquatics</code>, <code>beetles</code>, <code>ticks</code>, or <code>phenology</code>.</p>
 <p>Forecast netCDF or csv files should have the following columns (csv) or variables (netcdf) that correspond to the columns.</p>
-<div id="terrestrial" class="section level4" number="7.0.1.1">
-<h4><span class="header-section-number">7.0.1.1</span> Terrestrial</h4>
+<div id="terrestrial" class="section level3" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Terrestrial</h3>
 <ul>
 <li><code>time</code>: YYYY-MM-DD HH:MM UTC of the start of the 30-minute value or YYYY-MM-DD for daily forecasts</li>
 <li><code>siteID</code>: NEON code for site</li>
@@ -298,9 +307,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>le</code>: latent heat (W m-2)</li>
 <li><code>vswc</code>: volumetric soil water content (%)</li>
 </ul>
+<p>Here is an example of a forecast file that meets the standard for the daily terrestrial theme</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="submission-instructions.html#cb13-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   time = col_date(format = &quot;&quot;),
+##   ensemble = col_double(),
+##   siteID = col_character(),
+##   obs_flag = col_double(),
+##   nee = col_double(),
+##   le = col_double(),
+##   vswc = col_double(),
+##   forecast = col_double(),
+##   data_assimilation = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 272,000 x 9
+##    time       ensemble siteID obs_flag    nee     le   vswc forecast
+##    &lt;date&gt;        &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+##  1 2020-10-02        1 BART          2 -29.6  -114.  0.0220        1
+##  2 2020-10-02        2 BART          2 -21.1    49.9 0.191         1
+##  3 2020-10-02        3 BART          2  -5.70  344.  0.0792        1
+##  4 2020-10-02        4 BART          2   4.76  547.  0.0982        1
+##  5 2020-10-02        5 BART          2 -18.6    94.8 0.0883        1
+##  6 2020-10-02        6 BART          2  -4.32  375.  0.192         1
+##  7 2020-10-02        7 BART          2  -2.51  408.  0.127         1
+##  8 2020-10-02        8 BART          2 -10.5   255.  0.198         1
+##  9 2020-10-02        9 BART          2 -33.3  -184.  0.157         1
+## 10 2020-10-02       10 BART          2 -10.7   250.  0.109         1
+## # … with 271,990 more rows, and 1 more variable: data_assimilation &lt;dbl&gt;</code></pre>
+<p>Here is an example of a forecast file that meets the standard for the 30 minute terrestrial theme in the ncdf format. The file is located at <a href="https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc" class="uri">https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc</a></p>
 </div>
-<div id="beetles" class="section level4" number="7.0.1.2">
-<h4><span class="header-section-number">7.0.1.2</span> Beetles</h4>
+<div id="beetles" class="section level3" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Beetles</h3>
 <ul>
 <li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted)</li>
 <li><code>siteID</code>: NEON code for site</li>
@@ -310,9 +349,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>abundance</code>: abundance of beetles</li>
 <li><code>richness</code>: species richness of beetles</li>
 </ul>
+<p>Here is an example of a forecast file that meets the standard for the beetles theme</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="submission-instructions.html#cb16-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI_avg_null.csv.gz&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   siteID = col_character(),
+##   time = col_date(format = &quot;&quot;),
+##   ensemble = col_double(),
+##   richness = col_double(),
+##   abundance = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 443,500 x 5
+##    siteID time       ensemble richness abundance
+##    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+##  1 SJER   2020-01-06        1     3.15 -0.00247 
+##  2 SJER   2020-01-06        2     3.19  0.0195  
+##  3 SJER   2020-01-06        3     2.86  0.000971
+##  4 SJER   2020-01-06        4     3.27  0.0370  
+##  5 SJER   2020-01-06        5     2.87  0.0192  
+##  6 SJER   2020-01-06        6     2.71  0.0158  
+##  7 SJER   2020-01-06        7     3.64 -0.00148 
+##  8 SJER   2020-01-06        8     3.94  0.0311  
+##  9 SJER   2020-01-06        9     2.75  0.0180  
+## 10 SJER   2020-01-06       10     3.30  0.0249  
+## # … with 443,490 more rows</code></pre>
 </div>
-<div id="aquatics" class="section level4" number="7.0.1.3">
-<h4><span class="header-section-number">7.0.1.3</span> Aquatics</h4>
+<div id="aquatics" class="section level3" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Aquatics</h3>
 <ul>
 <li><code>time</code>: YYYY-MM-DD of forecast</li>
 <li><code>siteID</code>: NEON code for site</li>
@@ -323,7 +387,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>temp</code>: water temperature (C)</li>
 </ul>
 <p>Here is an example of a forecast file that meets the standard for the aquatics theme</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="submission-instructions.html#cb13-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="submission-instructions.html#cb19-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
@@ -351,8 +415,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 2021-03-01       10 BARC     8.68        26.3        2        1
 ## # … with 27,990 more rows, and 1 more variable: data_assimilation &lt;dbl&gt;</code></pre>
 </div>
-<div id="phenology" class="section level4" number="7.0.1.4">
-<h4><span class="header-section-number">7.0.1.4</span> Phenology</h4>
+<div id="phenology" class="section level3" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Phenology</h3>
 <ul>
 <li><code>time</code>: YYYY-MM-DD</li>
 <li><code>siteID</code>: NEON code for site</li>
@@ -361,10 +425,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
 <li><code>gcc_90</code>: green chromatic coordinate</li>
 </ul>
-<p>Here is an example of a forecast file that meets the standard for the phenology theme</p>
+<p>Here is are examples of forecast files that meet the standard for the phenology theme</p>
+<p>A CSV file</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="submission-instructions.html#cb22-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-UCSC_P_EDM.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   time = col_date(format = &quot;&quot;),
+##   siteID = col_character(),
+##   obs_flag = col_double(),
+##   forecast = col_double(),
+##   data_assimilation = col_double(),
+##   statistic = col_character(),
+##   gcc_90 = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 560 x 7
+##    time       siteID obs_flag forecast data_assimilation statistic gcc_90
+##    &lt;date&gt;     &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
+##  1 2021-02-23 BART          2        1                 1 mean      0.346 
+##  2 2021-02-23 BART          2        1                 1 sd        0.0117
+##  3 2021-02-23 CLBJ          2        1                 1 mean      0.325 
+##  4 2021-02-23 CLBJ          2        1                 1 sd        0.0185
+##  5 2021-02-23 DELA          2        1                 1 mean      0.354 
+##  6 2021-02-23 DELA          2        1                 1 sd        0.0327
+##  7 2021-02-23 GRSM          2        1                 1 mean      0.351 
+##  8 2021-02-23 GRSM          2        1                 1 sd        0.0136
+##  9 2021-02-23 HARV          2        1                 1 mean      0.331 
+## 10 2021-02-23 HARV          2        1                 1 sd        0.0120
+## # … with 550 more rows</code></pre>
+<p>A netcdf file located at <a href="https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc" class="uri">https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc</a></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="submission-instructions.html#cb25-1" aria-hidden="true" tabindex="-1"></a>ncdf4<span class="sc">::</span><span class="fu">nc_open</span>(<span class="st">&quot;images/phenology-2021-02-23-EFInull.nc&quot;</span>)</span></code></pre></div>
+<pre><code>## File images/phenology-2021-02-23-EFInull.nc (NC_FORMAT_NETCDF4):
+## 
+##      2 variables (excluding dimension variables):
+##         float gcc_90[time,site,ensemble]   (Contiguous storage)  
+##             long_name: 90% quantile of daily green chromatic coordinate
+##         char siteID[nchar,site]   (Contiguous storage)  
+## 
+##      4 dimensions:
+##         time  Size:35
+##             units: days since 2021-02-23
+##             long_name: time
+##         site  Size:8
+##             long_name: siteID
+##         ensemble  Size:2000
+##             long_name: ensemble member
+##         nchar  Size:4
+## [1] &quot;vobjtovarid4: **** WARNING **** I was asked to get a varid for dimension named nchar BUT this dimension HAS NO DIMVAR! Code will probably fail at this point&quot;
+## 
+##     3 global attributes:
+##         forecast_project_id: EFInull
+##         forecast_model_id: v0.1
+##         forecast_iteration_id: 2021-02-23 22:10:34</code></pre>
 </div>
-<div id="ticks" class="section level4" number="7.0.1.5">
-<h4><span class="header-section-number">7.0.1.5</span> Ticks</h4>
+<div id="ticks" class="section level3" number="7.1.5">
+<h3><span class="header-section-number">7.1.5</span> Ticks</h3>
 <ul>
 <li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted)</li>
 <li><code>siteID</code>: NEON code for site</li>
@@ -377,11 +492,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>*Teams that are NOT using ensemble-based forecast methods should replace the ensemble column with a statistic column. Multiple statistics can be reported using a long format in a csv or adding a statistic dimension in netCDF. The required options for this column are <code>mean</code> and <code>sd</code> (standard deviation). You can also include <code>Conf_interv_02.5</code>, <code>Conf_interv_97.5</code>, <code>Pred_interval_02.5</code>, and <code>Pred_interval_97.5</code> to describe uncertainty but these are optional. The numbers in the last four options indicate equal-tail quantiles for a 95% interval estimate and <code>Conf_</code>=confidence and <code>Pred_</code>=predictive. If statistics are reported we will make a Gaussian assumption when calculating error scores. The Continuous Ranked Probability Score is based on the predictive distribution so reported <code>sd</code> should be for the predictive distribution.</p>
 <p>For those using netCDF, the order of dimensions on forecast variables should be: <code>time</code>, <code>site</code>, <code>plot</code> [ticks only], and <code>ensemble</code>. In practice using a netCDF for the forecast forecast with the <code>statistic</code> rather than <code>ensemble</code> is not ideal.</p>
-<p>Additional detail about file formats can be found in the EFI Forecast Standard Documentation.</p>
+<p>Here is an example of a forecast file that meets the standard for the ticks theme</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="submission-instructions.html#cb27-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## Warning: 66500 parsing failures.
+##  row                  col           expected             actual                                                                                             file
+## 7001 amblyomma_americanum 1/0/T/F/TRUE/FALSE 4.00332129495972   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## 7002 amblyomma_americanum 1/0/T/F/TRUE/FALSE 0.0490100896296721 &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## 7003 amblyomma_americanum 1/0/T/F/TRUE/FALSE 1.78175379939298   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## 7004 amblyomma_americanum 1/0/T/F/TRUE/FALSE 3.49221356823098   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## 7005 amblyomma_americanum 1/0/T/F/TRUE/FALSE 7.67000549354529   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## .... .................... .................. .................. ................................................................................................
+## See problems(...) for more details.</code></pre>
+<pre><code>## # A tibble: 77,000 x 10
+##       X1 time       ixodes_scapularis plotID   siteID ensemble data_assimilation
+##    &lt;dbl&gt; &lt;date&gt;                 &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;dbl&gt;             &lt;dbl&gt;
+##  1     1 2019-03-04             0.341 BLAN_012 BLAN          1                 0
+##  2     2 2019-03-11             0.286 BLAN_012 BLAN          1                 0
+##  3     3 2019-03-18             0.372 BLAN_012 BLAN          1                 0
+##  4     4 2019-03-25             0.349 BLAN_012 BLAN          1                 0
+##  5     5 2019-04-01             0.368 BLAN_012 BLAN          1                 0
+##  6     6 2019-04-08             0.443 BLAN_012 BLAN          1                 0
+##  7     7 2019-04-15             0.455 BLAN_012 BLAN          1                 0
+##  8     8 2019-04-22             0.367 BLAN_012 BLAN          1                 0
+##  9     9 2019-04-29             0.368 BLAN_012 BLAN          1                 0
+## 10    10 2019-05-06             0.327 BLAN_012 BLAN          1                 0
+## # … with 76,990 more rows, and 3 more variables: forecast &lt;dbl&gt;,
+## #   obs_flag &lt;dbl&gt;, amblyomma_americanum &lt;lgl&gt;</code></pre>
 </div>
 </div>
-<div id="metadata-format" class="section level3" number="7.0.2">
-<h3><span class="header-section-number">7.0.2</span> Metadata format</h3>
+<div id="metadata-format" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Metadata format</h2>
 <p>Each submission requires a metadata file to be submitted. The metadata file must have the same name as the submitted forecast, but with the .xml extension. Model descriptions can be uploaded to <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a></p>
 <p><code>theme_name-year-month-day-team_name_ID.xml</code></p>
 <p>The metadata standard has been designed by the Ecological Forecasting Initiative and is build off the widely used Ecological Metadata Language (EML).</p>
@@ -403,16 +544,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the example vignettes, which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at <a href="mailto:eco4cast.initaitive@gmail.com" class="email">eco4cast.initaitive@gmail.com</a>.</p>
 <p>The Ecological Forecasting Initiative has provided R scripts to assist in generating the metadata XML file. The scripts can be found at the GitHub repository for the standard: <a href="https://github.com/eco4cast/EFIstandards" class="uri">https://github.com/eco4cast/EFIstandards</a> as well as the EML validator. Teams are encouraged to check the validity of their metadata before submission.</p>
 </div>
-<div id="submission-process" class="section level3" number="7.0.3">
-<h3><span class="header-section-number">7.0.3</span> Submission process</h3>
+<div id="submission-process" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Submission process</h2>
 <p>Individual forecast (csv, netCDF) and metadate (xml) files can be uploaded any time before the specific deadlines as defined by each theme. Only the most recent files will be scored.</p>
 <p>Teams will submit their forecast netCDF or csv files through the challenge website. You can manually submit your forecast through the <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a> website using the red plus on the bottom left. You can submit from an R script using the following:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="submission-instructions.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span> <span class="ot">=</span> <span class="st">&quot;data&quot;</span>,</span>
-<span id="cb16-2"><a href="submission-instructions.html#cb16-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;AWS_S3_ENDPOINT&quot;</span> <span class="ot">=</span> <span class="st">&quot;ecoforecast.org&quot;</span>)</span>
-<span id="cb16-3"><a href="submission-instructions.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="submission-instructions.html#cb16-4" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="submission-instructions.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span> <span class="ot">=</span> <span class="st">&quot;data&quot;</span>,</span>
+<span id="cb31-2"><a href="submission-instructions.html#cb31-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;AWS_S3_ENDPOINT&quot;</span> <span class="ot">=</span> <span class="st">&quot;ecoforecast.org&quot;</span>)</span>
+<span id="cb31-3"><a href="submission-instructions.html#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="submission-instructions.html#cb31-4" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span></code></pre></div>
 <p>Submissions need to adhere to the forecast format that is provided above, including the file naming convention. Our cyberinfastructure automatically evaluates forecasts and relies on the expected formatting. Contact <a href="mailto:eco4cast.initiative@gmail.com" class="email">eco4cast.initiative@gmail.com</a> if you experience technical issues with submitting.</p>
 <p>Note: If you have used AWS in the past you might have credential files in an .aws folder in your home directory that will cause an error when you try to upload to a non-AWS bucket. If you encounter this error you may need to rename your credentials files so put_object doesn’t try to read them.</p>
+</div>
+<div id="validating-submission" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Validating submission</h2>
+<p>A successful submission can be found at the following links within 2 hours of submissions</p>
+<p>Aquatics: <a href="https://data.ecoforecast.org/minio/forecasts/aquatics" class="uri">https://data.ecoforecast.org/minio/forecasts/aquatics</a></p>
+<p>Terrestrial: <a href="https://data.ecoforecast.org/minio/forecasts/terrestrial" class="uri">https://data.ecoforecast.org/minio/forecasts/terrestrial</a></p>
+<p>Beetles: <a href="https://data.ecoforecast.org/minio/forecasts/beetles" class="uri">https://data.ecoforecast.org/minio/forecasts/beetles</a></p>
+<p>Ticks: <a href="https://data.ecoforecast.org/minio/forecasts/ticks" class="uri">https://data.ecoforecast.org/minio/forecasts/ticks</a></p>
+<p>Phenology: <a href="https://data.ecoforecast.org/minio/forecasts/phenology" class="uri">https://data.ecoforecast.org/minio/forecasts/phenology</a></p>
+<p>We run a validator script when processing the submissions. If your submission does not meet the file standards above, it will be moved to a separate location and a log file (same name as submitted file with “log” appended to end) will be generated with some hints about why it did not meet the standard. If your submission did not meet the standard contact us and we can help you work through the issues.</p>
+<p><a href="https://data.ecoforecast.org/minio/forecasts/not_in_standard" class="uri">https://data.ecoforecast.org/minio/forecasts/not_in_standard</a></p>
+</div>
+<div id="visualizing-submissions" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Visualizing submissions</h2>
+<p>Plots of submissions can be found at our a dashboard: <a href="https://shiny.ecoforecast.org" class="uri">https://shiny.ecoforecast.org</a></p>
 
 </div>
 </div>

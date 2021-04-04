@@ -1,7 +1,7 @@
 --- 
 title: "NEON Ecological Forecasting Challenge"
 author: "Ecological Forecasting Initative Research Coordination Network"
-date: "2021-04-02"
+date: "2021-04-04"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]

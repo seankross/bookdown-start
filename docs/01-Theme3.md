@@ -10,7 +10,7 @@
 
 **Who**: Open to any individual or team that registers
 
-**How**: REGISTER your team and submit forecast
+**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ) your team and submit forecast
 
 ## Overview
 
@@ -18,7 +18,7 @@ Target species for the population forecasts are *Amblyomma americanum* and *Ixod
 
 ## Challenge 
 
-The challenge is open to any individual, group, or institution that may want to participate. The goals of this challenge are to forecast total Ixodes scapularis and Amblyomma americanum nymphs each epidemiological week (Sun-Sat) per sampled area at a set of NEON plots within NEON sites. Due to challenges in data collected in 2020, this round of the forecasting challenge will simulate a true forecasting challenge by focusing on data from the 2019 field season.
+The challenge is open to any individual, group, or institution that may want to participate. The goals of this challenge are to forecast total *Ixodes scapularis* and *Amblyomma americanum* nymphs each epidemiological week (Sun-Sat) per sampled area at a set of NEON plots within NEON sites. Due to challenges in data collected in 2020, this round of the forecasting challenge will simulate a true forecasting challenge by focusing on data from the 2019 field season.
 
 NOAA Global Ensemble Forecast System weather forecasts for each NEON site is provided for teams to use: https://data.ecoforecast.org/minio/drivers/noaa/
 
@@ -28,7 +28,7 @@ Teams must provide access (minimum of URL, but ideally a script) to any addition
 
 The challenge uses the following NEON data products:
 
-DP1.10093.001: Ticks sampled using drag cloths
+[DP1.10093.001](https://data.neonscience.org/data-products/DP1.10093.001): Ticks sampled using drag cloths
 
 Total *Ixodes scapularis* will be forecasting for the following plots (siteID_plotID): 
 
@@ -44,7 +44,7 @@ A file with previously released NEON data that has been processed into “target
 
 **Definition**
 
-Total Amblyomma americanum nymphs per week per plot.  Determined by the number of individuals caught and identified to species each epidemiological week at each plot. Each tick caught is identified to the lowest taxonomic level possible, and we are only interested in nymphal ticks identified to species (instead of only being identified to Family, Order, Genus etc.)
+Total *Amblyomma americanum* nymphs per week per plot.  Determined by the number of individuals caught and identified to species each epidemiological week at each plot. Each tick caught is identified to the lowest taxonomic level possible, and we are only interested in nymphal ticks identified to species (instead of only being identified to Family, Order, Genus etc.)
 
 **Motivation**
 
@@ -54,7 +54,7 @@ Species is a vector of disease, so forecasting tick abundance can potentially ai
 
 **Definition**
 
-Total Ixodes scapularis nymphs per week per plot. Determined by the number of individuals caught and identified to species each epidemiological week at each plot. Each tick caught is identified to the lowest taxonomic level possible, and we are only interested in nymphal ticks identified to species (instead of only being identified to Family, Order, Genus etc.)
+Total *Ixodes scapularis* nymphs per week per plot. Determined by the number of individuals caught and identified to species each epidemiological week at each plot. Each tick caught is identified to the lowest taxonomic level possible, and we are only interested in nymphal ticks identified to species (instead of only being identified to Family, Order, Genus etc.)
 
 **Motivation**
 

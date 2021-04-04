@@ -25,10 +25,6 @@ This design challenge asks teams to produce forecasts of mean daily surface wate
 
 Teams are asked to submit their 7 day forecasts of NEON surface water temperature and/or dissolved oxygen measurements along with uncertainty estimates and metadata. Any NEON surface water temperature and/or dissolved oxygen data prior to the 7 days being forecasted will be provided and may be used to build and improve the forecast models. Other data (other than temperature and/or dissolved oxygen data provided from NEON) can be used so long as they are not from the 7 days being forecasted at the beginning of each month, that they are publicly available, and that teams provide access (minimum of URL, but ideally a script) to all teams in the challenge.
 
-Submissions of forecast and metadata will be through https://data.ecoforecast.org/minio/submissions/ using prescribed file formats described in the challenge theme documentation
-
-Forecasts will be scored and compared using the Continuous Ranked Probability Score, a metric that combines accuracy and uncertainty estimation (Gneiting, T., & Raftery, A. E., 2007). 
-
 ## Data: Targets
 
 The R script for generating the evaluation and training data (i.e., targets) can be found at: https://github.com/eco4cast/neon4cast-aquatics
@@ -97,6 +93,7 @@ Evaluation will occur as new NEON data is released.
 ![Forecast Timeline Table](images/Aquatics Forecast Timeline.png)
 
 ## Design Team
+
 James Guinnip, Kansas State University  
 Sarah Burnet, University of Idaho  
 Ryan McClure, Virginia Tech  
@@ -114,8 +111,6 @@ Data used in the challenge are from the National Ecological Observatory Network 
 Scientists from NOAA and USGS have been involved in the design of the challenge.
 
 ## References
-
-Gneiting, T., & Raftery, A. E. (2007). Strictly proper scoring rules, prediction, and estimation. Journal of the American Statistical Association, 102(477), 359–378. https://doi.org/10.1198/016214506000001437
 
 Ouellet-Proulx, S., St-Hilaire, A., and Bouchar, M.-A.. 2017. Water temperature ensemble forecasts: Implementation using the CEQUEAU model on two contrasted river systems. Water 9(7):457. https://doi.org/10.3390/w9070457
 

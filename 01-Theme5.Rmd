@@ -10,7 +10,7 @@
 
 **Who**: Open to any individual or team that registers
 
-**How**: REGISTER your team and submit forecast
+**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ) your team and submit forecast
 
 ## Overview
 
@@ -27,7 +27,7 @@ This is an open ecological forecasting challenge to forecast carabid species ric
 ## Data: Targets
 
 The challenge uses the following NEON data product:
-DP1.10022.001: Ground beetles sampled from pitfall traps
+[DP1.10022.001](https://data.neonscience.org/data-products/DP1.10022.001): Ground beetles sampled from pitfall traps
 
 A file with previously released NEON data that has been processed into the aggregate “target” variables (richness and abundance) is provided below. The same processing will be applied to new data that are used for forecast evaluation. Further information about data structure, initial code for processing, and example null forecasts is provided in the neon4cast-beetles GitHub repository. 
 

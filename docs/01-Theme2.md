@@ -10,7 +10,7 @@
 
 **Who**: Open to any individual or team that registers
 
-**How**: REGISTER your team and submit forecast
+**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ) your team and submit forecast
 
 We held a Q&A session on January 22, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=3rOVlAX9YH8&feature=youtu.be).
 
@@ -38,11 +38,11 @@ A file with previously released NEON data that has been processed into “target
 
 **Definition**
 
-Net ecosystem exchange (NEE) is the net movement of carbon dioxide from the atmosphere to the ecosystem.  At the 30-minute time resolution is reported as $\mu$mol CO<sub>2</sub> m<sup>-2</sup> s<sup>-1</sup>.  At the daily time resolution it is reported as g C m<sub>-2</sub> day<sub>-1</sub>. Negative values correspond to an ecosystem absorbing CO<sup>2</sup> from the atmosphere, positive values correspond to an ecosystem emitting CO<sup>2</sup> to the atmosphere.
+Net ecosystem exchange (NEE) is the net movement of carbon dioxide from the atmosphere to the ecosystem.  At the 30-minute time resolution is reported as $\mu$mol CO<sub>2</sub> m<sup>-2</sup> s<sup>-1</sup>.  At the daily time resolution it is reported as g C m<sup>-2</sup> day<sup>-1</sup>. Negative values correspond to an ecosystem absorbing CO<sup>2</sup> from the atmosphere, positive values correspond to an ecosystem emitting CO<sub>2</sub> to the atmosphere.
 
 **Motivation**
 
-NEE quantifies the net exchange of CO<sup>2</sup> between the ecosystem and the atmosphere over that 30-minute or daily time period.  Assessing skill at predicting 1/2 hourly - sub daily measurements provides more insight into ability to capture diel processes. The diel curve contains information on how plants and soil immediately respond to variations in meteorology. 
+NEE quantifies the net exchange of CO<sub>2</sub> between the ecosystem and the atmosphere over that 30-minute or daily time period.  Assessing skill at predicting 1/2 hourly - sub daily measurements provides more insight into ability to capture diel processes. The diel curve contains information on how plants and soil immediately respond to variations in meteorology. 
 
 Making daily predictions will allow us to rapidly assess skill and provide information in a timeframe pertinent to inform and implement natural resource management. It also allows for models that do not produce sub-daily estimates to participate
 

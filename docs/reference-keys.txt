@@ -79,6 +79,8 @@ phenology
 ticks
 metadata-format
 submission-process
+validating-submission
+visualizing-submissions
 shared-forecast-drivers
 meteorology-noaa-global-ensemble-forecasting-system
 meteorology-neon-observed
