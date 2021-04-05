@@ -35,6 +35,7 @@ The design of the Challenge is the result of contributions of over 200 participa
 Computational resources are supported by NSF funded CyVerse, Jetstream, and XSEDE.
 
 We have prepared introductory videos from the December 9, 2020 AGU EFI Town Hall.  They providing an overview of 
+   
 1. [the Challenge](https://www.youtube.com/watch?v=deWuTLGspJg&feature=youtu.be)  
 2. [the Challenge cyberinfrastructure](https://www.youtube.com/watch?v=-tH4dG3yO3U)  
 3. [the NEON data streams](https://www.youtube.com/watch?v=3viG7QNGvK8&feature=youtu.be)  
