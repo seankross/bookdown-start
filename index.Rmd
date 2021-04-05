@@ -26,7 +26,7 @@ header-includes:
 </center>
 
 
-The NSF funded EFI Research Coordination Network (EFI-RCN) is hosting a NEON Ecological Forecast Challenge with the goal to create a community of practice that builds capacity for ecological forecasting by leveraging NEON data products. The Challenge revolves around the five theme areas listed below that span aquatic and terrestrial systems, and population, community, and ecosystem processes across a broad range of ecoregions that uses data collected by NEON.
+The NSF funded Ecological Forecasting Initiative Research Coordination Network (EFI-RCN) is hosting a NEON Ecological Forecast Challenge with the goal to create a community of practice that builds capacity for ecological forecasting by leveraging NEON data products. The Challenge revolves around the five theme areas listed below that span aquatic and terrestrial systems, and population, community, and ecosystem processes across a broad range of ecoregions that uses data collected by NEON.
 
 As a community, we are excited to learn more about the predictability of ecological processes by forecasting NEON data prior to its release.  What modeling frameworks, mechanistic processes, and statistical approaches best capture community, population, and ecosystem dynamics? These questions are answerable by a community generating a diverse array of forecasts.  The Challenge is open to any individual or team that wants to submit forecasts and includes categories for different career stages. Individuals or team contacts can register to submit forecasts HERE.
 
@@ -38,3 +38,22 @@ We have prepared introductory videos from the December 9, 2020 AGU EFI Town Hall
 1. [the Challenge](https://www.youtube.com/watch?v=deWuTLGspJg&feature=youtu.be)  
 2. [the Challenge cyberinfrastructure](https://www.youtube.com/watch?v=-tH4dG3yO3U)  
 3. [the NEON data streams](https://www.youtube.com/watch?v=3viG7QNGvK8&feature=youtu.be)  
+
+Ecological Forecasting Initiative Research Coordination Network (EFI-RCN) is supported by National Science Foundation (DEB-1926388).
+
+EFI-RCN Steering Committee
+
+Lead: R. Quinn Thomas (Virginia Tech)
+Program Manager: Jody Peters (Notre Dame)
+
+Michael Dietze (Boston University)  
+Melissa Kenney (University of Minnesota)   
+Christine Laney (NEON)   
+Jason McLachlan (University of Notre Dame)   
+Carl Boettiger (University of California, Berkeley)   
+Cayelan Carey (Virginia Tech)   
+Andy Fox (UCAR)   
+Leah Johnson (Virginia Tech)
+Whitney Woelmer (Virginia Tech; Student member)
+Alyssa Willson (University of Notre Dame; Student member)  
+
