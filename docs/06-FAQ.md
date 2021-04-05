@@ -8,7 +8,7 @@ The forecasts can be found at https://data.ecoforecast.org/minio/drivers/noaa/NO
 
 The following variables are available: air temperature, wind speed, relative humidity, downwelling shortwave, downwelling longwave, precipitation, and air pressure.  
 
-## I need historical weather data to build my model.  Where can I find it.
+## I need historical weather data to build my model.  Where can I find it?
 
 NEON collects weather variables at each of the sites. Their data products become available in 1-month data packages that are release ~ 2 weeks after the completion of the month.  For example, the June 1 data will be in the June package that is released mid-July.  Therefore there is up to a 1.5 month delay.  Furthermore, NEON data can have gaps that need to be gap-filled.  We are working with NEON to develop gap-filled weather data that becomes available sooner than the current 1.5 month delay.  The timing of the gap-filled low-latency weather product is unknown.  
 
@@ -33,7 +33,7 @@ NEON collects weather variables at each of the sites. Their data products become
 - [NASAs National Land Data Assimilation System](https://ldas.gsfc.nasa.gov/nldas/v2/forcing):  4 day delay
 
 
-## My submitted  by forecast but can not find it on the dashboard or in the directory of forecasts
+## I submitted my forecast but cannot find it on the dashboard or in the directory of forecasts
 
 A successful submission can be found at the following links within 2 hours of submissions
 
@@ -89,11 +89,11 @@ Pending
 
 The RCN is a 5-year project and we aim to run the Challenge for the duration of the project.  Each year will be a new round where we revise the rules (if necessary) and add new Themes.  Your feedback on the Challenge will be critical to revising and clarifying the rules and information about the Challenge.
 
-## Are there certain types of models that I need to use
+## Are there certain types of models that I need to use?
 
 No, you can use any type of model, including empirical and process-based models.  The only requirement is that your forecast includes uncertainty.  The uncertainty can be represents using different model runs (ensemble members) or the statistics of the forecast (mean and standard deviation).
 
-## What is the relationship with NEON?
+## What is the relationship between the Challenge and NEON?
 
 The Challenge is run by the Ecological Forecasting Initiative Research Coordination Network that is funded by the U.S. National Science Foundation.  While this effort is separate from NEON, NEON staff have been in involved in all stages of planning.  NEON staff are on the project steering committee and theme design teams. 
 
