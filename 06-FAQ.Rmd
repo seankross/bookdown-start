@@ -81,7 +81,7 @@ Ticks
 
 https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz
 
-## The metadata is confusing.  Can you point me to more information, tutorials, or examples?
+## I am having trouble generating the metadata.  Can you point me to more information, tutorials, or examples?
 
 Pending
 
@@ -97,7 +97,7 @@ No, you can use any type of model, including empirical and process-based models.
 
 The Challenge is run by the Ecological Forecasting Initiative Research Coordination Network that is funded by the U.S. National Science Foundation.  While this effort is separate from NEON, NEON staff have been in involved in all stages of planning.  NEON staff are on the project steering committee and theme design teams. 
 
-Members of the RCN are also on NEONs Ecological Forecasting Technical Working Group. This is formal pathway to provide feedback to NEON.
+Members of the RCN are also on NEON's Ecological Forecasting Technical Working Group. This is formal pathway to provide feedback to NEON.
 
 
 
