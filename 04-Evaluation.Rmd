@@ -177,6 +177,18 @@ coef(lm(optimal_sd[sample_mean > 0] ~ sample_mean[sample_mean > 0]))
 
 All forecasts will be compared to a null forecast produced by a simple historical-means calculation or a random walk. The GitHub repository for each theme has the code for the null model.
 
+Ticks: https://github.com/eco4cast/neon4cast-ticks/blob/master/03_nullFitAndForecast.R
+
+Terrestrial (Daily): https://github.com/eco4cast/neon4cast-terrestrial/blob/master/03_terrestrial_flux_daily_null.R
+
+Terrestrial (30 minute): https://github.com/eco4cast/neon4cast-terrestrial/blob/master/04_terrestrial_flux_30min_clim.R
+
+Beetles: https://github.com/eco4cast/neon4cast-beetles/blob/master/03_forecast.R
+
+Aquatics: https://github.com/eco4cast/neon4cast-aquatics/blob/master/03_generate_null_forecast_aquatics.R
+
+Phenology: https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel_randomWalk_main.R
+
 ## Forecast Submission Visualization and Leaderboard
 
 The [dashboard](https://shiny.ecoforecast.org) shows the forecast submissions by each team for each forecast theme by date and forecast variable. It also provides the CRPS scores for each submitted forecast.

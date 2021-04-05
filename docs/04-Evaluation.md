@@ -51,7 +51,7 @@ crps_equation_2
 ```
 
 ```
-## [1] 0.2469656
+## [1] 0.2250832
 ```
 
 Now calculate using the `crps_sample()` function in the `scoringRules` package
@@ -62,7 +62,7 @@ crps_sample(y = y, dat = x)
 ```
 
 ```
-## [1] 0.2469656
+## [1] 0.2250832
 ```
 
 ### Exploring the scoring surface
@@ -211,6 +211,18 @@ coef(lm(optimal_sd[sample_mean > 0] ~ sample_mean[sample_mean > 0]))
 ## Null forecast
 
 All forecasts will be compared to a null forecast produced by a simple historical-means calculation or a random walk. The GitHub repository for each theme has the code for the null model.
+
+Ticks: https://github.com/eco4cast/neon4cast-ticks/blob/master/03_nullFitAndForecast.R
+
+Terrestrial (Daily): https://github.com/eco4cast/neon4cast-terrestrial/blob/master/03_terrestrial_flux_daily_null.R
+
+Terrestrial (30 minute): https://github.com/eco4cast/neon4cast-terrestrial/blob/master/04_terrestrial_flux_30min_clim.R
+
+Beetles: https://github.com/eco4cast/neon4cast-beetles/blob/master/03_forecast.R
+
+Aquatics: https://github.com/eco4cast/neon4cast-aquatics/blob/master/03_generate_null_forecast_aquatics.R
+
+Phenology: https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel_randomWalk_main.R
 
 ## Forecast Submission Visualization and Leaderboard
 
