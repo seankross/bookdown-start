@@ -24,7 +24,7 @@
 <meta name="author" content="Ecological Forecasting Initative Research Coordination Network" />
 
 
-<meta name="date" content="2021-04-04" />
+<meta name="date" content="2021-04-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -263,7 +263,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.4" data-path="evaluation.html"><a href="evaluation.html#forecast-submission-visualization-and-leaderboard"><i class="fa fa-check"></i><b>9.4</b> Forecast Submission Visualization and Leaderboard</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="helpful-functions.html"><a href="helpful-functions.html"><i class="fa fa-check"></i><b>10</b> Helpful functions</a></li>
-<li class="chapter" data-level="11" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html"><i class="fa fa-check"></i><b>11</b> Frequently Asked Questions</a></li>
+<li class="chapter" data-level="11" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html"><i class="fa fa-check"></i><b>11</b> Frequently Asked Questions</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#my-model-uses-meterology-inputs.-where-can-i-find-forecasts-of-weather-to-use-in-my-ecological-forecast"><i class="fa fa-check"></i><b>11.1</b> My model uses meterology inputs. Where can I find forecasts of weather to use in my ecological forecast?</a></li>
+<li class="chapter" data-level="11.2" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-need-historical-weather-data-to-build-my-model.-where-can-i-find-it."><i class="fa fa-check"></i><b>11.2</b> I need historical weather data to build my model. Where can I find it.</a></li>
+<li class="chapter" data-level="11.3" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#my-submitted-by-forecast-but-can-not-find-it-on-the-dashboard-or-in-the-directory-of-forecasts"><i class="fa fa-check"></i><b>11.3</b> My submitted by forecast but can not find it on the dashboard or in the directory of forecasts</a></li>
+<li class="chapter" data-level="11.4" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#do-i-need-to-submit-forecasts-to-every-submission-date"><i class="fa fa-check"></i><b>11.4</b> Do I need to submit forecasts to every submission date?</a></li>
+<li class="chapter" data-level="11.5" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#where-can-i-find-examples-of-forecasts-that-match-the-required-standard"><i class="fa fa-check"></i><b>11.5</b> Where can I find examples of forecasts that match the required standard?</a></li>
+<li class="chapter" data-level="11.6" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#the-metadata-is-confusing.-can-you-point-me-to-more-information-tutorials-or-examples"><i class="fa fa-check"></i><b>11.6</b> The metadata is confusing. Can you point me to more information, tutorials, or examples?</a></li>
+<li class="chapter" data-level="11.7" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#how-many-years-are-you-planning-to-run-the-challenge"><i class="fa fa-check"></i><b>11.7</b> How many years are you planning to run the Challenge?</a></li>
+<li class="chapter" data-level="11.8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#are-there-certain-types-of-models-that-i-need-to-use"><i class="fa fa-check"></i><b>11.8</b> Are there certain types of models that I need to use</a></li>
+<li class="chapter" data-level="11.9" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#what-is-the-relationship-with-neon"><i class="fa fa-check"></i><b>11.9</b> What is the relationship with NEON?</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -286,8 +297,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="frequently-asked-questions" class="section level1" number="11">
 <h1><span class="header-section-number">11</span> Frequently Asked Questions</h1>
+<div id="my-model-uses-meterology-inputs.-where-can-i-find-forecasts-of-weather-to-use-in-my-ecological-forecast" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> My model uses meterology inputs. Where can I find forecasts of weather to use in my ecological forecast?</h2>
+<p>We have downloaded and temporally downscaled (6 hr to 1 hr) weather forecasts from NOAA’s Global Ensemble Forecasting System (GEFS). GEFS produces 31 different forecasts (called an ensemble with 31 members) at four cycles a day (00:00, 06:00, 12:00, and 18:00 UTC), where these are the times that the forecast starts. The forecast that starts at the 00:00 cycle runs 30 of the 31 ensemble members 35-days in the future. All other forecast cycles have members that run 16-days in the future.</p>
+<p>The forecasts can be found at <a href="https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/" class="uri">https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/</a></p>
+<p>The following variables are available: air temperature, wind speed, relative humidity, downwelling shortwave, downwelling longwave, precipitation, and air pressure.</p>
+</div>
+<div id="i-need-historical-weather-data-to-build-my-model.-where-can-i-find-it." class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> I need historical weather data to build my model. Where can I find it.</h2>
+<p>NEON collects weather variables at each of the sites. Their data products become available in 1-month data packages that are release ~ 2 weeks after the completion of the month. For example, the June 1 data will be in the June package that is released mid-July. Therefore there is up to a 1.5 month delay. Furthermore, NEON data can have gaps that need to be gap-filled. We are working with NEON to develop gap-filled weather data that becomes available sooner than the current 1.5 month delay. The timing of the gap-filled low-latency weather product is unknown.</p>
+<ol style="list-style-type: decimal">
+<li>If you don’t need real-time data, NEON weather data products are available on the NEON data portal at the following data products:</li>
+</ol>
+<ul>
+<li><p>Air temperature: <a href="https://data.neonscience.org/data-products/DP1.00002.001" class="uri">https://data.neonscience.org/data-products/DP1.00002.001</a></p></li>
+<li><p>Precipitation: <a href="https://data.neonscience.org/data-products/DP1.00006.001" class="uri">https://data.neonscience.org/data-products/DP1.00006.001</a></p></li>
+<li><p>Radiation: <a href="https://data.neonscience.org/data-products/DP1.00023.001" class="uri">https://data.neonscience.org/data-products/DP1.00023.001</a></p></li>
+<li><p>Wind: <a href="https://data.neonscience.org/data-products/DP1.00001.001" class="uri">https://data.neonscience.org/data-products/DP1.00001.001</a></p></li>
+<li><p>Relative humidity: <a href="https://data.neonscience.org/data-products/DP1.00098.001" class="uri">https://data.neonscience.org/data-products/DP1.00098.001</a></p></li>
+<li><p>Air pressure: <a href="https://data.neonscience.org/data-products/DP1.00004.001" class="uri">https://data.neonscience.org/data-products/DP1.00004.001</a></p></li>
+<li><p>Summary statistics (daily, monthly, annually): <a href="https://data.neonscience.org/data-products/DP4.00001.001" class="uri">https://data.neonscience.org/data-products/DP4.00001.001</a></p></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Gridded weather from models that have been assimilated with observations is available from other sources including:</li>
+</ol>
+<ul>
+<li><a href="https://ldas.gsfc.nasa.gov/nldas/v2/forcing">NASAs National Land Data Assimilation System</a>: 4 day delay</li>
+</ul>
+</div>
+<div id="my-submitted-by-forecast-but-can-not-find-it-on-the-dashboard-or-in-the-directory-of-forecasts" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> My submitted by forecast but can not find it on the dashboard or in the directory of forecasts</h2>
+<p>A successful submission can be found at the following links within 2 hours of submissions</p>
+<p>Aquatics: <a href="https://data.ecoforecast.org/minio/forecasts/aquatics" class="uri">https://data.ecoforecast.org/minio/forecasts/aquatics</a></p>
+<p>Terrestrial: <a href="https://data.ecoforecast.org/minio/forecasts/terrestrial" class="uri">https://data.ecoforecast.org/minio/forecasts/terrestrial</a></p>
+<p>Beetles: <a href="https://data.ecoforecast.org/minio/forecasts/beetles" class="uri">https://data.ecoforecast.org/minio/forecasts/beetles</a></p>
+<p>Ticks: <a href="https://data.ecoforecast.org/minio/forecasts/ticks" class="uri">https://data.ecoforecast.org/minio/forecasts/ticks</a></p>
+<p>Phenology: <a href="https://data.ecoforecast.org/minio/forecasts/phenology" class="uri">https://data.ecoforecast.org/minio/forecasts/phenology</a></p>
+<p>We run a validator script when processing the submissions. If your submission does not meet the file standards above, it will be moved to a separate location and a log file (same name as submitted file with “log” appended to end) will be generated with some hints about why it did not meet the standard. If your submission did not meet the standard contact us and we can help you work through the issues.</p>
+<p><a href="https://data.ecoforecast.org/minio/forecasts/not_in_standard" class="uri">https://data.ecoforecast.org/minio/forecasts/not_in_standard</a></p>
+</div>
+<div id="do-i-need-to-submit-forecasts-to-every-submission-date" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Do I need to submit forecasts to every submission date?</h2>
+<p>No, we are excited to have submissions at any of the submissions dates.</p>
+</div>
+<div id="where-can-i-find-examples-of-forecasts-that-match-the-required-standard" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> Where can I find examples of forecasts that match the required standard?</h2>
+<p>Aquatics</p>
+<p><a href="https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz" class="uri">https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz</a></p>
+<p>Phenology</p>
+<p><a href="https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-UCSC_P_EDM.csv" class="uri">https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-UCSC_P_EDM.csv</a></p>
+<p><a href="https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc" class="uri">https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc</a></p>
+<p>Beetles</p>
+<p><a href="https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI_avg_null.csv.gz" class="uri">https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI_avg_null.csv.gz</a></p>
+<p>Terrestrial</p>
+<p><a href="https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz" class="uri">https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz</a></p>
+<p><a href="https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc" class="uri">https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc</a></p>
+<p>Ticks</p>
+<p><a href="https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz" class="uri">https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz</a></p>
+</div>
+<div id="the-metadata-is-confusing.-can-you-point-me-to-more-information-tutorials-or-examples" class="section level2" number="11.6">
+<h2><span class="header-section-number">11.6</span> The metadata is confusing. Can you point me to more information, tutorials, or examples?</h2>
 <p>Pending</p>
+</div>
+<div id="how-many-years-are-you-planning-to-run-the-challenge" class="section level2" number="11.7">
+<h2><span class="header-section-number">11.7</span> How many years are you planning to run the Challenge?</h2>
+<p>The RCN is a 5-year project and we aim to run the Challenge for the duration of the project. Each year will be a new round where we revise the rules (if necessary) and add new Themes. Your feedback on the Challenge will be critical to revising and clarifying the rules and information about the Challenge.</p>
+</div>
+<div id="are-there-certain-types-of-models-that-i-need-to-use" class="section level2" number="11.8">
+<h2><span class="header-section-number">11.8</span> Are there certain types of models that I need to use</h2>
+<p>No, you can use any type of model, including empirical and process-based models. The only requirement is that your forecast includes uncertainty. The uncertainty can be represents using different model runs (ensemble members) or the statistics of the forecast (mean and standard deviation).</p>
+</div>
+<div id="what-is-the-relationship-with-neon" class="section level2" number="11.9">
+<h2><span class="header-section-number">11.9</span> What is the relationship with NEON?</h2>
+<p>The Challenge is run by the Ecological Forecasting Initiative Research Coordination Network that is funded by the U.S. National Science Foundation. While this effort is separate from NEON, NEON staff have been in involved in all stages of planning. NEON staff are on the project steering committee and theme design teams.</p>
+<p>Members of the RCN are also on NEONs Ecological Forecasting Technical Working Group. This is formal pathway to provide feedback to NEON.</p>
 
+</div>
 </div>
             </section>
 

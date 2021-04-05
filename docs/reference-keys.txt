@@ -94,3 +94,12 @@ null-forecast
 forecast-submission-visualization-and-leaderboard
 helpful-functions
 frequently-asked-questions
+my-model-uses-meterology-inputs.-where-can-i-find-forecasts-of-weather-to-use-in-my-ecological-forecast
+i-need-historical-weather-data-to-build-my-model.-where-can-i-find-it.
+my-submitted-by-forecast-but-can-not-find-it-on-the-dashboard-or-in-the-directory-of-forecasts
+do-i-need-to-submit-forecasts-to-every-submission-date
+where-can-i-find-examples-of-forecasts-that-match-the-required-standard
+the-metadata-is-confusing.-can-you-point-me-to-more-information-tutorials-or-examples
+how-many-years-are-you-planning-to-run-the-challenge
+are-there-certain-types-of-models-that-i-need-to-use
+what-is-the-relationship-with-neon
