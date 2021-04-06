@@ -28,7 +28,7 @@ NOAA Global Ensemble Forecast System weather forecasts for each NEON site is pro
 
 Teams must provide access (minimum of URL, but ideally a script) to any additional data they wish to use to all teams in the challenge. Teams of various career stages and disciplines are encouraged to submit forecasts.
 
-## Data: Targets
+## Data: Targets:
 
 The challenge uses the following NEON data products:
 
