@@ -75,10 +75,6 @@ All data in the supplied file is available to build and evaluate models before s
 
 ### Target file
 
-- `time`: YYYY-MM-DD
-- `siteID`: NEON site code (e.g., BART)
-- `gcc_90`: 90th percentile GCC for the ROI
-- `gcc_sd`: standard deviation of the 90th percentile
 
 
 Here is the format of the target file
@@ -86,6 +82,12 @@ Here is the format of the target file
 ```{r message = FALSE}
 readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz", guess_max = 1e6)
 ```
+The target file has the following columns:
+
+- `time`: YYYY-MM-DD    
+- `siteID`: NEON site code (e.g., BART)   
+- `gcc_90`: 90th percentile GCC for the ROI   
+- `gcc_sd`: standard deviation of the 90th percentile   
 
 ## Timeline
 
@@ -107,5 +109,3 @@ The challenge is hosted by the Ecological Forecasting Initiative (EFI; https://e
 Data used in the challenge are collected by the National Ecological Observatory Network (NEON; https://www.neonscience.org/) and hosted by the Phenocam Network (http://phenocam.sr.unh.edu/). 
 
 The forecasting challenge was developed in collaboration with the USA National Phenology Network: https://www.usanpn.org/usa-national-phenology-network.
-
-## References

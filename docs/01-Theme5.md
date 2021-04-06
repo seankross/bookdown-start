@@ -74,12 +74,7 @@ Note: The table included all data that NEON has collected and can be used for bu
 
 ### Target file
 
-The table has the following columns:
 
-- `siteID`: NEON site ID
-- `time`: YYYY-MM-DD (the Monday marking the week of sample collection (for training data) or forecast (submission). Per ISO standards, Monday marks the first day of each week.)
-- `abundance`: abundance of beetles
-- `richness`: species richness
 
 The code use to process the raw data to the evaluation data can be found here:
 https://github.com/eco4cast/NEON-community-forecast/blob/master/02_targets.R
@@ -107,6 +102,13 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ## 10 CPER   2013-07-29    0.220        13
 ## # … with 2,320 more rows
 ```
+
+The table has the following columns:  
+
+- `siteID`: NEON site ID    
+- `time`: YYYY-MM-DD (the Monday marking the week of sample collection (for training data) or forecast (submission). Per ISO standards, Monday marks the first day of each week.)   
+- `abundance`: abundance of beetles    
+- `richness`: species richness    
 
 ## Timeline
 

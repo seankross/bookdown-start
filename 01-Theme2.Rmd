@@ -32,7 +32,7 @@ The challenge uses the following NEON data products:
 [DP4.00200.001](https://data.neonscience.org/data-products/DP4.00200.001): Bundled data products - eddy covariance   
 [DP1.00094.001](https://data.neonscience.org/data-products/DP1.00094.001): Soil water content and water salinity  
 
-A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. Before the Terrestrial Carbon and Water Flux challenge begins, a processing script will be available in the neon4cast-terrestrial GitHub repository.
+A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. A processing script is available on the neon4cast-terrestrial GitHub repository: https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R
 
 ### Net ecosystem exchange
 
@@ -184,4 +184,3 @@ Data used in the challenge are from the National Ecological Observatory Network 
 
 Terrestrial Ecosystem Research Network [(TERN)](https://www.tern.org.au/) has been involved in the design of the challenge: 
 
-## References 

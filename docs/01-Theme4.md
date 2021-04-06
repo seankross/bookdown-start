@@ -28,7 +28,7 @@ NOAA Global Ensemble Forecast System weather forecasts for each NEON site is pro
 
 Teams must provide access (minimum of URL, but ideally a script) to any additional data they wish to use to all teams in the challenge. Teams of various career stages and disciplines are encouraged to submit forecasts.
 
-## Data: Targets:
+## Data: Targets
 
 The challenge uses the following NEON data products:
 
@@ -75,10 +75,6 @@ All data in the supplied file is available to build and evaluate models before s
 
 ### Target file
 
-- `time`: YYYY-MM-DD
-- `siteID`: NEON site code (e.g., BART)
-- `gcc_90`: 90th percentile GCC for the ROI
-- `gcc_sd`: standard deviation of the 90th percentile
 
 
 Here is the format of the target file
@@ -92,18 +88,24 @@ readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-target
 ## # A tibble: 12,600 x 4
 ##    time       siteID gcc_90   gcc_sd
 ##    <date>     <chr>   <dbl>    <dbl>
-##  1 2016-12-13 HARV    0.329 0.000173
-##  2 2016-12-14 HARV    0.328 0.000164
-##  3 2016-12-15 HARV    0.330 0.000444
-##  4 2016-12-16 HARV    0.329 0.000376
-##  5 2016-12-17 HARV    0.332 0.000345
-##  6 2016-12-18 HARV    0.332 0.000256
-##  7 2016-12-19 HARV    0.329 0.000381
-##  8 2016-12-20 HARV    0.330 0.000383
-##  9 2016-12-21 HARV    0.329 0.000388
-## 10 2016-12-22 HARV    0.329 0.000928
+##  1 2016-12-13 HARV    0.329 0.000171
+##  2 2016-12-14 HARV    0.328 0.000150
+##  3 2016-12-15 HARV    0.330 0.000505
+##  4 2016-12-16 HARV    0.329 0.000479
+##  5 2016-12-17 HARV    0.332 0.000417
+##  6 2016-12-18 HARV    0.332 0.000279
+##  7 2016-12-19 HARV    0.329 0.000373
+##  8 2016-12-20 HARV    0.330 0.000357
+##  9 2016-12-21 HARV    0.329 0.000371
+## 10 2016-12-22 HARV    0.329 0.000844
 ## # … with 12,590 more rows
 ```
+The target file has the following columns:
+
+- `time`: YYYY-MM-DD    
+- `siteID`: NEON site code (e.g., BART)   
+- `gcc_90`: 90th percentile GCC for the ROI   
+- `gcc_sd`: standard deviation of the 90th percentile   
 
 ## Timeline
 
@@ -125,5 +127,3 @@ The challenge is hosted by the Ecological Forecasting Initiative (EFI; https://e
 Data used in the challenge are collected by the National Ecological Observatory Network (NEON; https://www.neonscience.org/) and hosted by the Phenocam Network (http://phenocam.sr.unh.edu/). 
 
 The forecasting challenge was developed in collaboration with the USA National Phenology Network: https://www.usanpn.org/usa-national-phenology-network.
-
-## References
