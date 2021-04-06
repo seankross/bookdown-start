@@ -1,4 +1,4 @@
-# Shared Forecast Drivers
+# Meteorology Inputs
 
 We are downloading, subsetting, and processing forecasted meteorology drivers for each NEON site.  Currently, we have NOAA’s Global Ensemble Forecasting System V12 output available at the 1 hr time resolution for each NEON site.  For forecasts generated at midnight (00) UTC, the forecasts extend 35-days in the future.  For forecasts generated at 06, 12, and 18 UTC, the forecasts extend 16-days in the future.  There are 31 ensemble members for each forecast.  Each ensemble member is available as a separate netcdf file.  The following meteorological variables are included:  air temperature, air pressure, wind speed, precipitation, downwelling longwave radiation, downwelling shortwave radiation, relative humidity, specific humidity, and total cloud cover.  
 

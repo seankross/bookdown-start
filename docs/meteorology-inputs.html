@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Evaluation | NEON Ecological Forecasting Challenge</title>
+  <title>9 Meteorology Inputs | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Evaluation | NEON Ecological Forecasting Challenge" />
+  <meta property="og:title" content="9 Meteorology Inputs | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://seankross.com/bookdown-start/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="eco4cast/neon4cast-docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Evaluation | NEON Ecological Forecasting Challenge" />
+  <meta name="twitter:title" content="9 Meteorology Inputs | NEON Ecological Forecasting Challenge" />
   
   <meta name="twitter:description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="submission-instructions.html"/>
-<link rel="next" href="meteorology-inputs.html"/>
+<link rel="prev" href="evaluation.html"/>
+<link rel="next" href="helpful-functions.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -323,139 +323,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="evaluation" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Evaluation</h1>
-<p>Forecasts will be evaluated at each site and forecast horizon (i.e., time-step into the future), and a summary score will be assigned evaluating overall performance of all forecast submissions across sites. Forecasts will also be compared to a null model.</p>
-<p>Forecast evaluation results will be presented for all submitted models together and separately for each team category: undergraduate student only team, graduate student only team, post-doc only team, single institution team, multi-institution team, international team (team with individuals from at least two countries).</p>
-<div id="results" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Results</h2>
-<p>Preliminary results will be distributed using the NEON Ecological Forecast Challenge Output RShiny app and at <a href="https://data.ecoforecast.org/minio/scores/" class="uri">https://data.ecoforecast.org/minio/scores/</a>. We intend to write a joint manuscript synthesizing forecasts. Teams are welcome to publish results from their model at any time. If a publication is generated we encourage the manuscript to acknowledge the Ecological Forecasting Research Coordination Network and its support from the National Science Foundation (DEB-1926388).</p>
+<div id="meteorology-inputs" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Meteorology Inputs</h1>
+<p>We are downloading, subsetting, and processing forecasted meteorology drivers for each NEON site. Currently, we have NOAA’s Global Ensemble Forecasting System V12 output available at the 1 hr time resolution for each NEON site. For forecasts generated at midnight (00) UTC, the forecasts extend 35-days in the future. For forecasts generated at 06, 12, and 18 UTC, the forecasts extend 16-days in the future. There are 31 ensemble members for each forecast. Each ensemble member is available as a separate netcdf file. The following meteorological variables are included: air temperature, air pressure, wind speed, precipitation, downwelling longwave radiation, downwelling shortwave radiation, relative humidity, specific humidity, and total cloud cover.</p>
+<p>The weather forecasts are available through an s3 bucket (see Meteorology: NOAA Global Ensemble Forecasting System below) with multiple ways to access them: You can click on a file in the browser, you can directly download individual files from the command line using the file address, or you can download multiple files using aws.s3 commands. We provide an example using the <code>aws.s3</code> package in R for downloading all the ensemble members for particular location, forecast cycle (00, 06, 12, or 18), and NEON site at:</p>
+<p><a href="https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/download_noaa_files_s3.R" class="uri">https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/download_noaa_files_s3.R</a></p>
+<p>Additionally we provide example code in R for converting the netcdf files to csv files</p>
+<p><a href="https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read_example.R" class="uri">https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read_example.R</a></p>
+<p><a href="https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read.R" class="uri">https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read.R</a></p>
+<div id="meteorology-noaa-global-ensemble-forecasting-system" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Meteorology: NOAA Global Ensemble Forecasting System</h2>
+<p><a href="https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/">1 Hour NOAA Drivers</a></p>
 </div>
-<div id="scoring-metric-continuous-ranked-probability-score" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Scoring Metric: Continuous Ranked Probability Score</h2>
-<p>Forecasts will be scored using the continuous ranked probability score (CRPS), a proper scoring rule for evaluating forecasts presented as distributions or ensembles (Gneiting &amp; Raftery 2007). The CRPS compares the forecast probability distribution to that of the validation observation and assigns a score based on both the accuracy and precision of the forecast. We will use the ‘crps_sample’ function from the <code>scoringRules</code> package in R to calculate the CRPS for each forecast.</p>
-<p>We will generate a combined score for all locations and forecast horizons. Forecasts will also be evaluated using the CRPS at each time-step in the forecast horizon and each location included in the forecasts.</p>
-<div id="example-of-a-crps-calculation-from-an-ensemble-forecast" class="section level3" number="8.2.1">
-<h3><span class="header-section-number">8.2.1</span> Example of a CRPS calculation from an ensemble forecast</h3>
-<p>The following uses Equation 2 in Jordan, Kruger, and Lerch 2018</p>
-<div class="figure">
-<img src="images/equation_2.png" alt="" />
-<p class="caption">Equation 1 from Jordan, Kruger, and Lerch 2018.</p>
-</div>
-<p>First, create a random sample from a probability distribution. This is the “forecast” for a particular point in time. For simplicity, we will use a normal distribution with a mean of 8 and standard deviation of 1</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="evaluation.html#cb32-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="fl">1.0</span>)</span></code></pre></div>
-<p>Second, we have our data point (i.e., the target). We will set it to zero as well</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="evaluation.html#cb33-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">8</span></span></code></pre></div>
-<p>Now calculate CRPS using Equation 2</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="evaluation.html#cb34-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb34-2"><a href="evaluation.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
-<span id="cb34-3"><a href="evaluation.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
-<span id="cb34-4"><a href="evaluation.html#cb34-4" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s <span class="sc">+</span> <span class="fu">abs</span>(x[i] <span class="sc">-</span> x[j])</span>
-<span id="cb34-5"><a href="evaluation.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb34-6"><a href="evaluation.html#cb34-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb34-7"><a href="evaluation.html#cb34-7" aria-hidden="true" tabindex="-1"></a>crps_equation_2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">abs</span>(x <span class="sc">-</span> y)) <span class="sc">-</span> s <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">length</span>(x)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb34-8"><a href="evaluation.html#cb34-8" aria-hidden="true" tabindex="-1"></a>crps_equation_2</span></code></pre></div>
-<pre><code>## [1] 0.2381922</code></pre>
-<p>Now calculate using the <code>crps_sample()</code> function in the <code>scoringRules</code> package</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="evaluation.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crps_sample</span>(<span class="at">y =</span> y, <span class="at">dat =</span> x)</span></code></pre></div>
-<pre><code>## [1] 0.2381922</code></pre>
-</div>
-<div id="exploring-the-scoring-surface" class="section level3" number="8.2.2">
-<h3><span class="header-section-number">8.2.2</span> Exploring the scoring surface</h3>
-<p>Now lets see how the CRPS changes as the mean and standard deviation of the forecasted distribution change</p>
-<p>First, set vectors for the different mean and SD values we want to explore</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="evaluation.html#cb38-1" aria-hidden="true" tabindex="-1"></a>sample_mean <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">4</span>, <span class="dv">12</span>, <span class="fl">0.1</span>)</span>
-<span id="cb38-2"><a href="evaluation.html#cb38-2" aria-hidden="true" tabindex="-1"></a>sample_sd <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="fl">0.1</span>)</span></code></pre></div>
-<p>Second, set our observed value to 8 for simplicity</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="evaluation.html#cb39-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">8</span></span></code></pre></div>
-<p>Now calculate the CRPS at each combination of forest mean and SD</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="evaluation.html#cb40-1" aria-hidden="true" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="fu">length</span>(sample_mean), <span class="fu">length</span>(sample_sd)))</span>
-<span id="cb40-2"><a href="evaluation.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_mean)){</span>
-<span id="cb40-3"><a href="evaluation.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_sd)){</span>
-<span id="cb40-4"><a href="evaluation.html#cb40-4" aria-hidden="true" tabindex="-1"></a>    sample <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, sample_mean[i], sample_sd[j])</span>
-<span id="cb40-5"><a href="evaluation.html#cb40-5" aria-hidden="true" tabindex="-1"></a>    combined[i, j] <span class="ot">&lt;-</span> <span class="fu">crps_sample</span>(<span class="at">y =</span> y, <span class="at">dat =</span> sample)</span>
-<span id="cb40-6"><a href="evaluation.html#cb40-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb40-7"><a href="evaluation.html#cb40-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>Finally, visualize the scoring surface with the observed value represented by the red line</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="evaluation.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined),<span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>)</span>
-<span id="cb41-2"><a href="evaluation.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="04-Evaluation_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>The contour surface highlights the trade-off between the mean and standard deviation.</p>
-</div>
-<div id="crps-from-the-normal-distribution" class="section level3" number="8.2.3">
-<h3><span class="header-section-number">8.2.3</span> CRPS from the Normal Distribution</h3>
-<p>If the distributional forecast is a normal distribution represented by a mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, an ensemble of predictions is not needed to evaluate CRPS because we can take advantage of the analytic solution to CRPS under the normal assumption (Equation 4 from <a href="https://doi.org/10.1175/MWR2904.1">Calibrated Probabilistic Forecasting Using Ensemble Model Output Statistics and Minimum CRPS Estimation</a>).</p>
-<p>Equation 5 from <a href="https://doi.org/10.1175/MWR2904.1">Calibrated Probabilistic Forecasting Using Ensemble Model Output Statistics and Minimum CRPS Estimation</a> gives</p>
-<p><span class="math display">\[\begin{align*}
-CRPS(N(\mu, \sigma^2) | y) = \sigma \left( \frac{y - \mu}{\sigma} \left( 2 \Phi\left(  \frac{y - \mu}{\sigma} \right) - 1 \right)  + 2 \phi \left(  \frac{y - \mu}{\sigma} \right) - \frac{1}{\sqrt{\pi}} \right)
-\end{align*}\]</span></p>
-<p>for <span class="math inline">\(\Phi(\cdot)\)</span> and <span class="math inline">\(\phi(\cdot)\)</span> the standard normal CDF and PDF, respectively. Therefore, if the forecast distribution is <strong>truly</strong> a normal distribution (often this isn’t true in forecasts that only report a mean and sd) a simplified score can be applied as follows:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="evaluation.html#cb42-1" aria-hidden="true" tabindex="-1"></a>sample_mean <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">4</span>, <span class="dv">12</span>, <span class="fl">0.1</span>)</span>
-<span id="cb42-2"><a href="evaluation.html#cb42-2" aria-hidden="true" tabindex="-1"></a>sample_sd <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="fl">0.1</span>)</span>
-<span id="cb42-3"><a href="evaluation.html#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-4"><a href="evaluation.html#cb42-4" aria-hidden="true" tabindex="-1"></a>combined_norm <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="fu">length</span>(sample_mean), <span class="fu">length</span>(sample_sd)))</span>
-<span id="cb42-5"><a href="evaluation.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_mean)){</span>
-<span id="cb42-6"><a href="evaluation.html#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_sd)){</span>
-<span id="cb42-7"><a href="evaluation.html#cb42-7" aria-hidden="true" tabindex="-1"></a>    combined_norm[i, j] <span class="ot">&lt;-</span> <span class="fu">crps_norm</span>(<span class="at">y =</span> y, <span class="at">mean =</span> sample_mean[i], <span class="at">sd =</span> sample_sd[j])</span>
-<span id="cb42-8"><a href="evaluation.html#cb42-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb42-9"><a href="evaluation.html#cb42-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>Finally, visualize the scoring surface with the observed value represented by
-the red line</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="evaluation.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>)</span>
-<span id="cb43-2"><a href="evaluation.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="04-Evaluation_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<p>Note that at a given value of the sd, the lowest score is achieved at <span class="math inline">\(\mu = y\)</span> as shown for each of the blue lines where the minmum value of the score across each blue line is at the red line. This behavior make sense because the CRPS is a score that reward accuracy and precision. Thus, for any given level of precision (represented by the standard deviation), CRPS is optimized by producing the most accurate prediction of the distribution’s location.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="evaluation.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>)</span>
-<span id="cb44-2"><a href="evaluation.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb44-3"><a href="evaluation.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">2.5</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb44-4"><a href="evaluation.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">4.3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb44-5"><a href="evaluation.html#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">6.8</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<p><img src="04-Evaluation_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<p>Interestingly, for a given mean <span class="math inline">\(\mu \neq y\)</span> we find a pattern that makes intuitive sense given the goal of CRPS to produce forecasts that are both accurate and precise. For a given amount of bias in the prediction (i.e., given a <span class="math inline">\(\mu \neq y\)</span>), the optimal score is achieved by a standard deviation that slightly larger than the bias</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="evaluation.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb45-2"><a href="evaluation.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="do">## plots for mu = 7</span></span>
-<span id="cb45-3"><a href="evaluation.html#cb45-3" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">7</span></span>
-<span id="cb45-4"><a href="evaluation.html#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS contour given mu = &quot;</span>, mu))</span>
-<span id="cb45-5"><a href="evaluation.html#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> mu, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb45-6"><a href="evaluation.html#cb45-6" aria-hidden="true" tabindex="-1"></a>min_sd <span class="ot">&lt;-</span> sample_sd[<span class="fu">which.min</span>(<span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd))]</span>
-<span id="cb45-7"><a href="evaluation.html#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb45-8"><a href="evaluation.html#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_sd, <span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd), <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS profile given mu = &quot;</span>, mu))</span>
-<span id="cb45-9"><a href="evaluation.html#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb45-10"><a href="evaluation.html#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="do">## plots for mu = 11</span></span>
-<span id="cb45-11"><a href="evaluation.html#cb45-11" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">11</span></span>
-<span id="cb45-12"><a href="evaluation.html#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS contour given mu = &quot;</span>, mu))</span>
-<span id="cb45-13"><a href="evaluation.html#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> mu, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb45-14"><a href="evaluation.html#cb45-14" aria-hidden="true" tabindex="-1"></a>min_sd <span class="ot">&lt;-</span> sample_sd[<span class="fu">which.min</span>(<span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd))]</span>
-<span id="cb45-15"><a href="evaluation.html#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb45-16"><a href="evaluation.html#cb45-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_sd, <span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd), <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS profile given mu = &quot;</span>, mu))</span>
-<span id="cb45-17"><a href="evaluation.html#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<p><img src="04-Evaluation_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<p>Next, we plot the relationship between a given value of <span class="math inline">\(\mu\)</span> and the <span class="math inline">\(\sigma\)</span> that produces the optimal CRPS. This looks like a linear relationship.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="evaluation.html#cb46-1" aria-hidden="true" tabindex="-1"></a>optimal_sd <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(sample_mean))</span>
-<span id="cb46-2"><a href="evaluation.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_mean)) {</span>
-<span id="cb46-3"><a href="evaluation.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  optimal_sd[i] <span class="ot">&lt;-</span> sample_sd[<span class="fu">which.min</span>(<span class="fu">crps_norm</span>(y, <span class="at">mean =</span> sample_mean[i], <span class="at">sd =</span> sample_sd))]</span>
-<span id="cb46-4"><a href="evaluation.html#cb46-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb46-5"><a href="evaluation.html#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_mean, optimal_sd, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>)</span></code></pre></div>
-<p><img src="04-Evaluation_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p>Let’s estimate the slope of the relationship. It looks like the optimal <span class="math inline">\(sd\)</span> for a normal distribution forecast that is biased by <span class="math inline">\(|y - \mu|\)</span> is <span class="math inline">\(sd = 1.2|y - \mu|\)</span> which makes sense as this would put the true value in a region of high probability.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="evaluation.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(<span class="fu">lm</span>(optimal_sd[sample_mean <span class="sc">&gt;</span> <span class="dv">0</span>] <span class="sc">~</span> sample_mean[sample_mean <span class="sc">&gt;</span> <span class="dv">0</span>]))</span></code></pre></div>
-<pre><code>##                  (Intercept) sample_mean[sample_mean &gt; 0] 
-##                 2.430864e+00                -1.688326e-16</code></pre>
-</div>
-</div>
-<div id="null-forecast" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Null forecast</h2>
-<p>All forecasts will be compared to a null forecast produced by a simple historical-means calculation or a random walk. The GitHub repository for each theme has the code for the null model.</p>
-<p>Ticks: <a href="https://github.com/eco4cast/neon4cast-ticks/blob/master/03_nullFitAndForecast.R" class="uri">https://github.com/eco4cast/neon4cast-ticks/blob/master/03_nullFitAndForecast.R</a></p>
-<p>Terrestrial (Daily): <a href="https://github.com/eco4cast/neon4cast-terrestrial/blob/master/03_terrestrial_flux_daily_null.R" class="uri">https://github.com/eco4cast/neon4cast-terrestrial/blob/master/03_terrestrial_flux_daily_null.R</a></p>
-<p>Terrestrial (30 minute): <a href="https://github.com/eco4cast/neon4cast-terrestrial/blob/master/04_terrestrial_flux_30min_clim.R" class="uri">https://github.com/eco4cast/neon4cast-terrestrial/blob/master/04_terrestrial_flux_30min_clim.R</a></p>
-<p>Beetles: <a href="https://github.com/eco4cast/neon4cast-beetles/blob/master/03_forecast.R" class="uri">https://github.com/eco4cast/neon4cast-beetles/blob/master/03_forecast.R</a></p>
-<p>Aquatics: <a href="https://github.com/eco4cast/neon4cast-aquatics/blob/master/03_generate_null_forecast_aquatics.R" class="uri">https://github.com/eco4cast/neon4cast-aquatics/blob/master/03_generate_null_forecast_aquatics.R</a></p>
-<p>Phenology: <a href="https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel_randomWalk_main.R" class="uri">https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel_randomWalk_main.R</a></p>
-</div>
-<div id="forecast-submission-visualization-and-leaderboard" class="section level2" number="8.4">
-<h2><span class="header-section-number">8.4</span> Forecast Submission Visualization and Leaderboard</h2>
-<p>The <a href="https://shiny.ecoforecast.org">dashboard</a> shows the forecast submissions by each team for each forecast theme by date and forecast variable. It also provides the CRPS scores for each submitted forecast.</p>
+<div id="meteorology-neon-observed" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Meteorology: NEON Observed</h2>
+<p>In development through collaboration with NEON and NCAR.</p>
 
 </div>
 </div>
@@ -464,8 +346,8 @@ the red line</p>
           </div>
         </div>
       </div>
-<a href="submission-instructions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="meteorology-inputs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="evaluation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="helpful-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

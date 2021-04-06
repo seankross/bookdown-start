@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="participation.html"/>
-<link rel="next" href="shared-forecast-drivers.html"/>
+<link rel="next" href="evaluation.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -245,22 +245,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="submission-instructions.html"><a href="submission-instructions.html#validating-submission"><i class="fa fa-check"></i><b>7.4</b> Validating submission</a></li>
 <li class="chapter" data-level="7.5" data-path="submission-instructions.html"><a href="submission-instructions.html#visualizing-submissions"><i class="fa fa-check"></i><b>7.5</b> Visualizing submissions</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="shared-forecast-drivers.html"><a href="shared-forecast-drivers.html"><i class="fa fa-check"></i><b>8</b> Shared Forecast Drivers</a>
+<li class="chapter" data-level="8" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>8</b> Evaluation</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="shared-forecast-drivers.html"><a href="shared-forecast-drivers.html#meteorology-noaa-global-ensemble-forecasting-system"><i class="fa fa-check"></i><b>8.1</b> Meteorology: NOAA Global Ensemble Forecasting System</a></li>
-<li class="chapter" data-level="8.2" data-path="shared-forecast-drivers.html"><a href="shared-forecast-drivers.html#meteorology-neon-observed"><i class="fa fa-check"></i><b>8.2</b> Meteorology: NEON Observed</a></li>
+<li class="chapter" data-level="8.1" data-path="evaluation.html"><a href="evaluation.html#results"><i class="fa fa-check"></i><b>8.1</b> Results</a></li>
+<li class="chapter" data-level="8.2" data-path="evaluation.html"><a href="evaluation.html#scoring-metric-continuous-ranked-probability-score"><i class="fa fa-check"></i><b>8.2</b> Scoring Metric: Continuous Ranked Probability Score</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="evaluation.html"><a href="evaluation.html#example-of-a-crps-calculation-from-an-ensemble-forecast"><i class="fa fa-check"></i><b>8.2.1</b> Example of a CRPS calculation from an ensemble forecast</a></li>
+<li class="chapter" data-level="8.2.2" data-path="evaluation.html"><a href="evaluation.html#exploring-the-scoring-surface"><i class="fa fa-check"></i><b>8.2.2</b> Exploring the scoring surface</a></li>
+<li class="chapter" data-level="8.2.3" data-path="evaluation.html"><a href="evaluation.html#crps-from-the-normal-distribution"><i class="fa fa-check"></i><b>8.2.3</b> CRPS from the Normal Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>9</b> Evaluation</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="evaluation.html"><a href="evaluation.html#results"><i class="fa fa-check"></i><b>9.1</b> Results</a></li>
-<li class="chapter" data-level="9.2" data-path="evaluation.html"><a href="evaluation.html#scoring-metric-continuous-ranked-probability-score"><i class="fa fa-check"></i><b>9.2</b> Scoring Metric: Continuous Ranked Probability Score</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="evaluation.html"><a href="evaluation.html#example-of-a-crps-calculation-from-an-ensemble-forecast"><i class="fa fa-check"></i><b>9.2.1</b> Example of a CRPS calculation from an ensemble forecast</a></li>
-<li class="chapter" data-level="9.2.2" data-path="evaluation.html"><a href="evaluation.html#exploring-the-scoring-surface"><i class="fa fa-check"></i><b>9.2.2</b> Exploring the scoring surface</a></li>
-<li class="chapter" data-level="9.2.3" data-path="evaluation.html"><a href="evaluation.html#crps-from-the-normal-distribution"><i class="fa fa-check"></i><b>9.2.3</b> CRPS from the Normal Distribution</a></li>
+<li class="chapter" data-level="8.3" data-path="evaluation.html"><a href="evaluation.html#null-forecast"><i class="fa fa-check"></i><b>8.3</b> Null forecast</a></li>
+<li class="chapter" data-level="8.4" data-path="evaluation.html"><a href="evaluation.html#forecast-submission-visualization-and-leaderboard"><i class="fa fa-check"></i><b>8.4</b> Forecast Submission Visualization and Leaderboard</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="evaluation.html"><a href="evaluation.html#null-forecast"><i class="fa fa-check"></i><b>9.3</b> Null forecast</a></li>
-<li class="chapter" data-level="9.4" data-path="evaluation.html"><a href="evaluation.html#forecast-submission-visualization-and-leaderboard"><i class="fa fa-check"></i><b>9.4</b> Forecast Submission Visualization and Leaderboard</a></li>
+<li class="chapter" data-level="9" data-path="meteorology-inputs.html"><a href="meteorology-inputs.html"><i class="fa fa-check"></i><b>9</b> Meteorology Inputs</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="meteorology-inputs.html"><a href="meteorology-inputs.html#meteorology-noaa-global-ensemble-forecasting-system"><i class="fa fa-check"></i><b>9.1</b> Meteorology: NOAA Global Ensemble Forecasting System</a></li>
+<li class="chapter" data-level="9.2" data-path="meteorology-inputs.html"><a href="meteorology-inputs.html#meteorology-neon-observed"><i class="fa fa-check"></i><b>9.2</b> Meteorology: NEON Observed</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="helpful-functions.html"><a href="helpful-functions.html"><i class="fa fa-check"></i><b>10</b> Helpful functions</a>
 <ul>
@@ -617,7 +617,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="participation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="shared-forecast-drivers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="evaluation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
