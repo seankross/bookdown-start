@@ -76,14 +76,15 @@ All data in the supplied file is available to build and evaluate models before s
 ### Target file
 
 - `time`: YYYY-MM-DD
-- `statistic`: variable name (“mean” or “sd”)
-- `gcc_90`: 
 - `siteID`: NEON site code (e.g., BART)
+- `gcc_90`: 90th percentile GCC for the ROI
+- `gcc_sd`: standard deviation of the 90th percentile
+
 
 Here is the format of the target file
 
 ```{r message = FALSE}
-readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz", guess_max = 1e6)
+readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz", guess_max = 1e6)
 ```
 
 ## Timeline

@@ -76,37 +76,33 @@ All data in the supplied file is available to build and evaluate models before s
 ### Target file
 
 - `time`: YYYY-MM-DD
-- `statistic`: variable name (“mean” or “sd”)
-- `gcc_90`: 
 - `siteID`: NEON site code (e.g., BART)
+- `gcc_90`: 90th percentile GCC for the ROI
+- `gcc_sd`: standard deviation of the 90th percentile
+
 
 Here is the format of the target file
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz", guess_max = 1e6)
+readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz", guess_max = 1e6)
 ```
 
 ```
-## # A tibble: 3,969 x 21
-##     Year epiWeek yearWeek plotID   siteID nlcdClass       decimalLatitude
-##    <dbl> <chr>      <dbl> <chr>    <chr>  <chr>                     <dbl>
-##  1  2015 37        201537 BLAN_005 BLAN   deciduousForest            39.1
-##  2  2015 38        201538 BLAN_005 BLAN   deciduousForest            39.1
-##  3  2015 39        201539 BLAN_005 BLAN   deciduousForest            39.1
-##  4  2015 40        201540 BLAN_005 BLAN   deciduousForest            39.1
-##  5  2015 41        201541 BLAN_005 BLAN   deciduousForest            39.1
-##  6  2015 42        201542 BLAN_005 BLAN   deciduousForest            39.1
-##  7  2015 43        201543 BLAN_005 BLAN   deciduousForest            39.1
-##  8  2015 44        201544 BLAN_005 BLAN   deciduousForest            39.1
-##  9  2015 45        201545 BLAN_005 BLAN   deciduousForest            39.1
-## 10  2015 46        201546 BLAN_005 BLAN   deciduousForest            39.1
-## # … with 3,959 more rows, and 14 more variables: decimalLongitude <dbl>,
-## #   elevation <dbl>, totalSampledArea <dbl>, amblyomma_americanum <dbl>,
-## #   ixodes_scapularis <dbl>, time <date>, RHMin_precent <dbl>,
-## #   RHMin_variance <dbl>, RHMax_precent <dbl>, RHMax_variance <dbl>,
-## #   airTempMin_degC <dbl>, airTempMin_variance <dbl>, airTempMax_degC <dbl>,
-## #   airTempMax_variance <dbl>
+## # A tibble: 12,584 x 4
+##    time       siteID gcc_90   gcc_sd
+##    <date>     <chr>   <dbl>    <dbl>
+##  1 2016-12-13 HARV    0.329 0.000154
+##  2 2016-12-14 HARV    0.328 0.000170
+##  3 2016-12-15 HARV    0.330 0.000543
+##  4 2016-12-16 HARV    0.329 0.000381
+##  5 2016-12-17 HARV    0.332 0.000449
+##  6 2016-12-18 HARV    0.332 0.000354
+##  7 2016-12-19 HARV    0.329 0.000331
+##  8 2016-12-20 HARV    0.330 0.000364
+##  9 2016-12-21 HARV    0.329 0.000379
+## 10 2016-12-22 HARV    0.329 0.000949
+## # … with 12,574 more rows
 ```
 
 ## Timeline
