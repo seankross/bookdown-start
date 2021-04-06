@@ -43,7 +43,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ```
 
 ```
-## # A tibble: 2,556 x 9
+## # A tibble: 2,618 x 9
 ##    time       siteID oxygen temperature oxygen_sd temperature_sd depth_oxygen
 ##    <date>     <chr>   <dbl>       <dbl>     <dbl>          <dbl>        <dbl>
 ##  1 2017-10-20 BARC     6.01        26.4   0.0114        0.00104          1.19
@@ -56,7 +56,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ##  8 2017-10-27 BARC     6.41        24.3   0.00762       0.00104          1.22
 ##  9 2017-10-28 BARC     6.48        24.1   0.00766       0.00111          1.17
 ## 10 2017-10-29 BARC     6.64        23.8   0.00783       0.00101          1.10
-## # … with 2,546 more rows, and 2 more variables: depth_temperature <dbl>,
+## # … with 2,608 more rows, and 2 more variables: depth_temperature <dbl>,
 ## #   neon_product_ids <chr>
 ```
 

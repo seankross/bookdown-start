@@ -24,7 +24,7 @@
 <meta name="author" content="Ecological Forecasting Initative Research Coordination Network" />
 
 
-<meta name="date" content="2021-04-05" />
+<meta name="date" content="2021-04-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -347,10 +347,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Summary statistics (daily, monthly, annually): <a href="https://data.neonscience.org/data-products/DP4.00001.001" class="uri">https://data.neonscience.org/data-products/DP4.00001.001</a></p></li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Gridded weather from models that have been assimilated with observations is available from other sources including:</li>
+<li>Gridded weather from models that have been assimilated with observations are available from other sources including:</li>
 </ol>
 <ul>
 <li><a href="https://ldas.gsfc.nasa.gov/nldas/v2/forcing">NASAs National Land Data Assimilation System</a>: 4 day delay</li>
+<li><a href="https://daymet.ornl.gov">Daymet</a> is an option for daily meteorology variables, though it doesn’t yet cover 2020-2021. <a href="https://cran.r-project.org/web/packages/daymetr/index.html">Daymet has an R</a> package that can be used to download data for a single location or a set of locations.</li>
+<li>ERA5 product has high-quality subdaily data with ensemble-based uncertainties. Download scripts are available through the PEcAn project: <a href="https://github.com/PecanProject/pecan/blob/develop/modules/data.atmosphere/R/download.ERA5.R" class="uri">https://github.com/PecanProject/pecan/blob/develop/modules/data.atmosphere/R/download.ERA5.R</a></li>
+<li>Other meteorology products can be downloading using functions in PEcAn: <a href="https://github.com/PecanProject/pecan/blob/develop/modules/data.atmosphere/R/download.ERA5.R" class="uri">https://github.com/PecanProject/pecan/blob/develop/modules/data.atmosphere/R/download.ERA5.R</a></li>
 </ul>
 </div>
 <div id="i-submitted-my-forecast-but-cannot-find-it-on-the-dashboard-or-in-the-directory-of-forecasts" class="section level2" number="11.3">
