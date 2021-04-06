@@ -10,9 +10,9 @@
 
 **Who**: Open to any individual or team that registers
 
-**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ) your team and submit forecast
+**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
 
-We held a Q&A session on March 24, 2021. You can find a recording from that session [HERE](https://youtu.be/kyR0MoDCO1Q).
+We held a Q&A session on March 24, 2021. You can find a recording from that session [HERE](https://youtu.be/kyR0MoDCO1Q){target="_blank"}.
 
 ## Overview
 
@@ -28,7 +28,7 @@ Teams must post information about any additional data they wish to use on the th
 
 The challenge uses the following NEON data products:
 
-[DP1.10093.001](https://data.neonscience.org/data-products/DP1.10093.001): Ticks sampled using drag cloths
+[DP1.10093.001](https://data.neonscience.org/data-products/DP1.10093.001){target="_blank"}: Ticks sampled using drag cloths
 
 Total *Ixodes scapularis* will be forecasting for the following plots (siteID_plotID): 
 
@@ -38,7 +38,7 @@ Total *Amblyomma americanum* will be forecasting for the following plots (siteID
 
 SCBI_013, SERC_001, SERC_005, SERC_006, SERC_002, SERC_012, KONZ_025, UKFS_001, UKFS_004, UKFS_003, ORNL_002, ORNL_040, ORNL_008, ORNL_007, ORNL_009, ORNL_003, TALL_001, TALL_008, TALL_002
 
-A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation.  This [processing script](https://github.com/eco4cast/neon4cast-ticks/blob/master/02_ticks_targets.R) is available in the [neon4cast-ticks](https://github.com/eco4cast/neon4cast-ticks) GitHub repository.
+A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation.  This [processing script](https://github.com/eco4cast/neon4cast-ticks/blob/master/02_ticks_targets.R){target="_blank"} is available in the [neon4cast-ticks](https://github.com/eco4cast/neon4cast-ticks){target="_blank"} GitHub repository.
 
 ### Amblyomma americanum nymphs
 
@@ -64,13 +64,13 @@ This species is a vector of disease, so forecasting tick abundance can potential
 
 | Site Name       | SiteID     | NEON Domain     | Latitude  |  Longitude | Ixodes scapularis Plots | Amblyomma americanum Plots |
 | :------------- | :----------: | -----------: | -----------: | -----------: | -----------: | -----------: |
-|  [Blandy Experimental Farm, VA](https://www.neonscience.org/field-sites/blan) | BLAN  | D02: Mid-Atlantic    | 39.06026 | -78.07164 | BLAN_012, BLAN_005 |   |
-|  [Smithsonian Conservation Biology Institute, VA](https://www.neonscience.org/field-sites/scbi) | SCBI  | D02: Mid-Atlantic    | 38.89292 | -78.1395 | SCBI_013, SCBI_002 | SCBI_013 |
-|  [Smithsonian Environmental Research Center, MD](https://www.neonscience.org/field-sites/srer)  | SRER  | D02: Mid-Atlantic    | 38.89008 | -76.56001 | SERC_001, SERC_005, SERC_006, SERC_012 | SERC_001, SERC_002, SERC_005, SERC_006 SERC_012|
-|  [Oak Ridge, TN](https://www.neonscience.org/field-sites/blan) | ORNL  | D07: Appalachians & Cumberland Plateau    | 35.96412 | -84.2826 | ORNL_007 | ORNL_002, ORNL_003, ORNL_007, ORNL_008, ORNL_009, ORNL_040 |
-|  [Konza Prairie Biological Station, KS](https://www.neonscience.org/field-sites/konz) | KONZ  | D06: Prairie Peninsula    | 39.10077 | -96.56309 |  | KONZ_025 |
-|  [The University of Kansas Field Station, KS](https://www.neonscience.org/field-sites/ukfs)  | UKFS  | D06: Prairie Peninsula    | 39.04043 | -95.19215 |  | UKFS_001, UKFS_003, UKFS_004 |
-|  [Talladega National Forest, AL](https://www.neonscience.org/field-sites/tall)  | TALL  | DO8: Ozarks Complex    | 32.95046 | -87.39327 |  | TALL_001, TALL_002, TALL_008 |
+|  [Blandy Experimental Farm, VA](https://www.neonscience.org/field-sites/blan){target="_blank"} | BLAN  | D02: Mid-Atlantic    | 39.06026 | -78.07164 | BLAN_012, BLAN_005 |   |
+|  [Smithsonian Conservation Biology Institute, VA](https://www.neonscience.org/field-sites/scbi){target="_blank"} | SCBI  | D02: Mid-Atlantic    | 38.89292 | -78.1395 | SCBI_013, SCBI_002 | SCBI_013 |
+|  [Smithsonian Environmental Research Center, MD](https://www.neonscience.org/field-sites/srer){target="_blank"}  | SRER  | D02: Mid-Atlantic    | 38.89008 | -76.56001 | SERC_001, SERC_005, SERC_006, SERC_012 | SERC_001, SERC_002, SERC_005, SERC_006 SERC_012|
+|  [Oak Ridge, TN](https://www.neonscience.org/field-sites/blan){target="_blank"} | ORNL  | D07: Appalachians & Cumberland Plateau    | 35.96412 | -84.2826 | ORNL_007 | ORNL_002, ORNL_003, ORNL_007, ORNL_008, ORNL_009, ORNL_040 |
+|  [Konza Prairie Biological Station, KS](https://www.neonscience.org/field-sites/konz){target="_blank"} | KONZ  | D06: Prairie Peninsula    | 39.10077 | -96.56309 |  | KONZ_025 |
+|  [The University of Kansas Field Station, KS](https://www.neonscience.org/field-sites/ukfs){target="_blank"}  | UKFS  | D06: Prairie Peninsula    | 39.04043 | -95.19215 |  | UKFS_001, UKFS_003, UKFS_004 |
+|  [Talladega National Forest, AL](https://www.neonscience.org/field-sites/tall){target="_blank"}  | TALL  | DO8: Ozarks Complex    | 32.95046 | -87.39327 |  | TALL_001, TALL_002, TALL_008 |
 
 
 

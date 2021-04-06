@@ -51,7 +51,7 @@ crps_equation_2
 ```
 
 ```
-## [1] 0.2424385
+## [1] 0.2342381
 ```
 
 Now calculate using the `crps_sample()` function in the `scoringRules` package
@@ -62,7 +62,7 @@ crps_sample(y = y, dat = x)
 ```
 
 ```
-## [1] 0.2424385
+## [1] 0.2342381
 ```
 
 ### Exploring the scoring surface
@@ -226,4 +226,4 @@ Phenology: https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel
 
 ## Forecast Submission Visualization and Leaderboard
 
-The [dashboard](https://shiny.ecoforecast.org) shows the forecast submissions by each team for each forecast theme by date and forecast variable. It also provides the CRPS scores for each submitted forecast.
+The [dashboard](https://shiny.ecoforecast.org){target="_blank"} shows the forecast submissions by each team for each forecast theme by date and forecast variable. It also provides the CRPS scores for each submitted forecast.

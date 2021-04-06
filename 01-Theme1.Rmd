@@ -10,7 +10,7 @@
 
 **Who:** Open to any individual or team that registers
 
-**How:** [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ) your team and submit forecast
+**How:** [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
 
 ## Overview
 
@@ -29,10 +29,10 @@ Teams are asked to submit their 7 day forecasts of NEON surface water temperatur
 The R script for generating the evaluation and training data (i.e., targets) can be found at: https://github.com/eco4cast/neon4cast-aquatics
 
 The challenge uses the following NEON data products:
-[DP1.20264.001](https://data.neonscience.org/data-products/DP1.20264.001): Temperature at specific depth in surface water   
-[DP1.20288.001](https://data.neonscience.org/data-products/DP1.20288.001): Water quality
+[DP1.20264.001](https://data.neonscience.org/data-products/DP1.20264.001){target="_blank"}: Temperature at specific depth in surface water   
+[DP1.20288.001](https://data.neonscience.org/data-products/DP1.20288.001){target="_blank"}: Water quality
 
-A file with previously released NEON data that has been processed into targets is provided below. The target script can be found here. The same processing will be applied to new data that are used for forecast evaluation. Before the Aquatics challenge begins, a [processing script](https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R) is available in the neon4cast-aquatics GitHub repository.
+A file with previously released NEON data that has been processed into targets is provided below. The target script can be found here. The same processing will be applied to new data that are used for forecast evaluation. Before the Aquatics challenge begins, a [processing script](https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R){target="_blank"} is available in the neon4cast-aquatics GitHub repository.
 
 Here is the format of the target file
 
@@ -55,7 +55,7 @@ The target file has the following columns
 
 **Definition**
 
-Dissolved oxygen (DO) is the concentration of oxygen dissolved in water. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L-1. We have adapted the available NEON DO data to output the mean daily DO concentration in mg L-1 from a water quality sonde deployed 1m below the water surface at a lake site (Barco Lake) and a water quality sonde deployed in a stream site (Posey Creek). Common DO concentrations range between 0 and 12 mg L-1 and DO concentrations less than 2 mg L-1 are considered hypoxic. 
+Dissolved oxygen (DO) is the concentration of oxygen dissolved in water. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L-1. We have adapted the available NEON DO data to output the mean daily DO concentration in mg L<sup>-1</sup> from a water quality sonde deployed 1m below the water surface at a lake site (Barco Lake) and a water quality sonde deployed in a stream site (Posey Creek). Common DO concentrations range between 0 and 12 mg L<sup>-1</sup> and DO concentrations less than 2 mg L<sup>-1</sup> are considered hypoxic. 
 
 **Motivation**
 
@@ -77,8 +77,8 @@ In streams and rivers, forecasting water temperature can be meaningful for prote
 
 | Site Name       | SiteID     | NEON Domain     | Latitude  |  Longitude | Ecosystem Type |
 | :------------- | :----------: | -----------: | -----------: | -----------: | -----------: |
-|  [Lake Barco, FL](https://www.neonscience.org/field-sites/bart) | BART  | D03: Southeast    | 29.67598 | -82.00841 | Lake | 
-|  [Posey Creek, VA](https://www.neonscience.org/field-sites/pose) | POSE  | D02: Mid-Atlantic    | 38.89431 | -78.14726 | Stream | 
+|  [Lake Barco, FL](https://www.neonscience.org/field-sites/bart){target="_blank"} | BART  | D03: Southeast    | 29.67598 | -82.00841 | Lake | 
+|  [Posey Creek, VA](https://www.neonscience.org/field-sites/pose){target="_blank"} | POSE  | D02: Mid-Atlantic    | 38.89431 | -78.14726 | Stream | 
 
 ## Timeline
 

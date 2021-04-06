@@ -30,8 +30,8 @@ NEON collects weather variables at each of the sites. Their data products become
 
 2) Gridded weather from models that have been assimilated with observations are available from other sources including:
 
-- [NASAs National Land Data Assimilation System](https://ldas.gsfc.nasa.gov/nldas/v2/forcing):  4 day delay
-- [Daymet](https://daymet.ornl.gov) is an option for daily meteorology variables, though it doesn't yet cover 2020-2021.  [Daymet has an R](https://cran.r-project.org/web/packages/daymetr/index.html) package that can be used to download data for a single location or a set of locations.
+- [NASAs National Land Data Assimilation System](https://ldas.gsfc.nasa.gov/nldas/v2/forcing){target="_blank"}:  4 day delay
+- [Daymet](https://daymet.ornl.gov){target="_blank"} is an option for daily meteorology variables, though it doesn't yet cover 2020-2021.  [Daymet has an R](https://cran.r-project.org/web/packages/daymetr/index.html){target="_blank"} package that can be used to download data for a single location or a set of locations.
 - ERA5 product has high-quality subdaily data with ensemble-based uncertainties.  Download scripts are available through the PEcAn project: https://github.com/PecanProject/pecan/blob/develop/modules/data.atmosphere/R/download.ERA5.R
 - Other meteorology products can be downloading using functions in PEcAn: https://github.com/PecanProject/pecan/blob/develop/modules/data.atmosphere/R/download.ERA5.R  
 

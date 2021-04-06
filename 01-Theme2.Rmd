@@ -10,9 +10,9 @@
 
 **Who**: Open to any individual or team that registers
 
-**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ) your team and submit forecast
+**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
 
-We held a Q&A session on January 22, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=3rOVlAX9YH8&feature=youtu.be).
+We held a Q&A session on January 22, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=3rOVlAX9YH8&feature=youtu.be){target="_blank"}.
 
 ## Overview
 
@@ -29,8 +29,8 @@ Users are asked to submit their forecast of measured NEON NEE, LE, and soil mois
 
 The challenge uses the following NEON data products:  
 
-[DP4.00200.001](https://data.neonscience.org/data-products/DP4.00200.001): Bundled data products - eddy covariance   
-[DP1.00094.001](https://data.neonscience.org/data-products/DP1.00094.001): Soil water content and water salinity  
+[DP4.00200.001](https://data.neonscience.org/data-products/DP4.00200.001){target="_blank"}: Bundled data products - eddy covariance   
+[DP1.00094.001](https://data.neonscience.org/data-products/DP1.00094.001){target="_blank"}: Soil water content and water salinity  
 
 A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. A processing script is available on the neon4cast-terrestrial GitHub repository: https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R
 
@@ -72,31 +72,31 @@ Volumetric water content is the measurement of water availability in soil.   Thi
 
 | Site Name       | SiteID     | NEON Domain     | Latitude  |  Longitude | Dominant Species |
 | :------------- | :----------: | -----------: | -----------: | -----------: | -----------: |
-|  [Bartlett Experimental Forest, NH](https://www.neonscience.org/field-sites/bart) | BART  | D01: Northeast    | 44.0639 | -71.2874 | *Fagus grandifolia*, *Tsuga canadensis*, *Acer pensylvanicum* | 
-|  [Ordway Swisher Biological Station, FL](https://www.neonscience.org/field-sites/osbs) | OSBS  | D03: Southeast    | 31.91068 | -81.99343 | Herbaceous and woody wetlands, Evergreen forest | 
-|  [Konza Prairie Biological Station, KS](https://www.neonscience.org/field-sites/konz)  | KONZ  | D06: Prairie Peninsula    | 39.10077 | -96.56309 | Midwestern tallgrass prairie | 
-|  [Santa Rita Experimental Range, AZ](https://www.neonscience.org/field-sites/srer) | SRER  | D14: Desert Southwest    | 31.91068 | -110.83549 | Southwest desert shrub/scrub | 
+|  [Bartlett Experimental Forest, NH](https://www.neonscience.org/field-sites/bart){target="_blank"} | BART  | D01: Northeast    | 44.0639 | -71.2874 | *Fagus grandifolia*, *Tsuga canadensis*, *Acer pensylvanicum* | 
+|  [Ordway Swisher Biological Station, FL](https://www.neonscience.org/field-sites/osbs){target="_blank"} | OSBS  | D03: Southeast    | 31.91068 | -81.99343 | Herbaceous and woody wetlands, Evergreen forest | 
+|  [Konza Prairie Biological Station, KS](https://www.neonscience.org/field-sites/konz){target="_blank"}  | KONZ  | D06: Prairie Peninsula    | 39.10077 | -96.56309 | Midwestern tallgrass prairie | 
+|  [Santa Rita Experimental Range, AZ](https://www.neonscience.org/field-sites/srer){target="_blank"} | SRER  | D14: Desert Southwest    | 31.91068 | -110.83549 | Southwest desert shrub/scrub | 
 
 All sites are near Ameriflux sites that could be used when developing the models if the data are publicly available in the Ameriflux database.  If Ameriflux data is used, teams MUST follow Ameriflux data use policy (which is different from NEON’s) 
 
 **Bartlett**   
-  - [US-Bar: Bartlett Experimental Forest (2004-2017)](https://ameriflux.lbl.gov/sites/siteinfo/US-Bar)   
+  - [US-Bar: Bartlett Experimental Forest (2004-2017)](https://ameriflux.lbl.gov/sites/siteinfo/US-Bar){target="_blank"}   
 
 **Konza**  
-- [US-Kon: Konza Prairie LTER (KNZ) (2004-2019)](https://ameriflux.lbl.gov/sites/siteinfo/US-Kon)    
-- [US-KFB: Konza Prairie LTER (4B) (2006-present)](https://ameriflux.lbl.gov/sites/siteinfo/US-KFB)   
+- [US-Kon: Konza Prairie LTER (KNZ) (2004-2019)](https://ameriflux.lbl.gov/sites/siteinfo/US-Kon){target="_blank"}    
+- [US-KFB: Konza Prairie LTER (4B) (2006-present)](https://ameriflux.lbl.gov/sites/siteinfo/US-KFB){target="_blank"}   
 
 **Santa Rita**   
-- [US-SRC: Santa Rita Creosote (2008-2018, physically closest tower to the NEON tower)](https://ameriflux.lbl.gov/sites/siteinfo/US-SRC)      
-- [US-SRG: Santa Rita Grassland (2008-2019)](https://ameriflux.lbl.gov/sites/siteinfo/US-SRG)   
-- [US-SRM: Santa Rita Mesquite (2003-2019)](https://ameriflux.lbl.gov/sites/siteinfo/US-SRM)   
-- [US-SRS: Santa Rita Experimental Range Mesquite Savanna (2011-2019)](https://ameriflux.lbl.gov/sites/siteinfo/US-SRS)   
+- [US-SRC: Santa Rita Creosote (2008-2018, physically closest tower to the NEON tower)](https://ameriflux.lbl.gov/sites/siteinfo/US-SRC){target="_blank"}      
+- [US-SRG: Santa Rita Grassland (2008-2019)](https://ameriflux.lbl.gov/sites/siteinfo/US-SRG){target="_blank"}   
+- [US-SRM: Santa Rita Mesquite (2003-2019)](https://ameriflux.lbl.gov/sites/siteinfo/US-SRM){target="_blank"}   
+- [US-SRS: Santa Rita Experimental Range Mesquite Savanna (2011-2019)](https://ameriflux.lbl.gov/sites/siteinfo/US-SRS){target="_blank"}   
 
 **Ordway-Swisher**   
-- [US-SP1: Slashpine-Austin Cary- 65yrs nat regen (2000-2011)](https://ameriflux.lbl.gov/sites/siteinfo/US-SP1)   
-- [US-SP2: Slashpine-Mize-clearcut-3yr,regen (1998-2008)](https://ameriflux.lbl.gov/sites/siteinfo/US-SP2)   
-- [US-SP3: Slashpine-Donaldson-mid-rot- 12yrs (1999 - 2010)](https://ameriflux.lbl.gov/sites/siteinfo/US-SP3)   
-- [US-SP4: Slashpine-Rayonier-mid-rot- 12yrs (1998)](https://ameriflux.lbl.gov/sites/siteinfo/US-SP4)   
+- [US-SP1: Slashpine-Austin Cary- 65yrs nat regen (2000-2011)](https://ameriflux.lbl.gov/sites/siteinfo/US-SP1){target="_blank"}   
+- [US-SP2: Slashpine-Mize-clearcut-3yr,regen (1998-2008)](https://ameriflux.lbl.gov/sites/siteinfo/US-SP2){target="_blank"}   
+- [US-SP3: Slashpine-Donaldson-mid-rot- 12yrs (1999 - 2010)](https://ameriflux.lbl.gov/sites/siteinfo/US-SP3){target="_blank"}   
+- [US-SP4: Slashpine-Rayonier-mid-rot- 12yrs (1998)](https://ameriflux.lbl.gov/sites/siteinfo/US-SP4){target="_blank"}   
 
 ![Images of the four focal sites](images/NEON Terrestrial C Challenge Image.png)
 
@@ -178,9 +178,9 @@ Quinn Thomas, Virginia Tech
 
 ## Partners
 
-Data used in the challenge are from the National Ecological Observatory Network ([NEON](https://www.neonscience.org/))
+Data used in the challenge are from the National Ecological Observatory Network ([NEON](https://www.neonscience.org/){target="_blank"})
 
-[Ameriflux](https://ameriflux.lbl.gov/) is an excellent database of eddy-covariance data, including historical data for some of the four challenge sites.
+[Ameriflux](https://ameriflux.lbl.gov/){target="_blank"} is an excellent database of eddy-covariance data, including historical data for some of the four challenge sites.
 
-Terrestrial Ecosystem Research Network [(TERN)](https://www.tern.org.au/) has been involved in the design of the challenge: 
+Terrestrial Ecosystem Research Network [(TERN)](https://www.tern.org.au/){target="_blank"} has been involved in the design of the challenge: 
 

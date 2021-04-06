@@ -10,9 +10,9 @@
 
 **Who**: Open to any individual or team that registers
 
-**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ) your team and submit forecast
+**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
 
-We held a Q&A session on January 27, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=UwX2IA1vDQE&feature=youtu.be).
+We held a Q&A session on January 27, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=UwX2IA1vDQE&feature=youtu.be){target="_blank"}.
 
 ## Overview
 
@@ -32,9 +32,9 @@ Teams must provide access (minimum of URL, but ideally a script) to any addition
 
 The challenge uses the following NEON data products:
 
-[DP1.00033.001](https://data.neonscience.org/data-products/DP1.00033.001): Phenology images
+[DP1.00033.001](https://data.neonscience.org/data-products/DP1.00033.001){target="_blank"}: Phenology images
 
-A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. Before the Phenology challenge begins, a processing script will be available in the [neon4cast-phenology GitHub repository](https://github.com/eco4cast/neon4cast-phenology).
+A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. Before the Phenology challenge begins, a processing script will be available in the [neon4cast-phenology GitHub repository](https://github.com/eco4cast/neon4cast-phenology){target="_blank"}.
 
 ### Green chromatic coordinate (gcc)
 
@@ -50,13 +50,13 @@ Quantitative metrics of vegetation color extracted from PhenoCam imagery provide
 
 | Site Name       | Site (and PhenoCam) ID     | NEON Domain     | Latitude  |  Longitude | Dominant Species |
 | :------------- | :----------: | -----------: | -----------: | -----------: | -----------: |
-|  [Harvard Forest, MA](https://www.neonscience.org/field-sites/harv) | NEON.D01.HARV.DP1.00033  | D01: Northeast    | 42.537 | -72.173 | *Quercus rubra*, *Acer rubrum*, *Aralia nudicaulis* | 
-|  [Bartlett Experimental Forest, NH](https://www.neonscience.org/field-sites/bart) | NEON.D01.BART.DP1.00033  | D01: Northeast    | 44.0639 | -71.2874 | *Liriodendron tulipifera*, *Microstegium vimineum*, *Juglans nigra* | 
-|  [Steigerwaldt Land Services, WI](https://www.neonscience.org/field-sites/stei)  | NEON.D05.STEI.DP1.00033  | D05: Great Lakes | 45.509 | -89.586 | *Populus tremuloides*, *Abies balsamea*, *Acer rubrum* | 
-|  [The University of Kansas Field Station, KS](https://www.neonscience.org/field-sites/ukfs) | NEON.D06.UKFS.DP1.00033  | D06: Prairie Peninsula    | 39.040 | -95.192 | *Symphoricarpos orbiculatus*, *Celtis occidentalis*, *Carya ovata* | 
-|  [Great Smoky Mountains National Park, TN](https://www.neonscience.org/field-sites/grsm) | NEON.D07.GRSM.DP1.00033  | D07: Appalachians and Cumberland Plateau   | 35.689 | -83.502 | *Liriodendron tulipifera*, *Acer rubrum*, *Acer pensylvanicum* | 
-|  [Dead Lake, AL](https://www.neonscience.org/field-sites/dela) | NEON.D08.DELA.DP1.00033  | D08: Ozarks Complex    | 32.542 | -87.804 | *Celtis laevigata*, *Ligustrum sinense*, *Liquidambar styraciflua* | 
-|  [National Grassland, TX](https://www.neonscience.org/field-sites/clbj) | NEON.D11.CLBJ.DP1.00033  | D11: Southern Plains    | 33.401 | -97.570 | *Quercus marilandica*, *Schizachyrium scoparium* | 
+|  [Harvard Forest, MA](https://www.neonscience.org/field-sites/harv){target="_blank"} | NEON.D01.HARV.DP1.00033  | D01: Northeast    | 42.537 | -72.173 | *Quercus rubra*, *Acer rubrum*, *Aralia nudicaulis* | 
+|  [Bartlett Experimental Forest, NH](https://www.neonscience.org/field-sites/bart){target="_blank"} | NEON.D01.BART.DP1.00033  | D01: Northeast    | 44.0639 | -71.2874 | *Liriodendron tulipifera*, *Microstegium vimineum*, *Juglans nigra* | 
+|  [Steigerwaldt Land Services, WI](https://www.neonscience.org/field-sites/stei){target="_blank"}  | NEON.D05.STEI.DP1.00033  | D05: Great Lakes | 45.509 | -89.586 | *Populus tremuloides*, *Abies balsamea*, *Acer rubrum* | 
+|  [The University of Kansas Field Station, KS](https://www.neonscience.org/field-sites/ukfs){target="_blank"} | NEON.D06.UKFS.DP1.00033  | D06: Prairie Peninsula    | 39.040 | -95.192 | *Symphoricarpos orbiculatus*, *Celtis occidentalis*, *Carya ovata* | 
+|  [Great Smoky Mountains National Park, TN](https://www.neonscience.org/field-sites/grsm){target="_blank"} | NEON.D07.GRSM.DP1.00033  | D07: Appalachians and Cumberland Plateau   | 35.689 | -83.502 | *Liriodendron tulipifera*, *Acer rubrum*, *Acer pensylvanicum* | 
+|  [Dead Lake, AL](https://www.neonscience.org/field-sites/dela){target="_blank"} | NEON.D08.DELA.DP1.00033  | D08: Ozarks Complex    | 32.542 | -87.804 | *Celtis laevigata*, *Ligustrum sinense*, *Liquidambar styraciflua* | 
+|  [National Grassland, TX](https://www.neonscience.org/field-sites/clbj){target="_blank"} | NEON.D11.CLBJ.DP1.00033  | D11: Southern Plains    | 33.401 | -97.570 | *Quercus marilandica*, *Schizachyrium scoparium* | 
 
 
 ### Target data calulation
