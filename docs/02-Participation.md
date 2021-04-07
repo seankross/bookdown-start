@@ -6,7 +6,7 @@
 
 Participation requires that teams: 
 
-1. Complete a [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ) for each forecast theme you are participating in and each model you are contributing within a theme
+1. Complete a [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} for each forecast theme you are participating in and each model you are contributing within a theme
 2. Agree to the participation agreement below
 3. Submit forecast netCDF or csv file(s) 
 4. Provide the metadata xml file documenting the forecast 

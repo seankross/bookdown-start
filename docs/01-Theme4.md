@@ -22,7 +22,7 @@ Phenology researchers often use digital cameras (such as those that are part of 
 
 ## Challenge
 
-This is an open ecological forecasting challenge to forecast spring green-up of the common greenness index (GCC), as measured by digital cameras at various deciduous broadleaf NEON sites. The forecasts will be forecasts of daily mean GCC (specifically the 90% quantile, which has been shown to be more robust). The sites include Harvard Forest (HARV), Bartlett Experimental Forest (BART), Smithsonian Conservation Biology Institute, (SCBI), Steigerwaldt Land Services (STEI), The University of Kansas Field Station, KS (UKFS), Great Smoky Mountains National Park (GRSM), Dead Lake (DELA), and National Grassland (CLBJ).
+This is an open ecological forecasting challenge to forecast spring green-up of the common greenness index (gcc), as measured by digital cameras at various deciduous broadleaf NEON sites. The forecasts will be forecasts of daily mean gcc (specifically the 90% quantile called the gcc_90, which has been shown to be more robust). The sites include Harvard Forest (HARV), Bartlett Experimental Forest (BART), Smithsonian Conservation Biology Institute, (SCBI), Steigerwaldt Land Services (STEI), The University of Kansas Field Station, KS (UKFS), Great Smoky Mountains National Park (GRSM), Dead Lake (DELA), and National Grassland (CLBJ).
 
 NOAA Global Ensemble Forecast System weather forecasts for each NEON site is provided for teams to use: https://data.ecoforecast.org/minio/drivers/noaa/
 
@@ -34,13 +34,13 @@ The challenge uses the following NEON data products:
 
 [DP1.00033.001](https://data.neonscience.org/data-products/DP1.00033.001){target="_blank"}: Phenology images
 
-A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. Before the Phenology challenge begins, a processing script will be available in the [neon4cast-phenology GitHub repository](https://github.com/eco4cast/neon4cast-phenology){target="_blank"}.
+A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. The processing script is available on the [neon4cast-phenology GitHub repository](https://github.com/eco4cast/neon4cast-phenology){target="_blank"}.
 
 ### Green chromatic coordinate (gcc)
 
 **Definition**
 
-The ratio of the green digital number to the sum of the red, green, blue digital numbers from a digital camera
+The ratio of the green digital number to the sum of the red, green, blue digital numbers from a digital camera.  gcc_90 is the 90th percentile of the gcc within a set of pixel called a region of interest (ROI)
 
 **Motivation**
 
@@ -59,11 +59,11 @@ Quantitative metrics of vegetation color extracted from PhenoCam imagery provide
 |  [National Grassland, TX](https://www.neonscience.org/field-sites/clbj){target="_blank"} | NEON.D11.CLBJ.DP1.00033  | D11: Southern Plains    | 33.401 | -97.570 | *Quercus marilandica*, *Schizachyrium scoparium* | 
 
 
-### Target data calulation
+### Target data calculation
 
 Digital cameras mounted above forests are pointed at the forest canopy.  Images are collected every half hour.
 
-The images are a set of pixels values in red, blue, and blue color channels (RGB).  A pixel value is an 8-bit digital number (DN). Because internal processing (including exposure control) and external factors affecting scene illumination (weather and atmospheric effects) both influence the retrieved RGB signature, we calculate a number of vegetation indices that are effective at suppressing this unwanted variation and maximizing the underlying phenological signal. Most important among these is the green chromatic coordinate (GCC), calculated as GCC = GDN / (RDN + GDN + BDN).
+The images are a set of pixels values in red, green, and blue color channels (RGB).  A pixel value is an 8-bit digital number (DN). Because internal processing (including exposure control) and external factors affecting scene illumination (weather and atmospheric effects) both influence the retrieved RGB signature, we calculate a number of vegetation indices that are effective at suppressing this unwanted variation and maximizing the underlying phenological signal. Most important among these is the green chromatic coordinate (GCC), calculated as G<sub>CC</sub> = G<sub>DN</sub> / (R<sub>DN</sub> + G<sub>DN</sub> + B<sub>DN</sub>).
  
 For additional details, see Richardson et al. (2018) Scientific Data, and Richardson (2019) New Phytologist.
 
@@ -71,11 +71,9 @@ PhenoCam data are processed and posted daily and the low latency of the PhenoCam
 
 Each image has a defined “region of interest’ (ROI).  An ROI is a set of pixels that isolates particular features in the image (i.e., a set of deciduous trees in a mixed forest). The ROI of “DB_1000” for the below top-of-canopy PhenoCams will be used to assess the forecasts’ accuracy.  The mid-day (noon) mean GCC and GCC standard deviation for the “DB_1000” ROI will be used for evaluation.
 
-All data in the supplied file is available to build and evaluate models before submitting a forecast to challenge.  Once new data becomes, the data are appended to the existing file.  Within the challenge scoring, only the new data are used to evaluate previously submitted forecasts.
+All data in the supplied file is available to build and evaluate models before submitting a forecast to challenge.  Once new data becomes avialable, the data are appended to the existing file.  Within the challenge scoring, only the new data are used to evaluate previously submitted forecasts.
 
 ### Target file
-
-
 
 Here is the format of the target file
 
@@ -88,16 +86,16 @@ readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-target
 ## # A tibble: 12,600 x 4
 ##    time       siteID gcc_90   gcc_sd
 ##    <date>     <chr>   <dbl>    <dbl>
-##  1 2016-12-13 HARV    0.329 0.000171
-##  2 2016-12-14 HARV    0.328 0.000150
-##  3 2016-12-15 HARV    0.330 0.000505
-##  4 2016-12-16 HARV    0.329 0.000479
-##  5 2016-12-17 HARV    0.332 0.000417
-##  6 2016-12-18 HARV    0.332 0.000279
-##  7 2016-12-19 HARV    0.329 0.000373
-##  8 2016-12-20 HARV    0.330 0.000357
-##  9 2016-12-21 HARV    0.329 0.000371
-## 10 2016-12-22 HARV    0.329 0.000844
+##  1 2016-12-13 HARV    0.329 0.000180
+##  2 2016-12-14 HARV    0.328 0.000194
+##  3 2016-12-15 HARV    0.330 0.000443
+##  4 2016-12-16 HARV    0.329 0.000374
+##  5 2016-12-17 HARV    0.332 0.000394
+##  6 2016-12-18 HARV    0.332 0.000303
+##  7 2016-12-19 HARV    0.329 0.000345
+##  8 2016-12-20 HARV    0.330 0.000497
+##  9 2016-12-21 HARV    0.329 0.000354
+## 10 2016-12-22 HARV    0.329 0.000803
 ## # … with 12,590 more rows
 ```
 The target file has the following columns:
@@ -109,7 +107,7 @@ The target file has the following columns:
 
 ## Timeline
 
-Forecasts for a minimum of 35 days can be submitted daily by 6 pm ET for the period of February 1st through July 1st, 2021. Forecast should be submitted starting February 1st by 6 pm ET. A minimum of 35 days in the future must be forecasted for each submission. For example, the first submitted forecast should be for at least February 1st – March 7th, but it could be for the full spring. New forecasts can be submitted daily as new weather forecasts and observations (e.g., PhenoCam) become available. Processed PhenoCam data will be available daily by 11:59 pm ET for each day. Teams are allowed to start submitting forecasts after February 1st, but only forecasts of future days (when submitted) will be allowed. Late forecasts might be allowed under extenuating circumstances related to computer failure or processing delayed on our end. Forecasts do not have to be submitted daily and can be longer than 35 days.
+Forecasts for a minimum of 35 days can be submitted daily by 6 pm ET for the period of February 1st through July 1st, 2021. Forecast should be submitted starting February 1st by 6 pm ET. A minimum of 35 days in the future must be forecasted for each submission. For example, the first submitted forecast should be for at least February 1st – March 7th, but it could be for the full spring. New forecasts can be submitted daily as new weather forecasts and observations (e.g., PhenoCam) become available. Processed PhenoCam data will be available daily by 11:59 pm ET for each day. Teams are allowed to start submitting forecasts after February 1st, but only forecasts of future days (when submitted) will be allowed. Late forecasts might be allowed under extenuating circumstances related to computer failure or processing delays on our end. Forecasts do not have to be submitted daily and can be longer than 35 days.
 
 ## Design team
 
@@ -127,3 +125,10 @@ The challenge is hosted by the Ecological Forecasting Initiative (EFI; https://e
 Data used in the challenge are collected by the National Ecological Observatory Network (NEON; https://www.neonscience.org/) and hosted by the Phenocam Network (http://phenocam.sr.unh.edu/). 
 
 The forecasting challenge was developed in collaboration with the USA National Phenology Network: https://www.usanpn.org/usa-national-phenology-network.
+
+## References
+
+Richardson, A., Hufkens, K., Milliman, T. et al. Tracking vegetation phenology across diverse North American biomes using PhenoCam imagery. Sci Data 5, 180028 (2018). https://doi.org/10.1038/sdata.2018.28
+
+Richardson, A.D. (2019), Tracking seasonal rhythms of plants in diverse ecosystems with digital camera imagery. New Phytol, 222: 1742-1750. https://doi.org/10.1111/nph.15591
+

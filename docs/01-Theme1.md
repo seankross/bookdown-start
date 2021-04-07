@@ -74,7 +74,7 @@ The target file has the following columns
 
 **Definition**
 
-Dissolved oxygen (DO) is the concentration of oxygen dissolved in water. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L-1. We have adapted the available NEON DO data to output the mean daily DO concentration in mg L<sup>-1</sup> from a water quality sonde deployed 1m below the water surface at a lake site (Barco Lake) and a water quality sonde deployed in a stream site (Posey Creek). Common DO concentrations range between 0 and 12 mg L<sup>-1</sup> and DO concentrations less than 2 mg L<sup>-1</sup> are considered hypoxic. 
+Dissolved oxygen (DO) is the concentration of oxygen dissolved in water. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L<sup>-1</sup>. We have adapted the available NEON DO data to output the mean daily DO concentration in mg L<sup>-1</sup> from a water quality sonde deployed 1m below the water surface at a lake site (Barco Lake) and a water quality sonde deployed in a stream site (Posey Creek). Common DO concentrations range between 0 and 12 mg L<sup>-1</sup> and DO concentrations less than 2 mg L<sup>-1</sup> are considered hypoxic. 
 
 **Motivation**
 
