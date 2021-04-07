@@ -92,9 +92,10 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 - `Year`: Year of observation
 - `epiWeek`: The ISO week that starts on Sunday, consistent with CDC version of the epidemiological week (integer, WW)
 - `yearWeek`: (YYYYWW) Year week, combination of year and epidemiological week
+_ `time`: (YYYY-MM-DD), the first day of the epidemiological week, as defined by `MMWRweek::MMWRweek2Date(Year, epiWeek)`
 - `ixodes_scapularis`: Count. If no observation in the associated yearWeek: NA
 - `amblyomma_americanum`:  Count. If no observation in the associated yearWeek: NA
-- `plotID`: Plot where ticks are observed (HARV_002). Combination of targetSpecied and targetPlotID. A single identifier that represents the species being forecasted at the given plot. Used to save and score forecasts.
+- `plotID`: Plot where ticks are observed (HARV_002)
 - `siteID`: Site where ticks are observed (HARV)
 - `nlcdClass`: Land cover classification (mixedForest)
 - `decimalLatitude`: Latitude of the site
@@ -110,7 +111,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 - `airTempMax_degC`: The maximum air temperature, in degrees Celsius, recorded in the associated yearWeek. If no observation: NA
 - `airTempMax_variance`: Variance (degrees celsius squared) of the maximum air temperature recorded in the associated yearWeek. If no observation: NA
 
-Environmental data (weekly relative humidity and air temperature) in the challenge data set are provided as a starting point for teams that may not want to look for other environmental data. The challenge design team does not recommend one of these variables over another (from NEON or otherwise) or guarantee that their use will improve forecast accuracy. Furthermore, the environmental data provided is only available for the core terrestrial sites (KONZ, ORNL, SCBI, TALL).
+Environmental data (weekly relative humidity and air temperature) in the challenge data set are provided as a starting point for teams that may not want to look for other environmental data. The challenge design team does not recommend one of these variables over another (from NEON or otherwise) or guarantee that their use will improve forecast accuracy. Furthermore, the environmental data provided is only available for the core terrestrial sites (KONZ, ORNL, SCBI, TALL), and is from NEON's Summary weather statistics data product [DP4.00001.001](https://data.neonscience.org/data-products/DP4.00001.001).
 
 ## Timeline
 
