@@ -10,7 +10,7 @@ The following are important considerations when using the NOAA GEFS forecasts
 - For forecasts generated at 06, 12, and 18 UTC, the forecasts extend 16-days in the future.  
 - We are constantly downloading and processing the forecasts.  Since the 00 forecast runs 35-days in the future, it takes longer to download the complete forecast than the 06, 12, and 18 cycles.  As a result you may see the 00 forecast appear later than the other forecasts on the server.
 
-The following meteorological variables are included:
+The following meteorological variables are included:   
 - air temperature   
 - air pressure  
 - wind speed   
