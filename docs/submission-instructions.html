@@ -528,7 +528,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ticks" class="section level3" number="7.1.5">
 <h3><span class="header-section-number">7.1.5</span> Ticks</h3>
 <ul>
-<li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted)</li>
+<li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted). Defined by <code>MMWRweek::MMWRweek2Date(Year, epiWeek)</code></li>
 <li><code>siteID</code>: NEON code for site</li>
 <li><code>plotID</code>: NEON plotID</li>
 <li><code>ensemble</code> or <code>statistic</code>: if <code>ensemble</code> then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if <code>statistic</code> then either required to be the string <code>mean</code> or <code>sd</code> (see note below about statistic column).<br />

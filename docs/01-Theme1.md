@@ -92,7 +92,7 @@ In streams and rivers, forecasting water temperature can be meaningful for prote
 
 ### Focal sites
 
-![](images/Barco Posey Sites.png)
+![](images/Barco_Posey_Vertical.png)
 
 | Site Name       | SiteID     | NEON Domain     | Latitude  |  Longitude | Ecosystem Type |
 | :------------- | :----------: | -----------: | -----------: | -----------: | -----------: |
