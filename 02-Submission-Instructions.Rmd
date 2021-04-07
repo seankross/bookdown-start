@@ -101,7 +101,7 @@ ncdf4::nc_open("images/phenology-2021-02-23-EFInull.nc")
 
 ### Ticks
 
-- `time`: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted)
+- `time`: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted). Defined by `MMWRweek::MMWRweek2Date(Year, epiWeek)`
 - `siteID`: NEON code for site
 - `plotID`: NEON plotID
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).        
