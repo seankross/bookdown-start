@@ -1,10 +1,19 @@
-# Helpful functions
+# Helpful Functions
+
+The following are resources to help you prepare your forecasts for submission. 
+
+The [neon4cast](https://github.com/eco4cast/neon4cast){target="_blank"} package provides a collection of convenient helper utilities so you can score your forecast locally, validate the format of your forecast files to check for formatting errors before submitting, generate forecast metadata in EML (coming soon!), access EFI snapshots of NOAA forecasts at NEON sites, and submit your forecast. 
+
+The [neonstore](https://github.com/cboettig/neonstore){target="_blank"} package provides quick access and persistent storage of NEON data tables. 
+
+The [EFIstandards](https://github.com/eco4cast/EFIstandards){target="_blank"} package summarizes the proposed community standards for the common formatting and archiving of ecological forecasts by the Ecological Forecasting Initiative. These standards are a work in progress. If you have suggestions for improvement share them with eco4cast.initiative@gmail.com.”
+
 
 ## neon4cast package
 
-The `neon4cast` package located at https://github.com/eco4cast/neon4cast
+The `neon4cast` package is located at https://github.com/eco4cast/neon4cast
 
-`neon4cast` provides a collection of convenient helper utilities for
+`neon4cast` provides the following collection of convenient helper utilities for
 anyone entering the EFI NEON Forecasting Challenge.
 
 ### Installation
@@ -202,11 +211,9 @@ metadata file.
 
 ## neonstore package
 
-The neonstore package https://github.com/cboettig/neonstore
+The neonstore package is located at  https://github.com/eco4cast/neon4cast
 
-`neonstore` provides quick access and persistent storage of NEON data tables. 
-`neonstore` emphasizes simplicity and a clean data provenance trail, see 
-Provenance section below.
+`neonstore` provides quick access and persistent storage of NEON data tables. `neonstore` emphasizes simplicity and a clean data provenance trail, see Provenance section below.
 
 <!-- badges: start -->
 
@@ -502,7 +509,7 @@ df %>%
 Note that many of the airborne observation platform (AOP) products, such
 as these LIDAR files, do not include the PRNUM or REV components that make up part of the `productCode`s used in the NEON `product` tables.
 
-## EFIstandards
+## EFIstandards package
 
 <!-- badges: start -->
   [![R build status](https://github.com/cboettig/forecast-standards/workflows/R-CMD-check/badge.svg)](https://github.com/cboettig/forecast-standards/actions) 

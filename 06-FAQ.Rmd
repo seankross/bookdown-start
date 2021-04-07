@@ -49,9 +49,10 @@ Ticks: https://data.ecoforecast.org/minio/forecasts/ticks
 
 Phenology: https://data.ecoforecast.org/minio/forecasts/phenology
 
-We run a validator script when processing the submissions. If your submission does not meet the file standards above, it will be moved to a separate location and a log file (same name as submitted file with "log" appended to end) will be generated with some hints about why it did not meet the standard.  If your submission did not meet the standard contact us and we can help you work through the issues.
+We run a validator script when processing the submissions.  You can run the same script on your submissions before submitting them.  We provide an R function code in the [neon4cast package](https://github.com/eco4cast/neon4cast) called `forecast_output_validator.R` that will check your submissions on your own machine.
 
-https://data.ecoforecast.org/minio/forecasts/not_in_standard
+
+If your submission does not meet the file standards above, it will be moved to a [separate folder](https://data.ecoforecast.org/minio/forecasts/not_in_standard){target="_blank"} and a log file (same name as submitted file with "log" appended to end) will be generated with some hints about why it did not meet the standard.  If your submission did not meet the standard contact us and we can help you work through the issues.
 
 ## Do I need to submit forecasts to every submission date?
 
@@ -100,6 +101,10 @@ No, you can use any type of model, including empirical and process-based models.
 The Challenge is run by the Ecological Forecasting Initiative Research Coordination Network that is funded by the U.S. National Science Foundation.  While this effort is separate from NEON, NEON staff have been in involved in all stages of planning.  NEON staff are on the project steering committee and theme design teams. 
 
 Members of the RCN are also on NEON's Ecological Forecasting Technical Working Group. This is formal pathway to provide feedback to NEON.
+
+## I am interested in submitting different models or to multiple themes.  How should I register to do this?
+
+Pending
 
 
 

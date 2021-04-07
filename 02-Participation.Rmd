@@ -4,25 +4,28 @@
 
 ### How to participate
 
-Participation requires that teams: 
+Participation requires that **one contact person** from each team:
 
-1. Complete a [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} for each forecast theme you are participating in and each model you are contributing within a theme
-2. Agree to the participation agreement below
-3. Submit forecast netCDF or csv file(s) 
-4. Provide the metadata xml file documenting the forecast 
+1. Complete a [REGISTRATION](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} for each forecast theme you are participating in and each model you are contributing within a theme   
+2. The contact person agrees to the participation agreement below on behalf of the team    
+3. Submit forecast netCDF or csv file(s)   
+4. Provide the metadata xml file documenting the forecast   
 
-One contact person should register on behalf of their team. That contact person will be asked to provide the group members' names, emails, and affiliations so that everyone in the group can receive an invitation to join the Challenge theme Slack channel and access group resources. Teams are allowed and encouraged to join the challenge after the start date of each Challenge theme because there are multiple deadlines to submit forecasts. However, only forecasts submitted by each submission deadline will be officially scored.
+One contact person should register on behalf of their team. That contact person will be asked to provide the group members' names, emails, and affiliations so that everyone in the group can receive an invitation to join the Challenge theme Slack channel and access group resources. 
 
+Teams are allowed and encouraged to join the challenge after the start date of each Challenge theme because there are multiple deadlines to submit forecasts. However, only forecasts submitted by each submission deadline will be officially scored.
 
 ### Teams
 
-Teams can be individuals or groups. They can represent institutions or organizations. You will have 25 characters for a team name (e.g., “EFI Null Model”) and 10 characters for the team name ID (no spaces allowed; e.g., `EFI_Null`). 
+Teams can be individuals or groups. They can represent institutions or organizations. You will have 25 characters for a team name (e.g., "EFI Null Model") and 10 characters for the team name ID (no spaces allowed; e.g., "EFI_Null"). 
 
-The registration includes team categories (e.g., undergraduate only, graduate only, multi-institution, etc). Please check all that apply.
+The registration includes team categories (e.g., undergraduate only, graduate only, multi-institution, etc).
 
-If your team wants to submit multiple forecasts, please register a team for each model as only one forecast model per cycle per team is allowed. If there are two different time steps in a challenge theme (e.g., the terrestrial carbon flux theme has a 30-minute and 1-day option), register each as separate teams.
+**If your team wants to submit multiple forecasts**, please register a different team name for each model . If there are two different time steps in a challenge theme (e.g., the terrestrial carbon flux theme has a 30-minute and 1-day option), register each as separate teams.
 
 ### Slack and GitHub Communication
+
+Once your team is registered, everyone listed will receive an email with an invitation to join the EFI Slack group and the #neon4cast-theme channel. You will also receive details about the GitHub repository associated with the theme your team is registered for.
 
 We strongly encourage participants to use the Challenge theme Slack channels to ask questions, discuss ideas and challenges, and share resources. Overall, we strongly encourage a collegial approach to the Challenge -- this is a friendly competition to move the field forward and bring more people into the community, not a cutthroat competition to win by denying other teams useful information.
 
@@ -34,18 +37,19 @@ Teams are highly encouraged to publicly archive the code they are using for thei
 
 Teams are also encouraged to use Docker or Singularity to containerize their models & workflows. EFI conventions for containerizing forecasts are still being developed, but our aim (particularly in later years of the forecast challenge) is to be able to provide shared cyberinfrastructure that makes it easier for teams to automate containerized forecasts. Containers will also facilitate Challenge themes interested in performing post-hoc analyses, such as uncertainty quantification and sensitivity analysis.
 
-### Computational reesources
+### Computational resources
+
 We are currently working with CyVerse for access to computational resources for teams that require resources not available through home institutions. We will update with more details as they become available.
 
 ## Participation agreement
 
-All participants agree to have their forecast posted in real-time on the NEON Ecological Forecast Challenge Output RShiny app (in development) and potentially published in a scientific journal. The manuscripts describing the accuracy of forecasts across teams will be coordinated by the Ecological Forecasting Initiative Research Coordination Network and extend authorship to members of each team with an opt-in policy. 
+All participants agree to have their forecast posted in real-time on the NEON Ecological Forecast Challenge [Dashboard](https://shiny.ecoforecast.org/){target="_blank"} and potentially published in a scientific journal. The manuscripts describing the accuracy of forecasts across teams will be coordinated by the Ecological Forecasting Initiative Research Coordination Network and authorship will be extended to members of each team with an opt-in policy.
 
 If a publication is generated by a forecast team, we ask that the manuscript acknowledge the Ecological Forecasting Initiative Research Coordination Network and its support from the National Science Foundation (DEB-1926388).
 
 ## NEON Data Use
 
-NEON data products, software, and derivatives thereof are freely available for use when accompanied by appropriate disclaimers, acknowledgments, and data citations, defined in the NEON data use policy.
+NEON data products, software, and derivatives thereof are freely available for use when accompanied by appropriate disclaimers, acknowledgments, and data citations, defined in the [NEON data use policy](https://www.neonscience.org/data/about-data/data-policies){target="_blank"}.
 
 ## Additional data options
 

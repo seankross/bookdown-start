@@ -65,7 +65,7 @@ how-to-participate
 teams
 slack-and-github-communication
 archiving-models
-computational-reesources
+computational-resources
 participation-agreement
 neon-data-use
 additional-data-options
@@ -88,6 +88,7 @@ exploring-the-scoring-surface
 crps-from-the-normal-distribution
 null-forecast
 forecast-submission-visualization-and-leaderboard
+references-3
 meteorology-inputs
 noaa-global-ensemble-forecasting-system
 neon-observed
@@ -106,7 +107,7 @@ quickstart
 database-backend
 note-on-api-limits
 non-stacking-files-and-low-level-interface
-efistandards
+efistandards-package
 output-files
 output-metadata
 archiving
@@ -122,3 +123,4 @@ i-am-having-trouble-generating-the-metadata.-can-you-point-me-to-more-informatio
 how-many-years-are-you-planning-to-run-the-challenge
 are-there-certain-types-of-models-that-i-need-to-use
 what-is-the-relationship-between-the-challenge-and-neon
+i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this

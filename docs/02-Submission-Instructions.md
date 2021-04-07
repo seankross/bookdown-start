@@ -1,8 +1,11 @@
-# Submission instructions
+# Submission Instructions
+
+The following provides the requirements for the format of the forecasts that will be submitted. It is important to follow these format guidelines in order for your submitted forecasts to pass a set of internal checks that allow the forecast to be visualized on the [NEON Ecological Forecast Challenge dashboard](http://shiny.ecoforecast.org/){target="_blank"}  and evaluated with the scoring process.
+
 
 ## Forecast format
 
-Teams will submit their forecasts as a single netCDF or csv file with the following naming convention:
+Teams will submit their forecasts as a single netCDF or csv file with the following naming convention (**the correct naming convention is critical for the automated processing of submissions**):
 
 `theme_name-year-month-day-team_name_ID.csv`
 
@@ -16,18 +19,26 @@ The `theme_name` options are: `terrestrial_daily`, `terrestrial_30min`, `aquatic
 
 Forecast netCDF or csv files should have the following columns (csv) or variables (netcdf) that correspond to the columns.
 
+There are two key options for the format.  First, the file can be either in a csv or a netcdf format. Second the file can represent uncertainty using an ensemble column or a statistic column.  The ensemble column uses an interger to individual each ensemble member or MCMC member that represent forecast uncertainty.  The statistic column uses the words `mean` or `sd` to describe which statistic is represented in the forecasted target column.
+
+**Note for submissions with a `statistic` column option:**  Teams that are NOT using ensemble-based forecast methods should replace the ensemble column with a statistic column. Multiple statistics can be reported using a long format in a csv or adding a statistic dimension in netCDF. The required options for this column are `mean` and `sd` (standard deviation). You can also include `Conf_interv_02.5`, `Conf_interv_97.5`, `Pred_interval_02.5`, and `Pred_interval_97.5` to describe uncertainty but these are optional. The numbers in the last four options indicate equal-tail quantiles for a 95% interval estimate and `Conf_`=confidence and `Pred_`=predictive. If statistics are reported we will make a Gaussian assumption when calculating error scores. The Continuous Ranked Probability Score is based on the predictive distribution so reported `sd` should be for the predictive distribution.    
+
+**Note for those using netCDF option**, the order of dimensions on forecast variables should be: `time`, `site`, `plot` [ticks only], and `ensemble`.  In practice using a netCDF for the forecast  with the `statistic` rather than `ensemble` is not ideal.
+
+Below are examples of the forecast file format for each theme. **The correct file format is critical for the automated processing of submissions**
+
 ### Terrestrial
 
 - `time`: YYYY-MM-DD HH:MM UTC of the start of the 30-minute value or YYYY-MM-DD for daily forecasts
 - `siteID`: NEON code for site
-- `ensemble`*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)
+- `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).         
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `nee`: net ecosystem exchange (umol CO2 m-2 s-1)
 - `le`: latent heat (W m-2)
 - `vswc`: volumetric soil water content (%)
 
-Here is an example of a forecast file that meets the standard for the daily terrestrial theme
+Here is an example of a csv forecast file that meets the standard for the daily terrestrial theme
 
 
 ```r
@@ -67,19 +78,19 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_
 ## # … with 271,990 more rows, and 1 more variable: data_assimilation <dbl>
 ```
 
-Here is an example of a forecast file that meets the standard for the 30 minute terrestrial theme in the ncdf format.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc
+Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc
 
 ### Beetles
 
 - `time`: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted)
 - `siteID`: NEON code for site
-- `ensemble`*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)
+- `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).          
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `abundance`: abundance of beetles
 - `richness`: species richness of beetles 
 
-Here is an example of a forecast file that meets the standard for the beetles theme
+Here is an example of a csv forecast file that meets the standard for the beetles theme
 
 
 ```r
@@ -102,16 +113,16 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1     1.99   0.0221 
-##  2 SJER   2020-01-06        2     2.83   0.0291 
-##  3 SJER   2020-01-06        3     2.26   0.0260 
-##  4 SJER   2020-01-06        4     4.44   0.0162 
-##  5 SJER   2020-01-06        5     2.07   0.0186 
-##  6 SJER   2020-01-06        6     3.24   0.00745
-##  7 SJER   2020-01-06        7     2.95   0.0133 
-##  8 SJER   2020-01-06        8     3.24   0.0161 
-##  9 SJER   2020-01-06        9     2.66   0.0105 
-## 10 SJER   2020-01-06       10     4.29   0.0226 
+##  1 SJER   2020-01-06        1     4.35   0.0388 
+##  2 SJER   2020-01-06        2     2.39   0.0319 
+##  3 SJER   2020-01-06        3     3.17   0.0273 
+##  4 SJER   2020-01-06        4     3.34   0.0267 
+##  5 SJER   2020-01-06        5     3.43   0.00577
+##  6 SJER   2020-01-06        6     2.85   0.0141 
+##  7 SJER   2020-01-06        7     4.03   0.0242 
+##  8 SJER   2020-01-06        8     2.25   0.0218 
+##  9 SJER   2020-01-06        9     3.77   0.0205 
+## 10 SJER   2020-01-06       10     4.46   0.0245 
 ## # … with 443,490 more rows
 ```
 
@@ -119,13 +130,13 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 
 - `time`: YYYY-MM-DD of forecast
 - `siteID`: NEON code for site
-- `ensemble`*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)
+- `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).          
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `oxygen`: dissolved oxygen (ug/L)
 - `temp`: water temperature (C)
 
-Here is an example of a forecast file that meets the standard for the aquatics theme
+Here is an example of a csv forecast file that meets the standard for the aquatics theme
 
 
 ```r
@@ -168,14 +179,12 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-0
 
 - `time`: YYYY-MM-DD
 - `siteID`: NEON code for site
-- `ensemble`*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)
+- `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).    
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `gcc_90`: green chromatic coordinate
 
-Here is are examples of forecast files that meet the standard for the phenology theme
-
-A CSV file
+Here is are examples of csv forecast files that meet the standard for the phenology theme
 
 
 ```r
@@ -250,17 +259,13 @@ ncdf4::nc_open("images/phenology-2021-02-23-EFInull.nc")
 - `time`: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted)
 - `siteID`: NEON code for site
 - `plotID`: NEON plotID
-- `ensemble`*: integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample)
+- `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).        
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `amblyomma_americanum`: Number of *Amblyomma americanum* nymphs per plot per week
 - `ixodes_scapularis`: Number of *Ixodes scapularis* nymphs per plot per week
 
-*Teams that are NOT using ensemble-based forecast methods should replace the ensemble column with a statistic column. Multiple statistics can be reported using a long format in a csv or adding a statistic dimension in netCDF. The required options for this column are `mean` and `sd` (standard deviation). You can also include `Conf_interv_02.5`, `Conf_interv_97.5`, `Pred_interval_02.5`, and `Pred_interval_97.5` to describe uncertainty but these are optional. The numbers in the last four options indicate equal-tail quantiles for a 95% interval estimate and `Conf_`=confidence and `Pred_`=predictive. If statistics are reported we will make a Gaussian assumption when calculating error scores. The Continuous Ranked Probability Score is based on the predictive distribution so reported `sd` should be for the predictive distribution.
-
-For those using netCDF, the order of dimensions on forecast variables should be: `time`, `site`, `plot` [ticks only], and `ensemble`.  In practice using a netCDF for the forecast forecast with the `statistic` rather than `ensemble` is not ideal.
-
-Here is an example of a forecast file that meets the standard for the ticks theme
+Here is an example of a csv forecast file that meets the standard for the ticks theme
 
 
 ```r
@@ -303,13 +308,15 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-t
 
 ## Metadata format
 
-Each submission requires a metadata file to be submitted. The metadata file must have the same name as the submitted forecast, but with the .xml extension. Model descriptions can be uploaded to https://data.ecoforecast.org/minio/submissions/
+Each submission requires a metadata file to be submitted. The metadata file must have the same name as the submitted forecast, but with the .xml extension.  
 
 `theme_name-year-month-day-team_name_ID.xml`
 
-The metadata standard has been designed by the Ecological Forecasting Initiative and is build off the widely used Ecological Metadata Language (EML).
+Metadata files should be uploaded with the forecast files.
 
-The following components are required:
+The [metadata standard](https://github.com/eco4cast/EFIstandards){target="_blank"}  has been designed by the Ecological Forecasting Initiative and is build off the widely used Ecological Metadata Language (EML).
+
+The following components are required:   
 - Title  
 - pubDate: date that forecast is generated    
 - License: See below for details  
@@ -320,21 +327,25 @@ The following components are required:
 - forecast_horizon (length)   
 - forecast_issue_time   
 - forecast_iteration_id   
-- forecast_project_id: team_name_ID (e.g., `EFI_NULL`)    
+- forecast_project_id: team_name_ID (10 character team_name_ID; example: EFI_NULL))    
 - model_description which includes: forecast_model_id, model name, type (statistical, process-based, machine-learning, etc), and repository (url or DOI).   
 - Info on model structure and uncertainty (standards section 2.1.2)    
 
 The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., https://creativecommons.org/licenses/by/4.0/)
 
-We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the example vignettes, which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at eco4cast.initaitive@gmail.com.
+We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the [example vignettes](https://github.com/eco4cast/EFIstandards/tree/master/vignettes){target="_blank"} , which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at **eco4cast.initaitive@gmail.com**.
 
-The Ecological Forecasting Initiative has provided R scripts to assist in generating the metadata XML file. The scripts can be found at the GitHub repository for the standard: https://github.com/eco4cast/EFIstandards as well as the EML validator. Teams are encouraged to check the validity of their metadata before submission.
+The Ecological Forecasting Initiative has provided R scripts to assist in generating the metadata XML file. The scripts can be found at the GitHub repository for the standard: https://github.com/eco4cast/EFIstandards as well as the EML validator. Teams are encouraged to check the validity of their metadata before submission using the [validator script](https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R){target="_blank"} .
 
 ## Submission process
 
 Individual forecast (csv, netCDF) and metadate (xml) files can be uploaded any time before the specific deadlines as defined by each theme. Only the most recent files will be scored. 
 
-Teams will submit their forecast netCDF or csv files through the challenge website. You can manually submit your forecast through the https://data.ecoforecast.org/minio/submissions/ website using the red plus on the bottom left. You can submit from an R script using the following:
+**The correct file name and format is critical for the automated processing of submissions**
+
+Teams will submit their forecast netCDF or csv files manually through the challenge website or with an R script. 
+- You can manually submit your forecast through the https://data.ecoforecast.org/minio/submissions/ website using the red plus on the bottom left.   
+- You can submit from an R script using the following:  
 
 
 ```r
@@ -347,7 +358,7 @@ aws.s3::put_object(object = "theme_name-forecast-year-month-day-team_name.csv", 
 
 Submissions need to adhere to the forecast format that is provided above, including the file naming convention. Our cyberinfastructure automatically evaluates forecasts and relies on the expected formatting. Contact eco4cast.initiative@gmail.com if you experience technical issues with submitting.
 
-Note: If you have used AWS in the past you might have credential files in an .aws folder in your home directory that will cause an error when you try to upload to a non-AWS bucket. If you encounter this error you may need to rename your credentials files so put_object doesn't try to read them.
+**Note:** If you have used AWS in the past you might have credential files in an .aws folder in your home directory that will cause an error when you try to upload to a non-AWS bucket. If you encounter this error you may need to rename your credentials files so put_object doesn't try to read them.
 
 ## Validating submission
 
@@ -363,10 +374,8 @@ Ticks: https://data.ecoforecast.org/minio/forecasts/ticks
 
 Phenology: https://data.ecoforecast.org/minio/forecasts/phenology
 
-We run a validator script when processing the submissions. If your submission does not meet the file standards above, it will be moved to a separate location and a log file (same name as submitted file with "log" appended to end) will be generated with some hints about why it did not meet the standard.  If your submission did not meet the standard contact us and we can help you work through the issues.
-
-https://data.ecoforecast.org/minio/forecasts/not_in_standard
+We run a validator script when processing the submissions. If your submission does not meet the file standards above, it will be moved to a separate [folder](https://data.ecoforecast.org/minio/forecasts/not_in_standard){target="_blank"} and a log file (same name as submitted file with "log" appended to end) will be generated with some hints about why it did not meet the standard.  If your submission did not meet the standard contact us and we can help you work through the issues.
 
 ## Visualizing submissions
 
-Plots of submissions can be found at our a dashboard: https://shiny.ecoforecast.org
+Plots of submissions and table of scores can be found at our [dashboard](https://shiny.ecoforecast.org){target="_blank"} 

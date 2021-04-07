@@ -6,7 +6,7 @@ Forecast evaluation results will be presented for all submitted models together 
 
 ## Results
 
-Preliminary results will be distributed using the NEON Ecological Forecast Challenge Output RShiny app and at https://data.ecoforecast.org/minio/scores/. We intend to write a joint manuscript synthesizing forecasts. Teams are welcome to publish results from their model at any time. If a publication is generated we encourage the manuscript to acknowledge the Ecological Forecasting Research Coordination Network and its support from the National Science Foundation (DEB-1926388).
+Preliminary results will be distributed using the NEON Ecological Forecast Challenge [dashboard](http://shiny.ecoforecast.org/){target="_blank"} and at https://data.ecoforecast.org/minio/scores/. We intend to write a joint manuscript synthesizing forecasts, authorship will be extended to members of each team with an opt-in policy. Teams are welcome to publish results from their model at any time. If a publication is generated we encourage the manuscript to acknowledge the Ecological Forecasting Research Coordination Network and its support from the National Science Foundation (DEB-1926388).
 
 ## Scoring Metric: Continuous Ranked Probability Score
 
@@ -51,7 +51,7 @@ crps_equation_2
 ```
 
 ```
-## [1] 0.2209641
+## [1] 0.2370497
 ```
 
 Now calculate using the `crps_sample()` function in the `scoringRules` package
@@ -62,7 +62,7 @@ crps_sample(y = y, dat = x)
 ```
 
 ```
-## [1] 0.2209641
+## [1] 0.2370497
 ```
 
 ### Exploring the scoring surface
@@ -111,9 +111,9 @@ The contour surface highlights the trade-off between the mean and standard devia
 
 ### CRPS from the Normal Distribution
 
-If the distributional forecast is a normal distribution represented by a mean $\mu$ and standard deviation $\sigma$, an ensemble of predictions is not needed to evaluate CRPS because we can take advantage of the analytic solution to CRPS under the normal assumption (Equation 4 from [Calibrated Probabilistic Forecasting Using Ensemble Model Output Statistics and Minimum CRPS Estimation](https://doi.org/10.1175/MWR2904.1)). 
+If the distributional forecast is a normal distribution represented by a mean $\mu$ and standard deviation $\sigma$, an ensemble of predictions is not needed to evaluate CRPS because we can take advantage of the analytic solution to CRPS under the normal assumption (Equation 4 from Gneiting et al. 2005)
 
-Equation 5 from [Calibrated Probabilistic Forecasting Using Ensemble Model Output Statistics and Minimum CRPS Estimation](https://doi.org/10.1175/MWR2904.1) gives
+Equation 5 from Gneiting et al. (2005) gives
 
 $$\begin{align*}
 CRPS(N(\mu, \sigma^2) | y) = \sigma \left( \frac{y - \mu}{\sigma} \left( 2 \Phi\left(  \frac{y - \mu}{\sigma} \right) - 1 \right)  + 2 \phi \left(  \frac{y - \mu}{\sigma} \right) - \frac{1}{\sqrt{\pi}} \right)
@@ -135,7 +135,7 @@ for(i in 1:length(sample_mean)){
 ```
 
 Finally, visualize the scoring surface with the observed value represented by 
-the red line
+the red line.
 
 
 ```r
@@ -145,7 +145,7 @@ abline(v = y, col = "red")
 
 <img src="04-Evaluation_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
-Note that at a given value of the sd, the lowest score is achieved at $\mu = y$ as shown for each of the blue lines where the minmum value of the score across each blue line is at the red line. This behavior make sense because the CRPS is a score that reward accuracy and precision. Thus, for any given level of precision (represented by the standard deviation), CRPS is optimized by producing the most accurate prediction of the distribution's location.
+Note that at a given value of the sd, the lowest score is achieved at $\mu = y$ as shown for each of the blue lines where the minimum value of the score across each blue line is at the red line. This behavior makes sense because the CRPS is a score that rewards accuracy and precision. Thus, for any given level of precision (represented by the standard deviation), CRPS is optimized by producing the most accurate prediction of the distribution's location.
 
 
 ```r
@@ -158,7 +158,7 @@ abline(h = 6.8, col = "blue")
 
 <img src="04-Evaluation_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
-Interestingly, for a given mean $\mu \neq y$ we find a pattern that makes intuitive sense given the goal of CRPS to produce forecasts that are both accurate and precise. For a given amount of bias in the prediction (i.e., given a $\mu \neq y$), the optimal score is achieved by a standard deviation that slightly larger than the bias
+Interestingly, for a given mean $\mu \neq y$ we find a pattern that makes intuitive sense given the goal of CRPS to produce forecasts that are both accurate and precise. For a given amount of bias in the prediction (i.e., given a $\mu \neq y$), the optimal score is achieved by a standard deviation that slightly larger than the bias.
 
 
 ```r
@@ -226,4 +226,12 @@ Phenology: https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel
 
 ## Forecast Submission Visualization and Leaderboard
 
-The [dashboard](https://shiny.ecoforecast.org){target="_blank"} shows the forecast submissions by each team for each forecast theme by date and forecast variable. It also provides the CRPS scores for each submitted forecast.
+The [dashboard](https://shiny.ecoforecast.org){target="_blank"} shows the forecast submissions by each team for each forecast theme by date and forecast variable. It also provides the [CRPS scores](https://shiny.ecoforecast.org/#section-scores){target="_blank"} for each submitted forecast.
+
+## References
+
+Gneiting, T., A.E. Raftery. 2007. Strictly proper scoring rules, prediction, and estimation. Journal of the American Statistical Association, 102(477): 359–378. https://doi.org/10.1198/016214506000001437
+
+Jordan, A., F. Kruger, and S. Lerch 2018. Evaluating probabilistic forecasts with scoringRules. https://cran.r-project.org/web/packages/scoringRules/vignettes/article.pdf
+
+Gneiting, T., A.E. Raftery, A.H. Westveld III, T. Goldman. 2005. Calibrated probabilistic forecasting using ensemble model output statistics and minimum CRPS estimation. Monthly Weather Review, 133(5): 1098-1118. https://doi.org/10.1175/MWR2904.1
