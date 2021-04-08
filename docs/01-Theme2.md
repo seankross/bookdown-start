@@ -50,7 +50,7 @@ Making daily predictions will allow us to rapidly assess skill and provide infor
 
 **Definition**
 
-Latent heat flux is the movement of water as water vapor from the ecosystem to the atmosphere.  It is reported as W m<sup>-2</sup> (equivalent to J m<sup>-2</sup> s<sup>-1</sup>).  At the daily time resolution it is reported as g H2O m<sup>-2</sup> day<sup>-1</sup>. Positive values correspond to a transfer of water vapor from the ecosystem to the atmosphere.
+Latent heat flux is the movement of water as water vapor from the ecosystem to the atmosphere.  It is reported as W m<sup>-2</sup> (equivalent to J m<sup>-2</sup> s<sup>-1</sup>).  At the daily time resolution it is reported as mean W m<sup>-2</sup>. Positive values correspond to a transfer of water vapor from the ecosystem to the atmosphere.
 
 **Motivation**
 
@@ -110,8 +110,8 @@ The table with the half-hour NEE, LE, and VSWC has the following columns
 
 - `siteID`: NEON site code (e.g., BART)     
 - `time`: YYYY-MM-DD HH:MM for the start of the 30-minute period in UTC   
-- `nee`:  umol CO2 m-2 s-1   
-- `le`: W m-2   
+- `nee`:  umol CO2 m<sup>-2</sup> s<sup>-1</sup>   
+- `le`: W m<sup>-2</sup>   
 - `vswc`: (%)   
 - `nee_sd_intercept`: intercept in the nee observation uncertainty standard deviation   
 - `nee_sd_slopeP`: slope in the relationship between nee and observation uncertainty standard deviation for positive values of nee   
@@ -153,12 +153,12 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial/terrestrial_30
 
 ### Daily target data calulation
 
-To evaluate the models that produce daily flux forecasts, we select only days with at least 44 of 48 half hours that pass the quality control flags.  For these days, we average the half-hours and convert to daily units (gC/m2/day).  The daily data table has the following columns.
+To evaluate the models that produce daily flux forecasts, we select only days with at least 44 of 48 half hours that pass the quality control flags.  For these days, we average the half-hours and convert to carbon to daily units (gC/m2/day).  The daily data table has the following columns.
 
 - `siteID`: NEON site code (e.g., BART)  
 - `time`: YYYY-MM-DD (the day is determined using UTC time)  
-- `nee`: g C m-2 day-1  
-- `le`:  g H2O m-2 day-1  
+- `nee`: g C m<sup>-2</sup> day<sup>-1</sup>  
+- `le`:  W m<sup>-2</sup>
 - `vswc`: (%)  
 - `vswc_sd`: observation uncertainty standard deviation vswc  
 

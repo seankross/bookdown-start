@@ -449,20 +449,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.3.4</span> Target file</h3>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="theme-phenology.html#cb9-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 12,600 x 4
+<pre><code>## # A tibble: 12,608 x 4
 ##    time       siteID gcc_90   gcc_sd
 ##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;
-##  1 2016-12-13 HARV    0.329 0.000192
-##  2 2016-12-14 HARV    0.328 0.000152
-##  3 2016-12-15 HARV    0.330 0.000516
-##  4 2016-12-16 HARV    0.329 0.000352
-##  5 2016-12-17 HARV    0.332 0.000394
-##  6 2016-12-18 HARV    0.332 0.000250
-##  7 2016-12-19 HARV    0.329 0.000336
-##  8 2016-12-20 HARV    0.330 0.000371
-##  9 2016-12-21 HARV    0.329 0.000346
-## 10 2016-12-22 HARV    0.329 0.000665
-## # … with 12,590 more rows</code></pre>
+##  1 2016-12-13 HARV    0.329 0.000185
+##  2 2016-12-14 HARV    0.328 0.000129
+##  3 2016-12-15 HARV    0.330 0.000533
+##  4 2016-12-16 HARV    0.329 0.000417
+##  5 2016-12-17 HARV    0.332 0.000388
+##  6 2016-12-18 HARV    0.332 0.000279
+##  7 2016-12-19 HARV    0.329 0.000325
+##  8 2016-12-20 HARV    0.330 0.000409
+##  9 2016-12-21 HARV    0.329 0.000364
+## 10 2016-12-22 HARV    0.329 0.000846
+## # … with 12,598 more rows</code></pre>
 <p>The target file has the following columns:</p>
 <ul>
 <li><code>time</code>: YYYY-MM-DD<br />

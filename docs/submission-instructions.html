@@ -335,7 +335,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Where <code>year</code>, <code>month</code>, and <code>day</code> are the year, month, and day for the first day of the submitted forecast and the <code>team_name_ID</code> is the code for the team name that is specified in the registration (<code>team_name_ID</code> is a 10 character name with no spaces in it).</p>
 <p>The <code>theme_name</code> options are: <code>terrestrial_daily</code>, <code>terrestrial_30min</code>, <code>aquatics</code>, <code>beetles</code>, <code>ticks</code>, or <code>phenology</code>.</p>
 <p>Forecast netCDF or csv files should have the following columns (csv) or variables (netcdf) that correspond to the columns.</p>
-<p>There are two key options for the format. First, the file can be either in a csv or a netcdf format. Second the file can represent uncertainty using an ensemble column or a statistic column. The ensemble column uses an interger to individual each ensemble member or MCMC member that represent forecast uncertainty. The statistic column uses the words <code>mean</code> or <code>sd</code> to describe which statistic is represented in the forecasted target column.</p>
+<p>There are two key options for the format. First, the file can be either in a csv or a netcdf format. Second the file can represent uncertainty using an ensemble column or a statistic column. The ensemble column uses an integer to individual each ensemble member or MCMC member that represent forecast uncertainty. The statistic column uses the words <code>mean</code> or <code>sd</code> to describe which statistic is represented in the forecasted target column.</p>
 <p><strong>Note for submissions with a <code>statistic</code> column option:</strong> Teams that are NOT using ensemble-based forecast methods should replace the ensemble column with a statistic column. Multiple statistics can be reported using a long format in a csv or adding a statistic dimension in netCDF. The required options for this column are <code>mean</code> and <code>sd</code> (standard deviation). You can also include <code>Conf_interv_02.5</code>, <code>Conf_interv_97.5</code>, <code>Pred_interval_02.5</code>, and <code>Pred_interval_97.5</code> to describe uncertainty but these are optional. The numbers in the last four options indicate equal-tail quantiles for a 95% interval estimate and <code>Conf_</code>=confidence and <code>Pred_</code>=predictive. If statistics are reported we will make a Gaussian assumption when calculating error scores. The Continuous Ranked Probability Score is based on the predictive distribution so reported <code>sd</code> should be for the predictive distribution.</p>
 <p><strong>Note for those using netCDF option</strong>, the order of dimensions on forecast variables should be: <code>time</code>, <code>site</code>, <code>plot</code> [ticks only], and <code>ensemble</code>. In practice using a netCDF for the forecast with the <code>statistic</code> rather than <code>ensemble</code> is not ideal.</p>
 <p>Below are examples of the forecast file format for each theme. <strong>The correct file format is critical for the automated processing of submissions</strong></p>
@@ -348,8 +348,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
 <li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
-<li><code>nee</code>: net ecosystem exchange (umol CO2 m-2 s-1)</li>
-<li><code>le</code>: latent heat (W m-2)</li>
+<li><code>nee</code>: net ecosystem exchange (umol CO2 m<sup>-2</sup> s<sup>-1</sup> for 30 minute forecast or g C m<sup>-2</sup> day<sup>-1</sup> for daily forecasts)</li>
+<li><code>le</code>: latent heat (W m<sup>-2</sup>)</li>
 <li><code>vswc</code>: volumetric soil water content (%)</li>
 </ul>
 <p>Here is an example of a csv forecast file that meets the standard for the daily terrestrial theme</p>
@@ -409,16 +409,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-##  1 SJER   2020-01-06        1     4.35   0.0388 
-##  2 SJER   2020-01-06        2     2.39   0.0319 
-##  3 SJER   2020-01-06        3     3.17   0.0273 
-##  4 SJER   2020-01-06        4     3.34   0.0267 
-##  5 SJER   2020-01-06        5     3.43   0.00577
-##  6 SJER   2020-01-06        6     2.85   0.0141 
-##  7 SJER   2020-01-06        7     4.03   0.0242 
-##  8 SJER   2020-01-06        8     2.25   0.0218 
-##  9 SJER   2020-01-06        9     3.77   0.0205 
-## 10 SJER   2020-01-06       10     4.46   0.0245 
+##  1 SJER   2020-01-06        1     4.01   0.0294 
+##  2 SJER   2020-01-06        2     2.50   0.0145 
+##  3 SJER   2020-01-06        3     2.23   0.0251 
+##  4 SJER   2020-01-06        4     2.43  -0.00600
+##  5 SJER   2020-01-06        5     2.30   0.0439 
+##  6 SJER   2020-01-06        6     3.58   0.0172 
+##  7 SJER   2020-01-06        7     2.79   0.0231 
+##  8 SJER   2020-01-06        8     2.83   0.0198 
+##  9 SJER   2020-01-06        9     2.93   0.00269
+## 10 SJER   2020-01-06       10     2.21   0.0213 
 ## # … with 443,490 more rows</code></pre>
 </div>
 <div id="aquatics" class="section level3" number="7.1.3">
@@ -430,7 +430,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
 <li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
-<li><code>oxygen</code>: dissolved oxygen (ug/L)</li>
+<li><code>oxygen</code>: dissolved oxygen (mg/L)</li>
 <li><code>temp</code>: water temperature (C)</li>
 </ul>
 <p>Here is an example of a csv forecast file that meets the standard for the aquatics theme</p>

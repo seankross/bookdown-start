@@ -359,7 +359,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <div id="latent-heat-flux" class="section level3" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> Latent heat flux</h3>
 <p><strong>Definition</strong></p>
-<p>Latent heat flux is the movement of water as water vapor from the ecosystem to the atmosphere. It is reported as W m<sup>-2</sup> (equivalent to J m<sup>-2</sup> s<sup>-1</sup>). At the daily time resolution it is reported as g H2O m<sup>-2</sup> day<sup>-1</sup>. Positive values correspond to a transfer of water vapor from the ecosystem to the atmosphere.</p>
+<p>Latent heat flux is the movement of water as water vapor from the ecosystem to the atmosphere. It is reported as W m<sup>-2</sup> (equivalent to J m<sup>-2</sup> s<sup>-1</sup>). At the daily time resolution it is reported as mean W m<sup>-2</sup>. Positive values correspond to a transfer of water vapor from the ecosystem to the atmosphere.</p>
 <p><strong>Motivation</strong></p>
 <p>Latent heat measures the water loss from an ecosystem to the atmosphere through evapotranspiration (transpiration through plants + evaporation from surfaces).</p>
 <p>Forecasting latent heat (evapotranspiration) can provide insights to water stress for plants and the efficiency that plants are using water relative to NEE, and to the amount of liquid water remaining in the soil for soil moisture forecasting</p>
@@ -457,9 +457,9 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 </li>
 <li><code>time</code>: YYYY-MM-DD HH:MM for the start of the 30-minute period in UTC<br />
 </li>
-<li><code>nee</code>: umol CO2 m-2 s-1<br />
+<li><code>nee</code>: umol CO2 m<sup>-2</sup> s<sup>-1</sup><br />
 </li>
-<li><code>le</code>: W m-2<br />
+<li><code>le</code>: W m<sup>-2</sup><br />
 </li>
 <li><code>vswc</code>: (%)<br />
 </li>
@@ -500,16 +500,15 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 </div>
 <div id="daily-target-data-calulation" class="section level3" number="2.3.6">
 <h3><span class="header-section-number">2.3.6</span> Daily target data calulation</h3>
-<p>To evaluate the models that produce daily flux forecasts, we select only days with at least 44 of 48 half hours that pass the quality control flags. For these days, we average the half-hours and convert to daily units (gC/m2/day). The daily data table has the following columns.</p>
+<p>To evaluate the models that produce daily flux forecasts, we select only days with at least 44 of 48 half hours that pass the quality control flags. For these days, we average the half-hours and convert to carbon to daily units (gC/m2/day). The daily data table has the following columns.</p>
 <ul>
 <li><code>siteID</code>: NEON site code (e.g., BART)<br />
 </li>
 <li><code>time</code>: YYYY-MM-DD (the day is determined using UTC time)<br />
 </li>
-<li><code>nee</code>: g C m-2 day-1<br />
+<li><code>nee</code>: g C m<sup>-2</sup> day<sup>-1</sup><br />
 </li>
-<li><code>le</code>: g H2O m-2 day-1<br />
-</li>
+<li><code>le</code>: W m<sup>-2</sup></li>
 <li><code>vswc</code>: (%)<br />
 </li>
 <li><code>vswc_sd</code>: observation uncertainty standard deviation vswc</li>
