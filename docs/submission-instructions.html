@@ -409,16 +409,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-##  1 SJER   2020-01-06        1     4.01   0.0294 
-##  2 SJER   2020-01-06        2     2.50   0.0145 
-##  3 SJER   2020-01-06        3     2.23   0.0251 
-##  4 SJER   2020-01-06        4     2.43  -0.00600
-##  5 SJER   2020-01-06        5     2.30   0.0439 
-##  6 SJER   2020-01-06        6     3.58   0.0172 
-##  7 SJER   2020-01-06        7     2.79   0.0231 
-##  8 SJER   2020-01-06        8     2.83   0.0198 
-##  9 SJER   2020-01-06        9     2.93   0.00269
-## 10 SJER   2020-01-06       10     2.21   0.0213 
+##  1 SJER   2020-01-06        1     3.00   0.0185 
+##  2 SJER   2020-01-06        2     3.33   0.00443
+##  3 SJER   2020-01-06        3     3.71   0.0139 
+##  4 SJER   2020-01-06        4     1.39   0.0311 
+##  5 SJER   2020-01-06        5     2.91  -0.00478
+##  6 SJER   2020-01-06        6     3.26   0.0206 
+##  7 SJER   2020-01-06        7     3.81   0.0197 
+##  8 SJER   2020-01-06        8     2.82   0.0153 
+##  9 SJER   2020-01-06        9     1.22   0.0281 
+## 10 SJER   2020-01-06       10     1.77   0.00778
 ## # … with 443,490 more rows</code></pre>
 </div>
 <div id="aquatics" class="section level3" number="7.1.3">
@@ -573,23 +573,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><code>theme_name-year-month-day-team_name_ID.xml</code></p>
 <p>Metadata files should be uploaded with the forecast files.</p>
 <p>The <a href="https://github.com/eco4cast/EFIstandards" target="_blank">metadata standard</a> has been designed by the Ecological Forecasting Initiative and is build off the widely used Ecological Metadata Language (EML).</p>
-<p>The following components are required:<br />
-- Title<br />
-- pubDate: date that forecast is generated<br />
-- License: See below for details<br />
-- Creator(s)<br />
-- Spatial and temporal coverage<br />
-- File descriptions<br />
-- Model timestep<br />
-- forecast_horizon (length)<br />
-- forecast_issue_time<br />
-- forecast_iteration_id<br />
-- forecast_project_id: team_name_ID (10 character team_name_ID; example: EFI_NULL))<br />
-- model_description which includes: forecast_model_id, model name, type (statistical, process-based, machine-learning, etc), and repository (url or DOI).<br />
-- Info on model structure and uncertainty (standards section 2.1.2)</p>
+<p>To help support metadata generation, we have creating two helpful functions in the neon4cast package.</p>
+<p>First, the <code>neon4cast::create_model_metadata(forecast_file)</code> function will open a file that has the same name as your forecast file but with a <code>yml</code> extension. You will modify the fields in this file and save it. The are comments in the yml to help you with the information and a document describing the the fields <a href="https://shorturl.at/irMQW" target="_blank">here</a></p>
+<p>Second, the <code>neon4cast::write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")</code> will use the information in your forecast file and your the yml that you saved from <code>neon4cast::create_model_metadata()</code> to generate the xml file that you will submit.</p>
+<p><code>neon4cast::write_metadata_eml</code> uses a functions that you can use outside neon4cast::write_metadata_eml to valdiate the xml files. While <code>neon4cast::write_metadata_eml</code> does the validation internally, you check the validity of their metadata before submission using the <a href="https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R" target="_blank">validator script</a>.</p>
 <p>The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., <a href="https://creativecommons.org/licenses/by/4.0/" class="uri">https://creativecommons.org/licenses/by/4.0/</a>)</p>
 <p>We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the <a href="https://github.com/eco4cast/EFIstandards/tree/master/vignettes" target="_blank">example vignettes</a> , which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at <strong><a href="mailto:eco4cast.initaitive@gmail.com" class="email">eco4cast.initaitive@gmail.com</a></strong>.</p>
-<p>The Ecological Forecasting Initiative has provided R scripts to assist in generating the metadata XML file. The scripts can be found at the GitHub repository for the standard: <a href="https://github.com/eco4cast/EFIstandards" class="uri">https://github.com/eco4cast/EFIstandards</a> as well as the EML validator. Teams are encouraged to check the validity of their metadata before submission using the <a href="https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R" target="_blank">validator script</a> .</p>
 </div>
 <div id="submission-process" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Submission process</h2>

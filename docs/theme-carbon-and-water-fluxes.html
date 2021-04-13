@@ -481,20 +481,20 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <p>The standard derivation for the vswc (<code>vswc_sd</code>) is the uncertainty reported by NEON.</p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="theme-carbon-and-water-fluxes.html#cb3-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial/terrestrial_30min-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 289,184 x 12
+<pre><code>## # A tibble: 291,720 x 12
 ##    time                siteID    nee    le nee_sd_intercept nee_sd_slopeP
 ##    &lt;dttm&gt;              &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;
-##  1 2017-02-01 15:00:00 BART    3.13   2.52            0.710         0.217
-##  2 2017-02-01 15:30:00 BART   NA     NA               0.710         0.217
-##  3 2017-02-01 16:00:00 BART   NA     NA               0.710         0.217
-##  4 2017-02-01 16:30:00 BART    0.476  5.69            0.710         0.217
-##  5 2017-02-01 17:00:00 BART   NA     NA               0.710         0.217
-##  6 2017-02-01 17:30:00 BART    0.412  7.27            0.710         0.217
-##  7 2017-02-01 18:00:00 BART    0.812 23.7             0.710         0.217
-##  8 2017-02-01 18:30:00 BART   NA     NA               0.710         0.217
-##  9 2017-02-01 19:00:00 BART    0.820 19.1             0.710         0.217
-## 10 2017-02-01 19:30:00 BART    0.364  3.95            0.710         0.217
-## # … with 289,174 more rows, and 6 more variables: nee_sd_slopeN &lt;dbl&gt;,
+##  1 2017-02-01 15:00:00 BART    3.13   2.52            0.692         0.218
+##  2 2017-02-01 15:30:00 BART   NA     NA               0.692         0.218
+##  3 2017-02-01 16:00:00 BART   NA     NA               0.692         0.218
+##  4 2017-02-01 16:30:00 BART    0.476  5.69            0.692         0.218
+##  5 2017-02-01 17:00:00 BART   NA     NA               0.692         0.218
+##  6 2017-02-01 17:30:00 BART    0.412  7.27            0.692         0.218
+##  7 2017-02-01 18:00:00 BART    0.812 23.7             0.692         0.218
+##  8 2017-02-01 18:30:00 BART   NA     NA               0.692         0.218
+##  9 2017-02-01 19:00:00 BART    0.820 19.1             0.692         0.218
+## 10 2017-02-01 19:30:00 BART    0.364  3.95            0.692         0.218
+## # … with 291,710 more rows, and 6 more variables: nee_sd_slopeN &lt;dbl&gt;,
 ## #   le_sd_intercept &lt;dbl&gt;, le_sd_slopeP &lt;dbl&gt;, le_sd_slopeN &lt;dbl&gt;, vswc &lt;dbl&gt;,
 ## #   vswc_sd &lt;dbl&gt;</code></pre>
 </div>
@@ -515,7 +515,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 </ul>
 <p>NEED TO ADD WHERE vswc_sd comes from</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="theme-carbon-and-water-fluxes.html#cb5-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial/terrestrial_daily-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 6,028 x 6
+<pre><code>## # A tibble: 6,080 x 6
 ##    time       siteID   nee    le  vswc vswc_sd
 ##    &lt;date&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 2017-02-01 BART      NA    NA    NA      NA
@@ -528,7 +528,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 ##  8 2017-02-02 SRER      NA    NA    NA      NA
 ##  9 2017-02-03 BART      NA    NA    NA      NA
 ## 10 2017-02-03 KONZ      NA    NA    NA      NA
-## # … with 6,018 more rows</code></pre>
+## # … with 6,070 more rows</code></pre>
 <p>The R script for generating the evaluation and training data can be found at: <a href="https://github.com/eco4cast/neon4cast-terrestrial" class="uri">https://github.com/eco4cast/neon4cast-terrestrial</a></p>
 </div>
 </div>

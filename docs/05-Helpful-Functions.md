@@ -91,10 +91,10 @@ However, it is often more convenient to generate scores locally. Note
 that the “score” simply the `crps_sample` (for ensemble forecasts) or
 `crps_norm` (for summary statistic forecasts) score from the
 `scoringRules` R package, for each unique prediction
-(i.e. day/site/variable tuple).
+(i.e.day/site/variable tuple).
 
 Note that scores are only possible once the data becomes available in
-the corresponding targets file\!
+the corresponding targets file!
 
 ``` r
 scores <- score(forecast, theme = "aquatics")
@@ -145,7 +145,25 @@ forecast_output_validator(forecast_file)
 
 ### Generate forecast metadata in EML
 
-Coming soon\!
+The metadata 
+
+First, run 
+
+```
+create_model_metadata(forecast_file = forecast_file)        
+```
+
+then edit the yml file that is open with the information describing your team and model.  There are comments in the yml to help you complete the information.  You will only need to generate the yml once unless you change the  structure of your model or team members.  This will the `metadata_yaml` in the step step.
+
+Next, run
+
+```
+write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")
+```
+
+where `forecast_issue_time` is the time that you generated the forecast. `forecast_iteration_id` is a unique identifier of your choice that is associated with that iteration of your forecast.
+
+`write_metadata_eml` will generate the xml that you can submitted along with your forecast file. 
 
 ### Access EFI snapshots of NOAA forecasts at NEON sites
 
