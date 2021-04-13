@@ -124,15 +124,15 @@ Each submission requires a metadata file to be submitted. The metadata file must
 
 Metadata files should be uploaded with the forecast files.
 
-The [metadata standard](https://github.com/eco4cast/EFIstandards){target="_blank"}  has been designed by the Ecological Forecasting Initiative and is build off the widely used Ecological Metadata Language (EML).
+The [metadata standard](https://github.com/eco4cast/EFIstandards){target="_blank"}  has been designed by the Ecological Forecasting Initiative and is built off the widely used Ecological Metadata Language (EML).
 
-To help support metadata generation, we have creating two helpful functions in the neon4cast package.  
+To help support metadata generation, we have created two helpful functions in the neon4cast package.  
 
 First, the `neon4cast::create_model_metadata(forecast_file)` function will open a file that has the same name as your forecast file but with a `yml` extension.  You will modify the fields in this file and save it.  The are comments in the yml to help you with the information and a document describing the the fields [here](https://shorturl.at/irMQW){target="_blank"} 
 
 Second, the `neon4cast::write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")` will use the information in your forecast file and the yml that you saved from `neon4cast::create_model_metadata()` to generate the xml file that you will submit.
 
-`neon4cast::write_metadata_eml` uses a functions that you can use outside neon4cast::write_metadata_eml to valdiate the xml files.  While `neon4cast::write_metadata_eml` does the validation internally, you check the validity of their metadata before submission using the [validator script](https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R){target="_blank"}.
+`neon4cast::write_metadata_eml` uses a function that you can use outside neon4cast::write_metadata_eml to valdiate the xml files.  While `neon4cast::write_metadata_eml` does the validation internally, you check the validity of their metadata before submission using the [validator script](https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R){target="_blank"}.
 
 The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., https://creativecommons.org/licenses/by/4.0/)
 
