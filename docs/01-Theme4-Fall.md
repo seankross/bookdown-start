@@ -87,8 +87,26 @@ All data in the supplied file is available to build and evaluate models before s
 
 Here is the format of the target file
 
-```{r message = FALSE}
+
+```r
 readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz", guess_max = 1e6)
+```
+
+```
+## # A tibble: 13,096 x 6
+##    time       siteID gcc_90 rcc_90   gcc_sd  rcc_sd
+##    <date>     <chr>   <dbl>  <dbl>    <dbl>   <dbl>
+##  1 2016-12-13 HARV    0.329  0.375 0.000148 0.0205 
+##  2 2016-12-14 HARV    0.328  0.411 0.000170 0.00354
+##  3 2016-12-15 HARV    0.330  0.401 0.000547 0.00759
+##  4 2016-12-16 HARV    0.329  0.398 0.000448 0.00990
+##  5 2016-12-17 HARV    0.332  0.351 0.000359 0.0218 
+##  6 2016-12-18 HARV    0.332  0.353 0.000244 0.0322 
+##  7 2016-12-19 HARV    0.329  0.399 0.000355 0.0105 
+##  8 2016-12-20 HARV    0.330  0.405 0.000337 0.00786
+##  9 2016-12-21 HARV    0.329  0.412 0.000363 0.00689
+## 10 2016-12-22 HARV    0.329  0.412 0.000797 0.0105 
+## # … with 13,086 more rows
 ```
 The target file has the following columns:
 

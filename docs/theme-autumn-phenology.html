@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Submission Instructions | NEON Ecological Forecasting Challenge</title>
+  <title>5 Theme: Autumn phenology | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Submission Instructions | NEON Ecological Forecasting Challenge" />
+  <meta property="og:title" content="5 Theme: Autumn phenology | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://seankross.com/bookdown-start/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="eco4cast/neon4cast-docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Submission Instructions | NEON Ecological Forecasting Challenge" />
+  <meta name="twitter:title" content="5 Theme: Autumn phenology | NEON Ecological Forecasting Challenge" />
   
   <meta name="twitter:description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="participation.html"/>
-<link rel="next" href="evaluation.html"/>
+<link rel="prev" href="theme-spring-phenology.html"/>
+<link rel="next" href="theme-beetle-communities.html"/>
 <script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -340,290 +340,191 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="submission-instructions" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Submission Instructions</h1>
-<p>The following provides the requirements for the format of the forecasts that will be submitted. It is important to follow these format guidelines in order for your submitted forecasts to pass a set of internal checks that allow the forecast to be visualized on the <a href="http://shiny.ecoforecast.org/" target="_blank">NEON Ecological Forecast Challenge dashboard</a> and evaluated with the scoring process.</p>
-<div id="forecast-format" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Forecast format</h2>
-<p>Teams will submit their forecasts as a single netCDF or csv file with the following naming convention (<strong>the correct naming convention is critical for the automated processing of submissions</strong>):</p>
-<p><code>theme_name-year-month-day-team_name_ID.csv</code></p>
-<p>or</p>
-<p><code>theme_name-year-month-day-team_name_ID.nc</code></p>
-<p>Where <code>year</code>, <code>month</code>, and <code>day</code> are the year, month, and day for the first day of the submitted forecast and the <code>team_name_ID</code> is the code for the team name that is specified in the registration (<code>team_name_ID</code> is a 10 character name with no spaces in it).</p>
-<p>The <code>theme_name</code> options are: <code>terrestrial_daily</code>, <code>terrestrial_30min</code>, <code>aquatics</code>, <code>beetles</code>, <code>ticks</code>, or <code>phenology</code>.</p>
-<p>Forecast netCDF or csv files should have the following columns (csv) or variables (netcdf) that correspond to the columns.</p>
-<p>There are two key options for the format. First, the file can be either in a csv or a netcdf format. Second the file can represent uncertainty using an ensemble column or a statistic column. The ensemble column uses an integer to individual each ensemble member or MCMC member that represent forecast uncertainty. The statistic column uses the words <code>mean</code> or <code>sd</code> to describe which statistic is represented in the forecasted target column.</p>
-<p><strong>Note for submissions with a <code>statistic</code> column option:</strong> Teams that are NOT using ensemble-based forecast methods should replace the ensemble column with a statistic column. Multiple statistics can be reported using a long format in a csv or adding a statistic dimension in netCDF. The required options for this column are <code>mean</code> and <code>sd</code> (standard deviation). You can also include <code>Conf_interv_02.5</code>, <code>Conf_interv_97.5</code>, <code>Pred_interval_02.5</code>, and <code>Pred_interval_97.5</code> to describe uncertainty but these are optional. The numbers in the last four options indicate equal-tail quantiles for a 95% interval estimate and <code>Conf_</code>=confidence and <code>Pred_</code>=predictive. If statistics are reported we will make a Gaussian assumption when calculating error scores. The Continuous Ranked Probability Score is based on the predictive distribution so reported <code>sd</code> should be for the predictive distribution.</p>
-<p><strong>Note for those using netCDF option</strong>, the order of dimensions on forecast variables should be: <code>time</code>, <code>site</code>, <code>plot</code> [ticks only], and <code>ensemble</code>. In practice using a netCDF for the forecast with the <code>statistic</code> rather than <code>ensemble</code> is not ideal.</p>
-<p>Below are examples of the forecast file format for each theme. <strong>The correct file format is critical for the automated processing of submissions</strong></p>
-<div id="terrestrial" class="section level3" number="8.1.1">
-<h3><span class="header-section-number">8.1.1</span> Terrestrial</h3>
+<div id="theme-autumn-phenology" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Theme: Autumn phenology</h1>
+<p><strong>What</strong>: Terrestrial phenology defined by daily greenness and fall colors (redness) of plants</p>
+<p><strong>Where</strong>: 8 deciduous broadleaf forest NEON sites in the continental U.S.</p>
+<p><strong>When</strong>: Daily forecasts for 35-days in the future from July 15 - December 31, 2021. Forecast submissions are accepted daily, and later submissions after the July 15 start are permissible.</p>
+<p><strong>Why</strong>: Phenology has been identified as one of the primary ecological fingerprints of global climate change.</p>
+<p><strong>Who</strong>: Open to any individual or team that registers</p>
+<p><strong>How</strong>: <a href="https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ" target="_blank">REGISTER</a> your team and submit forecast</p>
+<p>We held a Q&amp;A session about the analogous spring phenology forecast on January 27, 2021. You can find a recording from that session <a href="https://www.youtube.com/watch?v=UwX2IA1vDQE&amp;feature=youtu.be" target="_blank">HERE</a>.</p>
+<div id="overview-4" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Overview</h2>
+<p>Phenology has been shown to be a robust integrator of the effects of year-to-year climate variability and longer-term climate change on natural systems (e.g., recent warming trends). Experimental studies have shown how other global change factors (e.g., elevated CO<sub>2</sub> and N deposition) can also influence phenology. There is a need to better document biological responses to a changing world, and improved phenological monitoring at scales from individual organisms to ecosystems, regions, and continents will contribute to achieving this goal.</p>
+<p>Phenology researchers often use digital cameras (such as those that are part of the PhenoCam Network) that take regular repeated images of plant canopies to monitor changes in greenness throughout the year. The PhenoCam Network is a cooperative continental-scale phenological observatory that uses digital repeat photography to track vegetation phenology in a diverse range of ecosystems across North America and around the World. Imagery and data are made publicly available in near-real-time through the PhenoCam webpage: <a href="http://phenocam.sr.unh.edu/" class="uri">http://phenocam.sr.unh.edu/</a>.</p>
+</div>
+<div id="challenge-4" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Challenge</h2>
+<p>This is an open ecological forecasting challenge to forecast spring green-up of the common greenness index (gcc), as measured by digital cameras at various deciduous broadleaf NEON sites. The primary forecast will be for daily mean gcc (specifically the 90% quantile called the gcc_90, which has been shown to be more robust). In additional, there is a second (optional) forecast for daily mean rcc_90 (90% quantile of the red chromatic coordinate), which we are using as an index of fall colors. The sites include Harvard Forest (HARV), Bartlett Experimental Forest (BART), Smithsonian Conservation Biology Institute, (SCBI), Steigerwaldt Land Services (STEI), The University of Kansas Field Station, KS (UKFS), Great Smoky Mountains National Park (GRSM), Dead Lake (DELA), and National Grassland (CLBJ).</p>
+<p>NOAA Global Ensemble Forecast System weather forecasts for each NEON site is provided for teams to use: <a href="https://data.ecoforecast.org/minio/drivers/noaa/" class="uri">https://data.ecoforecast.org/minio/drivers/noaa/</a></p>
+<p>Teams must provide access (minimum of URL, but ideally a script) to any additional data they wish to use to all teams in the challenge. Teams of various career stages and disciplines are encouraged to submit forecasts.</p>
+</div>
+<div id="data-targets-4" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Data: Targets:</h2>
+<p>The challenge uses the following NEON data products:</p>
+<p><a href="https://data.neonscience.org/data-products/DP1.00033.001" target="_blank">DP1.00033.001</a>: Phenology images</p>
+<p>A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. The processing script is available on the <a href="https://github.com/eco4cast/neon4cast-phenology" target="_blank">neon4cast-phenology GitHub repository</a>.</p>
+<div id="green-chromatic-coordinate-gcc-1" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Green chromatic coordinate (gcc)</h3>
+<p><strong>Definition</strong></p>
+<p>The ratio of the green digital number to the sum of the red, green, blue digital numbers from a digital camera. gcc_90 is the 90th percentile of the gcc within a set of pixel called a region of interest (ROI)</p>
+<p><strong>Motivation</strong></p>
+<p>Quantitative metrics of vegetation color extracted from PhenoCam imagery provide data that are consistent with ground observations of phenology and as well as other conventional vegetation indices across ecosystems.</p>
+</div>
+<div id="red-chromatic-coordinate-rcc" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Red chromatic coordinate (rcc)</h3>
+<p><strong>Definition</strong></p>
+<p>The ratio of the red digital number to the sum of the red, green, blue digital numbers from a digital camera. rcc_90 is the 90th percentile of the rcc within a set of pixel called a region of interest (ROI)</p>
+<p><strong>Motivation</strong></p>
+<p>While gcc is primarily a metric of vegetation greeness, rcc is more a metric of fall color. Adding rcc to the autumn forecast challenge has two motivations. First, from an end-user’s perspective the timing of peak fall coloration has aesthetic value, which translates into economic for tourism. Second, from the ecological perspective, autumn phenology involves two distinct (but coupled) processes, senescence (loss of leaf chlorophyll and photosythetic activity; translocation of nutrients) and abscission (actual leaf fall). Forecasting two indices helps us disentangle our ability to predict these two processes.</p>
+</div>
+<div id="focal-sites-4" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Focal sites</h3>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Site Name</th>
+<th align="center">Site (and PhenoCam) ID</th>
+<th align="right">NEON Domain</th>
+<th align="right">Latitude</th>
+<th align="right">Longitude</th>
+<th align="right">Dominant Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://www.neonscience.org/field-sites/harv" target="_blank">Harvard Forest, MA</a></td>
+<td align="center">NEON.D01.HARV.DP1.00033</td>
+<td align="right">D01: Northeast</td>
+<td align="right">42.537</td>
+<td align="right">-72.173</td>
+<td align="right"><em>Quercus rubra</em>, <em>Acer rubrum</em>, <em>Aralia nudicaulis</em></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://www.neonscience.org/field-sites/bart" target="_blank">Bartlett Experimental Forest, NH</a></td>
+<td align="center">NEON.D01.BART.DP1.00033</td>
+<td align="right">D01: Northeast</td>
+<td align="right">44.0639</td>
+<td align="right">-71.2874</td>
+<td align="right"><em>Liriodendron tulipifera</em>, <em>Microstegium vimineum</em>, <em>Juglans nigra</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://www.neonscience.org/field-sites/stei" target="_blank">Steigerwaldt Land Services, WI</a></td>
+<td align="center">NEON.D05.STEI.DP1.00033</td>
+<td align="right">D05: Great Lakes</td>
+<td align="right">45.509</td>
+<td align="right">-89.586</td>
+<td align="right"><em>Populus tremuloides</em>, <em>Abies balsamea</em>, <em>Acer rubrum</em></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://www.neonscience.org/field-sites/ukfs" target="_blank">The University of Kansas Field Station, KS</a></td>
+<td align="center">NEON.D06.UKFS.DP1.00033</td>
+<td align="right">D06: Prairie Peninsula</td>
+<td align="right">39.040</td>
+<td align="right">-95.192</td>
+<td align="right"><em>Symphoricarpos orbiculatus</em>, <em>Celtis occidentalis</em>, <em>Carya ovata</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://www.neonscience.org/field-sites/grsm" target="_blank">Great Smoky Mountains National Park, TN</a></td>
+<td align="center">NEON.D07.GRSM.DP1.00033</td>
+<td align="right">D07: Appalachians and Cumberland Plateau</td>
+<td align="right">35.689</td>
+<td align="right">-83.502</td>
+<td align="right"><em>Liriodendron tulipifera</em>, <em>Acer rubrum</em>, <em>Acer pensylvanicum</em></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://www.neonscience.org/field-sites/dela" target="_blank">Dead Lake, AL</a></td>
+<td align="center">NEON.D08.DELA.DP1.00033</td>
+<td align="right">D08: Ozarks Complex</td>
+<td align="right">32.542</td>
+<td align="right">-87.804</td>
+<td align="right"><em>Celtis laevigata</em>, <em>Ligustrum sinense</em>, <em>Liquidambar styraciflua</em></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://www.neonscience.org/field-sites/clbj" target="_blank">National Grassland, TX</a></td>
+<td align="center">NEON.D11.CLBJ.DP1.00033</td>
+<td align="right">D11: Southern Plains</td>
+<td align="right">33.401</td>
+<td align="right">-97.570</td>
+<td align="right"><em>Quercus marilandica</em>, <em>Schizachyrium scoparium</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="target-data-calculation-2" class="section level3" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Target data calculation</h3>
+<p>Digital cameras mounted above forests are pointed at the forest canopy. Images are collected every half hour.</p>
+<p>The images are a set of pixels values in red, green, and blue color channels (RGB). A pixel value is an 8-bit digital number (DN). Because internal processing (including exposure control) and external factors affecting scene illumination (weather and atmospheric effects) both influence the retrieved RGB signature, we calculate a number of vegetation indices that are effective at suppressing this unwanted variation and maximizing the underlying phenological signal. Important among these is the green chromatic coordinate (GCC), calculated as G<sub>CC</sub> = G<sub>DN</sub> / (R<sub>DN</sub> + G<sub>DN</sub> + B<sub>DN</sub>) and the red chromatic coordinate (RCC), calculated as R<sub>CC</sub> = R<sub>DN</sub> / (R<sub>DN</sub> + G<sub>DN</sub> + B<sub>DN</sub>).</p>
+<p>For additional details, see Richardson et al. (2018) Scientific Data, and Richardson (2019) New Phytologist.</p>
+<p>PhenoCam data are processed and posted daily and the low latency of the PhenoCam data allows for a unique opportunity to evaluate forecasts in real-time.</p>
+<p>Each image has a defined “region of interest’ (ROI). An ROI is a set of pixels that isolates particular features in the image (i.e., a set of deciduous trees in a mixed forest). The ROI of “DB_1000” for the below top-of-canopy PhenoCams will be used to assess the forecasts’ accuracy. The mid-day (noon) mean GCC and GCC standard deviation for the “DB_1000” ROI will be used for evaluation.</p>
+<p>All data in the supplied file is available to build and evaluate models before submitting a forecast to challenge. Once new data becomes avialable, the data are appended to the existing file. Within the challenge scoring, only the new data are used to evaluate previously submitted forecasts.</p>
+</div>
+<div id="target-file-2" class="section level3" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Target file</h3>
+<p>Here is the format of the target file</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="theme-autumn-phenology.html#cb11-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 13,096 x 6
+##    time       siteID gcc_90 rcc_90   gcc_sd  rcc_sd
+##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+##  1 2016-12-13 HARV    0.329  0.375 0.000148 0.0205 
+##  2 2016-12-14 HARV    0.328  0.411 0.000170 0.00354
+##  3 2016-12-15 HARV    0.330  0.401 0.000547 0.00759
+##  4 2016-12-16 HARV    0.329  0.398 0.000448 0.00990
+##  5 2016-12-17 HARV    0.332  0.351 0.000359 0.0218 
+##  6 2016-12-18 HARV    0.332  0.353 0.000244 0.0322 
+##  7 2016-12-19 HARV    0.329  0.399 0.000355 0.0105 
+##  8 2016-12-20 HARV    0.330  0.405 0.000337 0.00786
+##  9 2016-12-21 HARV    0.329  0.412 0.000363 0.00689
+## 10 2016-12-22 HARV    0.329  0.412 0.000797 0.0105 
+## # … with 13,086 more rows</code></pre>
+<p>The target file has the following columns:</p>
 <ul>
-<li><code>time</code>: YYYY-MM-DD HH:MM UTC of the start of the 30-minute value or YYYY-MM-DD for daily forecasts</li>
-<li><code>siteID</code>: NEON code for site</li>
-<li><code>ensemble</code> or <code>statistic</code>: if <code>ensemble</code> then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if <code>statistic</code> then either required to be the string <code>mean</code> or <code>sd</code> (see note below about statistic column).<br />
+<li><code>time</code>: YYYY-MM-DD<br />
 </li>
-<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
-<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
-<li><code>nee</code>: net ecosystem exchange (umol CO2 m<sup>-2</sup> s<sup>-1</sup> for 30 minute forecast or g C m<sup>-2</sup> day<sup>-1</sup> for daily forecasts)</li>
-<li><code>le</code>: latent heat (W m<sup>-2</sup>)</li>
-<li><code>vswc</code>: volumetric soil water content (%)</li>
-</ul>
-<p>Here is an example of a csv forecast file that meets the standard for the daily terrestrial theme</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="submission-instructions.html#cb15-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   time = col_date(format = &quot;&quot;),
-##   ensemble = col_double(),
-##   siteID = col_character(),
-##   obs_flag = col_double(),
-##   nee = col_double(),
-##   le = col_double(),
-##   vswc = col_double(),
-##   forecast = col_double(),
-##   data_assimilation = col_double()
-## )</code></pre>
-<pre><code>## # A tibble: 272,000 x 9
-##    time       ensemble siteID obs_flag    nee     le   vswc forecast
-##    &lt;date&gt;        &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
-##  1 2020-10-02        1 BART          2 -29.6  -114.  0.0220        1
-##  2 2020-10-02        2 BART          2 -21.1    49.9 0.191         1
-##  3 2020-10-02        3 BART          2  -5.70  344.  0.0792        1
-##  4 2020-10-02        4 BART          2   4.76  547.  0.0982        1
-##  5 2020-10-02        5 BART          2 -18.6    94.8 0.0883        1
-##  6 2020-10-02        6 BART          2  -4.32  375.  0.192         1
-##  7 2020-10-02        7 BART          2  -2.51  408.  0.127         1
-##  8 2020-10-02        8 BART          2 -10.5   255.  0.198         1
-##  9 2020-10-02        9 BART          2 -33.3  -184.  0.157         1
-## 10 2020-10-02       10 BART          2 -10.7   250.  0.109         1
-## # … with 271,990 more rows, and 1 more variable: data_assimilation &lt;dbl&gt;</code></pre>
-<p>Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme. The file is located at <a href="https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc" class="uri">https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc</a></p>
-</div>
-<div id="beetles" class="section level3" number="8.1.2">
-<h3><span class="header-section-number">8.1.2</span> Beetles</h3>
-<ul>
-<li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted)</li>
-<li><code>siteID</code>: NEON code for site</li>
-<li><code>ensemble</code> or <code>statistic</code>: if <code>ensemble</code> then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if <code>statistic</code> then either required to be the string <code>mean</code> or <code>sd</code> (see note below about statistic column).<br />
+<li><code>siteID</code>: NEON site code (e.g., BART)<br />
 </li>
-<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
-<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
-<li><code>abundance</code>: abundance of beetles</li>
-<li><code>richness</code>: species richness of beetles</li>
-</ul>
-<p>Here is an example of a csv forecast file that meets the standard for the beetles theme</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="submission-instructions.html#cb18-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI_avg_null.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   siteID = col_character(),
-##   time = col_date(format = &quot;&quot;),
-##   ensemble = col_double(),
-##   richness = col_double(),
-##   abundance = col_double()
-## )</code></pre>
-<pre><code>## # A tibble: 443,500 x 5
-##    siteID time       ensemble richness abundance
-##    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-##  1 SJER   2020-01-06        1    3.71     0.0387
-##  2 SJER   2020-01-06        2    0.832    0.0169
-##  3 SJER   2020-01-06        3    1.90     0.0105
-##  4 SJER   2020-01-06        4    2.75     0.0210
-##  5 SJER   2020-01-06        5    3.03     0.0279
-##  6 SJER   2020-01-06        6    2.27     0.0463
-##  7 SJER   2020-01-06        7    5.00     0.0140
-##  8 SJER   2020-01-06        8    2.82     0.0398
-##  9 SJER   2020-01-06        9    4.93     0.0153
-## 10 SJER   2020-01-06       10    3.24     0.0312
-## # … with 443,490 more rows</code></pre>
-</div>
-<div id="aquatics" class="section level3" number="8.1.3">
-<h3><span class="header-section-number">8.1.3</span> Aquatics</h3>
-<ul>
-<li><code>time</code>: YYYY-MM-DD of forecast</li>
-<li><code>siteID</code>: NEON code for site</li>
-<li><code>ensemble</code> or <code>statistic</code>: if <code>ensemble</code> then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if <code>statistic</code> then either required to be the string <code>mean</code> or <code>sd</code> (see note below about statistic column).<br />
+<li><code>gcc_90</code>: 90th percentile GCC for the ROI<br />
 </li>
-<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
-<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
-<li><code>oxygen</code>: dissolved oxygen (mg/L)</li>
-<li><code>temp</code>: water temperature (C)</li>
-</ul>
-<p>Here is an example of a csv forecast file that meets the standard for the aquatics theme</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="submission-instructions.html#cb21-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   time = col_date(format = &quot;&quot;),
-##   ensemble = col_double(),
-##   siteID = col_character(),
-##   oxygen = col_double(),
-##   temperature = col_double(),
-##   obs_flag = col_double(),
-##   forecast = col_double(),
-##   data_assimilation = col_double()
-## )</code></pre>
-<pre><code>## # A tibble: 28,000 x 8
-##    time       ensemble siteID oxygen temperature obs_flag forecast
-##    &lt;date&gt;        &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
-##  1 2021-03-01        1 BARC     8.98        19.1        2        1
-##  2 2021-03-01        2 BARC     8.67        21.6        2        1
-##  3 2021-03-01        3 BARC     8.73        28.9        2        1
-##  4 2021-03-01        4 BARC     8.12        28.2        2        1
-##  5 2021-03-01        5 BARC     8.18        17.6        2        1
-##  6 2021-03-01        6 BARC     8.70        34.1        2        1
-##  7 2021-03-01        7 BARC     8.83        14.9        2        1
-##  8 2021-03-01        8 BARC     8.25        23.7        2        1
-##  9 2021-03-01        9 BARC     8.47        15.0        2        1
-## 10 2021-03-01       10 BARC     8.68        26.3        2        1
-## # … with 27,990 more rows, and 1 more variable: data_assimilation &lt;dbl&gt;</code></pre>
-</div>
-<div id="phenology" class="section level3" number="8.1.4">
-<h3><span class="header-section-number">8.1.4</span> Phenology</h3>
-<ul>
-<li><code>time</code>: YYYY-MM-DD</li>
-<li><code>siteID</code>: NEON code for site</li>
-<li><code>ensemble</code> or <code>statistic</code>: if <code>ensemble</code> then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if <code>statistic</code> then either required to be the string <code>mean</code> or <code>sd</code> (see note below about statistic column).<br />
+<li><code>gcc_sd</code>: standard deviation of the 90th percentile (GCC)</li>
+<li><code>rcc_90</code>: 90th percentile RCC for the ROI<br />
 </li>
-<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
-<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
-<li><code>gcc_90</code>: green chromatic coordinate</li>
+<li><code>rcc_sd</code>: standard deviation of the 90th percentile (RCC)</li>
 </ul>
-<p>Here is are examples of csv forecast files that meet the standard for the phenology theme</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="submission-instructions.html#cb24-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-UCSC_P_EDM.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   time = col_date(format = &quot;&quot;),
-##   siteID = col_character(),
-##   obs_flag = col_double(),
-##   forecast = col_double(),
-##   data_assimilation = col_double(),
-##   statistic = col_character(),
-##   gcc_90 = col_double()
-## )</code></pre>
-<pre><code>## # A tibble: 560 x 7
-##    time       siteID obs_flag forecast data_assimilation statistic gcc_90
-##    &lt;date&gt;     &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
-##  1 2021-02-23 BART          2        1                 1 mean      0.346 
-##  2 2021-02-23 BART          2        1                 1 sd        0.0117
-##  3 2021-02-23 CLBJ          2        1                 1 mean      0.325 
-##  4 2021-02-23 CLBJ          2        1                 1 sd        0.0185
-##  5 2021-02-23 DELA          2        1                 1 mean      0.354 
-##  6 2021-02-23 DELA          2        1                 1 sd        0.0327
-##  7 2021-02-23 GRSM          2        1                 1 mean      0.351 
-##  8 2021-02-23 GRSM          2        1                 1 sd        0.0136
-##  9 2021-02-23 HARV          2        1                 1 mean      0.331 
-## 10 2021-02-23 HARV          2        1                 1 sd        0.0120
-## # … with 550 more rows</code></pre>
-<p>A netcdf file located at <a href="https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc" class="uri">https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc</a></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="submission-instructions.html#cb27-1" aria-hidden="true" tabindex="-1"></a>ncdf4<span class="sc">::</span><span class="fu">nc_open</span>(<span class="st">&quot;images/phenology-2021-02-23-EFInull.nc&quot;</span>)</span></code></pre></div>
-<pre><code>## File images/phenology-2021-02-23-EFInull.nc (NC_FORMAT_NETCDF4):
-## 
-##      2 variables (excluding dimension variables):
-##         float gcc_90[time,site,ensemble]   (Contiguous storage)  
-##             long_name: 90% quantile of daily green chromatic coordinate
-##         char siteID[nchar,site]   (Contiguous storage)  
-## 
-##      4 dimensions:
-##         time  Size:35
-##             units: days since 2021-02-23
-##             long_name: time
-##         site  Size:8
-##             long_name: siteID
-##         ensemble  Size:2000
-##             long_name: ensemble member
-##         nchar  Size:4
-## [1] &quot;vobjtovarid4: **** WARNING **** I was asked to get a varid for dimension named nchar BUT this dimension HAS NO DIMVAR! Code will probably fail at this point&quot;
-## 
-##     3 global attributes:
-##         forecast_project_id: EFInull
-##         forecast_model_id: v0.1
-##         forecast_iteration_id: 2021-02-23 22:10:34</code></pre>
-</div>
-<div id="ticks" class="section level3" number="8.1.5">
-<h3><span class="header-section-number">8.1.5</span> Ticks</h3>
-<ul>
-<li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted). Defined by <code>MMWRweek::MMWRweek2Date(Year, epiWeek)</code></li>
-<li><code>siteID</code>: NEON code for site</li>
-<li><code>plotID</code>: NEON plotID</li>
-<li><code>ensemble</code> or <code>statistic</code>: if <code>ensemble</code> then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if <code>statistic</code> then either required to be the string <code>mean</code> or <code>sd</code> (see note below about statistic column).<br />
-</li>
-<li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
-<li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
-<li><code>amblyomma_americanum</code>: Number of <em>Amblyomma americanum</em> nymphs per plot per week</li>
-<li><code>ixodes_scapularis</code>: Number of <em>Ixodes scapularis</em> nymphs per plot per week</li>
-</ul>
-<p>Here is an example of a csv forecast file that meets the standard for the ticks theme</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="submission-instructions.html#cb29-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
-<pre><code>## Warning: 66500 parsing failures.
-##  row                  col           expected             actual                                                                                             file
-## 7001 amblyomma_americanum 1/0/T/F/TRUE/FALSE 4.00332129495972   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
-## 7002 amblyomma_americanum 1/0/T/F/TRUE/FALSE 0.0490100896296721 &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
-## 7003 amblyomma_americanum 1/0/T/F/TRUE/FALSE 1.78175379939298   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
-## 7004 amblyomma_americanum 1/0/T/F/TRUE/FALSE 3.49221356823098   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
-## 7005 amblyomma_americanum 1/0/T/F/TRUE/FALSE 7.67000549354529   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
-## .... .................... .................. .................. ................................................................................................
-## See problems(...) for more details.</code></pre>
-<pre><code>## # A tibble: 77,000 x 10
-##       X1 time       ixodes_scapularis plotID   siteID ensemble data_assimilation
-##    &lt;dbl&gt; &lt;date&gt;                 &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;dbl&gt;             &lt;dbl&gt;
-##  1     1 2019-03-04             0.341 BLAN_012 BLAN          1                 0
-##  2     2 2019-03-11             0.286 BLAN_012 BLAN          1                 0
-##  3     3 2019-03-18             0.372 BLAN_012 BLAN          1                 0
-##  4     4 2019-03-25             0.349 BLAN_012 BLAN          1                 0
-##  5     5 2019-04-01             0.368 BLAN_012 BLAN          1                 0
-##  6     6 2019-04-08             0.443 BLAN_012 BLAN          1                 0
-##  7     7 2019-04-15             0.455 BLAN_012 BLAN          1                 0
-##  8     8 2019-04-22             0.367 BLAN_012 BLAN          1                 0
-##  9     9 2019-04-29             0.368 BLAN_012 BLAN          1                 0
-## 10    10 2019-05-06             0.327 BLAN_012 BLAN          1                 0
-## # … with 76,990 more rows, and 3 more variables: forecast &lt;dbl&gt;,
-## #   obs_flag &lt;dbl&gt;, amblyomma_americanum &lt;lgl&gt;</code></pre>
 </div>
 </div>
-<div id="metadata-format" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Metadata format</h2>
-<p>Each submission requires a metadata file to be submitted. The metadata file must have the same name as the submitted forecast, but with the .xml extension.</p>
-<p><code>theme_name-year-month-day-team_name_ID.xml</code></p>
-<p>Metadata files should be uploaded with the forecast files.</p>
-<p>The <a href="https://github.com/eco4cast/EFIstandards" target="_blank">metadata standard</a> has been designed by the Ecological Forecasting Initiative and is built off the widely used Ecological Metadata Language (EML).</p>
-<p>To help support metadata generation, we have created two helpful functions in the neon4cast package.</p>
-<p>First, the <code>neon4cast::create_model_metadata(forecast_file)</code> function will open a file that has the same name as your forecast file but with a <code>yml</code> extension. You will modify the fields in this file and save it. The are comments in the yml to help you with the information and a document describing the the fields <a href="https://shorturl.at/irMQW" target="_blank">here</a></p>
-<p>Second, the <code>neon4cast::write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")</code> will use the information in your forecast file and the yml that you saved from <code>neon4cast::create_model_metadata()</code> to generate the xml file that you will submit.</p>
-<p><code>neon4cast::write_metadata_eml</code> uses a function that you can use outside neon4cast::write_metadata_eml to valdiate the xml files. While <code>neon4cast::write_metadata_eml</code> does the validation internally, you check the validity of their metadata before submission using the <a href="https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R" target="_blank">validator script</a>.</p>
-<p>The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., <a href="https://creativecommons.org/licenses/by/4.0/" class="uri">https://creativecommons.org/licenses/by/4.0/</a>)</p>
-<p>We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the <a href="https://github.com/eco4cast/EFIstandards/tree/master/vignettes" target="_blank">example vignettes</a>, which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at <strong><a href="mailto:eco4cast.initaitive@gmail.com" class="email">eco4cast.initaitive@gmail.com</a></strong>.</p>
+<div id="timeline-4" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Timeline</h2>
+<p>Forecasts for a minimum of 35 days can be submitted daily by 6 pm ET for the period of July 15th through December 15th, 2021. Forecast should be submitted starting July 15th by 6 pm ET. A minimum of 35 days in the future must be forecasted for each submission. For example, the first submitted forecast should be for at least July 15th – August 19th, but it could be for the full autumn. New forecasts can be submitted daily as new weather forecasts and observations (e.g., PhenoCam) become available. Processed PhenoCam data will be available daily by 11:59 pm ET for each day. Teams are allowed to start submitting forecasts after February 1st, but only forecasts of future days (when submitted) will be allowed. Late forecasts might be allowed under extenuating circumstances related to computer failure or processing delays on our end. Forecasts do not have to be submitted daily and can be longer than 35 days.</p>
 </div>
-<div id="submission-process" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Submission process</h2>
-<p>Individual forecast (csv, netCDF) and metadate (xml) files can be uploaded any time before the specific deadlines as defined by each theme. Only the most recent files will be scored.</p>
-<p><strong>The correct file name and format is critical for the automated processing of submissions</strong></p>
-<p>Teams will submit their forecast netCDF or csv files manually through the challenge website or with an R script.
-- You can manually submit your forecast through the <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a> website using the red plus on the bottom left.<br />
-- You can submit from an R script using the following:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="submission-instructions.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span> <span class="ot">=</span> <span class="st">&quot;data&quot;</span>,</span>
-<span id="cb33-2"><a href="submission-instructions.html#cb33-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;AWS_S3_ENDPOINT&quot;</span> <span class="ot">=</span> <span class="st">&quot;ecoforecast.org&quot;</span>)</span>
-<span id="cb33-3"><a href="submission-instructions.html#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-4"><a href="submission-instructions.html#cb33-4" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span></code></pre></div>
-<p>Submissions need to adhere to the forecast format that is provided above, including the file naming convention. Our cyberinfastructure automatically evaluates forecasts and relies on the expected formatting. Contact <a href="mailto:eco4cast.initiative@gmail.com" class="email">eco4cast.initiative@gmail.com</a> if you experience technical issues with submitting.</p>
-<p><strong>Note:</strong> If you have used AWS in the past you might have credential files in an .aws folder in your home directory that will cause an error when you try to upload to a non-AWS bucket. If you encounter this error you may need to rename your credentials files so put_object doesn’t try to read them.</p>
+<div id="design-team-4" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Design team</h2>
+<p>Kathryn Wheeler, Boston University<br />
+Michael Dietze, Boston University<br />
+Kathy Gerst, National Phenology Network<br />
+Chris Jones, NC State University<br />
+Andrew Richardson, Northern Arizona University<br />
+Bijan Seyednasrollah, Northern Arizona University, PhenoCam Network</p>
 </div>
-<div id="validating-submission" class="section level2" number="8.4">
-<h2><span class="header-section-number">8.4</span> Validating submission</h2>
-<p>A successful submission can be found at the following links within 2 hours of submissions</p>
-<p>Aquatics: <a href="https://data.ecoforecast.org/minio/forecasts/aquatics" class="uri">https://data.ecoforecast.org/minio/forecasts/aquatics</a></p>
-<p>Terrestrial: <a href="https://data.ecoforecast.org/minio/forecasts/terrestrial" class="uri">https://data.ecoforecast.org/minio/forecasts/terrestrial</a></p>
-<p>Beetles: <a href="https://data.ecoforecast.org/minio/forecasts/beetles" class="uri">https://data.ecoforecast.org/minio/forecasts/beetles</a></p>
-<p>Ticks: <a href="https://data.ecoforecast.org/minio/forecasts/ticks" class="uri">https://data.ecoforecast.org/minio/forecasts/ticks</a></p>
-<p>Phenology: <a href="https://data.ecoforecast.org/minio/forecasts/phenology" class="uri">https://data.ecoforecast.org/minio/forecasts/phenology</a></p>
-<p>We run a validator script when processing the submissions. If your submission does not meet the file standards above, it will be moved to a separate <a href="https://data.ecoforecast.org/minio/forecasts/not_in_standard" target="_blank">folder</a> and a log file (same name as submitted file with “log” appended to end) will be generated with some hints about why it did not meet the standard. If your submission did not meet the standard contact us and we can help you work through the issues.</p>
+<div id="partners-4" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Partners</h2>
+<p>The challenge is hosted by the Ecological Forecasting Initiative (EFI; <a href="https://ecoforecast.org/" class="uri">https://ecoforecast.org/</a>) and its U.S. National Science Foundation sponsored Research Coordination Network (EFI-RCN; <a href="https://ecoforecast.org/rcn/" class="uri">https://ecoforecast.org/rcn/</a>).</p>
+<p>Data used in the challenge are collected by the National Ecological Observatory Network (NEON; <a href="https://www.neonscience.org/" class="uri">https://www.neonscience.org/</a>) and hosted by the Phenocam Network (<a href="http://phenocam.sr.unh.edu/" class="uri">http://phenocam.sr.unh.edu/</a>).</p>
+<p>The forecasting challenge was developed in collaboration with the USA National Phenology Network: <a href="https://www.usanpn.org/usa-national-phenology-network" class="uri">https://www.usanpn.org/usa-national-phenology-network</a>.</p>
 </div>
-<div id="visualizing-submissions" class="section level2" number="8.5">
-<h2><span class="header-section-number">8.5</span> Visualizing submissions</h2>
-<p>Plots of submissions and table of scores can be found at our <a href="https://shiny.ecoforecast.org" target="_blank">dashboard</a></p>
+<div id="references-2" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> References</h2>
+<p>Richardson, A., Hufkens, K., Milliman, T. et al. Tracking vegetation phenology across diverse North American biomes using PhenoCam imagery. Sci Data 5, 180028 (2018). <a href="https://doi.org/10.1038/sdata.2018.28" class="uri">https://doi.org/10.1038/sdata.2018.28</a></p>
+<p>Richardson, A.D. (2019), Tracking seasonal rhythms of plants in diverse ecosystems with digital camera imagery. New Phytol, 222: 1742-1750. <a href="https://doi.org/10.1111/nph.15591" class="uri">https://doi.org/10.1111/nph.15591</a></p>
 
 </div>
 </div>
@@ -632,8 +533,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="participation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="evaluation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="theme-spring-phenology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="theme-beetle-communities.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
