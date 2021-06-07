@@ -113,16 +113,16 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1     3.00   0.0185 
-##  2 SJER   2020-01-06        2     3.33   0.00443
-##  3 SJER   2020-01-06        3     3.71   0.0139 
-##  4 SJER   2020-01-06        4     1.39   0.0311 
-##  5 SJER   2020-01-06        5     2.91  -0.00478
-##  6 SJER   2020-01-06        6     3.26   0.0206 
-##  7 SJER   2020-01-06        7     3.81   0.0197 
-##  8 SJER   2020-01-06        8     2.82   0.0153 
-##  9 SJER   2020-01-06        9     1.22   0.0281 
-## 10 SJER   2020-01-06       10     1.77   0.00778
+##  1 SJER   2020-01-06        1    3.71     0.0387
+##  2 SJER   2020-01-06        2    0.832    0.0169
+##  3 SJER   2020-01-06        3    1.90     0.0105
+##  4 SJER   2020-01-06        4    2.75     0.0210
+##  5 SJER   2020-01-06        5    3.03     0.0279
+##  6 SJER   2020-01-06        6    2.27     0.0463
+##  7 SJER   2020-01-06        7    5.00     0.0140
+##  8 SJER   2020-01-06        8    2.82     0.0398
+##  9 SJER   2020-01-06        9    4.93     0.0153
+## 10 SJER   2020-01-06       10    3.24     0.0312
 ## # … with 443,490 more rows
 ```
 
@@ -314,19 +314,19 @@ Each submission requires a metadata file to be submitted. The metadata file must
 
 Metadata files should be uploaded with the forecast files.
 
-The [metadata standard](https://github.com/eco4cast/EFIstandards){target="_blank"}  has been designed by the Ecological Forecasting Initiative and is build off the widely used Ecological Metadata Language (EML).
+The [metadata standard](https://github.com/eco4cast/EFIstandards){target="_blank"}  has been designed by the Ecological Forecasting Initiative and is built off the widely used Ecological Metadata Language (EML).
 
-To help support metadata generation, we have creating two helpful functions in the neon4cast package.  
+To help support metadata generation, we have created two helpful functions in the neon4cast package.  
 
 First, the `neon4cast::create_model_metadata(forecast_file)` function will open a file that has the same name as your forecast file but with a `yml` extension.  You will modify the fields in this file and save it.  The are comments in the yml to help you with the information and a document describing the the fields [here](https://shorturl.at/irMQW){target="_blank"} 
 
-Second, the `neon4cast::write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")` will use the information in your forecast file and your the yml that you saved from `neon4cast::create_model_metadata()` to generate the xml file that you will submit.
+Second, the `neon4cast::write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")` will use the information in your forecast file and the yml that you saved from `neon4cast::create_model_metadata()` to generate the xml file that you will submit.
 
-`neon4cast::write_metadata_eml` uses a functions that you can use outside neon4cast::write_metadata_eml to valdiate the xml files.  While `neon4cast::write_metadata_eml` does the validation internally, you check the validity of their metadata before submission using the [validator script](https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R){target="_blank"}.
+`neon4cast::write_metadata_eml` uses a function that you can use outside neon4cast::write_metadata_eml to valdiate the xml files.  While `neon4cast::write_metadata_eml` does the validation internally, you check the validity of their metadata before submission using the [validator script](https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R){target="_blank"}.
 
 The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., https://creativecommons.org/licenses/by/4.0/)
 
-We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the [example vignettes](https://github.com/eco4cast/EFIstandards/tree/master/vignettes){target="_blank"} , which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at **eco4cast.initaitive@gmail.com**.
+We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the [example vignettes](https://github.com/eco4cast/EFIstandards/tree/master/vignettes){target="_blank"}, which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at **eco4cast.initaitive@gmail.com**.
 
 ## Submission process
 

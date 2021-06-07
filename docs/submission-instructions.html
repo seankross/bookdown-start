@@ -32,7 +32,7 @@
   
 <link rel="prev" href="participation.html"/>
 <link rel="next" href="evaluation.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -188,11 +188,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="theme-phenology.html"><a href="theme-phenology.html#data-targets-3"><i class="fa fa-check"></i><b>4.3</b> Data: Targets:</a>
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="theme-phenology.html"><a href="theme-phenology.html#green-chromatic-coordinate-gcc"><i class="fa fa-check"></i><b>4.3.1</b> Green chromatic coordinate (gcc)</a></li>
-<li class="chapter" data-level="4.3.2" data-path="theme-phenology.html"><a href="theme-phenology.html#focal-sites-3"><i class="fa fa-check"></i><b>4.3.2</b> Focal sites</a></li>
-<li class="chapter" data-level="4.3.3" data-path="theme-phenology.html"><a href="theme-phenology.html#target-data-calculation-1"><i class="fa fa-check"></i><b>4.3.3</b> Target data calculation</a></li>
-<li class="chapter" data-level="4.3.4" data-path="theme-phenology.html"><a href="theme-phenology.html#target-file-1"><i class="fa fa-check"></i><b>4.3.4</b> Target file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="theme-phenology.html"><a href="theme-phenology.html#red-chromatic-coordinate-gcc"><i class="fa fa-check"></i><b>4.3.2</b> Red chromatic coordinate (gcc)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="theme-phenology.html"><a href="theme-phenology.html#focal-sites-3"><i class="fa fa-check"></i><b>4.3.3</b> Focal sites</a></li>
+<li class="chapter" data-level="4.3.4" data-path="theme-phenology.html"><a href="theme-phenology.html#target-data-calculation-1"><i class="fa fa-check"></i><b>4.3.4</b> Target data calculation</a></li>
+<li class="chapter" data-level="4.3.5" data-path="theme-phenology.html"><a href="theme-phenology.html#target-file-1"><i class="fa fa-check"></i><b>4.3.5</b> Target file</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="theme-phenology.html"><a href="theme-phenology.html#timeline-3"><i class="fa fa-check"></i><b>4.4</b> Timeline</a></li>
+<li class="chapter" data-level="4.4" data-path="theme-phenology.html"><a href="theme-phenology.html#timeline-3"><i class="fa fa-check"></i><b>4.4</b> Timeline</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="theme-phenology.html"><a href="theme-phenology.html#spring-challenge"><i class="fa fa-check"></i><b>4.4.1</b> Spring Challenge</a></li>
+<li class="chapter" data-level="4.4.2" data-path="theme-phenology.html"><a href="theme-phenology.html#fall-challenge"><i class="fa fa-check"></i><b>4.4.2</b> Fall Challenge</a></li>
+</ul></li>
 <li class="chapter" data-level="4.5" data-path="theme-phenology.html"><a href="theme-phenology.html#design-team-3"><i class="fa fa-check"></i><b>4.5</b> Design team</a></li>
 <li class="chapter" data-level="4.6" data-path="theme-phenology.html"><a href="theme-phenology.html#partners-3"><i class="fa fa-check"></i><b>4.6</b> Partners</a></li>
 <li class="chapter" data-level="4.7" data-path="theme-phenology.html"><a href="theme-phenology.html#references-1"><i class="fa fa-check"></i><b>4.7</b> References</a></li>
@@ -409,16 +414,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-##  1 SJER   2020-01-06        1     3.00   0.0185 
-##  2 SJER   2020-01-06        2     3.33   0.00443
-##  3 SJER   2020-01-06        3     3.71   0.0139 
-##  4 SJER   2020-01-06        4     1.39   0.0311 
-##  5 SJER   2020-01-06        5     2.91  -0.00478
-##  6 SJER   2020-01-06        6     3.26   0.0206 
-##  7 SJER   2020-01-06        7     3.81   0.0197 
-##  8 SJER   2020-01-06        8     2.82   0.0153 
-##  9 SJER   2020-01-06        9     1.22   0.0281 
-## 10 SJER   2020-01-06       10     1.77   0.00778
+##  1 SJER   2020-01-06        1    3.71     0.0387
+##  2 SJER   2020-01-06        2    0.832    0.0169
+##  3 SJER   2020-01-06        3    1.90     0.0105
+##  4 SJER   2020-01-06        4    2.75     0.0210
+##  5 SJER   2020-01-06        5    3.03     0.0279
+##  6 SJER   2020-01-06        6    2.27     0.0463
+##  7 SJER   2020-01-06        7    5.00     0.0140
+##  8 SJER   2020-01-06        8    2.82     0.0398
+##  9 SJER   2020-01-06        9    4.93     0.0153
+## 10 SJER   2020-01-06       10    3.24     0.0312
 ## # … with 443,490 more rows</code></pre>
 </div>
 <div id="aquatics" class="section level3" number="7.1.3">
@@ -572,13 +577,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Each submission requires a metadata file to be submitted. The metadata file must have the same name as the submitted forecast, but with the .xml extension.</p>
 <p><code>theme_name-year-month-day-team_name_ID.xml</code></p>
 <p>Metadata files should be uploaded with the forecast files.</p>
-<p>The <a href="https://github.com/eco4cast/EFIstandards" target="_blank">metadata standard</a> has been designed by the Ecological Forecasting Initiative and is build off the widely used Ecological Metadata Language (EML).</p>
-<p>To help support metadata generation, we have creating two helpful functions in the neon4cast package.</p>
+<p>The <a href="https://github.com/eco4cast/EFIstandards" target="_blank">metadata standard</a> has been designed by the Ecological Forecasting Initiative and is built off the widely used Ecological Metadata Language (EML).</p>
+<p>To help support metadata generation, we have created two helpful functions in the neon4cast package.</p>
 <p>First, the <code>neon4cast::create_model_metadata(forecast_file)</code> function will open a file that has the same name as your forecast file but with a <code>yml</code> extension. You will modify the fields in this file and save it. The are comments in the yml to help you with the information and a document describing the the fields <a href="https://shorturl.at/irMQW" target="_blank">here</a></p>
-<p>Second, the <code>neon4cast::write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")</code> will use the information in your forecast file and your the yml that you saved from <code>neon4cast::create_model_metadata()</code> to generate the xml file that you will submit.</p>
-<p><code>neon4cast::write_metadata_eml</code> uses a functions that you can use outside neon4cast::write_metadata_eml to valdiate the xml files. While <code>neon4cast::write_metadata_eml</code> does the validation internally, you check the validity of their metadata before submission using the <a href="https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R" target="_blank">validator script</a>.</p>
+<p>Second, the <code>neon4cast::write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")</code> will use the information in your forecast file and the yml that you saved from <code>neon4cast::create_model_metadata()</code> to generate the xml file that you will submit.</p>
+<p><code>neon4cast::write_metadata_eml</code> uses a function that you can use outside neon4cast::write_metadata_eml to valdiate the xml files. While <code>neon4cast::write_metadata_eml</code> does the validation internally, you check the validity of their metadata before submission using the <a href="https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R" target="_blank">validator script</a>.</p>
 <p>The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., <a href="https://creativecommons.org/licenses/by/4.0/" class="uri">https://creativecommons.org/licenses/by/4.0/</a>)</p>
-<p>We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the <a href="https://github.com/eco4cast/EFIstandards/tree/master/vignettes" target="_blank">example vignettes</a> , which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at <strong><a href="mailto:eco4cast.initaitive@gmail.com" class="email">eco4cast.initaitive@gmail.com</a></strong>.</p>
+<p>We recommend teams read the full metadata standard description for definitions and more information, and in particular that they look at the <a href="https://github.com/eco4cast/EFIstandards/tree/master/vignettes" target="_blank">example vignettes</a>, which demonstrate the standard being used. Note that these Standards are a work in progress. If you find issues as you are applying them, let us know at <strong><a href="mailto:eco4cast.initaitive@gmail.com" class="email">eco4cast.initaitive@gmail.com</a></strong>.</p>
 </div>
 <div id="submission-process" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Submission process</h2>
@@ -658,7 +663,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["bookdown-start.epub"],
 "toc": {
 "collapse": "section"
 }

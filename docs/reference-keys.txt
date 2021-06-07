@@ -39,10 +39,13 @@ overview-3
 challenge-3
 data-targets-3
 green-chromatic-coordinate-gcc
+red-chromatic-coordinate-gcc
 focal-sites-3
 target-data-calculation-1
 target-file-1
 timeline-3
+spring-challenge
+fall-challenge
 design-team-3
 partners-3
 references-1

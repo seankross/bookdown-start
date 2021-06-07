@@ -32,7 +32,7 @@
   
 <link rel="prev" href="theme-phenology.html"/>
 <link rel="next" href="participation.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -188,11 +188,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="theme-phenology.html"><a href="theme-phenology.html#data-targets-3"><i class="fa fa-check"></i><b>4.3</b> Data: Targets:</a>
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="theme-phenology.html"><a href="theme-phenology.html#green-chromatic-coordinate-gcc"><i class="fa fa-check"></i><b>4.3.1</b> Green chromatic coordinate (gcc)</a></li>
-<li class="chapter" data-level="4.3.2" data-path="theme-phenology.html"><a href="theme-phenology.html#focal-sites-3"><i class="fa fa-check"></i><b>4.3.2</b> Focal sites</a></li>
-<li class="chapter" data-level="4.3.3" data-path="theme-phenology.html"><a href="theme-phenology.html#target-data-calculation-1"><i class="fa fa-check"></i><b>4.3.3</b> Target data calculation</a></li>
-<li class="chapter" data-level="4.3.4" data-path="theme-phenology.html"><a href="theme-phenology.html#target-file-1"><i class="fa fa-check"></i><b>4.3.4</b> Target file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="theme-phenology.html"><a href="theme-phenology.html#red-chromatic-coordinate-gcc"><i class="fa fa-check"></i><b>4.3.2</b> Red chromatic coordinate (gcc)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="theme-phenology.html"><a href="theme-phenology.html#focal-sites-3"><i class="fa fa-check"></i><b>4.3.3</b> Focal sites</a></li>
+<li class="chapter" data-level="4.3.4" data-path="theme-phenology.html"><a href="theme-phenology.html#target-data-calculation-1"><i class="fa fa-check"></i><b>4.3.4</b> Target data calculation</a></li>
+<li class="chapter" data-level="4.3.5" data-path="theme-phenology.html"><a href="theme-phenology.html#target-file-1"><i class="fa fa-check"></i><b>4.3.5</b> Target file</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="theme-phenology.html"><a href="theme-phenology.html#timeline-3"><i class="fa fa-check"></i><b>4.4</b> Timeline</a></li>
+<li class="chapter" data-level="4.4" data-path="theme-phenology.html"><a href="theme-phenology.html#timeline-3"><i class="fa fa-check"></i><b>4.4</b> Timeline</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="theme-phenology.html"><a href="theme-phenology.html#spring-challenge"><i class="fa fa-check"></i><b>4.4.1</b> Spring Challenge</a></li>
+<li class="chapter" data-level="4.4.2" data-path="theme-phenology.html"><a href="theme-phenology.html#fall-challenge"><i class="fa fa-check"></i><b>4.4.2</b> Fall Challenge</a></li>
+</ul></li>
 <li class="chapter" data-level="4.5" data-path="theme-phenology.html"><a href="theme-phenology.html#design-team-3"><i class="fa fa-check"></i><b>4.5</b> Design team</a></li>
 <li class="chapter" data-level="4.6" data-path="theme-phenology.html"><a href="theme-phenology.html#partners-3"><i class="fa fa-check"></i><b>4.6</b> Partners</a></li>
 <li class="chapter" data-level="4.7" data-path="theme-phenology.html"><a href="theme-phenology.html#references-1"><i class="fa fa-check"></i><b>4.7</b> References</a></li>
@@ -381,7 +386,7 @@ each NEON site</p>
 <a href="https://github.com/eco4cast/NEON-community-forecast/blob/master/02_targets.R" class="uri">https://github.com/eco4cast/NEON-community-forecast/blob/master/02_targets.R</a></p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="theme-beetle-communities.html#cb11-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/beetles/beetles-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 2,330 x 4
+<pre><code>## # A tibble: 2,344 x 4
 ##    siteID time       abundance richness
 ##    &lt;chr&gt;  &lt;date&gt;         &lt;dbl&gt;    &lt;dbl&gt;
 ##  1 CPER   2013-07-01    0.305        13
@@ -394,7 +399,7 @@ each NEON site</p>
 ##  8 OSBS   2013-07-22    0            NA
 ##  9 STER   2013-07-22    0.0952        7
 ## 10 CPER   2013-07-29    0.220        13
-## # … with 2,320 more rows</code></pre>
+## # … with 2,334 more rows</code></pre>
 <p>The table has the following columns:</p>
 <ul>
 <li><code>siteID</code>: NEON site ID<br />
@@ -502,7 +507,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["bookdown-start.epub"],
 "toc": {
 "collapse": "section"
 }

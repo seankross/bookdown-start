@@ -1,10 +1,10 @@
 # Theme: Phenology
 
-**What**: Terrestrial phenology defined by daily greenness of plants 
+**What**: Terrestrial phenology defined by daily greenness or redness of plants 
 
 **Where**: 8 deciduous broadleaf forest NEON sites in the continental U.S.
 
-**When**: Daily forecasts for 35-days in the future from February 1 - July 1, 2021 with a second round being run for the autumn. Forecast submissions are accepted daily, and later submissions after the February 1 start are permissible.
+**When**: Daily forecasts for 35-days in the future from February 1 - July 1, 2021 and from July 15, 2021 - December 15, 2021. Forecast submissions are accepted daily, and later submissions after the February 1 start are permissible.
 
 **Why**: Phenology has been identified as one of the primary ecological fingerprints of global climate change.
 
@@ -22,7 +22,7 @@ Phenology researchers often use digital cameras (such as those that are part of 
 
 ## Challenge
 
-This is an open ecological forecasting challenge to forecast spring green-up of the common greenness index (gcc), as measured by digital cameras at various deciduous broadleaf NEON sites. The forecasts will be forecasts of daily mean gcc (specifically the 90% quantile called the gcc_90, which has been shown to be more robust). The sites include Harvard Forest (HARV), Bartlett Experimental Forest (BART), Smithsonian Conservation Biology Institute, (SCBI), Steigerwaldt Land Services (STEI), The University of Kansas Field Station, KS (UKFS), Great Smoky Mountains National Park (GRSM), Dead Lake (DELA), and National Grassland (CLBJ).
+This is an open ecological forecasting challenge to forecast spring green-up of the common greenness index (gcc), as measured by digital cameras at various deciduous broadleaf NEON sites and the fall color change and leaf drop (gcc and the red index - rcc)  The forecasts will be forecasts of daily mean gcc (specifically the 90% quantile called the gcc_90 or rcc90, which has been shown to be more robust). The sites include Harvard Forest (HARV), Bartlett Experimental Forest (BART), Smithsonian Conservation Biology Institute, (SCBI), Steigerwaldt Land Services (STEI), The University of Kansas Field Station, KS (UKFS), Great Smoky Mountains National Park (GRSM), Dead Lake (DELA), and National Grassland (CLBJ).
 
 NOAA Global Ensemble Forecast System weather forecasts for each NEON site is provided for teams to use: https://data.ecoforecast.org/minio/drivers/noaa/
 
@@ -46,6 +46,16 @@ The ratio of the green digital number to the sum of the red, green, blue digital
 
 Quantitative metrics of vegetation color extracted from PhenoCam imagery provide data that are consistent with ground observations of phenology and as well as other conventional vegetation indices across ecosystems. 
 
+### Red chromatic coordinate (gcc)
+
+**Definition**
+
+The ratio of the red digital number to the sum of the red, green, blue digital numbers from a digital camera.  rcc_90 is the 90th percentile of the rcc within a set of pixel called a region of interest (ROI)
+
+**Motivation**
+
+Quantitative metrics of red vegetation color extracted from PhenoCam imagery provide data on changes in pigments over the course of fall senescence (fall color change and leaf drop).  The rcc can be highly correlated with gcc except in the fall when the gcc declines but rcc increases.  rcc_90 is an index of peak fall colors.   
+
 ### Focal sites
 
 | Site Name       | Site (and PhenoCam) ID     | NEON Domain     | Latitude  |  Longitude | Dominant Species |
@@ -63,7 +73,7 @@ Quantitative metrics of vegetation color extracted from PhenoCam imagery provide
 
 Digital cameras mounted above forests are pointed at the forest canopy.  Images are collected every half hour.
 
-The images are a set of pixels values in red, green, and blue color channels (RGB).  A pixel value is an 8-bit digital number (DN). Because internal processing (including exposure control) and external factors affecting scene illumination (weather and atmospheric effects) both influence the retrieved RGB signature, we calculate a number of vegetation indices that are effective at suppressing this unwanted variation and maximizing the underlying phenological signal. Most important among these is the green chromatic coordinate (GCC), calculated as G<sub>CC</sub> = G<sub>DN</sub> / (R<sub>DN</sub> + G<sub>DN</sub> + B<sub>DN</sub>).
+The images are a set of pixels values in red, green, and blue color channels (RGB).  A pixel value is an 8-bit digital number (DN). Because internal processing (including exposure control) and external factors affecting scene illumination (weather and atmospheric effects) both influence the retrieved RGB signature, we calculate a number of vegetation indices that are effective at suppressing this unwanted variation and maximizing the underlying phenological signal. Most important among these is the green chromatic coordinate (GCC), calculated as G<sub>CC</sub> = G<sub>DN</sub> / (R<sub>DN</sub> + G<sub>DN</sub> + B<sub>DN</sub>) and red chromatic coordinate (GCC), calculated as R<sub>CC</sub> = G<sub>DN</sub> / (R<sub>DN</sub> + G<sub>DN</sub> + B<sub>DN</sub>)
  
 For additional details, see Richardson et al. (2018) Scientific Data, and Richardson (2019) New Phytologist.
 
@@ -83,31 +93,39 @@ readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-target
 ```
 
 ```
-## # A tibble: 12,648 x 4
-##    time       siteID gcc_90   gcc_sd
-##    <date>     <chr>   <dbl>    <dbl>
-##  1 2016-12-13 HARV    0.329 0.000145
-##  2 2016-12-14 HARV    0.328 0.000223
-##  3 2016-12-15 HARV    0.330 0.000610
-##  4 2016-12-16 HARV    0.329 0.000416
-##  5 2016-12-17 HARV    0.332 0.000295
-##  6 2016-12-18 HARV    0.332 0.000297
-##  7 2016-12-19 HARV    0.329 0.000360
-##  8 2016-12-20 HARV    0.330 0.000424
-##  9 2016-12-21 HARV    0.329 0.000470
-## 10 2016-12-22 HARV    0.329 0.000889
-## # … with 12,638 more rows
+## # A tibble: 13,096 x 6
+##    time       siteID gcc_90 rcc_90   gcc_sd  rcc_sd
+##    <date>     <chr>   <dbl>  <dbl>    <dbl>   <dbl>
+##  1 2016-12-13 HARV    0.329  0.375 0.000148 0.0205 
+##  2 2016-12-14 HARV    0.328  0.411 0.000170 0.00354
+##  3 2016-12-15 HARV    0.330  0.401 0.000547 0.00759
+##  4 2016-12-16 HARV    0.329  0.398 0.000448 0.00990
+##  5 2016-12-17 HARV    0.332  0.351 0.000359 0.0218 
+##  6 2016-12-18 HARV    0.332  0.353 0.000244 0.0322 
+##  7 2016-12-19 HARV    0.329  0.399 0.000355 0.0105 
+##  8 2016-12-20 HARV    0.330  0.405 0.000337 0.00786
+##  9 2016-12-21 HARV    0.329  0.412 0.000363 0.00689
+## 10 2016-12-22 HARV    0.329  0.412 0.000797 0.0105 
+## # … with 13,086 more rows
 ```
 The target file has the following columns:
 
 - `time`: YYYY-MM-DD    
 - `siteID`: NEON site code (e.g., BART)   
 - `gcc_90`: 90th percentile GCC for the ROI   
-- `gcc_sd`: standard deviation of the 90th percentile   
+- `rcc_90`: 90th percentile RCC for the ROI   
+- `gcc_sd`: standard deviation of the 90th percentile
+- `rcc_sd`: standard deviation of the 90th percentile
 
 ## Timeline
 
+### Spring Challenge
+
 Forecasts for a minimum of 35 days can be submitted daily by 6 pm ET for the period of February 1st through July 1st, 2021. Forecast should be submitted starting February 1st by 6 pm ET. A minimum of 35 days in the future must be forecasted for each submission. For example, the first submitted forecast should be for at least February 1st – March 7th, but it could be for the full spring. New forecasts can be submitted daily as new weather forecasts and observations (e.g., PhenoCam) become available. Processed PhenoCam data will be available daily by 11:59 pm ET for each day. Teams are allowed to start submitting forecasts after February 1st, but only forecasts of future days (when submitted) will be allowed. Late forecasts might be allowed under extenuating circumstances related to computer failure or processing delays on our end. Forecasts do not have to be submitted daily and can be longer than 35 days.
+
+### Fall Challenge
+
+Forecasts for a minimum of 35 days can be submitted daily by 6 pm ET for the period of July 15th through December 15th, 2021. Forecast should be submitted starting July 15th by 6 pm ET. A minimum of 35 days in the future must be forecasted for each submission. For example, the first submitted forecast should be for at least July 15th – August 20th, but it could be for the full autumn New forecasts can be submitted daily as new weather forecasts and observations (e.g., PhenoCam) become available. Processed PhenoCam data will be available daily by 11:59 pm ET for each day. Teams are allowed to start submitting forecasts after July 15th, but only forecasts of future days (when submitted) will be allowed. Late forecasts might be allowed under extenuating circumstances related to computer failure or processing delays on our end. Forecasts do not have to be submitted daily and can be longer than 35 days.
 
 ## Design team
 
