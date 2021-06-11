@@ -12,6 +12,8 @@
 
 **How:** [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
 
+We held a Q&A session on May 21, 2021. You can find a recording from that session [HERE] (https://youtu.be/KBAPZoDKbk8){target="_blank"}.
+
 ## Overview
 
 In streams and rivers, forecasting water temperature can be meaningful for protecting aquatic communities while maintaining socio-economic benefits (Ouellet-Proulx et al. 2017). In lentic systems, successfully forecasting surface water temperatures can be important for fisheries and water utilities that need to manage the outflowing temperatures (Zhu et al. 2020). Recently, water temperature forecasts in lakes have been used to predict seasonal turnover when nutrients from the bottom can be mixed to the surface and impair the water quality. 
