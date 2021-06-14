@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Theme: Beetle Communities | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Theme: Beetle Communities | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
@@ -50,12 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -115,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -356,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="challenge-5" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Challenge</h2>
-<p>This is an open ecological forecasting challenge to forecast carabid species richness, defined as the total number of species, and abundance, defined as the total number of carabid individuals. The forecasts should be done weekly per site for all NEON terrestrial sites with richness being absolute and abundance scaled by the sampling effort. Contributing teams are required to submit a forecast for May-Dec 2021 and Jan-Dec 2022 on June 30, 2021. However, teams are encouraged to update their forecasts on the last day of each month, ending on December 31, 2021, as NEON validation data are released. NEON releases carabid sampling data weekly and no sooner than 60 days after collection, so a model submitted on June 30 can include a forecast for the first week of May, and so forth. Teams may use any open data products as drivers of richness and abundance so long as they are not from the month being forecast, and are made publicly available (minimum of URL, but ideally a script). Potential driver data sources include: NEON site data (<a href="https://www.neonscience.org/data-collection/soils-sediments" target="_blank">Soil and sediment data</a>, <a href="https://www.neonscience.org/data-collection/terrestrial-plants" target="_blank">Terrestrial Plant data</a>, <a href="https://www.neonscience.org/data-collection/meteorology">weather data</a>){target="_blank"}, NOAA forecasts, and beyond.</p>
+<p>This is an open ecological forecasting challenge to forecast carabid species richness, defined as the total number of species, and abundance, defined as the total number of carabid individuals. The forecasts should be done weekly per site for all NEON terrestrial sites with richness being absolute and abundance scaled by the sampling effort. Contributing teams are required to submit a forecast for May-Dec 2021 and Jan-Dec 2022 on June 30, 2021. However, teams are encouraged to update their forecasts on the last day of each month, ending on December 31, 2021, as NEON validation data are released. NEON releases carabid sampling data weekly and no sooner than 60 days after collection, so a model submitted on June 30 can include a forecast for the first week of May, and so forth. Teams may use any open data products as drivers of richness and abundance so long as they are not from the month being forecast, and are made publicly available (minimum of URL, but ideally a script). Potential driver data sources include: NEON site data (<a href="https://www.neonscience.org/data-collection/soils-sediments" target="_blank">Soil and sediment data</a>, <a href="https://www.neonscience.org/data-collection/terrestrial-plants" target="_blank">Terrestrial Plant data</a>, <a href="https://www.neonscience.org/data-collection/meteorology">weather data</a>){target=“_blank”}, NOAA forecasts, and beyond.</p>
 </div>
 <div id="data-targets-5" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Data: Targets</h2>
@@ -398,7 +402,7 @@ each NEON site</p>
 <a href="https://github.com/eco4cast/NEON-community-forecast/blob/master/02_targets.R" class="uri">https://github.com/eco4cast/NEON-community-forecast/blob/master/02_targets.R</a></p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="theme-beetle-communities.html#cb13-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/beetles/beetles-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 2,344 x 4
+<pre><code>## # A tibble: 2,347 x 4
 ##    siteID time       abundance richness
 ##    &lt;chr&gt;  &lt;date&gt;         &lt;dbl&gt;    &lt;dbl&gt;
 ##  1 CPER   2013-07-01    0.305        13
@@ -411,7 +415,7 @@ each NEON site</p>
 ##  8 OSBS   2013-07-22    0            NA
 ##  9 STER   2013-07-22    0.0952        7
 ## 10 CPER   2013-07-29    0.220        13
-## # … with 2,334 more rows</code></pre>
+## # … with 2,337 more rows</code></pre>
 <p>The table has the following columns:</p>
 <ul>
 <li><code>siteID</code>: NEON site ID<br />
@@ -500,6 +504,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -519,7 +524,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-start.epub"],
+"download": null,
 "toc": {
 "collapse": "section"
 }

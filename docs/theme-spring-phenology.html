@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Theme: Spring Phenology | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Theme: Spring Phenology | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
@@ -50,12 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -115,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -466,20 +470,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.3.4</span> Target file</h3>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="theme-spring-phenology.html#cb9-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 13,096 x 6
-##    time       siteID gcc_90 rcc_90   gcc_sd  rcc_sd
-##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;
-##  1 2016-12-13 HARV    0.329  0.375 0.000148 0.0205 
-##  2 2016-12-14 HARV    0.328  0.411 0.000170 0.00354
-##  3 2016-12-15 HARV    0.330  0.401 0.000547 0.00759
-##  4 2016-12-16 HARV    0.329  0.398 0.000448 0.00990
-##  5 2016-12-17 HARV    0.332  0.351 0.000359 0.0218 
-##  6 2016-12-18 HARV    0.332  0.353 0.000244 0.0322 
-##  7 2016-12-19 HARV    0.329  0.399 0.000355 0.0105 
-##  8 2016-12-20 HARV    0.330  0.405 0.000337 0.00786
-##  9 2016-12-21 HARV    0.329  0.412 0.000363 0.00689
-## 10 2016-12-22 HARV    0.329  0.412 0.000797 0.0105 
-## # … with 13,086 more rows</code></pre>
+<pre><code>## # A tibble: 13,152 x 6
+##    time       siteID gcc_90 rcc_90  gcc_sd rcc_sd
+##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+##  1 2016-12-13 HARV    0.329  0.375 0.00153 0.0116
+##  2 2016-12-14 HARV    0.328  0.411 0.00153 0.0116
+##  3 2016-12-15 HARV    0.330  0.401 0.00153 0.0116
+##  4 2016-12-16 HARV    0.329  0.398 0.00153 0.0116
+##  5 2016-12-17 HARV    0.332  0.351 0.00153 0.0116
+##  6 2016-12-18 HARV    0.332  0.353 0.00153 0.0116
+##  7 2016-12-19 HARV    0.329  0.399 0.00153 0.0116
+##  8 2016-12-20 HARV    0.330  0.405 0.00153 0.0116
+##  9 2016-12-21 HARV    0.329  0.412 0.00153 0.0116
+## 10 2016-12-22 HARV    0.329  0.412 0.00153 0.0116
+## # … with 13,142 more rows</code></pre>
 <p>The target file has the following columns:</p>
 <ul>
 <li><code>time</code>: YYYY-MM-DD<br />
@@ -550,6 +554,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -569,7 +574,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-start.epub"],
+"download": null,
 "toc": {
 "collapse": "section"
 }

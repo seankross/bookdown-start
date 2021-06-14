@@ -46,6 +46,10 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_
 ```
 
 ```
+## ! curl package not installed, falling back to using `url()`
+```
+
+```
 ## 
 ## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
@@ -98,6 +102,10 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ```
 
 ```
+## ! curl package not installed, falling back to using `url()`
+```
+
+```
 ## 
 ## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
@@ -113,16 +121,16 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1    3.71     0.0387
-##  2 SJER   2020-01-06        2    0.832    0.0169
-##  3 SJER   2020-01-06        3    1.90     0.0105
-##  4 SJER   2020-01-06        4    2.75     0.0210
-##  5 SJER   2020-01-06        5    3.03     0.0279
-##  6 SJER   2020-01-06        6    2.27     0.0463
-##  7 SJER   2020-01-06        7    5.00     0.0140
-##  8 SJER   2020-01-06        8    2.82     0.0398
-##  9 SJER   2020-01-06        9    4.93     0.0153
-## 10 SJER   2020-01-06       10    3.24     0.0312
+##  1 SJER   2020-01-06        1     2.98   0.00762
+##  2 SJER   2020-01-06        2     4.03   0.00450
+##  3 SJER   2020-01-06        3     4.23   0.0266 
+##  4 SJER   2020-01-06        4     2.29   0.0208 
+##  5 SJER   2020-01-06        5     2.82   0.00130
+##  6 SJER   2020-01-06        6     3.32   0.0113 
+##  7 SJER   2020-01-06        7     2.21   0.0202 
+##  8 SJER   2020-01-06        8     1.80   0.00537
+##  9 SJER   2020-01-06        9     4.42   0.0240 
+## 10 SJER   2020-01-06       10     5.10   0.0125 
 ## # … with 443,490 more rows
 ```
 
@@ -141,6 +149,10 @@ Here is an example of a csv forecast file that meets the standard for the aquati
 
 ```r
 readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz")
+```
+
+```
+## ! curl package not installed, falling back to using `url()`
 ```
 
 ```
@@ -189,6 +201,10 @@ Here is are examples of csv forecast files that meet the standard for the phenol
 
 ```r
 readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-UCSC_P_EDM.csv")
+```
+
+```
+## ! curl package not installed, falling back to using `url()`
 ```
 
 ```
