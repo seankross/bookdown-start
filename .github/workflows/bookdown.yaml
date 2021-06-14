@@ -44,9 +44,6 @@ jobs:
       - name: Build site
         run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
 
-      - name: Install npm
-        uses: actions/setup-node@v1
-
       - name: Commit results
         run: |
           git config --local user.name "$GITHUB_ACTOR"
