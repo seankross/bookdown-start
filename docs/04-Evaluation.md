@@ -14,6 +14,8 @@ Forecasts will be scored using the continuous ranked probability score (CRPS), a
 
 We will generate a combined score for all locations and forecast horizons. Forecasts will also be evaluated using the CRPS at each time-step in the forecast horizon and each location included in the forecasts.
 
+Importantly, we use the convention for CRPS where zero is lowest and best possible score, therefore teams want to achieve the lowest score. CPRS can be also expressed as a negative number with zero as highest and best possible score (Gneiting & Raftery 2007).  The `scoringRules` package that we use follows the 0 or greater convention.
+
 
 
 ### Example of a CRPS calculation from an ensemble forecast
@@ -51,7 +53,7 @@ crps_equation_2
 ```
 
 ```
-## [1] 0.2318857
+## [1] 0.2340598
 ```
 
 Now calculate using the `crps_sample()` function in the `scoringRules` package
@@ -62,7 +64,7 @@ crps_sample(y = y, dat = x)
 ```
 
 ```
-## [1] 0.2318857
+## [1] 0.2340598
 ```
 
 ### Exploring the scoring surface
