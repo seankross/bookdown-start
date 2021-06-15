@@ -198,7 +198,8 @@ noaa_fc
 #> #   time <dbl>, latitude <dbl>, longitude <dbl>
 ```
 
-### Submit a forecast
+
+### Submit a forecast {#neon4cast-submit}
 
 When you are ready to submit your forecast to EFI:
 
