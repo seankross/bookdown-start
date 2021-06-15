@@ -609,9 +609,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.3</span> Submission process</h2>
 <p>Individual forecast (csv, netCDF) and metadate (xml) files can be uploaded any time before the specific deadlines as defined by each theme. Only the most recent files will be scored.</p>
 <p><strong>The correct file name and format is critical for the automated processing of submissions</strong></p>
-<p>Teams will submit their forecast netCDF or csv files manually through the challenge website or with an R script.
-- You can manually submit your forecast through the <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a> website using the red plus on the bottom left.<br />
-- You can submit from an R script using the following:</p>
+<p>Teams will submit their forecast netCDF or csv files manually through the challenge website or with an R script.</p>
+<ul>
+<li>You can manually submit your forecast through the <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a> website using the red plus on the bottom left.<br />
+</li>
+<li>You can submit from an R script using the following:</li>
+</ul>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="submission-instructions.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span> <span class="ot">=</span> <span class="st">&quot;data&quot;</span>,</span>
 <span id="cb37-2"><a href="submission-instructions.html#cb37-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;AWS_S3_ENDPOINT&quot;</span> <span class="ot">=</span> <span class="st">&quot;ecoforecast.org&quot;</span>)</span>
 <span id="cb37-3"><a href="submission-instructions.html#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
