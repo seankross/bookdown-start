@@ -53,7 +53,7 @@ crps_equation_2
 ```
 
 ```
-## [1] 0.2340598
+## [1] 0.2325566
 ```
 
 Now calculate using the `crps_sample()` function in the `scoringRules` package
@@ -64,7 +64,7 @@ crps_sample(y = y, dat = x)
 ```
 
 ```
-## [1] 0.2340598
+## [1] 0.2325566
 ```
 
 ### Exploring the scoring surface

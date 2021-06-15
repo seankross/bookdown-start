@@ -121,16 +121,16 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1     2.98   0.00762
-##  2 SJER   2020-01-06        2     4.03   0.00450
-##  3 SJER   2020-01-06        3     4.23   0.0266 
-##  4 SJER   2020-01-06        4     2.29   0.0208 
-##  5 SJER   2020-01-06        5     2.82   0.00130
-##  6 SJER   2020-01-06        6     3.32   0.0113 
-##  7 SJER   2020-01-06        7     2.21   0.0202 
-##  8 SJER   2020-01-06        8     1.80   0.00537
-##  9 SJER   2020-01-06        9     4.42   0.0240 
-## 10 SJER   2020-01-06       10     5.10   0.0125 
+##  1 SJER   2020-01-06        1     4.08   0.0340 
+##  2 SJER   2020-01-06        2     3.31   0.0299 
+##  3 SJER   2020-01-06        3     3.09   0.00777
+##  4 SJER   2020-01-06        4     3.65   0.0112 
+##  5 SJER   2020-01-06        5     2.74   0.0320 
+##  6 SJER   2020-01-06        6     2.51   0.0175 
+##  7 SJER   2020-01-06        7     4.98   0.0220 
+##  8 SJER   2020-01-06        8     3.78   0.0239 
+##  9 SJER   2020-01-06        9     2.70   0.0275 
+## 10 SJER   2020-01-06       10     1.39   0.0275 
 ## # … with 443,490 more rows
 ```
 
@@ -360,8 +360,16 @@ Sys.setenv("AWS_DEFAULT_REGION" = "data",
            "AWS_S3_ENDPOINT" = "ecoforecast.org")
 
 aws.s3::put_object(object = "theme_name-forecast-year-month-day-team_name.csv", bucket = "submissions")
+aws.s3::put_object(object = "theme_name-year-month-day-team_name_ID.xml", bucket = "submissions")
 ```
 
+- Finally, we have developed a function called submit in the `neon4cast` package handles submission process. Internally it performs the `aws.s3` commands in option two and executes the submission \@ref(neon4cast-submit):
+
+
+```r
+neon4cast::submit(forecast_file = "theme_name-forecast-year-month-day-team_name.csv",
+                  metadata = "theme_name-year-month-day-team_name_ID.xml")
+```
 
 Submissions need to adhere to the forecast format that is provided above, including the file naming convention. Our cyberinfastructure automatically evaluates forecasts and relies on the expected formatting. Contact eco4cast.initiative@gmail.com if you experience technical issues with submitting.
 

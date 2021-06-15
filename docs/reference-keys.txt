@@ -113,7 +113,7 @@ score-forecast-locally
 validate-a-forecast-file
 generate-forecast-metadata-in-eml
 access-efi-snapshots-of-noaa-forecasts-at-neon-sites
-submit-a-forecast
+neon4cast-submit
 neonstore-package
 installation-1
 quickstart

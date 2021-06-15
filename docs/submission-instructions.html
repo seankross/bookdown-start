@@ -292,7 +292,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1.4" data-path="helpful-functions.html"><a href="helpful-functions.html#validate-a-forecast-file"><i class="fa fa-check"></i><b>11.1.4</b> Validate a forecast file</a></li>
 <li class="chapter" data-level="11.1.5" data-path="helpful-functions.html"><a href="helpful-functions.html#generate-forecast-metadata-in-eml"><i class="fa fa-check"></i><b>11.1.5</b> Generate forecast metadata in EML</a></li>
 <li class="chapter" data-level="11.1.6" data-path="helpful-functions.html"><a href="helpful-functions.html#access-efi-snapshots-of-noaa-forecasts-at-neon-sites"><i class="fa fa-check"></i><b>11.1.6</b> Access EFI snapshots of NOAA forecasts at NEON sites</a></li>
-<li class="chapter" data-level="11.1.7" data-path="helpful-functions.html"><a href="helpful-functions.html#submit-a-forecast"><i class="fa fa-check"></i><b>11.1.7</b> Submit a forecast</a></li>
+<li class="chapter" data-level="11.1.7" data-path="helpful-functions.html"><a href="helpful-functions.html#neon4cast-submit"><i class="fa fa-check"></i><b>11.1.7</b> Submit a forecast</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="helpful-functions.html"><a href="helpful-functions.html#neonstore-package"><i class="fa fa-check"></i><b>11.2</b> neonstore package</a>
 <ul>
@@ -432,16 +432,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-##  1 SJER   2020-01-06        1     2.98   0.00762
-##  2 SJER   2020-01-06        2     4.03   0.00450
-##  3 SJER   2020-01-06        3     4.23   0.0266 
-##  4 SJER   2020-01-06        4     2.29   0.0208 
-##  5 SJER   2020-01-06        5     2.82   0.00130
-##  6 SJER   2020-01-06        6     3.32   0.0113 
-##  7 SJER   2020-01-06        7     2.21   0.0202 
-##  8 SJER   2020-01-06        8     1.80   0.00537
-##  9 SJER   2020-01-06        9     4.42   0.0240 
-## 10 SJER   2020-01-06       10     5.10   0.0125 
+##  1 SJER   2020-01-06        1     4.08   0.0340 
+##  2 SJER   2020-01-06        2     3.31   0.0299 
+##  3 SJER   2020-01-06        3     3.09   0.00777
+##  4 SJER   2020-01-06        4     3.65   0.0112 
+##  5 SJER   2020-01-06        5     2.74   0.0320 
+##  6 SJER   2020-01-06        6     2.51   0.0175 
+##  7 SJER   2020-01-06        7     4.98   0.0220 
+##  8 SJER   2020-01-06        8     3.78   0.0239 
+##  9 SJER   2020-01-06        9     2.70   0.0275 
+## 10 SJER   2020-01-06       10     1.39   0.0275 
 ## # … with 443,490 more rows</code></pre>
 </div>
 <div id="aquatics" class="section level3" number="8.1.3">
@@ -615,7 +615,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="submission-instructions.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span> <span class="ot">=</span> <span class="st">&quot;data&quot;</span>,</span>
 <span id="cb37-2"><a href="submission-instructions.html#cb37-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;AWS_S3_ENDPOINT&quot;</span> <span class="ot">=</span> <span class="st">&quot;ecoforecast.org&quot;</span>)</span>
 <span id="cb37-3"><a href="submission-instructions.html#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="submission-instructions.html#cb37-4" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span></code></pre></div>
+<span id="cb37-4"><a href="submission-instructions.html#cb37-4" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span>
+<span id="cb37-5"><a href="submission-instructions.html#cb37-5" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-year-month-day-team_name_ID.xml&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span></code></pre></div>
+<ul>
+<li>Finally, we have developed a function called submit in the <code>neon4cast</code> package handles submission process. Internally it performs the <code>aws.s3</code> commands in option two and executes the submission <a href="helpful-functions.html#neon4cast-submit">11.1.7</a>:</li>
+</ul>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="submission-instructions.html#cb38-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">submit</span>(<span class="at">forecast_file =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>,</span>
+<span id="cb38-2"><a href="submission-instructions.html#cb38-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">metadata =</span> <span class="st">&quot;theme_name-year-month-day-team_name_ID.xml&quot;</span>)</span></code></pre></div>
 <p>Submissions need to adhere to the forecast format that is provided above, including the file naming convention. Our cyberinfastructure automatically evaluates forecasts and relies on the expected formatting. Contact <a href="mailto:eco4cast.initiative@gmail.com" class="email">eco4cast.initiative@gmail.com</a> if you experience technical issues with submitting.</p>
 <p><strong>Note:</strong> If you have used AWS in the past you might have credential files in an .aws folder in your home directory that will cause an error when you try to upload to a non-AWS bucket. If you encounter this error you may need to rename your credentials files so put_object doesn’t try to read them.</p>
 </div>
