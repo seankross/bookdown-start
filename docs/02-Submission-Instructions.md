@@ -351,9 +351,9 @@ Individual forecast (csv, netCDF) and metadate (xml) files can be uploaded any t
 **The correct file name and format is critical for the automated processing of submissions**
 
 Teams will submit their forecast netCDF or csv files manually through the challenge website or with an R script. 
-- You can manually submit your forecast through the https://data.ecoforecast.org/minio/submissions/ website using the red plus on the bottom left.   
-- You can submit from an R script using the following:  
 
+- You can manually submit your forecast through the https://data.ecoforecast.org/minio/submissions/ website using the red plus on the bottom left.   
+- You can submit from an R script using the following:
 
 ```r
 Sys.setenv("AWS_DEFAULT_REGION" = "data",
@@ -362,14 +362,13 @@ Sys.setenv("AWS_DEFAULT_REGION" = "data",
 aws.s3::put_object(object = "theme_name-forecast-year-month-day-team_name.csv", bucket = "submissions")
 aws.s3::put_object(object = "theme_name-year-month-day-team_name_ID.xml", bucket = "submissions")
 ```
-
 - Finally, we have developed a function called submit in the `neon4cast` package handles submission process. Internally it performs the `aws.s3` commands in option two and executes the submission \@ref(neon4cast-submit):
-
 
 ```r
 neon4cast::submit(forecast_file = "theme_name-forecast-year-month-day-team_name.csv",
                   metadata = "theme_name-year-month-day-team_name_ID.xml")
 ```
+
 
 Submissions need to adhere to the forecast format that is provided above, including the file naming convention. Our cyberinfastructure automatically evaluates forecasts and relies on the expected formatting. Contact eco4cast.initiative@gmail.com if you experience technical issues with submitting.
 
