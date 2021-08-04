@@ -402,7 +402,7 @@ each NEON site</p>
 <a href="https://github.com/eco4cast/NEON-community-forecast/blob/master/02_targets.R" class="uri">https://github.com/eco4cast/NEON-community-forecast/blob/master/02_targets.R</a></p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="theme-beetle-communities.html#cb13-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/beetles/beetles-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 2,347 x 4
+<pre><code>## # A tibble: 2,386 x 4
 ##    siteID time       abundance richness
 ##    &lt;chr&gt;  &lt;date&gt;         &lt;dbl&gt;    &lt;dbl&gt;
 ##  1 CPER   2013-07-01    0.305        13
@@ -415,7 +415,7 @@ each NEON site</p>
 ##  8 OSBS   2013-07-22    0            NA
 ##  9 STER   2013-07-22    0.0952        7
 ## 10 CPER   2013-07-29    0.220        13
-## # … with 2,337 more rows</code></pre>
+## # … with 2,376 more rows</code></pre>
 <p>The table has the following columns:</p>
 <ul>
 <li><code>siteID</code>: NEON site ID<br />

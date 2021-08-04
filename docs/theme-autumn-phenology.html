@@ -477,20 +477,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.3.5</span> Target file</h3>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="theme-autumn-phenology.html#cb11-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 13,152 x 6
-##    time       siteID gcc_90 rcc_90  gcc_sd rcc_sd
-##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
-##  1 2016-12-13 HARV    0.329  0.375 0.00190 0.0114
-##  2 2016-12-14 HARV    0.328  0.411 0.00190 0.0114
-##  3 2016-12-15 HARV    0.330  0.401 0.00190 0.0114
-##  4 2016-12-16 HARV    0.329  0.398 0.00190 0.0114
-##  5 2016-12-17 HARV    0.332  0.351 0.00190 0.0114
-##  6 2016-12-18 HARV    0.332  0.353 0.00190 0.0114
-##  7 2016-12-19 HARV    0.329  0.399 0.00190 0.0114
-##  8 2016-12-20 HARV    0.330  0.405 0.00190 0.0114
-##  9 2016-12-21 HARV    0.329  0.412 0.00190 0.0114
-## 10 2016-12-22 HARV    0.329  0.412 0.00190 0.0114
-## # … with 13,142 more rows</code></pre>
+<pre><code>## # A tibble: 13,544 x 6
+##    time       siteID gcc_90 rcc_90   gcc_sd  rcc_sd
+##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+##  1 2016-12-13 HARV    0.329  0.375 0.000888 0.00909
+##  2 2016-12-14 HARV    0.328  0.411 0.000888 0.00909
+##  3 2016-12-15 HARV    0.330  0.401 0.000888 0.00909
+##  4 2016-12-16 HARV    0.329  0.398 0.000888 0.00909
+##  5 2016-12-17 HARV    0.332  0.351 0.000888 0.00909
+##  6 2016-12-18 HARV    0.332  0.353 0.000888 0.00909
+##  7 2016-12-19 HARV    0.329  0.399 0.000888 0.00909
+##  8 2016-12-20 HARV    0.330  0.405 0.000888 0.00909
+##  9 2016-12-21 HARV    0.329  0.412 0.000888 0.00909
+## 10 2016-12-22 HARV    0.329  0.412 0.000888 0.00909
+## # … with 13,534 more rows</code></pre>
 <p>The target file has the following columns:</p>
 <ul>
 <li><code>time</code>: YYYY-MM-DD<br />

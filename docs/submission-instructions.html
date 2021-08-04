@@ -432,16 +432,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-##  1 SJER   2020-01-06        1     4.08   0.0340 
-##  2 SJER   2020-01-06        2     3.31   0.0299 
-##  3 SJER   2020-01-06        3     3.09   0.00777
-##  4 SJER   2020-01-06        4     3.65   0.0112 
-##  5 SJER   2020-01-06        5     2.74   0.0320 
-##  6 SJER   2020-01-06        6     2.51   0.0175 
-##  7 SJER   2020-01-06        7     4.98   0.0220 
-##  8 SJER   2020-01-06        8     3.78   0.0239 
-##  9 SJER   2020-01-06        9     2.70   0.0275 
-## 10 SJER   2020-01-06       10     1.39   0.0275 
+##  1 SJER   2020-01-06        1     3.78   0.00696
+##  2 SJER   2020-01-06        2     4.14   0.0201 
+##  3 SJER   2020-01-06        3     3.37   0.00799
+##  4 SJER   2020-01-06        4     4.44   0.0273 
+##  5 SJER   2020-01-06        5     3.48   0.00818
+##  6 SJER   2020-01-06        6     2.96   0.0324 
+##  7 SJER   2020-01-06        7     2.03   0.0130 
+##  8 SJER   2020-01-06        8     4.58   0.0239 
+##  9 SJER   2020-01-06        9     3.95   0.0102 
+## 10 SJER   2020-01-06       10     4.06   0.00825
 ## # … with 443,490 more rows</code></pre>
 </div>
 <div id="aquatics" class="section level3" number="8.1.3">
@@ -496,8 +496,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
 <li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
 <li><code>gcc_90</code>: green chromatic coordinate</li>
+<li><code>rcc_90</code>: red chromatic coordinate</li>
 </ul>
-<p>Here is are examples of csv forecast files that meet the standard for the phenology theme</p>
+<p>Here is are examples of csv forecast files that meet the standard for the phenology theme. There will be an extra column called <code>rcc_90</code> when <code>rcc_90</code> is included in the forecast.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="submission-instructions.html#cb27-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-UCSC_P_EDM.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## ! curl package not installed, falling back to using `url()`</code></pre>
 <pre><code>## 
@@ -611,7 +612,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>The correct file name and format is critical for the automated processing of submissions</strong></p>
 <p>Teams will submit their forecast netCDF or csv files manually through the challenge website or with an R script.</p>
 <ul>
-<li>You can manually submit your forecast through the <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a> website using the red plus on the bottom left.<br />
+<li>You can manually submit your forecast through the <a href="https://data.ecoforecast.org/minio/submissions/" class="uri">https://data.ecoforecast.org/minio/submissions/</a> website using the red plus on the bottom right<br />
 </li>
 <li>You can submit from an R script using the following:</li>
 </ul>

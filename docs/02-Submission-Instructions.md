@@ -121,16 +121,16 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1     4.08   0.0340 
-##  2 SJER   2020-01-06        2     3.31   0.0299 
-##  3 SJER   2020-01-06        3     3.09   0.00777
-##  4 SJER   2020-01-06        4     3.65   0.0112 
-##  5 SJER   2020-01-06        5     2.74   0.0320 
-##  6 SJER   2020-01-06        6     2.51   0.0175 
-##  7 SJER   2020-01-06        7     4.98   0.0220 
-##  8 SJER   2020-01-06        8     3.78   0.0239 
-##  9 SJER   2020-01-06        9     2.70   0.0275 
-## 10 SJER   2020-01-06       10     1.39   0.0275 
+##  1 SJER   2020-01-06        1     3.78   0.00696
+##  2 SJER   2020-01-06        2     4.14   0.0201 
+##  3 SJER   2020-01-06        3     3.37   0.00799
+##  4 SJER   2020-01-06        4     4.44   0.0273 
+##  5 SJER   2020-01-06        5     3.48   0.00818
+##  6 SJER   2020-01-06        6     2.96   0.0324 
+##  7 SJER   2020-01-06        7     2.03   0.0130 
+##  8 SJER   2020-01-06        8     4.58   0.0239 
+##  9 SJER   2020-01-06        9     3.95   0.0102 
+## 10 SJER   2020-01-06       10     4.06   0.00825
 ## # … with 443,490 more rows
 ```
 
@@ -195,8 +195,9 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-0
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `gcc_90`: green chromatic coordinate
+- `rcc_90`: red chromatic coordinate
 
-Here is are examples of csv forecast files that meet the standard for the phenology theme
+Here is are examples of csv forecast files that meet the standard for the phenology theme. There will be an extra column called `rcc_90` when `rcc_90` is included in the forecast.
 
 
 ```r
@@ -352,7 +353,7 @@ Individual forecast (csv, netCDF) and metadate (xml) files can be uploaded any t
 
 Teams will submit their forecast netCDF or csv files manually through the challenge website or with an R script. 
 
-- You can manually submit your forecast through the https://data.ecoforecast.org/minio/submissions/ website using the red plus on the bottom left.   
+- You can manually submit your forecast through the https://data.ecoforecast.org/minio/submissions/ website using the red plus on the bottom right   
 - You can submit from an R script using the following:
 
 ```r

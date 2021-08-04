@@ -372,7 +372,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A file with previously released NEON data that has been processed into targets is provided below. The target script can be found here. The same processing will be applied to new data that are used for forecast evaluation. Before the Aquatics challenge begins, a <a href="https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R" target="_blank">processing script</a> is available in the neon4cast-aquatics GitHub repository.</p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="theme-aquatic-ecosystems.html#cb1-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 2,740 x 9
+<pre><code>## # A tibble: 2,800 x 9
 ##    time       siteID oxygen temperature oxygen_sd temperature_sd depth_oxygen
 ##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;
 ##  1 2017-10-20 BARC     6.01        26.4   0.0114        0.00104          1.19
@@ -385,7 +385,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 2017-10-27 BARC     6.41        24.3   0.00762       0.00104          1.22
 ##  9 2017-10-28 BARC     6.48        24.1   0.00766       0.00111          1.17
 ## 10 2017-10-29 BARC     6.64        23.8   0.00783       0.00101          1.10
-## # … with 2,730 more rows, and 2 more variables: depth_temperature &lt;dbl&gt;,
+## # … with 2,790 more rows, and 2 more variables: depth_temperature &lt;dbl&gt;,
 ## #   neon_product_ids &lt;chr&gt;</code></pre>
 <p>The target file has the following columns</p>
 <ul>

@@ -133,20 +133,20 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial/terrestrial_30
 ```
 
 ```
-## # A tibble: 303,344 x 12
+## # A tibble: 309,192 x 12
 ##    time                siteID    nee    le nee_sd_intercept nee_sd_slopeP
 ##    <dttm>              <chr>   <dbl> <dbl>            <dbl>         <dbl>
-##  1 2017-02-01 15:00:00 BART    3.13   2.52            0.685         0.218
-##  2 2017-02-01 15:30:00 BART   NA     NA               0.685         0.218
-##  3 2017-02-01 16:00:00 BART   NA     NA               0.685         0.218
-##  4 2017-02-01 16:30:00 BART    0.476  5.69            0.685         0.218
-##  5 2017-02-01 17:00:00 BART   NA     NA               0.685         0.218
-##  6 2017-02-01 17:30:00 BART    0.412  7.27            0.685         0.218
-##  7 2017-02-01 18:00:00 BART    0.812 23.7             0.685         0.218
-##  8 2017-02-01 18:30:00 BART   NA     NA               0.685         0.218
-##  9 2017-02-01 19:00:00 BART    0.820 19.1             0.685         0.218
-## 10 2017-02-01 19:30:00 BART    0.364  3.95            0.685         0.218
-## # … with 303,334 more rows, and 6 more variables: nee_sd_slopeN <dbl>,
+##  1 2017-02-01 15:00:00 BART    3.13   2.52             1.04         0.187
+##  2 2017-02-01 15:30:00 BART   NA     NA                1.04         0.187
+##  3 2017-02-01 16:00:00 BART   NA     NA                1.04         0.187
+##  4 2017-02-01 16:30:00 BART    0.476  5.69             1.04         0.187
+##  5 2017-02-01 17:00:00 BART   NA     NA                1.04         0.187
+##  6 2017-02-01 17:30:00 BART    0.412  7.27             1.04         0.187
+##  7 2017-02-01 18:00:00 BART    0.812 23.7              1.04         0.187
+##  8 2017-02-01 18:30:00 BART   NA     NA                1.04         0.187
+##  9 2017-02-01 19:00:00 BART    0.820 19.1              1.04         0.187
+## 10 2017-02-01 19:30:00 BART    0.364  3.95             1.04         0.187
+## # … with 309,182 more rows, and 6 more variables: nee_sd_slopeN <dbl>,
 ## #   le_sd_intercept <dbl>, le_sd_slopeP <dbl>, le_sd_slopeN <dbl>, vswc <dbl>,
 ## #   vswc_sd <dbl>
 ```
@@ -170,7 +170,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial/terrestrial_da
 ```
 
 ```
-## # A tibble: 6,324 x 6
+## # A tibble: 6,444 x 6
 ##    time       siteID   nee    le  vswc vswc_sd
 ##    <date>     <chr>  <dbl> <dbl> <dbl>   <dbl>
 ##  1 2017-02-01 BART      NA    NA    NA      NA
@@ -183,7 +183,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial/terrestrial_da
 ##  8 2017-02-02 SRER      NA    NA    NA      NA
 ##  9 2017-02-03 BART      NA    NA    NA      NA
 ## 10 2017-02-03 KONZ      NA    NA    NA      NA
-## # … with 6,314 more rows
+## # … with 6,434 more rows
 ```
 
 The R script for generating the evaluation and training data can be found at: https://github.com/eco4cast/neon4cast-terrestrial
