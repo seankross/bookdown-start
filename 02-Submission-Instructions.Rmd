@@ -86,6 +86,7 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-0
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `gcc_90`: green chromatic coordinate
+- `rcc_90`: red chromatic coordinate
 
 Here is are examples of csv forecast files that meet the standard for the phenology theme
 
@@ -146,7 +147,7 @@ Individual forecast (csv, netCDF) and metadate (xml) files can be uploaded any t
 
 Teams will submit their forecast netCDF or csv files manually through the challenge website or with an R script. 
 
-- You can manually submit your forecast through the https://data.ecoforecast.org/minio/submissions/ website using the red plus on the bottom left.   
+- You can manually submit your forecast through the https://data.ecoforecast.org/minio/submissions/ website using the red plus on the bottom right   
 - You can submit from an R script using the following:
 ```{r eval = FALSE}
 Sys.setenv("AWS_DEFAULT_REGION" = "data",
