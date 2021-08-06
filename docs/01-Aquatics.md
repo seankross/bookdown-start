@@ -14,6 +14,10 @@
 
 We held a Q&A session on May 21, 2021. You can find a recording from that session  [HERE](https://youtu.be/KBAPZoDKbk8){target="_blank"}.
 
+Here is an overview of the Aquatic Ecosystems Challenge that was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
+
+![](https://youtu.be/935Uiy11mTw)
+
 ## Overview
 
 In streams and rivers, forecasting water temperature can be meaningful for protecting aquatic communities while maintaining socio-economic benefits (Ouellet-Proulx et al. 2017). In lentic systems, successfully forecasting surface water temperatures can be important for fisheries and water utilities that need to manage the outflowing temperatures (Zhu et al. 2020). Recently, water temperature forecasts in lakes have been used to predict seasonal turnover when nutrients from the bottom can be mixed to the surface and impair the water quality. 
@@ -44,7 +48,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ```
 
 ```
-## # A tibble: 2,800 x 9
+## # A tibble: 2,862 x 9
 ##    time       siteID oxygen temperature oxygen_sd temperature_sd depth_oxygen
 ##    <date>     <chr>   <dbl>       <dbl>     <dbl>          <dbl>        <dbl>
 ##  1 2017-10-20 BARC     6.01        26.4   0.0114        0.00104          1.19
@@ -57,7 +61,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ##  8 2017-10-27 BARC     6.41        24.3   0.00762       0.00104          1.22
 ##  9 2017-10-28 BARC     6.48        24.1   0.00766       0.00111          1.17
 ## 10 2017-10-29 BARC     6.64        23.8   0.00783       0.00101          1.10
-## # … with 2,790 more rows, and 2 more variables: depth_temperature <dbl>,
+## # … with 2,852 more rows, and 2 more variables: depth_temperature <dbl>,
 ## #   neon_product_ids <chr>
 ```
 The target file has the following columns   
