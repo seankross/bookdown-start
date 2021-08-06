@@ -16,7 +16,7 @@ We held a Q&A session on May 21, 2021. You can find a recording from that sessio
 
 Here is an overview of the Aquatic Ecosystems Challenge that was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
 
-![](https://youtu.be/935Uiy11mTw)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/935Uiy11mTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Overview
 
