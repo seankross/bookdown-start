@@ -12,11 +12,12 @@
 
 **How:** [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
 
-We held a Q&A session on May 21, 2021. You can find a recording from that session  [HERE](https://youtu.be/KBAPZoDKbk8){target="_blank"}.
 
-Here is an overview of the Aquatic Ecosystems Challenge that was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
+The video below is an overview of the Aquatic Ecosystems Challenge that was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/935Uiy11mTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+We held a Q&A session on May 21, 2021. You can find a recording from that session  [HERE](https://youtu.be/KBAPZoDKbk8){target="_blank"}.
 
 ## Overview
 
