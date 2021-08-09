@@ -115,6 +115,7 @@ Each new model needs its own [registration](https://nd.qualtrics.com/jfe/form/SV
 These videos were recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}. You can see the full playlist [HERE](https://www.youtube.com/playlist?list=PLmpgJtGjCb07WTpv5qFlPiPpxSQ2qFP9l){target="_blank"} or view individual videos below.
 
 **Videos Related to Specific Steps in Forecast Creation and Submission**
+
 - [Introduction to the NEON Forecast Challenge](https://youtu.be/bhhkMADM71I){target="_blank"}
 - [Reproducible Workflows](https://youtu.be/8dzyXFaVml8){target="_blank"}
 - [Using NEON data for the NEON Forecast Challenge](https://youtu.be/DRDv7axBYGo){target="_blank"}
@@ -124,6 +125,7 @@ These videos were recorded for the [2021 Early Career Annual Meeting](https://ec
 - [Ecological Forecasting Resources](https://youtu.be/Gvle9f5Q1TI){target="_blank"}
 
 **Overview of Each of the Challenge Themes**
+
 - [Terrestrial Carbon and Water Fluxes](https://youtu.be/WmFsACm-TMk){target="_blank"}
 - [Spring and Fall Phenology](https://youtu.be/P8OwhCF4AdI){target="_blank"}
 - [Beetle Communities](https://youtu.be/7196wcarMXQ){target="_blank"}
@@ -131,6 +133,7 @@ These videos were recorded for the [2021 Early Career Annual Meeting](https://ec
 - [Tick Populations](https://youtu.be/lHH_nY52ZMM){target="_blank"}
 
 **Flash Talks Highlighting Experiences By Early Career Individuals As They Submitted Their Forecasts**
+
 - [Phenology Forecast and the Kalman Filter] (https://youtu.be/flpp7R7V1KQ){target="_blank"}
 - [Phenology Forecast using the DALEC-SIP Model](https://youtu.be/45HXapR4ZrU){target="_blank"}
 - [Using GitHub Actions to Automate Forecast Execution and Submission](https://youtu.be/dMrUlXi4_Bo){target="_blank"}
