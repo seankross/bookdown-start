@@ -134,7 +134,7 @@ These videos were recorded for the [2021 Early Career Annual Meeting](https://ec
 
 **Flash Talks Highlighting Experiences By Early Career Individuals As They Submitted Their Forecasts**
 
-- [Phenology Forecast and the Kalman Filter] (https://youtu.be/flpp7R7V1KQ){target="_blank"}
+- [Phenology Forecast and the Kalman Filter](https://youtu.be/flpp7R7V1KQ){target="_blank"}
 - [Phenology Forecast using the DALEC-SIP Model](https://youtu.be/45HXapR4ZrU){target="_blank"}
 - [Using GitHub Actions to Automate Forecast Execution and Submission](https://youtu.be/dMrUlXi4_Bo){target="_blank"}
 
