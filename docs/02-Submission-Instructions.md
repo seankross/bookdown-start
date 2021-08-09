@@ -121,16 +121,16 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1     2.70   0.00338
-##  2 SJER   2020-01-06        2     4.62   0.0381 
-##  3 SJER   2020-01-06        3     3.94   0.0323 
-##  4 SJER   2020-01-06        4     3.18   0.0165 
-##  5 SJER   2020-01-06        5     3.34   0.0130 
-##  6 SJER   2020-01-06        6     4.34   0.00257
-##  7 SJER   2020-01-06        7     5.36   0.0200 
-##  8 SJER   2020-01-06        8     2.40   0.0373 
-##  9 SJER   2020-01-06        9     2.56   0.0227 
-## 10 SJER   2020-01-06       10     3.09   0.0202 
+##  1 SJER   2020-01-06        1     3.13   0.0223 
+##  2 SJER   2020-01-06        2     4.30   0.0123 
+##  3 SJER   2020-01-06        3     3.79   0.0191 
+##  4 SJER   2020-01-06        4     2.73   0.00964
+##  5 SJER   2020-01-06        5     4.05   0.0204 
+##  6 SJER   2020-01-06        6     2.37   0.0279 
+##  7 SJER   2020-01-06        7     3.20   0.0179 
+##  8 SJER   2020-01-06        8     3.20   0.0321 
+##  9 SJER   2020-01-06        9     3.21   0.0276 
+## 10 SJER   2020-01-06       10     1.82   0.0110 
 ## # … with 443,490 more rows
 ```
 
@@ -394,3 +394,9 @@ We run a validator script when processing the submissions. If your submission do
 ## Visualizing submissions
 
 Plots of submissions and table of scores can be found at our [dashboard](https://shiny.ecoforecast.org){target="_blank"} 
+
+## Video Describing How to Submit to the Challenge
+
+This video was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S8x5rLtltDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

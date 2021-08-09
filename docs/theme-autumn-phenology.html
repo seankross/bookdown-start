@@ -263,6 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="submission-instructions.html"><a href="submission-instructions.html#submission-process"><i class="fa fa-check"></i><b>8.3</b> Submission process</a></li>
 <li class="chapter" data-level="8.4" data-path="submission-instructions.html"><a href="submission-instructions.html#validating-submission"><i class="fa fa-check"></i><b>8.4</b> Validating submission</a></li>
 <li class="chapter" data-level="8.5" data-path="submission-instructions.html"><a href="submission-instructions.html#visualizing-submissions"><i class="fa fa-check"></i><b>8.5</b> Visualizing submissions</a></li>
+<li class="chapter" data-level="8.6" data-path="submission-instructions.html"><a href="submission-instructions.html#video-describing-how-to-submit-to-the-challenge"><i class="fa fa-check"></i><b>8.6</b> Video Describing How to Submit to the Challenge</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>9</b> Evaluation</a>
 <ul>
@@ -323,6 +324,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#are-there-certain-types-of-models-that-i-need-to-use"><i class="fa fa-check"></i><b>12.8</b> Are there certain types of models that I need to use?</a></li>
 <li class="chapter" data-level="12.9" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#what-is-the-relationship-between-the-challenge-and-neon"><i class="fa fa-check"></i><b>12.9</b> What is the relationship between the Challenge and NEON?</a></li>
 <li class="chapter" data-level="12.10" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this"><i class="fa fa-check"></i><b>12.10</b> I am interested in submitting different models or to multiple themes. How should I register to do this?</a></li>
+<li class="chapter" data-level="12.11" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#we-have-a-number-of-short-video-resources-that-provide-insight-into-participating-in-the-challenge"><i class="fa fa-check"></i><b>12.11</b> We have a number of short video resources that provide insight into participating in the Challenge</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -352,6 +354,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Why</strong>: Phenology has been identified as one of the primary ecological fingerprints of global climate change.</p>
 <p><strong>Who</strong>: Open to any individual or team that registers</p>
 <p><strong>How</strong>: <a href="https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ" target="_blank">REGISTER</a> your team and submit forecast</p>
+<p>The video below is an overview of the Phenology Challenge that was recorded for the <a href="https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/" target="_blank">2021 Early Career Annual Meeting</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P8OwhCF4AdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <p>We held a Q&amp;A session about the analogous spring phenology forecast on January 27, 2021. You can find a recording from that session <a href="https://www.youtube.com/watch?v=UwX2IA1vDQE&amp;feature=youtu.be" target="_blank">HERE</a>.</p>
 <div id="overview-4" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Overview</h2>
@@ -477,20 +482,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.3.5</span> Target file</h3>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="theme-autumn-phenology.html#cb11-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 13,584 x 6
-##    time       siteID gcc_90 rcc_90  gcc_sd  rcc_sd
-##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-##  1 2016-12-13 HARV    0.329  0.375 0.00107 0.00946
-##  2 2016-12-14 HARV    0.328  0.411 0.00107 0.00946
-##  3 2016-12-15 HARV    0.330  0.401 0.00107 0.00946
-##  4 2016-12-16 HARV    0.329  0.398 0.00107 0.00946
-##  5 2016-12-17 HARV    0.332  0.351 0.00107 0.00946
-##  6 2016-12-18 HARV    0.332  0.353 0.00107 0.00946
-##  7 2016-12-19 HARV    0.329  0.399 0.00107 0.00946
-##  8 2016-12-20 HARV    0.330  0.405 0.00107 0.00946
-##  9 2016-12-21 HARV    0.329  0.412 0.00107 0.00946
-## 10 2016-12-22 HARV    0.329  0.412 0.00107 0.00946
-## # … with 13,574 more rows</code></pre>
+<pre><code>## # A tibble: 13,592 x 6
+##    time       siteID gcc_90 rcc_90   gcc_sd  rcc_sd
+##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+##  1 2016-12-13 HARV    0.329  0.375 0.000513 0.00718
+##  2 2016-12-14 HARV    0.328  0.411 0.000513 0.00718
+##  3 2016-12-15 HARV    0.330  0.401 0.000513 0.00718
+##  4 2016-12-16 HARV    0.329  0.398 0.000513 0.00718
+##  5 2016-12-17 HARV    0.332  0.351 0.000513 0.00718
+##  6 2016-12-18 HARV    0.332  0.353 0.000513 0.00718
+##  7 2016-12-19 HARV    0.329  0.399 0.000513 0.00718
+##  8 2016-12-20 HARV    0.330  0.405 0.000513 0.00718
+##  9 2016-12-21 HARV    0.329  0.412 0.000513 0.00718
+## 10 2016-12-22 HARV    0.329  0.412 0.000513 0.00718
+## # … with 13,582 more rows</code></pre>
 <p>The target file has the following columns:</p>
 <ul>
 <li><code>time</code>: YYYY-MM-DD<br />
