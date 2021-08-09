@@ -56,9 +56,9 @@ Leah Johnson (Virginia Tech)
 Whitney Woelmer (Virginia Tech; Student member)   
 Alyssa Willson (University of Notre Dame; Student member)  
 
-**This video provides an overview of the Challenge.** 
+**Video Introducng the NEON Ecological Forecasting Challenge.** 
 
-It was originally recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
+This video was originally recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bhhkMADM71I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
