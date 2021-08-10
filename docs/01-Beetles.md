@@ -12,6 +12,10 @@
 
 **How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
 
+The video below is an overview of the Beetle Communities Challenge that was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7196wcarMXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Overview
 
 Biodiversity monitoring is critical for understanding environmental quality, evaluating the sustainability of land-use practices, and forecasting future impacts of global change on ecosystems. Sentinel species give forewarning of environmental risk to humans, so are particularly useful for such monitoring and forecasting efforts because they can provide surrogates for other co-located components of biodiversity (Sauberer et al. 2004). 
@@ -85,7 +89,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ```
 
 ```
-## # A tibble: 2,347 x 4
+## # A tibble: 2,393 x 4
 ##    siteID time       abundance richness
 ##    <chr>  <date>         <dbl>    <dbl>
 ##  1 CPER   2013-07-01    0.305        13
@@ -98,7 +102,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ##  8 OSBS   2013-07-22    0            NA
 ##  9 STER   2013-07-22    0.0952        7
 ## 10 CPER   2013-07-29    0.220        13
-## # … with 2,337 more rows
+## # … with 2,383 more rows
 ```
 
 The table has the following columns:  

@@ -187,3 +187,9 @@ We run a validator script when processing the submissions. If your submission do
 ## Visualizing submissions
 
 Plots of submissions and table of scores can be found at our [dashboard](https://shiny.ecoforecast.org){target="_blank"} 
+
+## Video Describing How to Submit to the Challenge
+
+This video was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S8x5rLtltDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

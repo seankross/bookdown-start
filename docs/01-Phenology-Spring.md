@@ -12,6 +12,10 @@
 
 **How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
 
+The video below is an overview of the Phenology Challenge that was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P8OwhCF4AdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 We held a Q&A session on January 27, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=UwX2IA1vDQE&feature=youtu.be){target="_blank"}.
 
 ## Overview
@@ -83,20 +87,20 @@ readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-target
 ```
 
 ```
-## # A tibble: 13,152 x 6
-##    time       siteID gcc_90 rcc_90  gcc_sd rcc_sd
-##    <date>     <chr>   <dbl>  <dbl>   <dbl>  <dbl>
-##  1 2016-12-13 HARV    0.329  0.375 0.00190 0.0114
-##  2 2016-12-14 HARV    0.328  0.411 0.00190 0.0114
-##  3 2016-12-15 HARV    0.330  0.401 0.00190 0.0114
-##  4 2016-12-16 HARV    0.329  0.398 0.00190 0.0114
-##  5 2016-12-17 HARV    0.332  0.351 0.00190 0.0114
-##  6 2016-12-18 HARV    0.332  0.353 0.00190 0.0114
-##  7 2016-12-19 HARV    0.329  0.399 0.00190 0.0114
-##  8 2016-12-20 HARV    0.330  0.405 0.00190 0.0114
-##  9 2016-12-21 HARV    0.329  0.412 0.00190 0.0114
-## 10 2016-12-22 HARV    0.329  0.412 0.00190 0.0114
-## # … with 13,142 more rows
+## # A tibble: 13,592 x 6
+##    time       siteID gcc_90 rcc_90   gcc_sd  rcc_sd
+##    <date>     <chr>   <dbl>  <dbl>    <dbl>   <dbl>
+##  1 2016-12-13 HARV    0.329  0.375 0.000646 0.00880
+##  2 2016-12-14 HARV    0.328  0.411 0.000646 0.00880
+##  3 2016-12-15 HARV    0.330  0.401 0.000646 0.00880
+##  4 2016-12-16 HARV    0.329  0.398 0.000646 0.00880
+##  5 2016-12-17 HARV    0.332  0.351 0.000646 0.00880
+##  6 2016-12-18 HARV    0.332  0.353 0.000646 0.00880
+##  7 2016-12-19 HARV    0.329  0.399 0.000646 0.00880
+##  8 2016-12-20 HARV    0.330  0.405 0.000646 0.00880
+##  9 2016-12-21 HARV    0.329  0.412 0.000646 0.00880
+## 10 2016-12-22 HARV    0.329  0.412 0.000646 0.00880
+## # … with 13,582 more rows
 ```
 The target file has the following columns:
 

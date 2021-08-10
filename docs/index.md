@@ -1,7 +1,7 @@
 --- 
 title: "NEON Ecological Forecasting Challenge"
 author: "Hosted by the Ecological Forecasting Initative Research Coordination Network and supported by National Science Foundation (DEB-1926388)"
-date: "Last modified: 2021-06-15"
+date: "Last modified: 2021-08-09"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -43,7 +43,7 @@ We have prepared introductory videos from the December 9, 2020 AGU EFI Town Hall
 **EFI-RCN Steering Committee**
 
 Lead: R. Quinn Thomas (Virginia Tech)   
-Program Manager: Jody Peters (Notre Dame)
+Program Manager: Jody Peters (University of Notre Dame)
 
 Michael Dietze (Boston University)  
 Melissa Kenney (University of Minnesota)   
@@ -55,4 +55,10 @@ Andy Fox (UCAR)
 Leah Johnson (Virginia Tech)   
 Whitney Woelmer (Virginia Tech; Student member)   
 Alyssa Willson (University of Notre Dame; Student member)  
+
+**Video Introducng the NEON Ecological Forecasting Challenge.** 
+
+This video was originally recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bhhkMADM71I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

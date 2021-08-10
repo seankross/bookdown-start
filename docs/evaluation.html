@@ -263,6 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="submission-instructions.html"><a href="submission-instructions.html#submission-process"><i class="fa fa-check"></i><b>8.3</b> Submission process</a></li>
 <li class="chapter" data-level="8.4" data-path="submission-instructions.html"><a href="submission-instructions.html#validating-submission"><i class="fa fa-check"></i><b>8.4</b> Validating submission</a></li>
 <li class="chapter" data-level="8.5" data-path="submission-instructions.html"><a href="submission-instructions.html#visualizing-submissions"><i class="fa fa-check"></i><b>8.5</b> Visualizing submissions</a></li>
+<li class="chapter" data-level="8.6" data-path="submission-instructions.html"><a href="submission-instructions.html#video-describing-how-to-submit-to-the-challenge"><i class="fa fa-check"></i><b>8.6</b> Video Describing How to Submit to the Challenge</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>9</b> Evaluation</a>
 <ul>
@@ -323,6 +324,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#are-there-certain-types-of-models-that-i-need-to-use"><i class="fa fa-check"></i><b>12.8</b> Are there certain types of models that I need to use?</a></li>
 <li class="chapter" data-level="12.9" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#what-is-the-relationship-between-the-challenge-and-neon"><i class="fa fa-check"></i><b>12.9</b> What is the relationship between the Challenge and NEON?</a></li>
 <li class="chapter" data-level="12.10" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this"><i class="fa fa-check"></i><b>12.10</b> I am interested in submitting different models or to multiple themes. How should I register to do this?</a></li>
+<li class="chapter" data-level="12.11" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#we-have-a-number-of-short-video-resources-that-provide-insight-into-participating-in-the-challenge"><i class="fa fa-check"></i><b>12.11</b> We have a number of short video resources that provide insight into participating in the Challenge</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -377,10 +379,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb41-6"><a href="evaluation.html#cb41-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb41-7"><a href="evaluation.html#cb41-7" aria-hidden="true" tabindex="-1"></a>crps_equation_2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">abs</span>(x <span class="sc">-</span> y)) <span class="sc">-</span> s <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">length</span>(x)<span class="sc">^</span><span class="dv">2</span>)</span>
 <span id="cb41-8"><a href="evaluation.html#cb41-8" aria-hidden="true" tabindex="-1"></a>crps_equation_2</span></code></pre></div>
-<pre><code>## [1] 0.2388153</code></pre>
+<pre><code>## [1] 0.2429241</code></pre>
 <p>Now calculate using the <code>crps_sample()</code> function in the <code>scoringRules</code> package</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="evaluation.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crps_sample</span>(<span class="at">y =</span> y, <span class="at">dat =</span> x)</span></code></pre></div>
-<pre><code>## [1] 0.2388153</code></pre>
+<pre><code>## [1] 0.2429241</code></pre>
 </div>
 <div id="exploring-the-scoring-surface" class="section level3" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> Exploring the scoring surface</h3>

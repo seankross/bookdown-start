@@ -263,6 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="submission-instructions.html"><a href="submission-instructions.html#submission-process"><i class="fa fa-check"></i><b>8.3</b> Submission process</a></li>
 <li class="chapter" data-level="8.4" data-path="submission-instructions.html"><a href="submission-instructions.html#validating-submission"><i class="fa fa-check"></i><b>8.4</b> Validating submission</a></li>
 <li class="chapter" data-level="8.5" data-path="submission-instructions.html"><a href="submission-instructions.html#visualizing-submissions"><i class="fa fa-check"></i><b>8.5</b> Visualizing submissions</a></li>
+<li class="chapter" data-level="8.6" data-path="submission-instructions.html"><a href="submission-instructions.html#video-describing-how-to-submit-to-the-challenge"><i class="fa fa-check"></i><b>8.6</b> Video Describing How to Submit to the Challenge</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>9</b> Evaluation</a>
 <ul>
@@ -323,6 +324,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#are-there-certain-types-of-models-that-i-need-to-use"><i class="fa fa-check"></i><b>12.8</b> Are there certain types of models that I need to use?</a></li>
 <li class="chapter" data-level="12.9" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#what-is-the-relationship-between-the-challenge-and-neon"><i class="fa fa-check"></i><b>12.9</b> What is the relationship between the Challenge and NEON?</a></li>
 <li class="chapter" data-level="12.10" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this"><i class="fa fa-check"></i><b>12.10</b> I am interested in submitting different models or to multiple themes. How should I register to do this?</a></li>
+<li class="chapter" data-level="12.11" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#we-have-a-number-of-short-video-resources-that-provide-insight-into-participating-in-the-challenge"><i class="fa fa-check"></i><b>12.11</b> We have a number of short video resources that provide insight into participating in the Challenge</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -352,6 +354,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Why:</strong> Freshwater surface water temperature and dissolved oxygen are critical for life in aquatic environments and can represent the health of the system</p>
 <p><strong>Who:</strong> Open to any individual or team that registers</p>
 <p><strong>How:</strong> <a href="https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ" target="_blank">REGISTER</a> your team and submit forecast</p>
+<p>The video below is an overview of the Aquatic Ecosystems Challenge that was recorded for the <a href="https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/" target="_blank">2021 Early Career Annual Meeting</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/935Uiy11mTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <p>We held a Q&amp;A session on May 21, 2021. You can find a recording from that session <a href="https://youtu.be/KBAPZoDKbk8" target="_blank">HERE</a>.</p>
 <div id="overview" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Overview</h2>
@@ -372,7 +377,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A file with previously released NEON data that has been processed into targets is provided below. The target script can be found here. The same processing will be applied to new data that are used for forecast evaluation. Before the Aquatics challenge begins, a <a href="https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R" target="_blank">processing script</a> is available in the neon4cast-aquatics GitHub repository.</p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="theme-aquatic-ecosystems.html#cb1-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 2,740 x 9
+<pre><code>## # A tibble: 2,862 x 9
 ##    time       siteID oxygen temperature oxygen_sd temperature_sd depth_oxygen
 ##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;        &lt;dbl&gt;
 ##  1 2017-10-20 BARC     6.01        26.4   0.0114        0.00104          1.19
@@ -385,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 2017-10-27 BARC     6.41        24.3   0.00762       0.00104          1.22
 ##  9 2017-10-28 BARC     6.48        24.1   0.00766       0.00111          1.17
 ## 10 2017-10-29 BARC     6.64        23.8   0.00783       0.00101          1.10
-## # … with 2,730 more rows, and 2 more variables: depth_temperature &lt;dbl&gt;,
+## # … with 2,852 more rows, and 2 more variables: depth_temperature &lt;dbl&gt;,
 ## #   neon_product_ids &lt;chr&gt;</code></pre>
 <p>The target file has the following columns</p>
 <ul>

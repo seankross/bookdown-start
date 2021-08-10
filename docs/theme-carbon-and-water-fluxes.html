@@ -263,6 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="submission-instructions.html"><a href="submission-instructions.html#submission-process"><i class="fa fa-check"></i><b>8.3</b> Submission process</a></li>
 <li class="chapter" data-level="8.4" data-path="submission-instructions.html"><a href="submission-instructions.html#validating-submission"><i class="fa fa-check"></i><b>8.4</b> Validating submission</a></li>
 <li class="chapter" data-level="8.5" data-path="submission-instructions.html"><a href="submission-instructions.html#visualizing-submissions"><i class="fa fa-check"></i><b>8.5</b> Visualizing submissions</a></li>
+<li class="chapter" data-level="8.6" data-path="submission-instructions.html"><a href="submission-instructions.html#video-describing-how-to-submit-to-the-challenge"><i class="fa fa-check"></i><b>8.6</b> Video Describing How to Submit to the Challenge</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>9</b> Evaluation</a>
 <ul>
@@ -323,6 +324,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#are-there-certain-types-of-models-that-i-need-to-use"><i class="fa fa-check"></i><b>12.8</b> Are there certain types of models that I need to use?</a></li>
 <li class="chapter" data-level="12.9" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#what-is-the-relationship-between-the-challenge-and-neon"><i class="fa fa-check"></i><b>12.9</b> What is the relationship between the Challenge and NEON?</a></li>
 <li class="chapter" data-level="12.10" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this"><i class="fa fa-check"></i><b>12.10</b> I am interested in submitting different models or to multiple themes. How should I register to do this?</a></li>
+<li class="chapter" data-level="12.11" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#we-have-a-number-of-short-video-resources-that-provide-insight-into-participating-in-the-challenge"><i class="fa fa-check"></i><b>12.11</b> We have a number of short video resources that provide insight into participating in the Challenge</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -352,6 +354,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Why:</strong> Carbon and water cycling are fundamental for climate and water regulation services provided by ecosystems</p>
 <p><strong>Who</strong>: Open to any individual or team that registers</p>
 <p><strong>How</strong>: <a href="https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ" target="_blank">REGISTER</a> your team and submit forecast</p>
+<p>The video below is an overview of the Terrestrial Carbon and Water Fluxes Challenge that was recorded for the <a href="https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/" target="_blank">2021 Early Career Annual Meeting</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WmFsACm-TMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 <p>We held a Q&amp;A session on January 22, 2021. You can find a recording from that session <a href="https://www.youtube.com/watch?v=3rOVlAX9YH8&amp;feature=youtu.be" target="_blank">HERE</a>.</p>
 <div id="overview-1" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Overview</h2>
@@ -502,20 +507,20 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <p>The standard derivation for the vswc (<code>vswc_sd</code>) is the uncertainty reported by NEON.</p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="theme-carbon-and-water-fluxes.html#cb3-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial/terrestrial_30min-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 303,344 x 12
+<pre><code>## # A tibble: 315,132 x 12
 ##    time                siteID    nee    le nee_sd_intercept nee_sd_slopeP
 ##    &lt;dttm&gt;              &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;
-##  1 2017-02-01 15:00:00 BART    3.13   2.52            0.685         0.218
-##  2 2017-02-01 15:30:00 BART   NA     NA               0.685         0.218
-##  3 2017-02-01 16:00:00 BART   NA     NA               0.685         0.218
-##  4 2017-02-01 16:30:00 BART    0.476  5.69            0.685         0.218
-##  5 2017-02-01 17:00:00 BART   NA     NA               0.685         0.218
-##  6 2017-02-01 17:30:00 BART    0.412  7.27            0.685         0.218
-##  7 2017-02-01 18:00:00 BART    0.812 23.7             0.685         0.218
-##  8 2017-02-01 18:30:00 BART   NA     NA               0.685         0.218
-##  9 2017-02-01 19:00:00 BART    0.820 19.1             0.685         0.218
-## 10 2017-02-01 19:30:00 BART    0.364  3.95            0.685         0.218
-## # … with 303,334 more rows, and 6 more variables: nee_sd_slopeN &lt;dbl&gt;,
+##  1 2017-02-01 15:00:00 BART    3.13   2.52             1.04         0.187
+##  2 2017-02-01 15:30:00 BART   NA     NA                1.04         0.187
+##  3 2017-02-01 16:00:00 BART   NA     NA                1.04         0.187
+##  4 2017-02-01 16:30:00 BART    0.476  5.69             1.04         0.187
+##  5 2017-02-01 17:00:00 BART   NA     NA                1.04         0.187
+##  6 2017-02-01 17:30:00 BART    0.412  7.27             1.04         0.187
+##  7 2017-02-01 18:00:00 BART    0.812 23.7              1.04         0.187
+##  8 2017-02-01 18:30:00 BART   NA     NA                1.04         0.187
+##  9 2017-02-01 19:00:00 BART    0.820 19.1              1.04         0.187
+## 10 2017-02-01 19:30:00 BART    0.364  3.95             1.04         0.187
+## # … with 315,122 more rows, and 6 more variables: nee_sd_slopeN &lt;dbl&gt;,
 ## #   le_sd_intercept &lt;dbl&gt;, le_sd_slopeP &lt;dbl&gt;, le_sd_slopeN &lt;dbl&gt;, vswc &lt;dbl&gt;,
 ## #   vswc_sd &lt;dbl&gt;</code></pre>
 </div>
@@ -536,7 +541,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 </ul>
 <p>NEED TO ADD WHERE vswc_sd comes from</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="theme-carbon-and-water-fluxes.html#cb5-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial/terrestrial_daily-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 6,324 x 6
+<pre><code>## # A tibble: 6,568 x 6
 ##    time       siteID   nee    le  vswc vswc_sd
 ##    &lt;date&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 2017-02-01 BART      NA    NA    NA      NA
@@ -549,7 +554,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 ##  8 2017-02-02 SRER      NA    NA    NA      NA
 ##  9 2017-02-03 BART      NA    NA    NA      NA
 ## 10 2017-02-03 KONZ      NA    NA    NA      NA
-## # … with 6,314 more rows</code></pre>
+## # … with 6,558 more rows</code></pre>
 <p>The R script for generating the evaluation and training data can be found at: <a href="https://github.com/eco4cast/neon4cast-terrestrial" class="uri">https://github.com/eco4cast/neon4cast-terrestrial</a></p>
 </div>
 </div>
