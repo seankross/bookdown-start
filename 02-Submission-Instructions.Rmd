@@ -91,7 +91,7 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-0
 Here is are examples of csv forecast files that meet the standard for the phenology theme. There will be an extra column called `rcc_90` when `rcc_90` is included in the forecast.
 
 ```{r}
-readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-UCSC_P_EDM.csv")
+readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2021-08-10-PEG_FUSION_0.csv")
 ```
 
 A netcdf file located at https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc
