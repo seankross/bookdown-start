@@ -8,7 +8,7 @@ The forecasts can be found at https://data.ecoforecast.org/minio/drivers/noaa/NO
 
 The following variables are available: air temperature, wind speed, relative humidity, downwelling shortwave, downwelling longwave, precipitation, and air pressure.  
 
-This video demonstrates how to access meteorological covariate data for the Challenge. The video was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
+[This video](https://youtu.be/D1n4q7nrFMw){target="_blank"} demonstrates how to access meteorological covariate data for the Challenge. The video was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/D1n4q7nrFMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -88,6 +88,9 @@ Ticks
 
 https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz
 
+## Is it possible to automate my forecast submissions?
+Yes. [Here is a video](https://youtu.be/dMrUlXi4_Bo){target="_blank"} that walks through using GitHub Actions to automate forecast execution and submission.
+
 ## I am having trouble generating the metadata.  Can you point me to more information, tutorials, or examples?
 
 Pending
@@ -110,16 +113,16 @@ Members of the RCN are also on NEON's Ecological Forecasting Technical Working G
 
 Each new model needs its own [registration](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} with a different model name. If you have a large team where entering everyone's contact inforamtion will preclude submitting multiple registrations, contact us at [eco4cast.initiative@gmail.com](mailto:eco4cast.initiative@gmail.com) for assistance.
 
-## We have a number of short video resources that provide insight into participating in the Challenge
+## Where can I find resources that provide how to participate in the Challenge?
 
-These videos were recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}. You can see the full playlist [HERE](https://www.youtube.com/playlist?list=PLmpgJtGjCb07WTpv5qFlPiPpxSQ2qFP9l){target="_blank"} or view individual videos below.
+These following videos were recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}. You can see the full playlist [HERE](https://www.youtube.com/playlist?list=PLmpgJtGjCb07WTpv5qFlPiPpxSQ2qFP9l){target="_blank"} or view individual videos below.
 
 **Videos Related to Specific Steps in Forecast Creation and Submission**
 
 - [Introduction to the NEON Forecast Challenge](https://youtu.be/bhhkMADM71I){target="_blank"}
 - [Reproducible Workflows](https://youtu.be/8dzyXFaVml8){target="_blank"}
 - [Using NEON data for the NEON Forecast Challenge](https://youtu.be/DRDv7axBYGo){target="_blank"}
-- [Accessing Covariate Data](https://youtu.be/D1n4q7nrFMw){target="_blank"}
+- [Accessing Meteorological Covariate Data](https://youtu.be/D1n4q7nrFMw){target="_blank"}
 - [From Models to Forecasts](https://youtu.be/YGG8_jiddDc){target="_blank"}
 - [Submitting to the NEON Forecast Challenge](https://youtu.be/S8x5rLtltDU){target="_blank"}
 - [Ecological Forecasting Resources](https://youtu.be/Gvle9f5Q1TI){target="_blank"}

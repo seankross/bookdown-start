@@ -319,12 +319,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.3" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-submitted-my-forecast-but-cannot-find-it-on-the-dashboard-or-in-the-directory-of-forecasts"><i class="fa fa-check"></i><b>12.3</b> I submitted my forecast but cannot find it on the dashboard or in the directory of forecasts</a></li>
 <li class="chapter" data-level="12.4" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#do-i-need-to-submit-forecasts-to-every-submission-date"><i class="fa fa-check"></i><b>12.4</b> Do I need to submit forecasts to every submission date?</a></li>
 <li class="chapter" data-level="12.5" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#where-can-i-find-examples-of-forecasts-that-match-the-required-standard"><i class="fa fa-check"></i><b>12.5</b> Where can I find examples of forecasts that match the required standard?</a></li>
-<li class="chapter" data-level="12.6" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-having-trouble-generating-the-metadata.-can-you-point-me-to-more-information-tutorials-or-examples"><i class="fa fa-check"></i><b>12.6</b> I am having trouble generating the metadata. Can you point me to more information, tutorials, or examples?</a></li>
-<li class="chapter" data-level="12.7" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#how-many-years-are-you-planning-to-run-the-challenge"><i class="fa fa-check"></i><b>12.7</b> How many years are you planning to run the Challenge?</a></li>
-<li class="chapter" data-level="12.8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#are-there-certain-types-of-models-that-i-need-to-use"><i class="fa fa-check"></i><b>12.8</b> Are there certain types of models that I need to use?</a></li>
-<li class="chapter" data-level="12.9" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#what-is-the-relationship-between-the-challenge-and-neon"><i class="fa fa-check"></i><b>12.9</b> What is the relationship between the Challenge and NEON?</a></li>
-<li class="chapter" data-level="12.10" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this"><i class="fa fa-check"></i><b>12.10</b> I am interested in submitting different models or to multiple themes. How should I register to do this?</a></li>
-<li class="chapter" data-level="12.11" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#we-have-a-number-of-short-video-resources-that-provide-insight-into-participating-in-the-challenge"><i class="fa fa-check"></i><b>12.11</b> We have a number of short video resources that provide insight into participating in the Challenge</a></li>
+<li class="chapter" data-level="12.6" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#is-it-possible-to-automate-my-forecast-submissions"><i class="fa fa-check"></i><b>12.6</b> Is it possible to automate my forecast submissions?</a></li>
+<li class="chapter" data-level="12.7" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-having-trouble-generating-the-metadata.-can-you-point-me-to-more-information-tutorials-or-examples"><i class="fa fa-check"></i><b>12.7</b> I am having trouble generating the metadata. Can you point me to more information, tutorials, or examples?</a></li>
+<li class="chapter" data-level="12.8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#how-many-years-are-you-planning-to-run-the-challenge"><i class="fa fa-check"></i><b>12.8</b> How many years are you planning to run the Challenge?</a></li>
+<li class="chapter" data-level="12.9" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#are-there-certain-types-of-models-that-i-need-to-use"><i class="fa fa-check"></i><b>12.9</b> Are there certain types of models that I need to use?</a></li>
+<li class="chapter" data-level="12.10" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#what-is-the-relationship-between-the-challenge-and-neon"><i class="fa fa-check"></i><b>12.10</b> What is the relationship between the Challenge and NEON?</a></li>
+<li class="chapter" data-level="12.11" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this"><i class="fa fa-check"></i><b>12.11</b> I am interested in submitting different models or to multiple themes. How should I register to do this?</a></li>
+<li class="chapter" data-level="12.12" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#where-can-i-find-resources-that-provide-how-to-participate-in-the-challenge"><i class="fa fa-check"></i><b>12.12</b> Where can I find resources that provide how to participate in the Challenge?</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -353,7 +354,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We have downloaded and temporally downscaled (6 hr to 1 hr) weather forecasts from NOAA’s Global Ensemble Forecasting System (GEFS). GEFS produces 31 different forecasts (called an ensemble with 31 members) at four cycles a day (00:00, 06:00, 12:00, and 18:00 UTC), where these are the times that the forecast starts. The forecast that starts at the 00:00 cycle runs 30 of the 31 ensemble members 35-days in the future. All other forecast cycles have members that run 16-days in the future.</p>
 <p>The forecasts can be found at <a href="https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/" class="uri">https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/</a></p>
 <p>The following variables are available: air temperature, wind speed, relative humidity, downwelling shortwave, downwelling longwave, precipitation, and air pressure.</p>
-<p>This video demonstrates how to access meteorological covariate data for the Challenge. The video was recorded for the <a href="https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/" target="_blank">2021 Early Career Annual Meeting</a></p>
+<p><a href="https://youtu.be/D1n4q7nrFMw" target="_blank">This video</a> demonstrates how to access meteorological covariate data for the Challenge. The video was recorded for the <a href="https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/" target="_blank">2021 Early Career Annual Meeting</a></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/D1n4q7nrFMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </div>
@@ -412,36 +413,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Ticks</p>
 <p><a href="https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz" class="uri">https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz</a></p>
 </div>
-<div id="i-am-having-trouble-generating-the-metadata.-can-you-point-me-to-more-information-tutorials-or-examples" class="section level2" number="12.6">
-<h2><span class="header-section-number">12.6</span> I am having trouble generating the metadata. Can you point me to more information, tutorials, or examples?</h2>
+<div id="is-it-possible-to-automate-my-forecast-submissions" class="section level2" number="12.6">
+<h2><span class="header-section-number">12.6</span> Is it possible to automate my forecast submissions?</h2>
+<p>Yes. <a href="https://youtu.be/dMrUlXi4_Bo" target="_blank">Here is a video</a> that walks through using GitHub Actions to automate forecast execution and submission.</p>
+</div>
+<div id="i-am-having-trouble-generating-the-metadata.-can-you-point-me-to-more-information-tutorials-or-examples" class="section level2" number="12.7">
+<h2><span class="header-section-number">12.7</span> I am having trouble generating the metadata. Can you point me to more information, tutorials, or examples?</h2>
 <p>Pending</p>
 </div>
-<div id="how-many-years-are-you-planning-to-run-the-challenge" class="section level2" number="12.7">
-<h2><span class="header-section-number">12.7</span> How many years are you planning to run the Challenge?</h2>
+<div id="how-many-years-are-you-planning-to-run-the-challenge" class="section level2" number="12.8">
+<h2><span class="header-section-number">12.8</span> How many years are you planning to run the Challenge?</h2>
 <p>The RCN is a 5-year project and we aim to run the Challenge for the duration of the project. Each year will be a new round where we revise the rules (if necessary) and add new Themes. Your feedback on the Challenge will be critical to revising and clarifying the rules and information about the Challenge.</p>
 </div>
-<div id="are-there-certain-types-of-models-that-i-need-to-use" class="section level2" number="12.8">
-<h2><span class="header-section-number">12.8</span> Are there certain types of models that I need to use?</h2>
+<div id="are-there-certain-types-of-models-that-i-need-to-use" class="section level2" number="12.9">
+<h2><span class="header-section-number">12.9</span> Are there certain types of models that I need to use?</h2>
 <p>No, you can use any type of model, including empirical and process-based models. The only requirement is that your forecast includes uncertainty. The uncertainty can be represents using different model runs (ensemble members) or the statistics of the forecast (mean and standard deviation).</p>
 </div>
-<div id="what-is-the-relationship-between-the-challenge-and-neon" class="section level2" number="12.9">
-<h2><span class="header-section-number">12.9</span> What is the relationship between the Challenge and NEON?</h2>
+<div id="what-is-the-relationship-between-the-challenge-and-neon" class="section level2" number="12.10">
+<h2><span class="header-section-number">12.10</span> What is the relationship between the Challenge and NEON?</h2>
 <p>The Challenge is run by the Ecological Forecasting Initiative Research Coordination Network that is funded by the U.S. National Science Foundation. While this effort is separate from NEON, NEON staff have been in involved in all stages of planning. NEON staff are on the project steering committee and theme design teams.</p>
 <p>Members of the RCN are also on NEON’s Ecological Forecasting Technical Working Group. This is formal pathway to provide feedback to NEON.</p>
 </div>
-<div id="i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this" class="section level2" number="12.10">
-<h2><span class="header-section-number">12.10</span> I am interested in submitting different models or to multiple themes. How should I register to do this?</h2>
+<div id="i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this" class="section level2" number="12.11">
+<h2><span class="header-section-number">12.11</span> I am interested in submitting different models or to multiple themes. How should I register to do this?</h2>
 <p>Each new model needs its own <a href="https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ" target="_blank">registration</a> with a different model name. If you have a large team where entering everyone’s contact inforamtion will preclude submitting multiple registrations, contact us at <a href="mailto:eco4cast.initiative@gmail.com">eco4cast.initiative@gmail.com</a> for assistance.</p>
 </div>
-<div id="we-have-a-number-of-short-video-resources-that-provide-insight-into-participating-in-the-challenge" class="section level2" number="12.11">
-<h2><span class="header-section-number">12.11</span> We have a number of short video resources that provide insight into participating in the Challenge</h2>
-<p>These videos were recorded for the <a href="https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/" target="_blank">2021 Early Career Annual Meeting</a>. You can see the full playlist <a href="https://www.youtube.com/playlist?list=PLmpgJtGjCb07WTpv5qFlPiPpxSQ2qFP9l" target="_blank">HERE</a> or view individual videos below.</p>
+<div id="where-can-i-find-resources-that-provide-how-to-participate-in-the-challenge" class="section level2" number="12.12">
+<h2><span class="header-section-number">12.12</span> Where can I find resources that provide how to participate in the Challenge?</h2>
+<p>These following videos were recorded for the <a href="https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/" target="_blank">2021 Early Career Annual Meeting</a>. You can see the full playlist <a href="https://www.youtube.com/playlist?list=PLmpgJtGjCb07WTpv5qFlPiPpxSQ2qFP9l" target="_blank">HERE</a> or view individual videos below.</p>
 <p><strong>Videos Related to Specific Steps in Forecast Creation and Submission</strong></p>
 <ul>
 <li><a href="https://youtu.be/bhhkMADM71I" target="_blank">Introduction to the NEON Forecast Challenge</a></li>
 <li><a href="https://youtu.be/8dzyXFaVml8" target="_blank">Reproducible Workflows</a></li>
 <li><a href="https://youtu.be/DRDv7axBYGo" target="_blank">Using NEON data for the NEON Forecast Challenge</a></li>
-<li><a href="https://youtu.be/D1n4q7nrFMw" target="_blank">Accessing Covariate Data</a></li>
+<li><a href="https://youtu.be/D1n4q7nrFMw" target="_blank">Accessing Meteorological Covariate Data</a></li>
 <li><a href="https://youtu.be/YGG8_jiddDc" target="_blank">From Models to Forecasts</a></li>
 <li><a href="https://youtu.be/S8x5rLtltDU" target="_blank">Submitting to the NEON Forecast Challenge</a></li>
 <li><a href="https://youtu.be/Gvle9f5Q1TI" target="_blank">Ecological Forecasting Resources</a></li>

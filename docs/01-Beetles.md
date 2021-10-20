@@ -26,7 +26,7 @@ With the long-term, community-wide, continental-scale data collection through th
 
 ## Challenge 
 
-This is an open ecological forecasting challenge to forecast carabid species richness, defined as the total number of species, and abundance, defined as the total number of carabid individuals. The forecasts should be done weekly per site for all NEON terrestrial sites with richness being absolute and abundance scaled by the sampling effort. Contributing teams are required to submit a forecast for May-Dec 2021 and Jan-Dec 2022 on June 30, 2021. However, teams are encouraged to update their forecasts on the last day of each month, ending on December 31, 2021, as NEON validation data are released. NEON releases carabid sampling data weekly and no sooner than 60 days after collection, so a model submitted on June 30 can include a forecast for the first week of May, and so forth. Teams may use any open data products as drivers of richness and abundance so long as they are not from the month being forecast, and are made publicly available (minimum of URL, but ideally a script). Potential driver data sources include: NEON site data ([Soil and sediment data](https://www.neonscience.org/data-collection/soils-sediments){target="_blank"}, [Terrestrial Plant data](https://www.neonscience.org/data-collection/terrestrial-plants){target="_blank"}, [weather data](https://www.neonscience.org/data-collection/meteorology)){target="_blank"}, NOAA forecasts, and beyond. 
+This is an open ecological forecasting challenge to forecast carabid species richness, defined as the total number of species, and abundance, defined as the total number of carabid individuals. The forecasts should be done weekly per site for all NEON terrestrial sites with richness being absolute and abundance scaled by the sampling effort. Contributing teams are required to submit a forecast for May-Dec 2021 and Jan-Dec 2022 on June 30, 2021. However, teams are encouraged to update their forecasts on the last day of each month, ending on December 31, 2021, as NEON validation data are released. NEON releases carabid sampling data weekly and no sooner than 60 days after collection, so a model submitted on June 30 can include a forecast for the first week of May, and so forth. Teams may use any open data products as drivers of richness and abundance so long as they are not from the month being forecast, and are made publicly available (minimum of URL, but ideally a script). Potential driver data sources include: NEON site data ([Soil and sediment data](https://www.neonscience.org/data-collection/soils-sediments){target="_blank"}, [Terrestrial Plant data](https://www.neonscience.org/data-collection/terrestrial-plants){target="_blank"}, [weather data](https://www.neonscience.org/data-collection/meteorology){target="_blank"}), NOAA forecasts, and beyond. 
 
 ## Data: Targets
 
@@ -89,7 +89,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ```
 
 ```
-## # A tibble: 2,393 x 4
+## # A tibble: 2,484 x 4
 ##    siteID time       abundance richness
 ##    <chr>  <date>         <dbl>    <dbl>
 ##  1 CPER   2013-07-01    0.305        13
@@ -102,7 +102,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ##  8 OSBS   2013-07-22    0            NA
 ##  9 STER   2013-07-22    0.0952        7
 ## 10 CPER   2013-07-29    0.220        13
-## # … with 2,383 more rows
+## # … with 2,474 more rows
 ```
 
 The table has the following columns:  
