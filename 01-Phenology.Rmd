@@ -4,7 +4,7 @@
 
 **Where**: 10 deciduous broadleaf forest, 6 grassland, and 2 shrubland NEON sites in the continental U.S.
 
-**When**: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022.  The only requirement is submissions are predictions of the future.
+**When**: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022.  The only requirement is that submissions are predictions of the future.
 
 **Why**: Phenology has been identified as one of the primary ecological fingerprints of global climate change.
 
