@@ -148,7 +148,16 @@ Answers to frequency asks questions can be found here: [Frequently Asked Questio
 
 ## Design team
 
-Pending
+Kathryn Wheeler, Boston University  
+Min Chen, University of Wisconsin, Madison
+Michael Dietze, Boston University  
+David LeBauer, University of Arizona
+Dabasmita Pal, Michigan State University
+Andrew Richardson, Northern Arizona University  
+Arun Ross, Michigan State University
+Quinn Thomas, Virginia Tech
+Luke Zachmann, Conservation Science Partners
+Kai Zhu, University of California - Santa Cruz
 
 ## Partners
 
