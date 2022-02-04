@@ -121,16 +121,16 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ## # A tibble: 443,500 x 5
 ##    siteID time       ensemble richness abundance
 ##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1     3.13   0.0223 
-##  2 SJER   2020-01-06        2     4.30   0.0123 
-##  3 SJER   2020-01-06        3     3.79   0.0191 
-##  4 SJER   2020-01-06        4     2.73   0.00964
-##  5 SJER   2020-01-06        5     4.05   0.0204 
-##  6 SJER   2020-01-06        6     2.37   0.0279 
-##  7 SJER   2020-01-06        7     3.20   0.0179 
-##  8 SJER   2020-01-06        8     3.20   0.0321 
-##  9 SJER   2020-01-06        9     3.21   0.0276 
-## 10 SJER   2020-01-06       10     1.82   0.0110 
+##  1 SJER   2020-01-06        1     2.90   0.0191 
+##  2 SJER   2020-01-06        2     3.21   0.0228 
+##  3 SJER   2020-01-06        3     4.17  -0.00227
+##  4 SJER   2020-01-06        4     2.37   0.0131 
+##  5 SJER   2020-01-06        5     3.22   0.0317 
+##  6 SJER   2020-01-06        6     4.70   0.0313 
+##  7 SJER   2020-01-06        7     2.24   0.0265 
+##  8 SJER   2020-01-06        8     2.90   0.0283 
+##  9 SJER   2020-01-06        9     3.14   0.00957
+## 10 SJER   2020-01-06       10     2.83   0.0111 
 ## # … with 443,490 more rows
 ```
 
@@ -201,7 +201,7 @@ Here is are examples of csv forecast files that meet the standard for the phenol
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-UCSC_P_EDM.csv")
+readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2021-08-09-PEG_FUSION_0.csv")
 ```
 
 ```
@@ -214,29 +214,27 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2021
 ## cols(
 ##   time = col_date(format = ""),
 ##   siteID = col_character(),
-##   obs_flag = col_double(),
-##   forecast = col_double(),
-##   data_assimilation = col_double(),
 ##   statistic = col_character(),
-##   gcc_90 = col_double()
+##   gcc_90 = col_double(),
+##   rcc_90 = col_double()
 ## )
 ```
 
 ```
-## # A tibble: 560 x 7
-##    time       siteID obs_flag forecast data_assimilation statistic gcc_90
-##    <date>     <chr>     <dbl>    <dbl>             <dbl> <chr>      <dbl>
-##  1 2021-02-23 BART          2        1                 1 mean      0.346 
-##  2 2021-02-23 BART          2        1                 1 sd        0.0117
-##  3 2021-02-23 CLBJ          2        1                 1 mean      0.325 
-##  4 2021-02-23 CLBJ          2        1                 1 sd        0.0185
-##  5 2021-02-23 DELA          2        1                 1 mean      0.354 
-##  6 2021-02-23 DELA          2        1                 1 sd        0.0327
-##  7 2021-02-23 GRSM          2        1                 1 mean      0.351 
-##  8 2021-02-23 GRSM          2        1                 1 sd        0.0136
-##  9 2021-02-23 HARV          2        1                 1 mean      0.331 
-## 10 2021-02-23 HARV          2        1                 1 sd        0.0120
-## # … with 550 more rows
+## # A tibble: 528 x 5
+##    time       siteID statistic  gcc_90 rcc_90
+##    <date>     <chr>  <chr>       <dbl>  <dbl>
+##  1 2021-08-10 HARV   mean      0.418   0.409 
+##  2 2021-08-10 HARV   sd        0.00280 0.0129
+##  3 2021-08-11 HARV   mean      0.416   0.407 
+##  4 2021-08-11 HARV   sd        0.00125 0.0120
+##  5 2021-08-12 HARV   mean      0.418   0.408 
+##  6 2021-08-12 HARV   sd        0.00293 0.0129
+##  7 2021-08-13 HARV   mean      0.417   0.406 
+##  8 2021-08-13 HARV   sd        0.00307 0.0120
+##  9 2021-08-14 HARV   mean      0.418   0.406 
+## 10 2021-08-14 HARV   sd        0.00325 0.0104
+## # … with 518 more rows
 ```
 
 A netcdf file located at https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc

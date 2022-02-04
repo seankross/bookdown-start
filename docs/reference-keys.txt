@@ -133,9 +133,10 @@ i-need-historical-weather-data-to-build-my-model.-where-can-i-find-it
 i-submitted-my-forecast-but-cannot-find-it-on-the-dashboard-or-in-the-directory-of-forecasts
 do-i-need-to-submit-forecasts-to-every-submission-date
 where-can-i-find-examples-of-forecasts-that-match-the-required-standard
+is-it-possible-to-automate-my-forecast-submissions
 i-am-having-trouble-generating-the-metadata.-can-you-point-me-to-more-information-tutorials-or-examples
 how-many-years-are-you-planning-to-run-the-challenge
 are-there-certain-types-of-models-that-i-need-to-use
 what-is-the-relationship-between-the-challenge-and-neon
 i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this
-we-have-a-number-of-short-video-resources-that-provide-insight-into-participating-in-the-challenge
+where-can-i-find-resources-that-provide-how-to-participate-in-the-challenge
