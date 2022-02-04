@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Shared Forecast Drivers | NEON Ecological Forecasting Challenge</title>
+  <title>9 Meteorology Inputs | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Shared Forecast Drivers | NEON Ecological Forecasting Challenge" />
+  <meta property="og:title" content="9 Meteorology Inputs | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://seankross.com/bookdown-start/" />
   
@@ -16,24 +16,23 @@
   <meta name="github-repo" content="eco4cast/neon4cast-docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Shared Forecast Drivers | NEON Ecological Forecasting Challenge" />
+  <meta name="twitter:title" content="9 Meteorology Inputs | NEON Ecological Forecasting Challenge" />
   
   <meta name="twitter:description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   
 
-<meta name="author" content="Ecological Forecasting Initative Research Coordination Network" />
+<meta name="author" content="Hosted by the Ecological Forecasting Initative Research Coordination Network and supported by National Science Foundation (DEB-1926388)" />
 
 
-<meta name="date" content="2021-04-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="submission-instructions.html"/>
-<link rel="next" href="evaluation.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<link rel="prev" href="evaluation.html"/>
+<link rel="next" href="helpful-functions.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,12 +50,15 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -117,6 +119,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -142,6 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.3.1" data-path="theme-aquatic-ecosystems.html"><a href="theme-aquatic-ecosystems.html#surface-mean-daily-dissolved-oxygen-concentration"><i class="fa fa-check"></i><b>1.3.1</b> Surface Mean Daily Dissolved Oxygen Concentration</a></li>
 <li class="chapter" data-level="1.3.2" data-path="theme-aquatic-ecosystems.html"><a href="theme-aquatic-ecosystems.html#surface-mean-daily-water-temperature"><i class="fa fa-check"></i><b>1.3.2</b> Surface Mean Daily Water Temperature</a></li>
+<li class="chapter" data-level="1.3.3" data-path="theme-aquatic-ecosystems.html"><a href="theme-aquatic-ecosystems.html#focal-sites"><i class="fa fa-check"></i><b>1.3.3</b> Focal sites</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="theme-aquatic-ecosystems.html"><a href="theme-aquatic-ecosystems.html#timeline"><i class="fa fa-check"></i><b>1.4</b> Timeline</a></li>
 <li class="chapter" data-level="1.5" data-path="theme-aquatic-ecosystems.html"><a href="theme-aquatic-ecosystems.html#design-team"><i class="fa fa-check"></i><b>1.5</b> Design Team</a></li>
@@ -157,14 +161,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3.1" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#net-ecosystem-exchange"><i class="fa fa-check"></i><b>2.3.1</b> Net ecosystem exchange</a></li>
 <li class="chapter" data-level="2.3.2" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#latent-heat-flux"><i class="fa fa-check"></i><b>2.3.2</b> Latent heat flux</a></li>
 <li class="chapter" data-level="2.3.3" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#soil-moisture"><i class="fa fa-check"></i><b>2.3.3</b> Soil moisture</a></li>
-<li class="chapter" data-level="2.3.4" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#focal-sites"><i class="fa fa-check"></i><b>2.3.4</b> Focal sites</a></li>
+<li class="chapter" data-level="2.3.4" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#focal-sites-1"><i class="fa fa-check"></i><b>2.3.4</b> Focal sites</a></li>
 <li class="chapter" data-level="2.3.5" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#minute-target-data-calulation"><i class="fa fa-check"></i><b>2.3.5</b> 30-minute target data calulation</a></li>
 <li class="chapter" data-level="2.3.6" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#daily-target-data-calulation"><i class="fa fa-check"></i><b>2.3.6</b> Daily target data calulation</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#timeline-1"><i class="fa fa-check"></i><b>2.4</b> Timeline</a></li>
 <li class="chapter" data-level="2.5" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#design-team-1"><i class="fa fa-check"></i><b>2.5</b> Design team</a></li>
 <li class="chapter" data-level="2.6" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#partners-1"><i class="fa fa-check"></i><b>2.6</b> Partners</a></li>
-<li class="chapter" data-level="2.7" data-path="theme-carbon-and-water-fluxes.html"><a href="theme-carbon-and-water-fluxes.html#references-1"><i class="fa fa-check"></i><b>2.7</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html"><i class="fa fa-check"></i><b>3</b> Theme: Tick Populations</a>
 <ul>
@@ -174,30 +177,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#amblyomma-americanum-nymphs"><i class="fa fa-check"></i><b>3.3.1</b> Amblyomma americanum nymphs</a></li>
 <li class="chapter" data-level="3.3.2" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#ixodes-scapularis-nymphs"><i class="fa fa-check"></i><b>3.3.2</b> Ixodes scapularis nymphs</a></li>
-<li class="chapter" data-level="3.3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#focal-sites-1"><i class="fa fa-check"></i><b>3.3.3</b> Focal sites</a></li>
-<li class="chapter" data-level="3.3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-data-calulation"><i class="fa fa-check"></i><b>3.3.4</b> Target data calulation</a></li>
+<li class="chapter" data-level="3.3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#focal-sites-2"><i class="fa fa-check"></i><b>3.3.3</b> Focal sites</a></li>
+<li class="chapter" data-level="3.3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-data-calculation"><i class="fa fa-check"></i><b>3.3.4</b> Target data calculation</a></li>
 <li class="chapter" data-level="3.3.5" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-file"><i class="fa fa-check"></i><b>3.3.5</b> Target file</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#timeline-2"><i class="fa fa-check"></i><b>3.4</b> Timeline</a></li>
 <li class="chapter" data-level="3.5" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#design-team-2"><i class="fa fa-check"></i><b>3.5</b> Design team</a></li>
 <li class="chapter" data-level="3.6" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#partners-2"><i class="fa fa-check"></i><b>3.6</b> Partners</a></li>
-<li class="chapter" data-level="3.7" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#references-2"><i class="fa fa-check"></i><b>3.7</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="theme-phenology.html"><a href="theme-phenology.html"><i class="fa fa-check"></i><b>4</b> Theme: Phenology</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="theme-phenology.html"><a href="theme-phenology.html#overview-3"><i class="fa fa-check"></i><b>4.1</b> Overview</a></li>
 <li class="chapter" data-level="4.2" data-path="theme-phenology.html"><a href="theme-phenology.html#challenge-3"><i class="fa fa-check"></i><b>4.2</b> Challenge</a></li>
-<li class="chapter" data-level="4.3" data-path="theme-phenology.html"><a href="theme-phenology.html#data-targets-3"><i class="fa fa-check"></i><b>4.3</b> Data: Targets:</a>
+<li class="chapter" data-level="4.3" data-path="theme-phenology.html"><a href="theme-phenology.html#data-targets-3"><i class="fa fa-check"></i><b>4.3</b> Data: Targets</a>
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="theme-phenology.html"><a href="theme-phenology.html#green-chromatic-coordinate-gcc"><i class="fa fa-check"></i><b>4.3.1</b> Green chromatic coordinate (gcc)</a></li>
-<li class="chapter" data-level="4.3.2" data-path="theme-phenology.html"><a href="theme-phenology.html#focal-sites-2"><i class="fa fa-check"></i><b>4.3.2</b> Focal sites</a></li>
-<li class="chapter" data-level="4.3.3" data-path="theme-phenology.html"><a href="theme-phenology.html#target-data-calulation-1"><i class="fa fa-check"></i><b>4.3.3</b> Target data calulation</a></li>
-<li class="chapter" data-level="4.3.4" data-path="theme-phenology.html"><a href="theme-phenology.html#target-file-1"><i class="fa fa-check"></i><b>4.3.4</b> Target file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="theme-phenology.html"><a href="theme-phenology.html#red-chromatic-coordinate-rcc"><i class="fa fa-check"></i><b>4.3.2</b> Red chromatic coordinate (rcc)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="theme-phenology.html"><a href="theme-phenology.html#focal-sites-3"><i class="fa fa-check"></i><b>4.3.3</b> Focal sites</a></li>
+<li class="chapter" data-level="4.3.4" data-path="theme-phenology.html"><a href="theme-phenology.html#target-data-calculation-1"><i class="fa fa-check"></i><b>4.3.4</b> Target data calculation</a></li>
+<li class="chapter" data-level="4.3.5" data-path="theme-phenology.html"><a href="theme-phenology.html#target-file-1"><i class="fa fa-check"></i><b>4.3.5</b> Target file</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="theme-phenology.html"><a href="theme-phenology.html#timeline-3"><i class="fa fa-check"></i><b>4.4</b> Timeline</a></li>
-<li class="chapter" data-level="4.5" data-path="theme-phenology.html"><a href="theme-phenology.html#design-team-3"><i class="fa fa-check"></i><b>4.5</b> Design team</a></li>
-<li class="chapter" data-level="4.6" data-path="theme-phenology.html"><a href="theme-phenology.html#partners-3"><i class="fa fa-check"></i><b>4.6</b> Partners</a></li>
-<li class="chapter" data-level="4.7" data-path="theme-phenology.html"><a href="theme-phenology.html#references-3"><i class="fa fa-check"></i><b>4.7</b> References</a></li>
+<li class="chapter" data-level="4.5" data-path="theme-phenology.html"><a href="theme-phenology.html#submissions"><i class="fa fa-check"></i><b>4.5</b> Submissions</a></li>
+<li class="chapter" data-level="4.6" data-path="theme-phenology.html"><a href="theme-phenology.html#meterological-inputs-for-modeling"><i class="fa fa-check"></i><b>4.6</b> Meterological inputs for modeling</a></li>
+<li class="chapter" data-level="4.7" data-path="theme-phenology.html"><a href="theme-phenology.html#useful-functions"><i class="fa fa-check"></i><b>4.7</b> Useful functions</a></li>
+<li class="chapter" data-level="4.8" data-path="theme-phenology.html"><a href="theme-phenology.html#null-models"><i class="fa fa-check"></i><b>4.8</b> Null models</a></li>
+<li class="chapter" data-level="4.9" data-path="theme-phenology.html"><a href="theme-phenology.html#faq"><i class="fa fa-check"></i><b>4.9</b> FAQ</a></li>
+<li class="chapter" data-level="4.10" data-path="theme-phenology.html"><a href="theme-phenology.html#design-team-3"><i class="fa fa-check"></i><b>4.10</b> Design team</a></li>
+<li class="chapter" data-level="4.11" data-path="theme-phenology.html"><a href="theme-phenology.html#partners-3"><i class="fa fa-check"></i><b>4.11</b> Partners</a></li>
+<li class="chapter" data-level="4.12" data-path="theme-phenology.html"><a href="theme-phenology.html#references-1"><i class="fa fa-check"></i><b>4.12</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html"><i class="fa fa-check"></i><b>5</b> Theme: Beetle Communities</a>
 <ul>
@@ -207,14 +215,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#abundance-of-beetles-abundance"><i class="fa fa-check"></i><b>5.3.1</b> Abundance of beetles (abundance)</a></li>
 <li class="chapter" data-level="5.3.2" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#species-richness-n"><i class="fa fa-check"></i><b>5.3.2</b> Species richness (n)</a></li>
-<li class="chapter" data-level="5.3.3" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#focal-sites-3"><i class="fa fa-check"></i><b>5.3.3</b> Focal sites</a></li>
-<li class="chapter" data-level="5.3.4" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#target-data-calulation-2"><i class="fa fa-check"></i><b>5.3.4</b> Target data calulation</a></li>
+<li class="chapter" data-level="5.3.3" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#focal-sites-4"><i class="fa fa-check"></i><b>5.3.3</b> Focal sites</a></li>
+<li class="chapter" data-level="5.3.4" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#target-data-calculation-2"><i class="fa fa-check"></i><b>5.3.4</b> Target data calculation</a></li>
 <li class="chapter" data-level="5.3.5" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#target-file-2"><i class="fa fa-check"></i><b>5.3.5</b> Target file</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#timeline-4"><i class="fa fa-check"></i><b>5.4</b> Timeline</a></li>
 <li class="chapter" data-level="5.5" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#design-team-4"><i class="fa fa-check"></i><b>5.5</b> Design team</a></li>
 <li class="chapter" data-level="5.6" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#partners-4"><i class="fa fa-check"></i><b>5.6</b> Partners</a></li>
-<li class="chapter" data-level="5.7" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#references-4"><i class="fa fa-check"></i><b>5.7</b> References</a></li>
+<li class="chapter" data-level="5.7" data-path="theme-beetle-communities.html"><a href="theme-beetle-communities.html#references-2"><i class="fa fa-check"></i><b>5.7</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="participation.html"><a href="participation.html"><i class="fa fa-check"></i><b>6</b> Participation</a>
 <ul>
@@ -224,13 +232,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.2" data-path="participation.html"><a href="participation.html#teams"><i class="fa fa-check"></i><b>6.1.2</b> Teams</a></li>
 <li class="chapter" data-level="6.1.3" data-path="participation.html"><a href="participation.html#slack-and-github-communication"><i class="fa fa-check"></i><b>6.1.3</b> Slack and GitHub Communication</a></li>
 <li class="chapter" data-level="6.1.4" data-path="participation.html"><a href="participation.html#archiving-models"><i class="fa fa-check"></i><b>6.1.4</b> Archiving models</a></li>
-<li class="chapter" data-level="6.1.5" data-path="participation.html"><a href="participation.html#computational-reesources"><i class="fa fa-check"></i><b>6.1.5</b> Computational reesources</a></li>
+<li class="chapter" data-level="6.1.5" data-path="participation.html"><a href="participation.html#computational-resources"><i class="fa fa-check"></i><b>6.1.5</b> Computational resources</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="participation.html"><a href="participation.html#participation-agreement"><i class="fa fa-check"></i><b>6.2</b> Participation agreement</a></li>
 <li class="chapter" data-level="6.3" data-path="participation.html"><a href="participation.html#neon-data-use"><i class="fa fa-check"></i><b>6.3</b> NEON Data Use</a></li>
 <li class="chapter" data-level="6.4" data-path="participation.html"><a href="participation.html#additional-data-options"><i class="fa fa-check"></i><b>6.4</b> Additional data options</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="submission-instructions.html"><a href="submission-instructions.html"><i class="fa fa-check"></i><b>7</b> Submission instructions</a>
+<li class="chapter" data-level="7" data-path="submission-instructions.html"><a href="submission-instructions.html"><i class="fa fa-check"></i><b>7</b> Submission Instructions</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="submission-instructions.html"><a href="submission-instructions.html#forecast-format"><i class="fa fa-check"></i><b>7.1</b> Forecast format</a>
 <ul>
@@ -244,25 +252,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="submission-instructions.html"><a href="submission-instructions.html#submission-process"><i class="fa fa-check"></i><b>7.3</b> Submission process</a></li>
 <li class="chapter" data-level="7.4" data-path="submission-instructions.html"><a href="submission-instructions.html#validating-submission"><i class="fa fa-check"></i><b>7.4</b> Validating submission</a></li>
 <li class="chapter" data-level="7.5" data-path="submission-instructions.html"><a href="submission-instructions.html#visualizing-submissions"><i class="fa fa-check"></i><b>7.5</b> Visualizing submissions</a></li>
+<li class="chapter" data-level="7.6" data-path="submission-instructions.html"><a href="submission-instructions.html#video-describing-how-to-submit-to-the-challenge"><i class="fa fa-check"></i><b>7.6</b> Video Describing How to Submit to the Challenge</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="shared-forecast-drivers.html"><a href="shared-forecast-drivers.html"><i class="fa fa-check"></i><b>8</b> Shared Forecast Drivers</a>
+<li class="chapter" data-level="8" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>8</b> Evaluation</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="shared-forecast-drivers.html"><a href="shared-forecast-drivers.html#meteorology-noaa-global-ensemble-forecasting-system"><i class="fa fa-check"></i><b>8.1</b> Meteorology: NOAA Global Ensemble Forecasting System</a></li>
-<li class="chapter" data-level="8.2" data-path="shared-forecast-drivers.html"><a href="shared-forecast-drivers.html#meteorology-neon-observed"><i class="fa fa-check"></i><b>8.2</b> Meteorology: NEON Observed</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>9</b> Evaluation</a>
+<li class="chapter" data-level="8.1" data-path="evaluation.html"><a href="evaluation.html#results"><i class="fa fa-check"></i><b>8.1</b> Results</a></li>
+<li class="chapter" data-level="8.2" data-path="evaluation.html"><a href="evaluation.html#scoring-metric-continuous-ranked-probability-score"><i class="fa fa-check"></i><b>8.2</b> Scoring Metric: Continuous Ranked Probability Score</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="evaluation.html"><a href="evaluation.html#results"><i class="fa fa-check"></i><b>9.1</b> Results</a></li>
-<li class="chapter" data-level="9.2" data-path="evaluation.html"><a href="evaluation.html#scoring-metric-continuous-ranked-probability-score"><i class="fa fa-check"></i><b>9.2</b> Scoring Metric: Continuous Ranked Probability Score</a>
+<li class="chapter" data-level="8.2.1" data-path="evaluation.html"><a href="evaluation.html#example-of-a-crps-calculation-from-an-ensemble-forecast"><i class="fa fa-check"></i><b>8.2.1</b> Example of a CRPS calculation from an ensemble forecast</a></li>
+<li class="chapter" data-level="8.2.2" data-path="evaluation.html"><a href="evaluation.html#exploring-the-scoring-surface"><i class="fa fa-check"></i><b>8.2.2</b> Exploring the scoring surface</a></li>
+<li class="chapter" data-level="8.2.3" data-path="evaluation.html"><a href="evaluation.html#crps-from-the-normal-distribution"><i class="fa fa-check"></i><b>8.2.3</b> CRPS from the Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="evaluation.html"><a href="evaluation.html#null-forecast"><i class="fa fa-check"></i><b>8.3</b> Null forecast</a></li>
+<li class="chapter" data-level="8.4" data-path="evaluation.html"><a href="evaluation.html#forecast-submission-visualization-and-leaderboard"><i class="fa fa-check"></i><b>8.4</b> Forecast Submission Visualization and Leaderboard</a></li>
+<li class="chapter" data-level="8.5" data-path="evaluation.html"><a href="evaluation.html#references-3"><i class="fa fa-check"></i><b>8.5</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="met-inputs.html"><a href="met-inputs.html"><i class="fa fa-check"></i><b>9</b> Meteorology Inputs</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="evaluation.html"><a href="evaluation.html#example-of-a-crps-calculation-from-an-ensemble-forecast"><i class="fa fa-check"></i><b>9.2.1</b> Example of a CRPS calculation from an ensemble forecast</a></li>
-<li class="chapter" data-level="9.2.2" data-path="evaluation.html"><a href="evaluation.html#exploring-the-scoring-surface"><i class="fa fa-check"></i><b>9.2.2</b> Exploring the scoring surface</a></li>
-<li class="chapter" data-level="9.2.3" data-path="evaluation.html"><a href="evaluation.html#crps-from-the-normal-distribution"><i class="fa fa-check"></i><b>9.2.3</b> CRPS from the Normal Distribution</a></li>
+<li class="chapter" data-level="9.1" data-path="met-inputs.html"><a href="met-inputs.html#noaa-global-ensemble-forecasting-system"><i class="fa fa-check"></i><b>9.1</b> NOAA Global Ensemble Forecasting System</a></li>
+<li class="chapter" data-level="9.2" data-path="met-inputs.html"><a href="met-inputs.html#noaa-global-ensemble-forecasting-system-stacked"><i class="fa fa-check"></i><b>9.2</b> NOAA Global Ensemble Forecasting System Stacked</a></li>
+<li class="chapter" data-level="9.3" data-path="met-inputs.html"><a href="met-inputs.html#neon-observed"><i class="fa fa-check"></i><b>9.3</b> NEON Observed</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="evaluation.html"><a href="evaluation.html#null-forecast"><i class="fa fa-check"></i><b>9.3</b> Null forecast</a></li>
-<li class="chapter" data-level="9.4" data-path="evaluation.html"><a href="evaluation.html#forecast-submission-visualization-and-leaderboard"><i class="fa fa-check"></i><b>9.4</b> Forecast Submission Visualization and Leaderboard</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="helpful-functions.html"><a href="helpful-functions.html"><i class="fa fa-check"></i><b>10</b> Helpful functions</a>
+<li class="chapter" data-level="10" data-path="helpful-functions.html"><a href="helpful-functions.html"><i class="fa fa-check"></i><b>10</b> Helpful Functions</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="helpful-functions.html"><a href="helpful-functions.html#neon4cast-package"><i class="fa fa-check"></i><b>10.1</b> neon4cast package</a>
 <ul>
@@ -272,7 +283,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1.4" data-path="helpful-functions.html"><a href="helpful-functions.html#validate-a-forecast-file"><i class="fa fa-check"></i><b>10.1.4</b> Validate a forecast file</a></li>
 <li class="chapter" data-level="10.1.5" data-path="helpful-functions.html"><a href="helpful-functions.html#generate-forecast-metadata-in-eml"><i class="fa fa-check"></i><b>10.1.5</b> Generate forecast metadata in EML</a></li>
 <li class="chapter" data-level="10.1.6" data-path="helpful-functions.html"><a href="helpful-functions.html#access-efi-snapshots-of-noaa-forecasts-at-neon-sites"><i class="fa fa-check"></i><b>10.1.6</b> Access EFI snapshots of NOAA forecasts at NEON sites</a></li>
-<li class="chapter" data-level="10.1.7" data-path="helpful-functions.html"><a href="helpful-functions.html#submit-a-forecast"><i class="fa fa-check"></i><b>10.1.7</b> Submit a forecast</a></li>
+<li class="chapter" data-level="10.1.7" data-path="helpful-functions.html"><a href="helpful-functions.html#neon4cast-submit"><i class="fa fa-check"></i><b>10.1.7</b> Submit a forecast</a></li>
 </ul></li>
 <li class="chapter" data-level="10.2" data-path="helpful-functions.html"><a href="helpful-functions.html#neonstore-package"><i class="fa fa-check"></i><b>10.2</b> neonstore package</a>
 <ul>
@@ -282,7 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2.4" data-path="helpful-functions.html"><a href="helpful-functions.html#note-on-api-limits"><i class="fa fa-check"></i><b>10.2.4</b> Note on API limits</a></li>
 <li class="chapter" data-level="10.2.5" data-path="helpful-functions.html"><a href="helpful-functions.html#non-stacking-files-and-low-level-interface"><i class="fa fa-check"></i><b>10.2.5</b> Non-stacking files and low-level interface</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="helpful-functions.html"><a href="helpful-functions.html#efistandards"><i class="fa fa-check"></i><b>10.3</b> EFIstandards</a>
+<li class="chapter" data-level="10.3" data-path="helpful-functions.html"><a href="helpful-functions.html#efistandards-package"><i class="fa fa-check"></i><b>10.3</b> EFIstandards package</a>
 <ul>
 <li class="chapter" data-level="10.3.1" data-path="helpful-functions.html"><a href="helpful-functions.html#output-files"><i class="fa fa-check"></i><b>10.3.1</b> Output Files:</a></li>
 <li class="chapter" data-level="10.3.2" data-path="helpful-functions.html"><a href="helpful-functions.html#output-metadata"><i class="fa fa-check"></i><b>10.3.2</b> Output Metadata:</a></li>
@@ -298,10 +309,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-submitted-my-forecast-but-cannot-find-it-on-the-dashboard-or-in-the-directory-of-forecasts"><i class="fa fa-check"></i><b>11.3</b> I submitted my forecast but cannot find it on the dashboard or in the directory of forecasts</a></li>
 <li class="chapter" data-level="11.4" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#do-i-need-to-submit-forecasts-to-every-submission-date"><i class="fa fa-check"></i><b>11.4</b> Do I need to submit forecasts to every submission date?</a></li>
 <li class="chapter" data-level="11.5" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#where-can-i-find-examples-of-forecasts-that-match-the-required-standard"><i class="fa fa-check"></i><b>11.5</b> Where can I find examples of forecasts that match the required standard?</a></li>
-<li class="chapter" data-level="11.6" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-having-trouble-generating-the-metadata.-can-you-point-me-to-more-information-tutorials-or-examples"><i class="fa fa-check"></i><b>11.6</b> I am having trouble generating the metadata. Can you point me to more information, tutorials, or examples?</a></li>
-<li class="chapter" data-level="11.7" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#how-many-years-are-you-planning-to-run-the-challenge"><i class="fa fa-check"></i><b>11.7</b> How many years are you planning to run the Challenge?</a></li>
-<li class="chapter" data-level="11.8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#are-there-certain-types-of-models-that-i-need-to-use"><i class="fa fa-check"></i><b>11.8</b> Are there certain types of models that I need to use?</a></li>
-<li class="chapter" data-level="11.9" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#what-is-the-relationship-between-the-challenge-and-neon"><i class="fa fa-check"></i><b>11.9</b> What is the relationship between the Challenge and NEON?</a></li>
+<li class="chapter" data-level="11.6" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#is-it-possible-to-automate-my-forecast-submissions"><i class="fa fa-check"></i><b>11.6</b> Is it possible to automate my forecast submissions?</a></li>
+<li class="chapter" data-level="11.7" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-having-trouble-generating-the-metadata.-can-you-point-me-to-more-information-tutorials-or-examples"><i class="fa fa-check"></i><b>11.7</b> I am having trouble generating the metadata. Can you point me to more information, tutorials, or examples?</a></li>
+<li class="chapter" data-level="11.8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#how-many-years-are-you-planning-to-run-the-challenge"><i class="fa fa-check"></i><b>11.8</b> How many years are you planning to run the Challenge?</a></li>
+<li class="chapter" data-level="11.9" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#are-there-certain-types-of-models-that-i-need-to-use"><i class="fa fa-check"></i><b>11.9</b> Are there certain types of models that I need to use?</a></li>
+<li class="chapter" data-level="11.10" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#what-is-the-relationship-between-the-challenge-and-neon"><i class="fa fa-check"></i><b>11.10</b> What is the relationship between the Challenge and NEON?</a></li>
+<li class="chapter" data-level="11.11" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#i-am-interested-in-submitting-different-models-or-to-multiple-themes.-how-should-i-register-to-do-this"><i class="fa fa-check"></i><b>11.11</b> I am interested in submitting different models or to multiple themes. How should I register to do this?</a></li>
+<li class="chapter" data-level="11.12" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html#where-can-i-find-resources-that-provide-how-to-participate-in-the-challenge"><i class="fa fa-check"></i><b>11.12</b> Where can I find resources that provide how to participate in the Challenge?</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -323,21 +337,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="shared-forecast-drivers" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Shared Forecast Drivers</h1>
-<p>We are downloading, subsetting, and processing forecasted meteorology drivers for each NEON site. Currently, we have NOAA’s Global Ensemble Forecasting System V12 output available at the 1 hr time resolution for each NEON site. For forecasts generated at midnight (00) UTC, the forecasts extend 35-days in the future. For forecasts generated at 06, 12, and 18 UTC, the forecasts extend 16-days in the future. There are 31 ensemble members for each forecast. Each ensemble member is available as a separate netcdf file. The following meteorological variables are included: air temperature, air pressure, wind speed, precipitation, downwelling longwave radiation, downwelling shortwave radiation, relative humidity, specific humidity, and total cloud cover.</p>
-<p>The weather forecasts are available through an s3 bucket (see Meteorology: NOAA Global Ensemble Forecasting System below) with multiple ways to access them: You can click on a file in the browser, you can directly download individual files from the command line using the file address, or you can download multiple files using aws.s3 commands. We provide an example using the <code>aws.s3</code> package in R for downloading all the ensemble members for particular location, forecast cycle (00, 06, 12, or 18), and NEON site at:</p>
-<p><a href="https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/download_noaa_files_s3.R" class="uri">https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/download_noaa_files_s3.R</a></p>
-<p>Additionally we provide example code in R for converting the netcdf files to csv files</p>
-<p><a href="https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read_example.R" class="uri">https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read_example.R</a></p>
-<p><a href="https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read.R" class="uri">https://github.com/eco4cast/neon4cast-shared-utilities/blob/main/noaa_gefs_read.R</a></p>
-<div id="meteorology-noaa-global-ensemble-forecasting-system" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Meteorology: NOAA Global Ensemble Forecasting System</h2>
-<p><a href="https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/">1 Hour NOAA Drivers</a></p>
+<div id="met_inputs" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Meteorology Inputs</h1>
+<p>We are downloading, subsetting, and processing forecasted meteorology drivers for each NEON site. Currently, we have NOAA’s Global Ensemble Forecasting System (GEFS) V12 output available at the 1 hr time resolution for each NEON site.</p>
+<p>The following are important considerations when using the NOAA GEFS forecasts</p>
+<ul>
+<li>There are 31 ensemble members for each forecast. Each ensemble member is available as a separate netcdf file.<br />
+</li>
+<li>For forecasts generated at four times per day. The directories are organized by these cycles: 00, 06, 12, and 18 cycles</li>
+<li>For the midnight (00) UTC, the forecasts extend 35-days in the future for the ensemble members 01 - 30. Ensemble member 00 only extends 16-days in the future.</li>
+<li>For forecasts generated at 06, 12, and 18 UTC, the forecasts extend 16-days in the future.<br />
+</li>
+<li>We are constantly downloading and processing the forecasts. Since the 00 forecast runs 35-days in the future, it takes longer to download the complete forecast than the 06, 12, and 18 cycles. As a result you may see the 00 forecast appear later than the other forecasts on the server.</li>
+</ul>
+<p>The following meteorological variables are included:<br />
+- air temperature<br />
+- air pressure<br />
+- wind speed<br />
+- precipitation<br />
+- downwelling longwave radiation<br />
+- downwelling shortwave radiation<br />
+- relative humidity</p>
+<p>The weather forecasts are available through an s3 bucket (see NOAA Global Ensemble Forecasting System below) with multiple ways to access them:
+- You can click on a file in the browser, you can directly download individual files from the command line using the file address
+- You can download multiple files using <code>aws.s3</code> commands.
+- We provide an R function code in the <a href="https://github.com/eco4cast/neon4cast">neon4cast package</a> called <code>noaa.R</code> for downloading all the ensemble members for particular location, forecast cycle (00, 06, 12, or 18), and NEON site</p>
+<p>Additionally, we provide an R function code in the <a href="https://github.com/eco4cast/neon4cast">neon4cast package</a> called <code>read_forecast.R</code> for converting the download netcdf files to a data frame.</p>
+<div id="noaa-global-ensemble-forecasting-system" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> NOAA Global Ensemble Forecasting System</h2>
+<p><a href="https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/" target="_blank">1 Hour NOAA Drivers</a><br />
+</p>
+<p>The data are organized by siteID/date/cycle where cycle is the hour of the day (UTC) that the forecast was started (00, 06, 12, 18).</p>
 </div>
-<div id="meteorology-neon-observed" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Meteorology: NEON Observed</h2>
-<p>In development through collaboration with NEON and NCAR.</p>
+<div id="noaa-global-ensemble-forecasting-system-stacked" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> NOAA Global Ensemble Forecasting System Stacked</h2>
+<p>We have extracted the first hour of each NOAA GEFS forecast since September 2020 and combined them together to generate a continuous weather product that runs from September 2020 to present. This is available for model calibration and seamlessly transitions to the current day’s NOAA GEFS forecast</p>
+<p><a href="https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr_stacked/" target="_blank">Historical NOAA Drivers</a><br />
+</p>
+<p>The data are organized by siteID.</p>
+</div>
+<div id="neon-observed" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> NEON Observed</h2>
+<p>Our goal is to make the observed weather at each NEON site available. This is currently in development through a collaboration with NEON and NCAR.</p>
 
 </div>
 </div>
@@ -346,8 +387,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="submission-instructions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="evaluation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="evaluation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="helpful-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -370,6 +411,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

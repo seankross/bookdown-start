@@ -4,7 +4,7 @@
 
 **Where**: 10 deciduous broadleaf forest, 6 grassland, and 2 shrubland NEON sites in the continental U.S.
 
-**When**: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022.  The only requirement is submissions are predictions of the future.
+**When**: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022.  The only requirement is that submissions are predictions of the future.
 
 **Why**: Phenology has been identified as one of the primary ecological fingerprints of global climate change.
 
@@ -147,9 +147,9 @@ Functions for downloading and working with the meteorology forecasts can be be f
 
 Two null models are automatically generated each day.  The persistence null model use the most recent measurement of gcc_90 or rcc_90 and predicts that the values will be constant in the future.  The climatology null model futures that the gcc_90 or rcc_90 will be equal to the historical mean of that day of year.
 
-Code for the persistence null model can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel_randomWalk_main.R)
+Code for the persistence null model can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel_randomWalk_main.R){target="_blank"
 
-Code for the climatology null model can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/phenology_climatology.R)
+Code for the climatology null model can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/phenology_climatology.R){target="_blank"
 
 ## FAQ
 
@@ -158,13 +158,15 @@ Answers to frequency asks questions can be found here: [Frequently Asked Questio
 ## Design team
 
 Kathryn Wheeler, Boston University  
+Min Chen, University of Wisconsin, Madison
 Michael Dietze, Boston University  
-Andrew Richardson, Northern Arizona University  
 David LeBauer, University of Arizona
-Kai Zhu, University of California - Santa Cruz
+Dabasmita Pal, Michigan State University
+Andrew Richardson, Northern Arizona University  
+Arun Ross, Michigan State University
 Quinn Thomas, Virginia Tech
-Dabasmita Pal
-Luke Zachmann
+Luke Zachmann, Conservation Science Partners
+Kai Zhu, University of California - Santa Cruz
 
 ## Partners
 
