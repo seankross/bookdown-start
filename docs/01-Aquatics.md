@@ -49,20 +49,20 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ```
 
 ```
-## # A tibble: 2,960 x 9
+## # A tibble: 2,996 × 9
 ##    time       siteID oxygen temperature oxygen_sd temperature_sd depth_oxygen
-##    <date>     <chr>   <dbl>       <dbl>     <dbl>          <dbl>        <dbl>
-##  1 2017-10-20 BARC     6.01        26.4   0.0114        0.00104          1.19
-##  2 2017-10-21 BARC     6.06        26.3   0.00717       0.000986         1.20
-##  3 2017-10-22 BARC     6.13        26.4   0.00721       0.00119          1.19
-##  4 2017-10-23 BARC     6.43        26.6   0.00765       0.000944         1.16
-##  5 2017-10-24 BARC     6.31        26.4   0.00746       0.00118          1.11
-##  6 2017-10-25 BARC     6.27        25.9   0.00737       0.00107          1.13
-##  7 2017-10-26 BARC     6.30        25.0   0.00743       0.00105          1.19
-##  8 2017-10-27 BARC     6.41        24.3   0.00762       0.00104          1.22
-##  9 2017-10-28 BARC     6.48        24.1   0.00766       0.00111          1.17
-## 10 2017-10-29 BARC     6.64        23.8   0.00783       0.00101          1.10
-## # … with 2,950 more rows, and 2 more variables: depth_temperature <dbl>,
+##    <date>     <chr>  <lgl>        <dbl> <lgl>              <dbl> <lgl>       
+##  1 2017-08-27 BARC   NA            31.5 NA               0.00108 NA          
+##  2 2017-08-28 BARC   NA            31.1 NA               0.00107 NA          
+##  3 2017-08-29 BARC   NA            30.9 NA               0.00146 NA          
+##  4 2017-08-30 BARC   NA            31.0 NA               0.00147 NA          
+##  5 2017-08-31 BARC   NA            31.5 NA               0.00204 NA          
+##  6 2017-09-01 BARC   NA            31.5 NA               0.00168 NA          
+##  7 2017-09-02 BARC   NA            31.1 NA               0.00113 NA          
+##  8 2017-09-03 BARC   NA            30.7 NA               0.00137 NA          
+##  9 2017-09-04 BARC   NA            31.1 NA               0.00244 NA          
+## 10 2017-09-05 BARC   NA            30.8 NA               0.00144 NA          
+## # … with 2,986 more rows, and 2 more variables: depth_temperature <dbl>,
 ## #   neon_product_ids <chr>
 ```
 The target file has the following columns   

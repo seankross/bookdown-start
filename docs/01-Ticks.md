@@ -94,7 +94,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 ```
 
 ```
-## # A tibble: 3,024 x 21
+## # A tibble: 3,024 × 21
 ##     Year epiWeek yearWeek plotID   siteID nlcdClass       decimalLatitude
 ##    <dbl>   <dbl>    <dbl> <chr>    <chr>  <chr>                     <dbl>
 ##  1  2015      37   201537 BLAN_005 BLAN   deciduousForest            39.1
@@ -108,11 +108,11 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 ##  9  2015      45   201545 BLAN_005 BLAN   deciduousForest            39.1
 ## 10  2015      46   201546 BLAN_005 BLAN   deciduousForest            39.1
 ## # … with 3,014 more rows, and 14 more variables: decimalLongitude <dbl>,
-## #   elevation <dbl>, totalSampledArea <dbl>, amblyomma_americanum <dbl>,
-## #   ixodes_scapularis <dbl>, time <date>, RHMin_precent <dbl>,
-## #   RHMin_variance <dbl>, RHMax_precent <dbl>, RHMax_variance <dbl>,
-## #   airTempMin_degC <dbl>, airTempMin_variance <dbl>, airTempMax_degC <dbl>,
-## #   airTempMax_variance <dbl>
+## #   elevation <dbl>, totalSampledArea <dbl>, amblyomma_americanum <lgl>,
+## #   ixodes_scapularis <lgl>, time <date>, RHMin_precent <lgl>,
+## #   RHMin_variance <lgl>, RHMax_precent <lgl>, RHMax_variance <lgl>,
+## #   airTempMin_degC <lgl>, airTempMin_variance <lgl>, airTempMax_degC <lgl>,
+## #   airTempMax_variance <lgl>
 ```
 
 

@@ -1,4 +1,4 @@
-# Meteorology Inputs
+# Meteorology Inputs{#met_inputs}
 
 We are downloading, subsetting, and processing forecasted meteorology drivers for each NEON site.  Currently, we have NOAA’s Global Ensemble Forecasting System (GEFS) V12 output available at the 1 hr time resolution for each NEON site.  
 
@@ -29,8 +29,19 @@ Additionally, we provide an R function code in the [neon4cast package](https://g
 
 ## NOAA Global Ensemble Forecasting System
 
-[1 Hour NOAA Drivers](https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/){target="_blank"}
+[1 Hour NOAA Drivers](https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr/){target="_blank"}\
+
+The data are organized by siteID/date/cycle where cycle is the hour of the day (UTC) that the forecast was started (00, 06, 12, 18).
+
+## NOAA Global Ensemble Forecasting System Stacked
+
+We have extracted the first hour of each NOAA GEFS forecast since September 2020 and combined them together to generate a continuous weather product that runs from September 2020 to present.  This is available for model calibration and seamlessly transitions to the current day's NOAA GEFS forecast
+
+[Historical NOAA Drivers](https://data.ecoforecast.org/minio/drivers/noaa/NOAAGEFS_1hr_stacked/){target="_blank"}\
+
+The data are organized by siteID.
 
 ## NEON Observed
 
 Our goal is to make the observed weather at each NEON site available. This is currently in development through a collaboration with NEON and NCAR.
+

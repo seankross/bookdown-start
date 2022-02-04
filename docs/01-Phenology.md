@@ -18,9 +18,7 @@ The video below is an overview of the Phenology Challenge that was recorded for 
 
 We held a Q&A session on January 27, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=UwX2IA1vDQE&feature=youtu.be){target="_blank"}.
 
-```{r echo = FALSE, message = FALSE}
-library(tidyverse)
-```
+
 
 ## Overview
 
@@ -67,22 +65,32 @@ While gcc is primarily a metric of vegetation greeness, rcc is more a metric of 
 
 Information on the sites can be found here:
 
-```{r}
+
+```r
 site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-phenology/master/Phenology_NEON_Field_Site_Metadata_20210928.csv", show_col_types = FALSE)
 ```
 
-```{r echo = FALSE}
-site_data %>% 
-  select(field_site_id, field_site_name, phenocam_vegtation, phenocam_code, phenocam_roi, neon_url) %>% 
-  rename(siteID = field_site_id,
-         `site name` = field_site_name,
-         `Phenocam code` = phenocam_code,
-         `Phenocam ROI` = phenocam_roi,
-         `NEON site URL` = neon_url,
-         `Phenocam vegetation type` = phenocam_vegtation) %>% 
-  arrange(`Phenocam vegetation type`) %>% 
-  knitr::kable()
-```
+
+|siteID |site name                                       |Phenocam vegetation type |Phenocam code           |Phenocam ROI |NEON site URL                                |
+|:------|:-----------------------------------------------|:------------------------|:-----------------------|:------------|:--------------------------------------------|
+|BART   |Bartlett Experimental Forest NEON               |deciduous broadleaf      |NEON.D01.BART.DP1.00033 |DB_1000      |https://www.neonscience.org/field-sites/bart |
+|CLBJ   |Lyndon B. Johnson National Grassland NEON       |deciduous broadleaf      |NEON.D11.CLBJ.DP1.00033 |DB_2000      |https://www.neonscience.org/field-sites/clbj |
+|DELA   |Dead Lake NEON                                  |deciduous broadleaf      |NEON.D08.DELA.DP1.00033 |DB_1000      |https://www.neonscience.org/field-sites/dela |
+|GRSM   |Great Smoky Mountains National Park NEON        |deciduous broadleaf      |NEON.D07.GRSM.DP1.00033 |DB_1000      |https://www.neonscience.org/field-sites/grsm |
+|HARV   |Harvard Forest & Quabbin Watershed NEON         |deciduous broadleaf      |NEON.D01.HARV.DP1.00033 |DB_1000      |https://www.neonscience.org/field-sites/harv |
+|MLBS   |Mountain Lake Biological Station NEON           |deciduous broadleaf      |NEON.D07.MLBS.DP1.00033 |DB_2000      |https://www.neonscience.org/field-sites/mlbs |
+|SCBI   |Smithsonian Conservation Biology Institute NEON |deciduous broadleaf      |NEON.D02.SCBI.DP1.00033 |DB_1000      |https://www.neonscience.org/field-sites/scbi |
+|SERC   |Smithsonian Environmental Research Center NEON  |deciduous broadleaf      |NEON.D02.SERC.DP1.00033 |DB_1000      |https://www.neonscience.org/field-sites/serc |
+|STEI   |Steigerwaldt-Chequamegon NEON                   |deciduous broadleaf      |NEON.D05.STEI.DP1.00033 |DB_1000      |https://www.neonscience.org/field-sites/stei |
+|UKFS   |University of Kansas Field Station NEON         |deciduous broadleaf      |NEON.D06.UKFS.DP1.00033 |DB_1000      |https://www.neonscience.org/field-sites/ukfs |
+|CPER   |Central Plains Experimental Range NEON          |grassland                |NEON.D10.CPER.DP1.00033 |GR_1000      |https://www.neonscience.org/field-sites/cper |
+|DSNY   |Disney Wilderness Preserve NEON                 |grassland                |NEON.D03.DSNY.DP1.00033 |GR_1000      |https://www.neonscience.org/field-sites/dsny |
+|JORN   |Jornada Experimental Range NEON                 |grassland                |NEON.D14.JORN.DP1.00033 |GR_1000      |https://www.neonscience.org/field-sites/jorn |
+|KONZ   |Konza Prairie Biological Station NEON           |grassland                |NEON.D06.KONZ.DP1.00033 |GR_1000      |https://www.neonscience.org/field-sites/konz |
+|OAES   |Marvin Klemme Range Research Station NEON       |grassland                |NEON.D11.OAES.DP1.00033 |GR_1000      |https://www.neonscience.org/field-sites/oaes |
+|WOOD   |Chase Lake National Wildlife Refuge NEON        |grassland                |NEON.D09.WOOD.DP1.00033 |GR_1000      |https://www.neonscience.org/field-sites/wood |
+|ONAQ   |Onaqui NEON                                     |shrubland                |NEON.D15.ONAQ.DP1.00033 |SH_1000      |https://www.neonscience.org/field-sites/onaq |
+|SRER   |Santa Rita Experimental Range NEON              |shrubland                |NEON.D14.SRER.DP1.00033 |SH_1000      |https://www.neonscience.org/field-sites/srer |
 
 ### Target data calculation
 
@@ -102,7 +110,8 @@ All data in the supplied file is available to build and evaluate models before s
 
 Here is the format of the target file
 
-```{r message = FALSE}
+
+```r
 d <- readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz", guess_max = 1e6)
 ```
 The target file has the following columns:
@@ -138,9 +147,9 @@ Functions for downloading and working with the meteorology forecasts can be be f
 
 Two null models are automatically generated each day.  The persistence null model use the most recent measurement of gcc_90 or rcc_90 and predicts that the values will be constant in the future.  The climatology null model futures that the gcc_90 or rcc_90 will be equal to the historical mean of that day of year.
 
-Code for the persistence null model can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel_randomWalk_main.R){target="_blank"
+Code for the persistence null model can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/nullModel_randomWalk_main.R)
 
-Code for the climatology null model can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/phenology_climatology.R){target="_blank"
+Code for the climatology null model can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/phenology_climatology.R)
 
 ## FAQ
 
@@ -148,7 +157,14 @@ Answers to frequency asks questions can be found here: [Frequently Asked Questio
 
 ## Design team
 
-Pending
+Kathryn Wheeler, Boston University  
+Michael Dietze, Boston University  
+Andrew Richardson, Northern Arizona University  
+David LeBauer, University of Arizona
+Kai Zhu, University of California - Santa Cruz
+Quinn Thomas, Virginia Tech
+Dabasmita Pal
+Luke Zachmann
 
 ## Partners
 

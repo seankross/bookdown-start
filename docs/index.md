@@ -1,7 +1,7 @@
 --- 
 title: "NEON Ecological Forecasting Challenge"
 author: "Hosted by the Ecological Forecasting Initative Research Coordination Network and supported by National Science Foundation (DEB-1926388)"
-date: "Last modified: 2021-10-20"
+date: "Last modified: 2022-02-04"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
