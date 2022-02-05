@@ -20,8 +20,8 @@ We held a Q&A session on January 27, 2021. You can find a recording from that se
 
 ```{r echo = FALSE, message = FALSE}
 if (!require("tidyverse", character.only = TRUE)) {
-        install.packages("tidyverse", dependencies = TRUE)
-        library("tidyverse", character.only = TRUE)
+  install.packages("tidyverse", dependencies = TRUE)
+  library("tidyverse", character.only = TRUE)
 }
 ```
 
@@ -70,8 +70,8 @@ While gcc is primarily a metric of vegetation greeness, rcc is more a metric of 
 
 Information on the sites can be found here:
 
-```{r}
-site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-phenology/master/Phenology_NEON_Field_Site_Metadata_20210928.csv", show_col_types = FALSE)
+```{r message = FALSE}
+site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-phenology/master/Phenology_NEON_Field_Site_Metadata_20210928.csv")
 ```
 
 ```{r echo = FALSE}
