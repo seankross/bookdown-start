@@ -27,16 +27,35 @@ There are two key options for the format.  First, the file can be either in a cs
 
 Below are examples of the forecast file format for each theme. **The correct file format is critical for the automated processing of submissions**
 
-### Terrestrial
+### Terrestrial 30 min
 
-- `time`: YYYY-MM-DD HH:MM UTC of the start of the 30-minute value or YYYY-MM-DD for daily forecasts
+Note: remember this theme is "terrestrial_30min"
+
+- `time`: YYYY-MM-DD HH:MM UTC of the start of the 30-minute value
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).         
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
-- `nee`: net ecosystem exchange (umol CO2 m<sup>-2</sup> s<sup>-1</sup> for 30 minute forecast or g C m<sup>-2</sup> day<sup>-1</sup> for daily forecasts)
+- `nee`: net ecosystem exchange (umol CO2 m<sup>-2</sup> s<sup>-1</sup> for 30 minute forecast
 - `le`: latent heat (W m<sup>-2</sup>)
-- `vswc`: volumetric soil water content (%)
+
+If you only forecast nee or le, you can exclude the other variable from the file
+
+Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc
+
+### Terrestrial Daily
+
+Note: remember this theme is "terrestrial_daily"
+
+- `time`: YYYY-MM-DD 
+- `siteID`: NEON code for site
+- `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).         
+- `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
+- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `nee`: g C m<sup>-2</sup> day<sup>-1</sup> for daily forecasts)
+- `le`: latent heat (W m<sup>-2</sup>)
+
+If you only forecast nee or le, you can exclude the other variable from the file
 
 Here is an example of a csv forecast file that meets the standard for the daily terrestrial theme
 
@@ -44,7 +63,7 @@ Here is an example of a csv forecast file that meets the standard for the daily 
 readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz")
 ```
 
-Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc
+
 
 ### Beetles
 

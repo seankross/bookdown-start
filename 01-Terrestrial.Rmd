@@ -1,16 +1,16 @@
 # Theme: Carbon and Water Fluxes
 
-**What:** Net ecosystem exchange of CO2, evapotranspiration, and soil moisture
+**What:** Net ecosystem exchange of CO2 and evapotranspiration in terrestrial ecosystems
 
 **Where**: 4 NEON sites that span a water stress gradient in the U.S. The images below show the flux tower at the center of each site.
 
-**When:** Half hour and/or daily forecasts for a 35 day period are submitted once per month January 31-December 31, 2021; later submissions after the January 31 start are permissible
+**When**: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022.  The only requirement is that submissions are predictions of the future at the time the forecast is submitted.
 
 **Why:** Carbon and water cycling are fundamental for climate and water regulation services provided by ecosystems
 
 **Who**: Open to any individual or team that registers
 
-**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
+**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast. If you registered for the Round 1 (2021) and are using the same team and method then you do not need to re-register.
 
 The video below is an overview of the Terrestrial Carbon and Water Fluxes Challenge that was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
 
@@ -24,17 +24,18 @@ The exchange of water and carbon dioxide between the atmosphere and the land is 
 
 ## Challenge 
 
-This design challenge asks teams to produce forecasts of net ecosystem exchange of carbon dioxide (NEE), latent heat flux of evapotranspiration (LE), and soil moisture across four NEON sites with differing climates. These target variables are important because they can be used to inform energy budgets and further reduce uncertainty in the CO2 sink or source behavior of the terrestrial biosphere. 
-This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at either the 30-minute or daily time step over the next 35-days using NOAA Global Ensemble Forecast System weather forecasts as drivers (if forecasting model uses meteorological inputs). Monthly forecasts can be submitted for each month in 2021. The challenge will take place using the eddy covariance flux towers at 4 NEON sites: Bartlett Experimental Forest (BART), Konza Prairie Biological Station (KONZ), Ordway-Swisher Biological Station (OSBS), and Santa Rita Experimental Range (SRER). 
+This design challenge asks teams to produce forecasts of net ecosystem exchange of carbon dioxide (NEE) and latent heat flux of evapotranspiration (LE) across four NEON sites with differing climates. These target variables are important because they can be used to inform energy budgets and further reduce uncertainty in the CO2 sink or source behavior of the terrestrial biosphere. 
+This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at either the 30-minute or daily time step over the next 35-days using NOAA Global Ensemble Forecast System weather forecasts as drivers (if forecasting model uses meteorological inputs).  Forecasts can be submitted each day in 2022. 
 
-Users are asked to submit their forecast of measured NEON NEE, LE, and soil moisture data, along with uncertainty estimates and metadata. Any NEE, LE, and soil moisture data prior to the month being forecasted may be used to build and improve the models used to generate forecasts. Other data can be used so long as they are not from the month being forecast and the data are made publicly available (minimum of URL, but ideally a script) and accessible to all teams in the challenge.
+The challenge will take place using the eddy covariance flux towers at 4 NEON sites: Bartlett Experimental Forest (BART), Konza Prairie Biological Station (KONZ), Ordway-Swisher Biological Station (OSBS), and Santa Rita Experimental Range (SRER). 
+
+Users are asked to submit their forecast of measured NEON NEE and LE, along with uncertainty estimates and metadata. Any existing NEE and LE may be used to build and improve the models used to generate forecasts. Other data can be used so long as they are not from the month being forecast and the data are made publicly available (minimum of URL, but ideally a script) and accessible to all teams in the challenge.
 
 ## Data: Targets 
 
 The challenge uses the following NEON data products:  
 
 [DP4.00200.001](https://data.neonscience.org/data-products/DP4.00200.001){target="_blank"}: Bundled data products - eddy covariance   
-[DP1.00094.001](https://data.neonscience.org/data-products/DP1.00094.001){target="_blank"}: Soil water content and water salinity  
 
 A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. A processing script is available on the neon4cast-terrestrial GitHub repository: https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R
 
@@ -61,16 +62,6 @@ Latent heat flux is the movement of water as water vapor from the ecosystem to t
 Latent heat measures the water loss from an ecosystem to the atmosphere through evapotranspiration (transpiration through plants + evaporation from surfaces).  
 
 Forecasting latent heat (evapotranspiration) can provide insights to water stress for plants and the efficiency that plants are using water relative to NEE, and to the amount of liquid water remaining in the soil for soil moisture forecasting
-
-### Soil moisture
-
-**Definition**
-
-Volumetric soil water content integrated at one station (station 3) at 15 cm depth.  It is reported as a proportion of water volume to soil volume.
-
-**Motivation**
-
-Volumetric water content is the measurement of water availability in soil.   This water can be transpired during photosynthesis by plants.  Forecasts of volumetric water content can provide insights into water stress for plants.
 
 ### Focal sites
 
@@ -107,8 +98,7 @@ All sites are near Ameriflux sites that could be used when developing the models
 
 ### 30-minute target data calulation
 
-To create the data for evaluation (and training) for NEE and LE we extract NEE and LE that pass the turbulence quality control flags (`qfqm.fluxCo2.turb.qfFinl` and `qfqm.fluxH2o.turb.qfFinl` = 0) provided by NEON.   To calculate depth integrated soil moisture (VSWC) for the half-hourly, we used the depth of each sensor. The midpoints between each sensor were used to calculate the proportion of the depth profile each sensor occupied. Soil moisture values from each sensor were weighted by the proportion of the depth profile, then summed to generate the target variable.
-
+To create the data for evaluation (and training) for NEE and LE we extract NEE and LE that pass the turbulence quality control flags (`qfqm.fluxCo2.turb.qfFinl` = 0 ) provided by NEON and has flux values between -50 and 50 umol CO2 m<sup>-2</sup> s<sup>-1</sup>.
 
 The table with the half-hour NEE, LE, and VSWC has the following columns
 
@@ -116,69 +106,85 @@ The table with the half-hour NEE, LE, and VSWC has the following columns
 - `time`: YYYY-MM-DD HH:MM for the start of the 30-minute period in UTC   
 - `nee`:  umol CO2 m<sup>-2</sup> s<sup>-1</sup>   
 - `le`: W m<sup>-2</sup>   
-- `vswc`: (%)   
 - `nee_sd_intercept`: intercept in the nee observation uncertainty standard deviation   
 - `nee_sd_slopeP`: slope in the relationship between nee and observation uncertainty standard deviation for positive values of nee   
 - `nee_sd_slopeN`: slope in the relationship between nee and observation uncertainty standard deviation for negative values of nee   
 - `le_sd_intercept`: intercept in the le observation uncertainty standard deviation   
 - `le_sd_slopeP`:slope in the relationship between le and observation uncertainty standard deviation for positive values of le  
-- `le_sd_slopeN`: slope in the relationship between le and observation uncertainty standard deviation for negative values of le   
-- `vswc_sd`:  observation uncertainty standard deviation vswc  
+- `le_sd_slopeN`: slope in the relationship between le and observation uncertainty standard deviation for negative values of le
 
 The observation uncertainty estimates for nee and le are derived from the PECAN project and can be used by `sd_nee <- nee_sd_intercept + nee_sd_slopeP * nee`.  They are not supplied by NEON.
 
-The standard derivation for the vswc (`vswc_sd`) is the uncertainty reported by NEON.
-
-Here is the format of the target file
+Here is the download link and format of the `terrestrial_30min` target file
 
 ```{r message = FALSE}
-readr::read_csv("https://data.ecoforecast.org/targets/terrestrial/terrestrial_30min-targets.csv.gz", guess_max = 1e6)
+readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestrial_30min-targets.csv.gz", guess_max = 1e6)
 ```
 
 ### Daily target data calulation
 
-To evaluate the models that produce daily flux forecasts, we select only days with at least 44 of 48 half hours that pass the quality control flags.  For these days, we average the half-hours and convert to carbon to daily units (gC/m2/day).  The daily data table has the following columns.
+To evaluate the models that produce daily flux forecasts, we select only days with at least 24 of 48 half hours that pass the quality control flags .  For these days, we average the half-hours and convert to carbon to daily units (gC/m2/day).  The daily data table has the following columns.
 
 - `siteID`: NEON site code (e.g., BART)  
 - `time`: YYYY-MM-DD (the day is determined using UTC time)  
 - `nee`: g C m<sup>-2</sup> day<sup>-1</sup>  
 - `le`:  W m<sup>-2</sup>
-- `vswc`: (%)  
-- `vswc_sd`: observation uncertainty standard deviation vswc  
 
-NEED TO ADD WHERE vswc_sd comes from
+Here is the download link and format of the `terrestrial_daily` target file
+
 
 ```{r message = FALSE}
-readr::read_csv("https://data.ecoforecast.org/targets/terrestrial/terrestrial_daily-targets.csv.gz", guess_max = 1e6)
+readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestrial_daily-targets.csv.gz", guess_max = 1e6)
 ```
 
-The R script for generating the evaluation and training data can be found at: https://github.com/eco4cast/neon4cast-terrestrial
+The R script for generating the evaluation and training data can be found at: https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R
 
 ## Timeline
 
-The timeline is determined by the data latency provided by NEON. NEON data is released in month long sets, 2 weeks after the month ends. 
+Forecasts for a minimum of 35 days can be submitted daily by 11:59 pm UTC throughout 2022. A minimum of 35 days in the future must be forecasted for each submission. For example, a forecast submitted on February 1 should be for at least February 1st – March 7th. New forecasts can be submitted daily as new weather forecasts and observations (e.g., new flux data is released by NEON) become available. The key is that submissions are predictions of the future.
 
-The challenge will begin January 31, 2021 at 11:59 Eastern Standard Time (UTC−05:00) and run through December 31, 2021. Subsequent forecasts are due at 11:59 EST on the final day of each month.
+Even that daily submissions are allowed and encouraged as new observations and weather forecasts become available, the automation of forecast generation may be ideal.  There are many ways to automate scripts that are written to download observations and meteorology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html)){target="_blank"} that execute tasks at user specified times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
 
-NEON data for a given month is scheduled to be released around the 15th of the following month. Once the NEON data for a previous month is released, teams have between the release of those data to the end of the month to forecast the current month. 
+## Flux data latency
 
-For example, NEON eddy-covariance data area will be released on January 15 that contains values for December 1 - 31. Teams can use these December eddy-covariance data to help generate forecasts from Jan 1 - February 5 (35 days). This January forecast is due by 11:59 pm EST on January 31. The forecast issue date for the January forecast is January 1, so no new observational data from after that date can be used to constrain forecasts and the forecast should use the weather forecast issued at midnight January 1 (i.e. start of day) as the driver (not the observed meteorology in January or forecasts made at later dates). See the calendar below for a visual depiction of the data availability and forecast submission timeline.
+NEON data officially releases the flux data on their data portal and API in monthly data packages.  Data for a given month is scheduled to be released around the 15th of the following month. Once the NEON data for a previous month is released.
 
-![](images/Carbon Calendar 2.png)
+NEON is also processing flux data with only a 5 day delay (latency).  Any data that has been processed but not included in a released monthly package is avialable on NEON s3 storage.  The list of files that can be downloaded can found [here](https://s3.data.neonscience.org/neon-sae-files/ods/sae_files_unpublished/sae_file_url_unpublished.csv).  
 
-Evaluation will occur as new NEON data is released. 
+Our targets file is the combination of NEON's monthly releases and the files on the s3 bucket.  As a result, flux data within 5-days of the restart of a forecast are avaialable to inform the forecast.
+
+The reduction of the latency from monthly to 5-days allows this theme to forecast in real-time - a major advancement for the forecastinc challenge.  Thank you NEON!
+
+## Submissions
+
+Instructions for submitting forecasts are found here: [Submission Instructions]
+
+The specific file format for the terrestrial_daily theme is here: [Terrestrial daily]
+
+The specific file format for the terrestrial_30min theme is here: [Terrestrial 30 min]
+
+## Meterological inputs for modeling
+
+Information about forecasted meteorology that is available for you to use when generating your forecasts can be found here: [Meteorology Inputs] 
+
+## Useful functions
+
+Functions for validating, evaluating and submitting forecasts can be found here [Helpful Functions]
+
+Functions for downloading and working with the meteorology forecasts can be be found here: [Access EFI snapshots of NOAA forecasts at NEON sites]
+
+## Null models
+
+Pending
+
+## FAQ
+
+Answers to frequency asks questions can be found here: [Frequently Asked Questions]
+
 
 ## Design team 
 
-Alex Young, SUNY - College of Environmental Science & Forestry  
-George Burba, LI-COR Biosciences  
-Jamie Cleverly, Terrestrial Ecosystem Research Network (TERN)   
-Ankur Desai, University of Wisconsin, Madison   
-Mike Dietze, Boston University   
-Andy Fox, Joint Center for Satellite Data Assimilation   
-William Hammond, Oklahoma State University  
-Danica Lombardozzi, National Center for Atmospheric Research   
-Quinn Thomas, Virginia Tech  
+Pending
 
 ## Partners
 
@@ -186,5 +192,5 @@ Data used in the challenge are from the National Ecological Observatory Network 
 
 [Ameriflux](https://ameriflux.lbl.gov/){target="_blank"} is an excellent database of eddy-covariance data, including historical data for some of the four challenge sites.
 
-Terrestrial Ecosystem Research Network [(TERN)](https://www.tern.org.au/){target="_blank"} has been involved in the design of the challenge: 
+Terrestrial Ecosystem Research Network [(TERN)](https://www.tern.org.au/){target="_blank"} has been involved in the design of the challenge.
 
