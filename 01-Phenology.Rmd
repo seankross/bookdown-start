@@ -19,7 +19,10 @@ The video below is an overview of the Phenology Challenge that was recorded for 
 We held a Q&A session on January 27, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=UwX2IA1vDQE&feature=youtu.be){target="_blank"}.
 
 ```{r echo = FALSE, message = FALSE}
-library(tidyverse)
+if (!require("tidyverse", character.only = TRUE)) {
+        install.packages("tidyverse", dependencies = TRUE)
+        library("tidyverse", character.only = TRUE)
+}
 ```
 
 ## Overview
