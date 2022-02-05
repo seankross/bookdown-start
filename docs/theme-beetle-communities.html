@@ -32,7 +32,7 @@
   
 <link rel="prev" href="theme-phenology.html"/>
 <link rel="next" href="participation.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -397,8 +397,8 @@ each NEON site</p>
 <p>The code use to process the raw data to the evaluation data can be found here:
 <a href="https://github.com/eco4cast/NEON-community-forecast/blob/master/02_targets.R" class="uri">https://github.com/eco4cast/NEON-community-forecast/blob/master/02_targets.R</a></p>
 <p>Here is the format of the target file</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="theme-beetle-communities.html#cb11-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/beetles/beetles-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 2,325 × 4
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="theme-beetle-communities.html#cb13-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/beetles/beetles-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 2,325 x 4
 ##    siteID time       abundance richness
 ##    &lt;chr&gt;  &lt;date&gt;         &lt;dbl&gt;    &lt;dbl&gt;
 ##  1 CPER   2013-07-01    4.16         13

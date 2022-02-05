@@ -32,7 +32,7 @@
   
 <link rel="prev" href="theme-tick-populations.html"/>
 <link rel="next" href="theme-beetle-communities.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -349,6 +349,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <iframe width="560" height="315" src="https://www.youtube.com/embed/P8OwhCF4AdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p>We held a Q&amp;A session on January 27, 2021. You can find a recording from that session <a href="https://www.youtube.com/watch?v=UwX2IA1vDQE&amp;feature=youtu.be" target="_blank">HERE</a>.</p>
+<pre><code>## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
+## logical.return = TRUE, : there is no package called &#39;tidyverse&#39;</code></pre>
+<pre><code>## 
+## The downloaded binary packages are in
+##  /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//RtmpNSFeM8/downloaded_packages</code></pre>
 <div id="overview-3" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Overview</h2>
 <p>Phenology has been shown to be a robust integrator of the effects of year-to-year climate variability and longer-term climate change on natural systems (e.g., recent warming trends). Experimental studies have shown how other global change factors (e.g., elevated CO<sub>2</sub> and N deposition) can also influence phenology. There is a need to better document biological responses to a changing world, and improved phenological monitoring at scales from individual organisms to ecosystems, regions, and continents will contribute to achieving this goal.</p>
@@ -381,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="focal-sites-3" class="section level3" number="4.3.3">
 <h3><span class="header-section-number">4.3.3</span> Focal sites</h3>
 <p>Information on the sites can be found here:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="theme-phenology.html#cb9-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-phenology/master/Phenology_NEON_Field_Site_Metadata_20210928.csv&quot;</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="theme-phenology.html#cb11-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-phenology/master/Phenology_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="4%" />
@@ -561,7 +566,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="target-file-1" class="section level3" number="4.3.5">
 <h3><span class="header-section-number">4.3.5</span> Target file</h3>
 <p>Here is the format of the target file</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="theme-phenology.html#cb10-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="theme-phenology.html#cb12-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
 <p>The target file has the following columns:</p>
 <ul>
 <li><code>time</code>: YYYY-MM-DD<br />

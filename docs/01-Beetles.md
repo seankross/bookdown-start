@@ -89,7 +89,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ```
 
 ```
-## # A tibble: 2,325 × 4
+## # A tibble: 2,325 x 4
 ##    siteID time       abundance richness
 ##    <chr>  <date>         <dbl>    <dbl>
 ##  1 CPER   2013-07-01    4.16         13

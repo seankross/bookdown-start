@@ -32,7 +32,7 @@
   
 <link rel="prev" href="participation.html"/>
 <link rel="next" href="evaluation.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -367,17 +367,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>vswc</code>: volumetric soil water content (%)</li>
 </ul>
 <p>Here is an example of a csv forecast file that meets the standard for the daily terrestrial theme</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="submission-instructions.html#cb13-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## Rows: 272000 Columns: 9</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr  (1): siteID
-## dbl  (7): ensemble, obs_flag, nee, le, vswc, forecast, data_assimilation
-## date (1): time</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="submission-instructions.html#cb15-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz&quot;</span>)</span></code></pre></div>
 <pre><code>## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre><code>## # A tibble: 272,000 × 9
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   time = col_date(format = &quot;&quot;),
+##   ensemble = col_double(),
+##   siteID = col_character(),
+##   obs_flag = col_double(),
+##   nee = col_double(),
+##   le = col_double(),
+##   vswc = col_double(),
+##   forecast = col_double(),
+##   data_assimilation = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 272,000 x 9
 ##    time       ensemble siteID obs_flag    nee     le   vswc forecast
 ##    &lt;date&gt;        &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
 ##  1 2020-10-02        1 BART          2 -29.6  -114.  0.0220        1
@@ -407,16 +411,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Here is an example of a csv forecast file that meets the standard for the beetles theme</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="submission-instructions.html#cb18-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI_avg_null.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## Rows: 441000 Columns: 5</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr  (1): siteID
-## dbl  (3): ensemble, richness, abundance
-## date (1): time</code></pre>
 <pre><code>## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre><code>## # A tibble: 441,000 × 5
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   siteID = col_character(),
+##   time = col_date(format = &quot;&quot;),
+##   ensemble = col_double(),
+##   richness = col_double(),
+##   abundance = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 441,000 x 5
 ##    siteID time       ensemble richness abundance
 ##    &lt;chr&gt;  &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
 ##  1 SJER   2020-01-06        1     3.36   0.0121 
@@ -444,17 +448,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>temp</code>: water temperature (C)</li>
 </ul>
 <p>Here is an example of a csv forecast file that meets the standard for the aquatics theme</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="submission-instructions.html#cb23-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## Rows: 28000 Columns: 8</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr  (1): siteID
-## dbl  (6): ensemble, oxygen, temperature, obs_flag, forecast, data_assimilation
-## date (1): time</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="submission-instructions.html#cb21-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz&quot;</span>)</span></code></pre></div>
 <pre><code>## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre><code>## # A tibble: 28,000 × 8
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   time = col_date(format = &quot;&quot;),
+##   ensemble = col_double(),
+##   siteID = col_character(),
+##   oxygen = col_double(),
+##   temperature = col_double(),
+##   obs_flag = col_double(),
+##   forecast = col_double(),
+##   data_assimilation = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 28,000 x 8
 ##    time       ensemble siteID oxygen temperature obs_flag forecast
 ##    &lt;date&gt;        &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
 ##  1 2021-03-01        1 BARC     8.98        19.1        2        1
@@ -482,17 +489,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>rcc_90</code>: red chromatic coordinate</li>
 </ul>
 <p>Here is are examples of csv forecast files that meet the standard for the phenology theme. There will be an extra column called <code>rcc_90</code> when <code>rcc_90</code> is included in the forecast.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="submission-instructions.html#cb28-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/phenology/phenology-2021-08-09-PEG_FUSION_0.csv&quot;</span>)</span></code></pre></div>
-<pre><code>## Rows: 528 Columns: 5</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr  (2): siteID, statistic
-## dbl  (2): gcc_90, rcc_90
-## date (1): time</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="submission-instructions.html#cb24-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/phenology/phenology-2021-08-09-PEG_FUSION_0.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre><code>## # A tibble: 528 × 5
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   time = col_date(format = &quot;&quot;),
+##   siteID = col_character(),
+##   statistic = col_character(),
+##   gcc_90 = col_double(),
+##   rcc_90 = col_double()
+## )</code></pre>
+<pre><code>## # A tibble: 528 x 5
 ##    time       siteID statistic  gcc_90 rcc_90
 ##    &lt;date&gt;     &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;
 ##  1 2021-08-10 HARV   mean      0.418   0.409 
@@ -507,7 +514,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 2021-08-14 HARV   sd        0.00325 0.0104
 ## # … with 518 more rows</code></pre>
 <p>A netcdf file located at <a href="https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc" class="uri">https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc</a></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="submission-instructions.html#cb33-1" aria-hidden="true" tabindex="-1"></a>ncdf4<span class="sc">::</span><span class="fu">nc_open</span>(<span class="st">&quot;images/phenology-2021-02-23-EFInull.nc&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="submission-instructions.html#cb27-1" aria-hidden="true" tabindex="-1"></a>ncdf4<span class="sc">::</span><span class="fu">nc_open</span>(<span class="st">&quot;images/phenology-2021-02-23-EFInull.nc&quot;</span>)</span></code></pre></div>
 <pre><code>## File images/phenology-2021-02-23-EFInull.nc (NC_FORMAT_NETCDF4):
 ## 
 ##      2 variables (excluding dimension variables):
@@ -516,14 +523,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##         char siteID[nchar,site]   (Contiguous storage)  
 ## 
 ##      4 dimensions:
-##         time  Size:35 
+##         time  Size:35
 ##             units: days since 2021-02-23
 ##             long_name: time
-##         site  Size:8 
+##         site  Size:8
 ##             long_name: siteID
-##         ensemble  Size:2000 
+##         ensemble  Size:2000
 ##             long_name: ensemble member
-##         nchar  Size:4 (no dimvar)
+##         nchar  Size:4
+## [1] &quot;vobjtovarid4: **** WARNING **** I was asked to get a varid for dimension named nchar BUT this dimension HAS NO DIMVAR! Code will probably fail at this point&quot;
 ## 
 ##     3 global attributes:
 ##         forecast_project_id: EFInull
@@ -544,9 +552,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>ixodes_scapularis</code>: Number of <em>Ixodes scapularis</em> nymphs per plot per week</li>
 </ul>
 <p>Here is an example of a csv forecast file that meets the standard for the ticks theme</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="submission-instructions.html#cb35-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 77,000 × 10
-##     ...1 time       ixodes_scapularis plotID   siteID ensemble data_assimilation
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="submission-instructions.html#cb29-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1]</code></pre>
+<pre><code>## Warning: 66500 parsing failures.
+##  row                  col           expected             actual                                                                                             file
+## 7001 amblyomma_americanum 1/0/T/F/TRUE/FALSE 4.00332129495972   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## 7002 amblyomma_americanum 1/0/T/F/TRUE/FALSE 0.0490100896296721 &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## 7003 amblyomma_americanum 1/0/T/F/TRUE/FALSE 1.78175379939298   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## 7004 amblyomma_americanum 1/0/T/F/TRUE/FALSE 3.49221356823098   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## 7005 amblyomma_americanum 1/0/T/F/TRUE/FALSE 7.67000549354529   &#39;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&#39;
+## .... .................... .................. .................. ................................................................................................
+## See problems(...) for more details.</code></pre>
+<pre><code>## # A tibble: 77,000 x 10
+##       X1 time       ixodes_scapularis plotID   siteID ensemble data_assimilation
 ##    &lt;dbl&gt; &lt;date&gt;                 &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;dbl&gt;             &lt;dbl&gt;
 ##  1     1 2019-03-04             0.341 BLAN_012 BLAN          1                 0
 ##  2     2 2019-03-11             0.286 BLAN_012 BLAN          1                 0
@@ -559,7 +577,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9     9 2019-04-29             0.368 BLAN_012 BLAN          1                 0
 ## 10    10 2019-05-06             0.327 BLAN_012 BLAN          1                 0
 ## # … with 76,990 more rows, and 3 more variables: forecast &lt;dbl&gt;,
-## #   obs_flag &lt;dbl&gt;, amblyomma_americanum &lt;dbl&gt;</code></pre>
+## #   obs_flag &lt;dbl&gt;, amblyomma_americanum &lt;lgl&gt;</code></pre>
 </div>
 </div>
 <div id="metadata-format" class="section level2" number="7.2">
@@ -585,16 +603,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 <li>You can submit from an R script using the following:</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="submission-instructions.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span> <span class="ot">=</span> <span class="st">&quot;data&quot;</span>,</span>
-<span id="cb37-2"><a href="submission-instructions.html#cb37-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;AWS_S3_ENDPOINT&quot;</span> <span class="ot">=</span> <span class="st">&quot;ecoforecast.org&quot;</span>)</span>
-<span id="cb37-3"><a href="submission-instructions.html#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-4"><a href="submission-instructions.html#cb37-4" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span>
-<span id="cb37-5"><a href="submission-instructions.html#cb37-5" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-year-month-day-team_name_ID.xml&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="submission-instructions.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span> <span class="ot">=</span> <span class="st">&quot;data&quot;</span>,</span>
+<span id="cb33-2"><a href="submission-instructions.html#cb33-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;AWS_S3_ENDPOINT&quot;</span> <span class="ot">=</span> <span class="st">&quot;ecoforecast.org&quot;</span>)</span>
+<span id="cb33-3"><a href="submission-instructions.html#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="submission-instructions.html#cb33-4" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span>
+<span id="cb33-5"><a href="submission-instructions.html#cb33-5" aria-hidden="true" tabindex="-1"></a>aws.s3<span class="sc">::</span><span class="fu">put_object</span>(<span class="at">object =</span> <span class="st">&quot;theme_name-year-month-day-team_name_ID.xml&quot;</span>, <span class="at">bucket =</span> <span class="st">&quot;submissions&quot;</span>)</span></code></pre></div>
 <ul>
 <li>Finally, we have developed a function called submit in the <code>neon4cast</code> package handles submission process. Internally it performs the <code>aws.s3</code> commands in option two and executes the submission <a href="helpful-functions.html#neon4cast-submit">10.1.7</a>:</li>
 </ul>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="submission-instructions.html#cb38-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">submit</span>(<span class="at">forecast_file =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>,</span>
-<span id="cb38-2"><a href="submission-instructions.html#cb38-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">metadata =</span> <span class="st">&quot;theme_name-year-month-day-team_name_ID.xml&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="submission-instructions.html#cb34-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">submit</span>(<span class="at">forecast_file =</span> <span class="st">&quot;theme_name-forecast-year-month-day-team_name.csv&quot;</span>,</span>
+<span id="cb34-2"><a href="submission-instructions.html#cb34-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">metadata =</span> <span class="st">&quot;theme_name-year-month-day-team_name_ID.xml&quot;</span>)</span></code></pre></div>
 <p>Submissions need to adhere to the forecast format that is provided above, including the file naming convention. Our cyberinfastructure automatically evaluates forecasts and relies on the expected formatting. Contact <a href="mailto:eco4cast.initiative@gmail.com" class="email">eco4cast.initiative@gmail.com</a> if you experience technical issues with submitting.</p>
 <p><strong>Note:</strong> If you have used AWS in the past you might have credential files in an .aws folder in your home directory that will cause an error when you try to upload to a non-AWS bucket. If you encounter this error you may need to rename your credentials files so put_object doesn’t try to read them.</p>
 </div>

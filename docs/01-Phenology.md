@@ -19,6 +19,16 @@ The video below is an overview of the Phenology Challenge that was recorded for 
 We held a Q&A session on January 27, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=UwX2IA1vDQE&feature=youtu.be){target="_blank"}.
 
 
+```
+## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
+## logical.return = TRUE, : there is no package called 'tidyverse'
+```
+
+```
+## 
+## The downloaded binary packages are in
+## 	/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//RtmpNSFeM8/downloaded_packages
+```
 
 ## Overview
 
@@ -67,7 +77,7 @@ Information on the sites can be found here:
 
 
 ```r
-site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-phenology/master/Phenology_NEON_Field_Site_Metadata_20210928.csv", show_col_types = FALSE)
+site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-phenology/master/Phenology_NEON_Field_Site_Metadata_20210928.csv")
 ```
 
 
