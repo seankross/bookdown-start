@@ -10,7 +10,7 @@
 
 **Who**: Open to any individual or team that registers
 
-**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
+**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast.  If you registered for the Round 1 (2021) and are using the same team and method then you do not need to re-register.
 
 The video below is an overview of the Phenology Challenge that was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
 
@@ -125,7 +125,9 @@ The target file has the following columns:
 
 ## Timeline
 
-Forecasts for a minimum of 35 days can be submitted daily by 6 pm ET for the period of February 15th through Forecast should be submitted starting February 1st by 6 pm ET. A minimum of 35 days in the future must be forecasted for each submission. For example, the first submitted forecast should be for at least February 1st – March 7th, but it could be for the full spring. New forecasts can be submitted daily as new weather forecasts and observations (e.g., PhenoCam) become available. Processed PhenoCam data will be available daily by 11:59 pm ET for each day. Teams are allowed to start submitting forecasts after February 1st, but only forecasts of future days (when submitted) will be allowed. Late forecasts might be allowed under extenuating circumstances related to computer failure or processing delays on our end. Forecasts do not have to be submitted daily and can be longer than 35 days.
+Forecasts for a minimum of 35 days can be submitted daily by 6 pm ET throughout 2022. A minimum of 35 days in the future must be forecasted for each submission. For example, a forecast submitted on February 1 should be for at least February 1st – March 7th, but it could be for the full spring. New forecasts can be submitted daily as new weather forecasts and observations (e.g., PhenoCam) become available. Processed PhenoCam data will be available daily by 11:59 pm ET for each day. The key is that submissions are predictions of the future.
+
+Even that daily submissions are allowed and encouraged as new observations and weather forecasts become avaiable, the automation of forecast generation may be ideal.  There are many ways to automate scripts that are writen to download observations and metreology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html)){target="_blank"} that execuate tasks at user specificd times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
 
 ## Submissions
 
