@@ -49,7 +49,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ```
 
 ```
-## # A tibble: 2,996 × 9
+## # A tibble: 2,996 x 9
 ##    time       siteID oxygen temperature oxygen_sd temperature_sd depth_oxygen
 ##    <date>     <chr>  <lgl>        <dbl> <lgl>              <dbl> <lgl>       
 ##  1 2017-08-27 BARC   NA            31.5 NA               0.00108 NA          

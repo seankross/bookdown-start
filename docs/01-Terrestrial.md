@@ -137,7 +137,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial/terrestrial_30
 ```
 
 ```
-## # A tibble: 344,520 × 12
+## # A tibble: 344,520 x 12
 ##    time                siteID    nee    le nee_sd_intercept nee_sd_slopeP
 ##    <dttm>              <chr>   <dbl> <dbl>            <dbl>         <dbl>
 ##  1 2017-02-01 15:00:00 BART    3.13   2.52            0.888         0.173
@@ -174,7 +174,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial/terrestrial_da
 ```
 
 ```
-## # A tibble: 7,180 × 6
+## # A tibble: 7,180 x 6
 ##    time       siteID   nee    le  vswc vswc_sd
 ##    <date>     <chr>  <dbl> <dbl> <dbl>   <dbl>
 ##  1 2017-02-01 BART      NA    NA    NA      NA

@@ -94,7 +94,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 ```
 
 ```
-## # A tibble: 3,024 × 21
+## # A tibble: 3,024 x 21
 ##     Year epiWeek yearWeek plotID   siteID nlcdClass       decimalLatitude
 ##    <dbl>   <dbl>    <dbl> <chr>    <chr>  <chr>                     <dbl>
 ##  1  2015      37   201537 BLAN_005 BLAN   deciduousForest            39.1
