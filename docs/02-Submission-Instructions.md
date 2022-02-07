@@ -27,16 +27,35 @@ There are two key options for the format.  First, the file can be either in a cs
 
 Below are examples of the forecast file format for each theme. **The correct file format is critical for the automated processing of submissions**
 
-### Terrestrial
+### Terrestrial 30 min
 
-- `time`: YYYY-MM-DD HH:MM UTC of the start of the 30-minute value or YYYY-MM-DD for daily forecasts
+Note: remember this theme is "terrestrial_30min"
+
+- `time`: YYYY-MM-DD HH:MM UTC of the start of the 30-minute value
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).         
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
-- `nee`: net ecosystem exchange (umol CO2 m<sup>-2</sup> s<sup>-1</sup> for 30 minute forecast or g C m<sup>-2</sup> day<sup>-1</sup> for daily forecasts)
+- `nee`: net ecosystem exchange (umol CO2 m<sup>-2</sup> s<sup>-1</sup> for 30 minute forecast
 - `le`: latent heat (W m<sup>-2</sup>)
-- `vswc`: volumetric soil water content (%)
+
+If you only forecast nee or le, you can exclude the other variable from the file
+
+Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc
+
+### Terrestrial Daily
+
+Note: remember this theme is "terrestrial_daily"
+
+- `time`: YYYY-MM-DD 
+- `siteID`: NEON code for site
+- `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).         
+- `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
+- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `nee`: g C m<sup>-2</sup> day<sup>-1</sup> for daily forecasts)
+- `le`: latent heat (W m<sup>-2</sup>)
+
+If you only forecast nee or le, you can exclude the other variable from the file
 
 Here is an example of a csv forecast file that meets the standard for the daily terrestrial theme
 
@@ -78,7 +97,7 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_
 ## # … with 271,990 more rows, and 1 more variable: data_assimilation <dbl>
 ```
 
-Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc
+
 
 ### Beetles
 
@@ -113,16 +132,16 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ## # A tibble: 441,000 x 5
 ##    siteID time       ensemble richness abundance
 ##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1     3.36   0.0121 
-##  2 SJER   2020-01-06        2     3.75   0.0129 
-##  3 SJER   2020-01-06        3     3.55   0.0202 
-##  4 SJER   2020-01-06        4     4.00   0.00405
-##  5 SJER   2020-01-06        5     4.37   0.0224 
-##  6 SJER   2020-01-06        6     1.23   0.0255 
-##  7 SJER   2020-01-06        7     4.00   0.0325 
-##  8 SJER   2020-01-06        8     3.98   0.0284 
-##  9 SJER   2020-01-06        9     3.50   0.0300 
-## 10 SJER   2020-01-06       10     2.73   0.0410 
+##  1 SJER   2020-01-06        1    1.65    0.0294 
+##  2 SJER   2020-01-06        2    2.72    0.0322 
+##  3 SJER   2020-01-06        3    3.33    0.0363 
+##  4 SJER   2020-01-06        4    3.59    0.0239 
+##  5 SJER   2020-01-06        5    0.160   0.0533 
+##  6 SJER   2020-01-06        6    2.25    0.0511 
+##  7 SJER   2020-01-06        7    3.31    0.00430
+##  8 SJER   2020-01-06        8    1.64    0.0337 
+##  9 SJER   2020-01-06        9    1.61    0.0246 
+## 10 SJER   2020-01-06       10    2.21    0.0140 
 ## # … with 440,990 more rows
 ```
 
