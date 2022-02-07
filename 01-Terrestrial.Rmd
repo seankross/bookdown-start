@@ -65,14 +65,24 @@ Forecasting latent heat (evapotranspiration) can provide insights to water stres
 
 ### Focal sites
 
-| Site Name       | SiteID     | NEON Domain     | Latitude  |  Longitude | Dominant Species |
-| :------------- | :----------: | -----------: | -----------: | -----------: | -----------: |
-|  [Bartlett Experimental Forest, NH](https://www.neonscience.org/field-sites/bart){target="_blank"} | BART  | D01: Northeast    | 44.0639 | -71.2874 | *Fagus grandifolia*, *Tsuga canadensis*, *Acer pensylvanicum* | 
-|  [Ordway Swisher Biological Station, FL](https://www.neonscience.org/field-sites/osbs){target="_blank"} | OSBS  | D03: Southeast    | 31.91068 | -81.99343 | Herbaceous and woody wetlands, Evergreen forest | 
-|  [Konza Prairie Biological Station, KS](https://www.neonscience.org/field-sites/konz){target="_blank"}  | KONZ  | D06: Prairie Peninsula    | 39.10077 | -96.56309 | Midwestern tallgrass prairie | 
-|  [Santa Rita Experimental Range, AZ](https://www.neonscience.org/field-sites/srer){target="_blank"} | SRER  | D14: Desert Southwest    | 31.91068 | -110.83549 | Southwest desert shrub/scrub | 
+Information on the sites can be found here:
 
-All sites are near Ameriflux sites that could be used when developing the models if the data are publicly available in the Ameriflux database.  If Ameriflux data is used, teams MUST follow Ameriflux data use policy (which is different from NEON’s) 
+```{r message = FALSE}
+site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-terrestrial/master/Terrestrial_NEON_Field_Site_Metadata_20210928.csv")
+```
+
+```{r echo = FALSE}
+site_data %>% 
+  select(field_site_id, field_site_name, field_dominant_nlcd_classes, field_latitude, field_longitude, neon_url) %>% 
+  rename(siteID = field_site_id,
+         `site name` = field_site_name,
+         `vegetation type` = field_dominant_nlcd_classes,
+         `latitude` = field_latitude,
+         `longtitude` =  field_longitude,
+         `NEON site URL` = neon_url) %>% 
+  arrange(siteID) %>% 
+  knitr::kable()
+```
 
 **Bartlett**   
   - [US-Bar: Bartlett Experimental Forest (2004-2017)](https://ameriflux.lbl.gov/sites/siteinfo/US-Bar){target="_blank"}   
@@ -121,6 +131,8 @@ Here is the download link and format of the `terrestrial_30min` target file
 readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestrial_30min-targets.csv.gz", guess_max = 1e6)
 ```
 
+The code used to generate the targets from NEON data can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R)
+
 ### Daily target data calulation
 
 To evaluate the models that produce daily flux forecasts, we select only days with at least 24 of 48 half hours that pass the quality control flags .  For these days, we average the half-hours and convert to carbon to daily units (gC/m2/day).  The daily data table has the following columns.
@@ -132,18 +144,19 @@ To evaluate the models that produce daily flux forecasts, we select only days wi
 
 Here is the download link and format of the `terrestrial_daily` target file
 
-
 ```{r message = FALSE}
 readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestrial_daily-targets.csv.gz", guess_max = 1e6)
 ```
 
-The R script for generating the evaluation and training data can be found at: https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R
+The code used to generate the targets from NEON data can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R)
 
 ## Timeline
 
 Forecasts for a minimum of 35 days can be submitted daily by 11:59 pm UTC throughout 2022. A minimum of 35 days in the future must be forecasted for each submission. For example, a forecast submitted on February 1 should be for at least February 1st – March 7th. New forecasts can be submitted daily as new weather forecasts and observations (e.g., new flux data is released by NEON) become available. The key is that submissions are predictions of the future.
 
 Even that daily submissions are allowed and encouraged as new observations and weather forecasts become available, the automation of forecast generation may be ideal.  There are many ways to automate scripts that are written to download observations and meteorology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html)){target="_blank"} that execute tasks at user specified times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
+
+Cron jobs work on unix and mac systems.  An example of a script that executes a cron job using R can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/cron_automation.R){target="_blank"}.
 
 ## Flux data latency
 
@@ -175,12 +188,17 @@ Functions for downloading and working with the meteorology forecasts can be be f
 
 ## Null models
 
-Pending
+Two null models are automatically generated each day - these are simple baseline models.  The persistence null model uses the most recent measurement of nee or le and predicts that the values will be constant in the future.  The climatology null model futures that the nee or lee will be equal to the historical mean of that day of year.  We apply both the persistence and climatology model to the daily fluxes and the climatology to the 30 minute fluxes
+
+Code for the daily persistence null model can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/03_terrestrial_flux_30min_persistance.R){target="_blank}
+
+Code for the daily climatology null model can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/03_terrestrial_flux_daily_climatology.R){target="_blank"}
+
+Code for the 30 minutate climatology null model can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/03_terrestrial_flux_30min_clim.R){target="_blank"}
 
 ## FAQ
 
 Answers to frequency asks questions can be found here: [Frequently Asked Questions]
-
 
 ## Design team 
 

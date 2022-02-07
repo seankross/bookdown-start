@@ -103,6 +103,8 @@ Forecasts for a minimum of 35 days can be submitted daily by 11:59 pm UTC throug
 
 Even that daily submissions are allowed and encouraged as new observations and weather forecasts become available, the automation of forecast generation may be ideal.  There are many ways to automate scripts that are written to download observations and meteorology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html)){target="_blank"} that execute tasks at user specified times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
 
+Cron jobs work on unix and mac systems.  An example of a script that executes a cron job using R can be found [here](https://github.com/eco4cast/neon4cast-aquatics/blob/master/cron_automation.R){target="_blank"}.
+
 ## Observed data latency
 
 NEON data officially releases the flux data on their data portal and API in monthly data packages.  Data for a given month is scheduled to be released around the 15th of the following month. As a result there will be a gap 2 weeks - 6 weeks between the last available observation and the start of your forecast.  
