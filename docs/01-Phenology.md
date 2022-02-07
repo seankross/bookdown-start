@@ -4,7 +4,7 @@
 
 **Where**: 10 deciduous broadleaf forest, 6 grassland, and 2 shrubland NEON sites in the continental U.S.
 
-**When**: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022.  The only requirement is that submissions are predictions of the future.
+**When**: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022.  The only requirement is that submissions are predictions of the future at the time the forecast is submitted.
 
 **Why**: Phenology has been identified as one of the primary ecological fingerprints of global climate change.
 
@@ -19,16 +19,6 @@ The video below is an overview of the Phenology Challenge that was recorded for 
 We held a Q&A session on January 27, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=UwX2IA1vDQE&feature=youtu.be){target="_blank"}.
 
 
-```
-## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
-## logical.return = TRUE, : there is no package called 'tidyverse'
-```
-
-```
-## 
-## The downloaded binary packages are in
-## 	/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//RtmpNSFeM8/downloaded_packages
-```
 
 ## Overview
 
@@ -137,7 +127,9 @@ The target file has the following columns:
 
 Forecasts for a minimum of 35 days can be submitted daily by 6 pm ET throughout 2022. A minimum of 35 days in the future must be forecasted for each submission. For example, a forecast submitted on February 1 should be for at least February 1st – March 7th, but it could be for the full spring. New forecasts can be submitted daily as new weather forecasts and observations (e.g., PhenoCam) become available. Processed PhenoCam data will be available daily by 11:59 pm ET for each day. The key is that submissions are predictions of the future.
 
-Even that daily submissions are allowed and encouraged as new observations and weather forecasts become avaiable, the automation of forecast generation may be ideal.  There are many ways to automate scripts that are writen to download observations and metreology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html)){target="_blank"} that execuate tasks at user specificd times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
+Daily submissions are allowed and encouraged as new observations and weather forecasts become available, therefore the automation of forecast generation may be ideal.  There are many ways to automate scripts that are written to download observations and metreology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html)){target="_blank"} that execute tasks at user specifics times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
+
+Cron jobs work on unix and mac systems.  An example of a script that executes a cron job using R can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/cron_automation.R){target="_blank"}.
 
 ## Submissions
 

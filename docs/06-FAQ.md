@@ -89,7 +89,10 @@ Ticks
 https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz
 
 ## Is it possible to automate my forecast submissions?
-Yes. [Here is a video](https://youtu.be/dMrUlXi4_Bo){target="_blank"} that walks through using GitHub Actions to automate forecast execution and submission.
+
+Yes. There are many ways to automate scripts that are written to download observations and metreology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html)){target="_blank"} that execute tasks at user specifics times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
+
+Cron jobs work on unix and mac systems.  An example of a script that executes a cron job using R can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/cron_automation.R){target="_blank"}.
 
 ## I am having trouble generating the metadata.  Can you point me to more information, tutorials, or examples?
 

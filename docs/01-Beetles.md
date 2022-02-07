@@ -89,7 +89,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ```
 
 ```
-## # A tibble: 2,325 x 4
+## # A tibble: 2,389 x 4
 ##    siteID time       abundance richness
 ##    <chr>  <date>         <dbl>    <dbl>
 ##  1 CPER   2013-07-01    4.16         13
@@ -102,7 +102,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ##  8 STER   2013-08-05    0.673         7
 ##  9 CPER   2013-08-12    0.0661        8
 ## 10 HARV   2013-08-12    0.313        22
-## # … with 2,315 more rows
+## # … with 2,379 more rows
 ```
 
 The table has the following columns:  
