@@ -65,7 +65,7 @@ The target file has the following columns
 
 **Definition**
 
-Dissolved oxygen (DO) is the concentration of oxygen dissolved in water. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L<sup>-1</sup>. We have adapted the available NEON DO data to output the mean daily DO concentration in mg L<sup>-1</sup> from a water quality sonde deployed 1m below the water surface at a lake site (Barco Lake) and a water quality sonde deployed in a stream site (Posey Creek). Common DO concentrations range between 0 and 12 mg L<sup>-1</sup> and DO concentrations less than 2 mg L<sup>-1</sup> are considered hypoxic. 
+Dissolved oxygen (DO) is the concentration of oxygen dissolved in water. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L<sup>-1</sup>. We have adapted the available NEON DO data to output the mean daily DO concentration in mg L<sup>-1</sup> from a water quality sonde deployed 1m below the water surface at a lake site (BARC and CRAM) and a water quality sonde deployed in a stream site (COMO, MCDI, POSE). Common DO concentrations range between 0 and 12 mg L<sup>-1</sup> and DO concentrations less than 2 mg L<sup>-1</sup> are considered hypoxic. 
 
 **Motivation**
 
@@ -75,7 +75,7 @@ Dissolved oxygen concentration is a critically important variable in limnology. 
 
 **Definition**
 
-Water temperature is the temperature of the water. NEON’s 30-minute time resolution from deployed water temperature sondes in the freshwater sites reports this in degrees celsius (°C). We have adapted the available NEON water temperature data to output the mean daily water temperature in °C from a water temperature sonde deployed 1m below the water surface at a lake site (Barco Lake) and a water temperature sonde deployed in a stream site (Posey Creek). Common water temperatures in lakes and streams range between 4 and 35 °C.
+Water temperature is the temperature of the water. NEON’s 30-minute time resolution from deployed water temperature sondes in the freshwater sites reports this in degrees Celsius (°C). We have adapted the available NEON water temperature data to output the mean daily water temperature in °C from temperature thermisters deployed 0-1m below the water surface at the lake sites (BARC and CRAM) and a water temperature sonde deployed in a stream site (COMO, MCDI, POSE). Common water temperatures in lakes and streams range between 4 and 35 °C.
 
 **Motivation**
 
@@ -85,17 +85,32 @@ In streams and rivers, forecasting water temperature can be meaningful for prote
 
 **Definition**
 
-
+Pending
 
 **Motivation**
 
+Pending
 
 ### Focal sites
 
-| Site Name       | SiteID     | NEON Domain     | Latitude  |  Longitude | Ecosystem Type |
-| :------------- | :----------: | -----------: | -----------: | -----------: | -----------: |
-|  [Lake Barco, FL](https://www.neonscience.org/field-sites/bart){target="_blank"} | BART  | D03: Southeast    | 29.67598 | -82.00841 | Lake | 
-|  [Posey Creek, VA](https://www.neonscience.org/field-sites/pose){target="_blank"} | POSE  | D02: Mid-Atlantic    | 38.89431 | -78.14726 | Stream | 
+Information on the sites can be found here:
+
+```{r message = FALSE}
+site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20210928.csv")
+```
+
+```{r echo = FALSE}
+site_data %>% 
+  select(field_site_id, field_site_name, field_site_subtype, field_latitude, field_longitude, neon_url) %>% 
+  rename(siteID = field_site_id,
+         `site name` = field_site_name,
+         `waterbody type` = field_site_subtype,
+         `latitude` = field_latitude,
+         `longtitude` =  field_longitude,
+         `NEON site URL` = neon_url) %>% 
+  arrange(siteID) %>% 
+  knitr::kable()
+```
 
 ## Timeline
 
@@ -113,7 +128,7 @@ NEON data officially releases the flux data on their data portal and API in mont
 
 Instructions for submitting forecasts are found here: [Submission Instructions]
 
-The specific file format for the terrestrial_daily theme is here: [Aquatics]
+The specific file format for the aquatics theme is here: [Aquatics]
 
 ## Meterological inputs for modeling
 
