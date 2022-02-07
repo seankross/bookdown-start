@@ -189,19 +189,19 @@ Submissions need to adhere to the forecast format that is provided above, includ
 
 ## Validating submission
 
+You can check the status of your submssion using the following function in the `neon4cast` package
+
+```{r}
+neon4cast::check_submission("phenology-2022-02-07-persistence.nc")
+```
+
 A successful submission can be found at the following links within 2 hours of submissions
 
-Aquatics: https://data.ecoforecast.org/minio/forecasts/aquatics
+We run a validator script when processing the submissions. If your submission does not meet the file standards above, you can run a function that provides information describing potential issues.  The forecast file needs to be in your local working directory or you need to provide a full path to the file
 
-Terrestrial: https://data.ecoforecast.org/minio/forecasts/terrestrial
- 
-Beetles: https://data.ecoforecast.org/minio/forecasts/beetles
-
-Ticks: https://data.ecoforecast.org/minio/forecasts/ticks
-
-Phenology: https://data.ecoforecast.org/minio/forecasts/phenology
-
-We run a validator script when processing the submissions. If your submission does not meet the file standards above, it will be moved to a separate [folder](https://data.ecoforecast.org/minio/forecasts/not_in_standard){target="_blank"} and a log file (same name as submitted file with "log" appended to end) will be generated with some hints about why it did not meet the standard.  If your submission did not meet the standard contact us and we can help you work through the issues.
+```{r}
+neon4cast::forecast_output_validator("phenology-2022-02-07-persistence.nc")
+```
 
 ## Visualizing submissions
 
