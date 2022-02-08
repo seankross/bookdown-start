@@ -32,7 +32,7 @@
   
 <link rel="prev" href="theme-tick-populations.html"/>
 <link rel="next" href="theme-beetle-communities.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -189,10 +189,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#data-targets-2"><i class="fa fa-check"></i><b>3.3</b> Data: Targets</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#amblyomma-americanum-nymphs"><i class="fa fa-check"></i><b>3.3.1</b> Amblyomma americanum nymphs</a></li>
-<li class="chapter" data-level="3.3.2" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#ixodes-scapularis-nymphs"><i class="fa fa-check"></i><b>3.3.2</b> Ixodes scapularis nymphs</a></li>
-<li class="chapter" data-level="3.3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#focal-sites-2"><i class="fa fa-check"></i><b>3.3.3</b> Focal sites</a></li>
-<li class="chapter" data-level="3.3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-data-calculation"><i class="fa fa-check"></i><b>3.3.4</b> Target data calculation</a></li>
-<li class="chapter" data-level="3.3.5" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-file"><i class="fa fa-check"></i><b>3.3.5</b> Target file</a></li>
+<li class="chapter" data-level="3.3.2" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#focal-sites-2"><i class="fa fa-check"></i><b>3.3.2</b> Focal sites</a></li>
+<li class="chapter" data-level="3.3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-data-calculation"><i class="fa fa-check"></i><b>3.3.3</b> Target data calculation</a></li>
+<li class="chapter" data-level="3.3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-file"><i class="fa fa-check"></i><b>3.3.4</b> Target file</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#timeline-2"><i class="fa fa-check"></i><b>3.4</b> Timeline</a></li>
 <li class="chapter" data-level="3.5" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#design-team-3"><i class="fa fa-check"></i><b>3.5</b> Design team</a></li>
@@ -395,7 +394,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="focal-sites-3" class="section level3" number="4.3.3">
 <h3><span class="header-section-number">4.3.3</span> Focal sites</h3>
 <p>Information on the sites can be found here:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="theme-phenology.html#cb13-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-phenology/master/Phenology_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="theme-phenology.html#cb12-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-phenology/master/Phenology_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="4%" />
@@ -575,7 +574,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="target-file-1" class="section level3" number="4.3.5">
 <h3><span class="header-section-number">4.3.5</span> Target file</h3>
 <p>Here is the format of the target file</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="theme-phenology.html#cb14-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="theme-phenology.html#cb13-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
 <p>The target file has the following columns:</p>
 <ul>
 <li><code>time</code>: YYYY-MM-DD<br />

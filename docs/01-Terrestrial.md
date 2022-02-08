@@ -2,7 +2,7 @@
 
 **What:** Net ecosystem exchange of CO2 and evapotranspiration in terrestrial ecosystems
 
-**Where**: 12 NEON sites across the conterminous U.S. The images below show the flux tower at the center of each site.
+**Where**: 10 NEON sites across the conterminous U.S. The images below show the flux tower at the center of each site.
 
 **When**: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022.  The only requirement is that submissions are predictions of the future at the time the forecast is submitted.
 
@@ -82,13 +82,11 @@ site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4ca
 |KONZ   |Konza Prairie Biological Station NEON                       |Deciduous Forest&#124;Grassland/Herbaceous                             | 39.10077|  -96.56307|https://www.neonscience.org/field-sites/konz |
 |ORNL   |Oak Ridge NEON                                              |Deciduous Forest&#124;Evergreen Forest&#124;Pasture/Hay                | 35.96413|  -84.28259|https://www.neonscience.org/field-sites/ornl |
 |OSBS   |Ordway-Swisher Biological Station NEON                      |Emergent Herbaceous Wetlands&#124;Evergreen Forest&#124;Woody Wetlands | 29.68928|  -81.99343|https://www.neonscience.org/field-sites/osbs |
-|SCBI   |Smithsonian Conservation Biology Institute NEON             |Deciduous Forest&#124;Evergreen Forest&#124;Pasture/Hay                | 38.89292|  -78.13949|https://www.neonscience.org/field-sites/scbi |
 |SJER   |San Joaquin Experimental Range NEON                         |Evergreen Forest&#124;Grassland/Herbaceous&#124;Shrub/Scrub            | 37.10878| -119.73228|https://www.neonscience.org/field-sites/sjer |
 |SRER   |Santa Rita Experimental Range NEON                          |Shrub/Scrub                                                            | 31.91068| -110.83549|https://www.neonscience.org/field-sites/srer |
 |TALL   |Talladega National Forest NEON                              |Deciduous Forest&#124;Evergreen Forest&#124;Mixed Forest               | 32.95047|  -87.39326|https://www.neonscience.org/field-sites/tall |
 |UNDE   |University of Notre Dame Environmental Research Center NEON |Deciduous Forest&#124;Mixed Forest&#124;Woody Wetlands                 | 46.23391|  -89.53725|https://www.neonscience.org/field-sites/unde |
 |WREF   |Wind River Experimental Forest NEON                         |Evergreen Forest                                                       | 45.82049| -121.95191|https://www.neonscience.org/field-sites/wref |
-|YELL   |Yellowstone National Park NEON                              |Evergreen Forest&#124;Grassland/Herbaceous&#124;Shrub/Scrub            | 44.95348| -110.53914|https://www.neonscience.org/field-sites/yell |
 
 ### 30-minute target data calulation
 
@@ -117,7 +115,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestr
 ```
 
 ```
-## # A tibble: 350,512 x 10
+## # A tibble: 876,760 × 10
 ##    time                siteID    nee      le nee_sd_intercept nee_sd_slopeP
 ##    <dttm>              <chr>   <dbl>   <dbl>            <dbl>         <dbl>
 ##  1 2017-02-01 10:00:00 BART   -0.574 -0.413              1.15         0.204
@@ -130,7 +128,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestr
 ##  8 2017-02-01 13:30:00 BART   NA     NA                  1.15         0.204
 ##  9 2017-02-01 14:00:00 BART   NA     NA                  1.15         0.204
 ## 10 2017-02-01 14:30:00 BART   NA     NA                  1.15         0.204
-## # … with 350,502 more rows, and 4 more variables: nee_sd_slopeN <dbl>,
+## # … with 876,750 more rows, and 4 more variables: nee_sd_slopeN <dbl>,
 ## #   le_sd_intercept <dbl>, le_sd_slopeP <dbl>, le_sd_slopeN <dbl>
 ```
 
@@ -153,20 +151,20 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestr
 ```
 
 ```
-## # A tibble: 7,304 x 4
-##    time       siteID    nee    le
-##    <date>     <chr>   <dbl> <dbl>
-##  1 2017-02-01 BART   NA     NA   
-##  2 2017-02-01 KONZ   NA     NA   
-##  3 2017-02-01 OSBS   NA     NA   
-##  4 2017-02-01 SRER   NA     NA   
-##  5 2017-02-02 BART    0.580  2.71
-##  6 2017-02-02 KONZ   NA     NA   
-##  7 2017-02-02 OSBS   NA     NA   
-##  8 2017-02-02 SRER   NA     NA   
-##  9 2017-02-03 BART    0.687  8.47
-## 10 2017-02-03 KONZ   NA     NA   
-## # … with 7,294 more rows
+## # A tibble: 18,270 × 4
+##    time       siteID   nee    le
+##    <date>     <chr>  <dbl> <dbl>
+##  1 2017-02-01 BART      NA    NA
+##  2 2017-02-01 CLBJ      NA    NA
+##  3 2017-02-01 KONZ      NA    NA
+##  4 2017-02-01 ORNL      NA    NA
+##  5 2017-02-01 OSBS      NA    NA
+##  6 2017-02-01 SJER      NA    NA
+##  7 2017-02-01 SRER      NA    NA
+##  8 2017-02-01 TALL      NA    NA
+##  9 2017-02-01 UNDE      NA    NA
+## 10 2017-02-01 WREF      NA    NA
+## # … with 18,260 more rows
 ```
 
 The code used to generate the targets from NEON data can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R)

@@ -32,7 +32,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="theme-carbon-and-water-fluxes.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -189,10 +189,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#data-targets-2"><i class="fa fa-check"></i><b>3.3</b> Data: Targets</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#amblyomma-americanum-nymphs"><i class="fa fa-check"></i><b>3.3.1</b> Amblyomma americanum nymphs</a></li>
-<li class="chapter" data-level="3.3.2" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#ixodes-scapularis-nymphs"><i class="fa fa-check"></i><b>3.3.2</b> Ixodes scapularis nymphs</a></li>
-<li class="chapter" data-level="3.3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#focal-sites-2"><i class="fa fa-check"></i><b>3.3.3</b> Focal sites</a></li>
-<li class="chapter" data-level="3.3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-data-calculation"><i class="fa fa-check"></i><b>3.3.4</b> Target data calculation</a></li>
-<li class="chapter" data-level="3.3.5" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-file"><i class="fa fa-check"></i><b>3.3.5</b> Target file</a></li>
+<li class="chapter" data-level="3.3.2" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#focal-sites-2"><i class="fa fa-check"></i><b>3.3.2</b> Focal sites</a></li>
+<li class="chapter" data-level="3.3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-data-calculation"><i class="fa fa-check"></i><b>3.3.3</b> Target data calculation</a></li>
+<li class="chapter" data-level="3.3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-file"><i class="fa fa-check"></i><b>3.3.4</b> Target file</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#timeline-2"><i class="fa fa-check"></i><b>3.4</b> Timeline</a></li>
 <li class="chapter" data-level="3.5" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#design-team-3"><i class="fa fa-check"></i><b>3.5</b> Design team</a></li>
@@ -363,11 +362,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <iframe width="560" height="315" src="https://www.youtube.com/embed/935Uiy11mTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p>We held a Q&amp;A session on May 21, 2021. You can find a recording from that session <a href="https://youtu.be/KBAPZoDKbk8" target="_blank">HERE</a>.</p>
-<pre><code>## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
-## logical.return = TRUE, : there is no package called &#39;tidyverse&#39;</code></pre>
-<pre><code>## 
-## The downloaded binary packages are in
-##  /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//Rtmpd8IHf6/downloaded_packages</code></pre>
 <div id="overview" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Overview</h2>
 <p>In streams and rivers, forecasting water temperature can be meaningful for protecting aquatic communities while maintaining socio-economic benefits (Ouellet-Proulx et al. 2017). In lentic systems, successfully forecasting surface water temperatures can be important for fisheries and water utilities that need to manage the outflowing temperatures (Zhu et al. 2020). Recently, water temperature forecasts in lakes have been used to predict seasonal turnover when nutrients from the bottom can be mixed to the surface and impair the water quality.</p>
@@ -387,8 +381,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="https://data.neonscience.org/data-products/DP1.20288.001" target="_blank">DP1.20288.001</a>: Water quality</p>
 <p>A file with previously released NEON data that has been processed into targets is provided below. The target script can be found here. The same processing will be applied to new data that are used for forecast evaluation. Before the Aquatics challenge begins, a <a href="https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R" target="_blank">processing script</a> is available in the neon4cast-aquatics GitHub repository.</p>
 <p>Here is the format of the target file</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="theme-aquatic-ecosystems.html#cb3-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 12,112 x 10
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="theme-aquatic-ecosystems.html#cb1-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 12,112 × 10
 ##    time       siteID oxygen temperature  chla oxygen_sd temperature_sd chla_sd
 ##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 2017-08-27 BARC       NA        31.4    NA        NA        0.00162      NA
@@ -448,7 +442,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="focal-sites" class="section level3" number="1.3.4">
 <h3><span class="header-section-number">1.3.4</span> Focal sites</h3>
 <p>Information on the sites can be found here:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="theme-aquatic-ecosystems.html#cb5-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="theme-aquatic-ecosystems.html#cb3-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="6%" />

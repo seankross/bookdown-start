@@ -20,16 +20,7 @@ The video below is an overview of the Aquatic Ecosystems Challenge that was reco
 We held a Q&A session on May 21, 2021. You can find a recording from that session  [HERE](https://youtu.be/KBAPZoDKbk8){target="_blank"}.
 
 
-```
-## Warning in library(package, lib.loc = lib.loc, character.only = TRUE,
-## logical.return = TRUE, : there is no package called 'tidyverse'
-```
 
-```
-## 
-## The downloaded binary packages are in
-## 	/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//Rtmpd8IHf6/downloaded_packages
-```
 
 ## Overview
 
@@ -63,7 +54,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ```
 
 ```
-## # A tibble: 12,112 x 10
+## # A tibble: 12,112 × 10
 ##    time       siteID oxygen temperature  chla oxygen_sd temperature_sd chla_sd
 ##    <date>     <chr>   <dbl>       <dbl> <dbl>     <dbl>          <dbl>   <dbl>
 ##  1 2017-08-27 BARC       NA        31.4    NA        NA        0.00162      NA

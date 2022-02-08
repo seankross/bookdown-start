@@ -40,7 +40,6 @@ overview-2
 challenge-2
 data-targets-2
 amblyomma-americanum-nymphs
-ixodes-scapularis-nymphs
 focal-sites-2
 target-data-calculation
 target-file

@@ -43,20 +43,25 @@ NEON collects weather variables at each of the sites. Their data products become
 
 A successful submission can be found at the following links within 2 hours of submissions
 
-Aquatics: https://data.ecoforecast.org/minio/forecasts/aquatics
-
-Terrestrial: https://data.ecoforecast.org/minio/forecasts/terrestrial
- 
-Beetles: https://data.ecoforecast.org/minio/forecasts/beetles
-
-Ticks: https://data.ecoforecast.org/minio/forecasts/ticks
-
-Phenology: https://data.ecoforecast.org/minio/forecasts/phenology
-
-We run a validator script when processing the submissions.  You can run the same script on your submissions before submitting them.  We provide an R function code in the [neon4cast package](https://github.com/eco4cast/neon4cast) called `forecast_output_validator.R` that will check your submissions on your own machine.
+You can check the status of your submssion using the following function in the `neon4cast` package
 
 
-If your submission does not meet the file standards above, it will be moved to a [separate folder](https://data.ecoforecast.org/minio/forecasts/not_in_standard){target="_blank"} and a log file (same name as submitted file with "log" appended to end) will be generated with some hints about why it did not meet the standard.  If your submission did not meet the standard contact us and we can help you work through the issues.
+```r
+neon4cast::check_submission("phenology-2022-02-07-persistence.nc")
+```
+
+```
+## Submission was successfully processed
+```
+
+We run a validator script when processing the submissions. If your submission does not meet the file standards above, you can run a function that provides information describing potential issues.  The forecast file needs to be in your local working directory or you need to provide a full path to the file
+
+
+```r
+neon4cast::forecast_output_validator("phenology-2022-02-07-persistence.nc")
+```
+
+If your submission did not meet the standard contact us and we can help you work through the issues.
 
 ## Do I need to submit forecasts to every submission date?
 
