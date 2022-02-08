@@ -2,7 +2,7 @@
 
 **What:** Net ecosystem exchange of CO2 and evapotranspiration in terrestrial ecosystems
 
-**Where**: 12 NEON sites across the conterminous U.S. The images below show the flux tower at the center of each site.
+**Where**: 10 NEON sites across the conterminous U.S. The images below show the flux tower at the center of each site.
 
 **When**: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022.  The only requirement is that submissions are predictions of the future at the time the forecast is submitted.
 
@@ -17,6 +17,10 @@ The video below is an overview of the Terrestrial Carbon and Water Fluxes Challe
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WmFsACm-TMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 We held a Q&A session on January 22, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=3rOVlAX9YH8&feature=youtu.be){target="_blank"}.
+
+```{r echo = FALSE, message = FALSE}
+library("magrittr")
+```
 
 ## Overview
 
