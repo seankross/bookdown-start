@@ -134,7 +134,7 @@ Information about forecasted meteorology that is available for you to use when g
 
 ## Useful functions
 
-Functions for validating, evaluating and submitting forecasts can be found here [Helpful Functions]
+Functions for validating, evaluating and submitting forecasts can be found here: [Helpful Functions]
 
 Functions for downloading and working with the meteorology forecasts can be be found here: [Access EFI snapshots of NOAA forecasts at NEON sites]
 
