@@ -19,13 +19,6 @@ The video below is an overview of the Aquatic Ecosystems Challenge that was reco
 
 We held a Q&A session on May 21, 2021. You can find a recording from that session  [HERE](https://youtu.be/KBAPZoDKbk8){target="_blank"}.
 
-```{r echo = FALSE, message = FALSE}
-if (!require("tidyverse", character.only = TRUE)) {
-  install.packages("tidyverse", dependencies = TRUE)
-  library("tidyverse", character.only = TRUE)
-}
-```
-
 ## Overview
 
 In streams and rivers, forecasting water temperature can be meaningful for protecting aquatic communities while maintaining socio-economic benefits (Ouellet-Proulx et al. 2017). In lentic systems, successfully forecasting surface water temperatures can be important for fisheries and water utilities that need to manage the outflowing temperatures (Zhu et al. 2020). Recently, water temperature forecasts in lakes have been used to predict seasonal turnover when nutrients from the bottom can be mixed to the surface and impair the water quality. 

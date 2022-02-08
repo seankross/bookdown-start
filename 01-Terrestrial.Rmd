@@ -18,13 +18,6 @@ The video below is an overview of the Terrestrial Carbon and Water Fluxes Challe
 
 We held a Q&A session on January 22, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=3rOVlAX9YH8&feature=youtu.be){target="_blank"}.
 
-```{r echo = FALSE, message = FALSE}
-if (!require("tidyverse", character.only = TRUE)) {
-  install.packages("tidyverse", dependencies = TRUE)
-  library("tidyverse", character.only = TRUE)
-}
-```
-
 ## Overview
 
 The exchange of water and carbon dioxide between the atmosphere and the land is akin to earth’s terrestrial ecosystems breathing rate and lung capacity. The water available to plant roots plays a critical role in plant function, and subsequently represents a predominant source of uncertainty for predictions of how much carbon is entering or exiting an ecosystem. One of the best ways to monitor changes in the amount of carbon and water in an ecosystem is the eddy-covariance method. This method observes the net amount of carbon and water entering and exiting ecosystems at half-hourly timesteps, which is important because it can provide information on ecosystem processes such as photosynthesis, respiration, and transpiration, their sensitivities to ongoing climate and land use change, and greenhouse gas budgets for carbon accounting and natural climate solutions. Forecasts of carbon uptake and release, water use, and soil moisture can provide insights into future production of food, fiber, timber, and carbon credits. Additionally, forecasts will highlight the influence that stress and disturbance have on carbon and water cycling.
