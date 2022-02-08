@@ -28,23 +28,25 @@ In streams and rivers, forecasting water temperature can be meaningful for prote
 
 Dissolved oxygen concentration is a critically important variable in limnology. Forecasts of dissolved oxygen in freshwaters is the first step to understanding other freshwater ecosystem processes. For example, oxygen serves as the gatekeeper to other biogeochemical reactions that occur in rivers and lakes. Preemptive forecasts of dissolved oxygen concentrations can anticipate periods of high or low oxygen availability, thereby providing insight into how the ecosystem may change at relatively short timescales. 
 
+chlorophyll-a is a metric of phytoplankton biomass. Phytoplankton biomass are the base of the aquatic food-web and an important indicator of water quality for managers.
+
 ## Challenge
 
 This design challenge asks teams to produce forecasts of mean daily surface water temperature, dissolved oxygen, and/or chlorophyll-a in 2 NEON lake and/or 3 NEON river/stream sites for 35-days in the future.  
 
 You can chose to submit to either the lakes or the streams or both.  You can also chose to submit any of the three focal variables (temperature, oxygen, and chlorophyll).
 
-Teams are asked to submit their 35-day forecasts of NEON surface mean daily surface water temperature, dissolved oxygen, and/or chlorophyll-a along with uncertainty estimates and metadata. Any NEON surface water temperature and/or dissolved oxygen data prior to the forecasted being generated will be provided and may be used to build and improve the forecast models. Other data (other than temperature and/or dissolved oxygen data provided from NEON) can be used teams provide access (minimum of URL, but ideally a script) to all teams in the challenge.
+Teams are asked to submit their 35-day forecasts of NEON surface mean daily surface water temperature, dissolved oxygen, and/or chlorophyll-a along with uncertainty estimates and metadata. NEON surface water temperature, dissolved oxygen, and chlorophyll-a collected prior to the current date will be provided and may be used to build and improve the forecast models. Other data can be used as long as teams provide access (minimum of URL, but ideally a script) to all teams in the challenge.
 
 ## Data: Targets
 
 The R script for generating the evaluation and training data (i.e., targets) can be found at: https://github.com/eco4cast/neon4cast-aquatics
 
 The challenge uses the following NEON data products:
-[DP1.20264.001](https://data.neonscience.org/data-products/DP1.20264.001){target="_blank"}: Temperature at specific depth in surface water   
-[DP1.20288.001](https://data.neonscience.org/data-products/DP1.20288.001){target="_blank"}: Water quality
+- [DP1.20264.001](https://data.neonscience.org/data-products/DP1.20264.001){target="_blank"}: Temperature at specific depth in surface water
+- [DP1.20288.001](https://data.neonscience.org/data-products/DP1.20288.001){target="_blank"}: Water quality (includes oxygen and chlorophyll-a)   
 
-A file with previously released NEON data that has been processed into targets is provided below. The target script can be found here. The same processing will be applied to new data that are used for forecast evaluation. Before the Aquatics challenge begins, a [processing script](https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R){target="_blank"} is available in the neon4cast-aquatics GitHub repository.
+A file with previously released NEON data that has been processed into targets is provided below. The target script can be found [here](https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R){target="_blank"}. The same processing will be applied to new data that are used for forecast evaluation. 
 
 Here is the format of the target file
 
@@ -70,16 +72,17 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ## # … with 12,102 more rows, and 2 more variables: depth_oxygen <dbl>,
 ## #   depth_temperature <dbl>
 ```
+
 The target file has the following columns   
 
 - `time`: date of observation    
 - `siteID`: NEON site code    
 - `oxygen`: oxygen (mg/L)   
 - `temperature`: temperature (Celsius)   
-- `chlorophyll`: chlorophyll-a (mg/L)
+- `chla`: chlorophyll-a (mg/L)
 - `oxygen_sd`: standard deviation of oxygen observation as reported by NEON    
 - `temperature_sd`: standard deviation of temperature observation as reported by NEON   
-- `chlorophyll_sd`: standard deviation of temperature observation as reported by NEON   
+- `chla_sd`: standard deviation of temperature observation as reported by NEON   
 - `depth_oxygen`: depth in meters of oxygen and chlorophyll observation   
 - `depth_temperature`: depth in meters of temperature observation
 
@@ -107,11 +110,11 @@ In streams and rivers, forecasting water temperature can be meaningful for prote
 
 **Definition**
 
-Pending
+chlorophyll-a (chla) is the concentration of chlorophyll-a in the water column, as measured using florescence. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L<sup>-1</sup>. We have adapted the available NEON chla data to output the mean daily chla concentration in mg L<sup>-1</sup> from a water quality sonde deployed ~-0.3 - 1m below the water surface at a lake site (BARC and CRAM) and a water quality sonde deployed in a stream site (COMO, MCDI, POSE).
 
 **Motivation**
 
-Pending
+Phytoplankton biomass are the base of the aquatic food-web and an important indicator of water quality for managers.
 
 ### Focal sites
 
@@ -135,13 +138,13 @@ site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4ca
 
 Forecasts for a minimum of 35 days can be submitted daily by 11:59 pm UTC throughout 2022. A minimum of 35 days in the future must be forecasted for each submission. For example, a forecast submitted on February 1 should be for at least February 1st – March 7th. New forecasts can be submitted daily as new weather forecasts and observations (e.g., new flux data is released by NEON) become available. The key is that submissions are predictions of the future.
 
-Even that daily submissions are allowed and encouraged as new observations and weather forecasts become available, the automation of forecast generation may be ideal.  There are many ways to automate scripts that are written to download observations and meteorology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html)){target="_blank"} that execute tasks at user specified times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
+Even that daily submissions are allowed and encouraged as new observations and weather forecasts become available, the automation of forecast generation may be ideal.  There are many ways to automate scripts that are written to download observations and meteorology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html){target="_blank"}) that execute tasks at user specified times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
 
 Cron jobs work on unix and mac systems.  An example of a script that executes a cron job using R can be found [here](https://github.com/eco4cast/neon4cast-aquatics/blob/master/cron_automation.R){target="_blank"}.
 
 ## Observed data latency
 
-NEON data officially releases the flux data on their data portal and API in monthly data packages.  Data for a given month is scheduled to be released around the 15th of the following month. As a result there will be a gap 2 weeks - 6 weeks between the last available observation and the start of your forecast.  
+NEON data officially releases the temperature, oxygen, and chlorophyll-a data on their data portal and API in monthly data packages.  Data for a given month is scheduled to be released around the 15th of the following month. As a result there will be a gap of 2 weeks - 6 weeks between the last available observation and the start of your forecast.  
 
 ## Submissions
 
@@ -155,22 +158,19 @@ Information about forecasted meteorology that is available for you to use when g
 
 ## Useful functions
 
-Functions for validating, evaluating and submitting forecasts can be found here [Helpful Functions]
+Functions for validating, evaluating and submitting forecasts can be found here: [Helpful Functions]
 
 Functions for downloading and working with the meteorology forecasts can be be found here: [Access EFI snapshots of NOAA forecasts at NEON sites]
 
 ## Null models
 
-Pending
+A climatology null model is automatically generated each day to served as a simple baseline model. This climatology null model forecasts that the nee or lee will be equal to the historical mean of that day of year.
+
+Code for the climatology null model can be found [here](https://github.com/eco4cast/neon4cast-aquatics/blob/master/03_climatology_null.R){target="_blank"}
 
 ## FAQ
 
 Answers to frequency asks questions can be found here: [Frequently Asked Questions]
-
-
-## Design team 
-
-Pending
 
 ## Design Team
 
