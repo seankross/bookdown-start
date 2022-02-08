@@ -562,15 +562,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ticks" class="section level3" number="7.1.6">
 <h3><span class="header-section-number">7.1.6</span> Ticks</h3>
 <ul>
-<li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted). Defined by <code>MMWRweek::MMWRweek2Date(Year, epiWeek)</code></li>
+<li><code>time</code>: YYYY-MM-DD of forecast (where the DD is the first day of the week (Sunday) that is forecasted). Defined by <code>MMWRweek::MMWRweek2Date(Year, mmwrWeek)</code></li>
 <li><code>siteID</code>: NEON code for site</li>
-<li><code>plotID</code>: NEON plotID</li>
 <li><code>ensemble</code> or <code>statistic</code>: if <code>ensemble</code> then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if <code>statistic</code> then either required to be the string <code>mean</code> or <code>sd</code> (see note below about statistic column).<br />
 </li>
 <li><code>forecast</code>: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)</li>
 <li><code>data_assimilation</code>: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)</li>
-<li><code>amblyomma_americanum</code>: Number of <em>Amblyomma americanum</em> nymphs per plot per week</li>
-<li><code>ixodes_scapularis</code>: Number of <em>Ixodes scapularis</em> nymphs per plot per week</li>
+<li><code>Amblyomma americanum</code>: Density of <em>Amblyomma americanum</em> nymphs</li>
 </ul>
 <p>Here is an example of a csv forecast file that meets the standard for the ticks theme</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="submission-instructions.html#cb39-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz&quot;</span>)</span></code></pre></div>
