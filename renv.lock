@@ -114,6 +114,13 @@
       "Repository": "CRAN",
       "Hash": "916996b97ed2c882b0e748b79c75a0ec"
     },
+    "arrow": {
+      "Package": "arrow",
+      "Version": "6.0.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "da21509f51b9ad1386ca293e1042abf5"
+    },
     "askpass": {
       "Package": "askpass",
       "Version": "1.1",
@@ -665,12 +672,12 @@
       "Version": "0.1.0",
       "Source": "GitHub",
       "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "neon4cast",
       "RemoteUsername": "eco4cast",
+      "RemoteRepo": "neon4cast",
       "RemoteRef": "HEAD",
-      "RemoteSha": "21318fc1f6448fdc9a132a905896715e58e0f5db",
-      "Hash": "9c8d56101c670ffa64d01eb8a84d6f92"
+      "RemoteSha": "a201afea88885292b18bcff88f94212d454f366f",
+      "RemoteHost": "api.github.com",
+      "Hash": "1a03f7598330b7a8dcc0256886e6acb2"
     },
     "neonstore": {
       "Package": "neonstore",
