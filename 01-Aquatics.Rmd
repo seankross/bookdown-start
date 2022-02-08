@@ -106,14 +106,14 @@ site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4ca
 
 ```{r echo = FALSE}
 site_data %>% 
-  select(field_site_id, field_site_name, field_site_subtype, field_latitude, field_longitude, neon_url) %>% 
-  rename(siteID = field_site_id,
+  dplyr::select(field_site_id, field_site_name, field_site_subtype, field_latitude, field_longitude, neon_url) %>% 
+  dplyr::rename(siteID = field_site_id,
          `site name` = field_site_name,
          `waterbody type` = field_site_subtype,
          `latitude` = field_latitude,
          `longtitude` =  field_longitude,
          `NEON site URL` = neon_url) %>% 
-  arrange(siteID) %>% 
+  dplyr::arrange(siteID) %>% 
   knitr::kable()
 ```
 
