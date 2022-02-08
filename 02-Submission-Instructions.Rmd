@@ -60,7 +60,7 @@ If you only forecast nee or le, you can exclude the other variable from the file
 Here is an example of a csv forecast file that meets the standard for the daily terrestrial theme
 
 ```{r}
-readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz")
+readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial_daily/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz")
 ```
 
 
