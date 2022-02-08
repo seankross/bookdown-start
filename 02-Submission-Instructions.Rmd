@@ -199,7 +199,7 @@ A successful submission can be found at the following links within 2 hours of su
 
 We run a validator script when processing the submissions. If your submission does not meet the file standards above, you can run a function that provides information describing potential issues.  The forecast file needs to be in your local working directory or you need to provide a full path to the file
 
-```{r}
+```{r eval = FALSE}
 neon4cast::forecast_output_validator("phenology-2022-02-07-persistence.nc")
 ```
 
