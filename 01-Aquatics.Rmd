@@ -21,7 +21,7 @@ We held a Q&A session on May 21, 2021. You can find a recording from that sessio
 
 
 ```{r echo = FALSE, message = FALSE}
-library("magrittr")
+library("tidyverse")
 ```
 
 ## Overview

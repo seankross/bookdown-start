@@ -19,7 +19,7 @@ The video below is an overview of the Terrestrial Carbon and Water Fluxes Challe
 We held a Q&A session on January 22, 2021. You can find a recording from that session [HERE](https://www.youtube.com/watch?v=3rOVlAX9YH8&feature=youtu.be){target="_blank"}.
 
 ```{r echo = FALSE, message = FALSE}
-library("magrittr")
+library("tidyverse")
 ```
 
 ## Overview
