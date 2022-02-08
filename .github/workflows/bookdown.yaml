@@ -8,8 +8,7 @@ name: bookdown
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container: rocker/geospatial
+    runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
