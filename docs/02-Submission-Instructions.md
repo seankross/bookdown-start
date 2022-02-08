@@ -61,27 +61,29 @@ Here is an example of a csv forecast file that meets the standard for the daily 
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz")
+readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial_daily/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz")
+```
+
+```
+## Rows: 272000 Columns: 9
+```
+
+```
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr  (1): siteID
+## dbl  (7): ensemble, obs_flag, nee, le, vswc, forecast, data_assimilation
+## date (1): time
 ```
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   time = col_date(format = ""),
-##   ensemble = col_double(),
-##   siteID = col_character(),
-##   obs_flag = col_double(),
-##   nee = col_double(),
-##   le = col_double(),
-##   vswc = col_double(),
-##   forecast = col_double(),
-##   data_assimilation = col_double()
-## )
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 ```
-## # A tibble: 272,000 x 9
+## # A tibble: 272,000 × 9
 ##    time       ensemble siteID obs_flag    nee     le   vswc forecast
 ##    <date>        <dbl> <chr>     <dbl>  <dbl>  <dbl>  <dbl>    <dbl>
 ##  1 2020-10-02        1 BART          2 -29.6  -114.  0.0220        1
@@ -117,31 +119,37 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ```
 
 ```
-## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   siteID = col_character(),
-##   time = col_date(format = ""),
-##   ensemble = col_double(),
-##   richness = col_double(),
-##   abundance = col_double()
-## )
+## Rows: 441000 Columns: 5
 ```
 
 ```
-## # A tibble: 441,000 x 5
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr  (1): siteID
+## dbl  (3): ensemble, richness, abundance
+## date (1): time
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```
+## # A tibble: 441,000 × 5
 ##    siteID time       ensemble richness abundance
 ##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1    1.65    0.0294 
-##  2 SJER   2020-01-06        2    2.72    0.0322 
-##  3 SJER   2020-01-06        3    3.33    0.0363 
-##  4 SJER   2020-01-06        4    3.59    0.0239 
-##  5 SJER   2020-01-06        5    0.160   0.0533 
-##  6 SJER   2020-01-06        6    2.25    0.0511 
-##  7 SJER   2020-01-06        7    3.31    0.00430
-##  8 SJER   2020-01-06        8    1.64    0.0337 
-##  9 SJER   2020-01-06        9    1.61    0.0246 
-## 10 SJER   2020-01-06       10    2.21    0.0140 
+##  1 SJER   2020-01-06        1     2.84   0.0243 
+##  2 SJER   2020-01-06        2     3.22   0.00783
+##  3 SJER   2020-01-06        3     2.05   0.0211 
+##  4 SJER   2020-01-06        4     1.04   0.0209 
+##  5 SJER   2020-01-06        5     2.58   0.0304 
+##  6 SJER   2020-01-06        6     4.00   0.0164 
+##  7 SJER   2020-01-06        7     2.91   0.0200 
+##  8 SJER   2020-01-06        8     3.17   0.0146 
+##  9 SJER   2020-01-06        9     3.67   0.0115 
+## 10 SJER   2020-01-06       10     2.41   0.0196 
 ## # … with 440,990 more rows
 ```
 
@@ -163,22 +171,25 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-0
 ```
 
 ```
-## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   time = col_date(format = ""),
-##   ensemble = col_double(),
-##   siteID = col_character(),
-##   oxygen = col_double(),
-##   temperature = col_double(),
-##   obs_flag = col_double(),
-##   forecast = col_double(),
-##   data_assimilation = col_double()
-## )
+## Rows: 28000 Columns: 8
 ```
 
 ```
-## # A tibble: 28,000 x 8
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr  (1): siteID
+## dbl  (6): ensemble, oxygen, temperature, obs_flag, forecast, data_assimilation
+## date (1): time
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```
+## # A tibble: 28,000 × 8
 ##    time       ensemble siteID oxygen temperature obs_flag forecast
 ##    <date>        <dbl> <chr>   <dbl>       <dbl>    <dbl>    <dbl>
 ##  1 2021-03-01        1 BARC     8.98        19.1        2        1
@@ -212,19 +223,25 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2021
 ```
 
 ```
-## 
-## ── Column specification ────────────────────────────────────────────────────────
-## cols(
-##   time = col_date(format = ""),
-##   siteID = col_character(),
-##   statistic = col_character(),
-##   gcc_90 = col_double(),
-##   rcc_90 = col_double()
-## )
+## Rows: 528 Columns: 5
 ```
 
 ```
-## # A tibble: 528 x 5
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr  (2): siteID, statistic
+## dbl  (2): gcc_90, rcc_90
+## date (1): time
+```
+
+```
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+```
+
+```
+## # A tibble: 528 × 5
 ##    time       siteID statistic  gcc_90 rcc_90
 ##    <date>     <chr>  <chr>       <dbl>  <dbl>
 ##  1 2021-08-10 HARV   mean      0.418   0.409 
@@ -256,15 +273,14 @@ ncdf4::nc_open("images/phenology-2021-02-23-EFInull.nc")
 ##         char siteID[nchar,site]   (Contiguous storage)  
 ## 
 ##      4 dimensions:
-##         time  Size:35
+##         time  Size:35 
 ##             units: days since 2021-02-23
 ##             long_name: time
-##         site  Size:8
+##         site  Size:8 
 ##             long_name: siteID
-##         ensemble  Size:2000
+##         ensemble  Size:2000 
 ##             long_name: ensemble member
-##         nchar  Size:4
-## [1] "vobjtovarid4: **** WARNING **** I was asked to get a varid for dimension named nchar BUT this dimension HAS NO DIMVAR! Code will probably fail at this point"
+##         nchar  Size:4 (no dimvar)
 ## 
 ##     3 global attributes:
 ##         forecast_project_id: EFInull
@@ -291,24 +307,8 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-t
 ```
 
 ```
-## Warning: Missing column names filled in: 'X1' [1]
-```
-
-```
-## Warning: 66500 parsing failures.
-##  row                  col           expected             actual                                                                                             file
-## 7001 amblyomma_americanum 1/0/T/F/TRUE/FALSE 4.00332129495972   'https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz'
-## 7002 amblyomma_americanum 1/0/T/F/TRUE/FALSE 0.0490100896296721 'https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz'
-## 7003 amblyomma_americanum 1/0/T/F/TRUE/FALSE 1.78175379939298   'https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz'
-## 7004 amblyomma_americanum 1/0/T/F/TRUE/FALSE 3.49221356823098   'https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz'
-## 7005 amblyomma_americanum 1/0/T/F/TRUE/FALSE 7.67000549354529   'https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-tickGlobalNull_RandomWalk.csv.gz'
-## .... .................... .................. .................. ................................................................................................
-## See problems(...) for more details.
-```
-
-```
-## # A tibble: 77,000 x 10
-##       X1 time       ixodes_scapularis plotID   siteID ensemble data_assimilation
+## # A tibble: 77,000 × 10
+##     ...1 time       ixodes_scapularis plotID   siteID ensemble data_assimilation
 ##    <dbl> <date>                 <dbl> <chr>    <chr>     <dbl>             <dbl>
 ##  1     1 2019-03-04             0.341 BLAN_012 BLAN          1                 0
 ##  2     2 2019-03-11             0.286 BLAN_012 BLAN          1                 0
@@ -321,7 +321,7 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/ticks/ticks-2019-03-04-t
 ##  9     9 2019-04-29             0.368 BLAN_012 BLAN          1                 0
 ## 10    10 2019-05-06             0.327 BLAN_012 BLAN          1                 0
 ## # … with 76,990 more rows, and 3 more variables: forecast <dbl>,
-## #   obs_flag <dbl>, amblyomma_americanum <lgl>
+## #   obs_flag <dbl>, amblyomma_americanum <dbl>
 ```
 
 ## Metadata format
@@ -378,19 +378,25 @@ Submissions need to adhere to the forecast format that is provided above, includ
 
 ## Validating submission
 
+You can check the status of your submssion using the following function in the `neon4cast` package
+
+
+```r
+neon4cast::check_submission("phenology-2022-02-07-persistence.nc")
+```
+
+```
+## Submission was successfully processed
+```
+
 A successful submission can be found at the following links within 2 hours of submissions
 
-Aquatics: https://data.ecoforecast.org/minio/forecasts/aquatics
+We run a validator script when processing the submissions. If your submission does not meet the file standards above, you can run a function that provides information describing potential issues.  The forecast file needs to be in your local working directory or you need to provide a full path to the file
 
-Terrestrial: https://data.ecoforecast.org/minio/forecasts/terrestrial
- 
-Beetles: https://data.ecoforecast.org/minio/forecasts/beetles
 
-Ticks: https://data.ecoforecast.org/minio/forecasts/ticks
-
-Phenology: https://data.ecoforecast.org/minio/forecasts/phenology
-
-We run a validator script when processing the submissions. If your submission does not meet the file standards above, it will be moved to a separate [folder](https://data.ecoforecast.org/minio/forecasts/not_in_standard){target="_blank"} and a log file (same name as submitted file with "log" appended to end) will be generated with some hints about why it did not meet the standard.  If your submission did not meet the standard contact us and we can help you work through the issues.
+```r
+neon4cast::forecast_output_validator("phenology-2022-02-07-persistence.nc")
+```
 
 ## Visualizing submissions
 

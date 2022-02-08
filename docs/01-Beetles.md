@@ -4,17 +4,20 @@
 
 **Where:** 47 terrestrial NEON sites that span the diverse ecosystems of the U.S.
 
-**When:** Weekly forecasts for 20 months in the future starting June 30-December 31, 2021; later submissions after the June 30 start are permissible
+**When:** Weekly forecasts for 20 months in the future starting June 30-December 31, 2022; later submissions after the June 30 start are permissible
 
 **Why:** Improve understanding of habitat quality, conservation potential, land-use sustainability, and biodiversity change in response to global change and ecological disturbances
 
-**Who**: Open to any individual or team that registers
+**Who**: Open to any individual or team that registers.
 
-**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast
+**How**: [REGISTER](https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ){target="_blank"} your team and submit forecast. If you registered for the Round 1 (2021) and are using the same team and method then you do not need to re-register.
 
 The video below is an overview of the Beetle Communities Challenge that was recorded for the [2021 Early Career Annual Meeting](https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/){target="_blank"}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7196wcarMXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
 
 ## Overview
 
@@ -26,7 +29,7 @@ With the long-term, community-wide, continental-scale data collection through th
 
 ## Challenge 
 
-This is an open ecological forecasting challenge to forecast carabid species richness, defined as the total number of species, and abundance, defined as the total number of carabid individuals. The forecasts should be done weekly per site for all NEON terrestrial sites with richness being absolute and abundance scaled by the sampling effort. Contributing teams are required to submit a forecast for May-Dec 2021 and Jan-Dec 2022 on June 30, 2021. However, teams are encouraged to update their forecasts on the last day of each month, ending on December 31, 2021, as NEON validation data are released. NEON releases carabid sampling data weekly and no sooner than 60 days after collection, so a model submitted on June 30 can include a forecast for the first week of May, and so forth. Teams may use any open data products as drivers of richness and abundance so long as they are not from the month being forecast, and are made publicly available (minimum of URL, but ideally a script). Potential driver data sources include: NEON site data ([Soil and sediment data](https://www.neonscience.org/data-collection/soils-sediments){target="_blank"}, [Terrestrial Plant data](https://www.neonscience.org/data-collection/terrestrial-plants){target="_blank"}, [weather data](https://www.neonscience.org/data-collection/meteorology){target="_blank"}), NOAA forecasts, and beyond. 
+This is an open ecological forecasting challenge to forecast carabid species richness, defined as the total number of species, and abundance, defined as the total number of carabid individuals. The forecasts should be done weekly per site for all NEON terrestrial sites with richness being absolute and abundance scaled by the sampling effort. Contributing teams are required to submit a forecast for May-Dec 2022 and Jan-Dec 2023 on June 30, 2022. However, teams are encouraged to update their forecasts on the last day of each month, ending on December 31, 2021, as NEON validation data are released. NEON releases carabid sampling data weekly and no sooner than 60 days after collection, so a model submitted on June 30 can include a forecast for the first week of May, and so forth. Teams may use any open data products as drivers of richness and abundance so long as they are not from the month being forecast, and are made publicly available (minimum of URL, but ideally a script). Potential driver data sources include: NEON site data ([Soil and sediment data](https://www.neonscience.org/data-collection/soils-sediments){target="_blank"}, [Terrestrial Plant data](https://www.neonscience.org/data-collection/terrestrial-plants){target="_blank"}, [weather data](https://www.neonscience.org/data-collection/meteorology){target="_blank"}), NOAA forecasts, and beyond. 
 
 ## Data: Targets
 
@@ -60,7 +63,65 @@ A forecast prediction can be compared against only measured data (i.e. observed 
 
 ### Focal sites
 
-All NEON terrestrial sites are included
+All 47bNEON terrestrial sites are included
+
+Information on the sites can be found here:
+
+
+```r
+site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-beetles/master/Beetles_NEON_Field_Site_Metadata_20210928.csv")
+```
+
+
+|siteID |site name                                                   |vegetation type                                                                | latitude| longtitude|NEON site URL                                |
+|:------|:-----------------------------------------------------------|:------------------------------------------------------------------------------|--------:|----------:|:--------------------------------------------|
+|ABBY   |Abby Road NEON                                              |Evergreen Forest&#124;Grassland/Herbaceous&#124;Shrub/Scrub                    | 45.76244| -122.33032|https://www.neonscience.org/field-sites/abby |
+|BARR   |Utqiaġvik NEON                                              |Emergent Herbaceous Wetlands                                                   | 71.28241| -156.61936|https://www.neonscience.org/field-sites/barr |
+|BART   |Bartlett Experimental Forest NEON                           |Deciduous Forest&#124;Evergreen Forest&#124;Mixed Forest                       | 44.06389|  -71.28737|https://www.neonscience.org/field-sites/bart |
+|BLAN   |Blandy Experimental Farm NEON                               |Deciduous Forest&#124;Pasture/Hay                                              | 39.03370|  -78.04179|https://www.neonscience.org/field-sites/blan |
+|BONA   |Caribou-Poker Creeks Research Watershed NEON                |Deciduous Forest&#124;Evergreen Forest&#124;Mixed Forest&#124;Woody Wetlands   | 65.15401| -147.50258|https://www.neonscience.org/field-sites/bona |
+|CLBJ   |Lyndon B. Johnson National Grassland NEON                   |Deciduous Forest&#124;Grassland/Herbaceous                                     | 33.40123|  -97.57000|https://www.neonscience.org/field-sites/clbj |
+|CPER   |Central Plains Experimental Range NEON                      |Grassland/Herbaceous                                                           | 40.81554| -104.74559|https://www.neonscience.org/field-sites/cper |
+|DCFS   |Dakota Coteau Field Site NEON                               |Grassland/Herbaceous                                                           | 47.16165|  -99.10656|https://www.neonscience.org/field-sites/dcfs |
+|DEJU   |Delta Junction NEON                                         |Evergreen Forest&#124;Shrub/Scrub&#124;Woody Wetlands                          | 63.88112| -145.75136|https://www.neonscience.org/field-sites/deju |
+|DELA   |Dead Lake NEON                                              |Evergreen Forest&#124;Woody Wetlands                                           | 32.54173|  -87.80388|https://www.neonscience.org/field-sites/dela |
+|DSNY   |Disney Wilderness Preserve NEON                             |Pasture/Hay&#124;Woody Wetlands                                                | 28.12505|  -81.43619|https://www.neonscience.org/field-sites/dsny |
+|GRSM   |Great Smoky Mountains National Park NEON                    |Deciduous Forest&#124;Evergreen Forest                                         | 35.68896|  -83.50195|https://www.neonscience.org/field-sites/grsm |
+|GUAN   |Guanica Forest NEON                                         |Evergreen Forest                                                               | 17.96955|  -66.86870|https://www.neonscience.org/field-sites/quan |
+|HARV   |Harvard Forest & Quabbin Watershed NEON                     |Deciduous Forest&#124;Evergreen Forest&#124;Mixed Forest&#124;Woody Wetlands   | 42.53691|  -72.17265|https://www.neonscience.org/field-sites/harv |
+|HEAL   |Healy NEON                                                  |Dwarf Scrub&#124;Evergreen Forest&#124;Shrub/Scrub                             | 63.87580| -149.21335|https://www.neonscience.org/field-sites/heal |
+|JERC   |The Jones Center At Ichauway NEON                           |Cultivated Crops&#124;Deciduous Forest&#124;Evergreen Forest&#124;Mixed Forest | 31.19484|  -84.46862|https://www.neonscience.org/field-sites/jerc |
+|JORN   |Jornada Experimental Range NEON                             |Shrub/Scrub                                                                    | 32.59069| -106.84254|https://www.neonscience.org/field-sites/jorn |
+|KONA   |Konza Prairie Agroecosystem NEON                            |Cultivated Crops                                                               | 39.11045|  -96.61293|https://www.neonscience.org/field-sites/kona |
+|KONZ   |Konza Prairie Biological Station NEON                       |Deciduous Forest&#124;Grassland/Herbaceous                                     | 39.10077|  -96.56307|https://www.neonscience.org/field-sites/konz |
+|LAJA   |Lajas Experimental Station NEON                             |Cultivated Crops&#124;Grassland/Herbaceous&#124;Pasture/Hay                    | 18.02126|  -67.07689|https://www.neonscience.org/field-sites/laja |
+|LENO   |Lenoir Landing NEON                                         |Deciduous Forest&#124;Woody Wetlands                                           | 31.85386|  -88.16118|https://www.neonscience.org/field-sites/leno |
+|MLBS   |Mountain Lake Biological Station NEON                       |Deciduous Forest                                                               | 37.37831|  -80.52485|https://www.neonscience.org/field-sites/mlbs |
+|MOAB   |Moab NEON                                                   |Evergreen Forest&#124;Shrub/Scrub                                              | 38.24828| -109.38827|https://www.neonscience.org/field-sites/moab |
+|NIWO   |Niwot Ridge NEON                                            |Evergreen Forest&#124;Grassland/Herbaceous                                     | 40.05425| -105.58237|https://www.neonscience.org/field-sites/niwo |
+|NOGP   |Northern Great Plains Research Laboratory NEON              |Grassland/Herbaceous                                                           | 46.76972| -100.91535|https://www.neonscience.org/field-sites/nogp |
+|OAES   |Marvin Klemme Range Research Station NEON                   |Grassland/Herbaceous&#124;Shrub/Scrub                                          | 35.41060|  -99.05878|https://www.neonscience.org/field-sites/oaes |
+|ONAQ   |Onaqui NEON                                                 |Evergreen Forest&#124;Shrub/Scrub                                              | 40.17760| -112.45245|https://www.neonscience.org/field-sites/onaq |
+|ORNL   |Oak Ridge NEON                                              |Deciduous Forest&#124;Evergreen Forest&#124;Pasture/Hay                        | 35.96413|  -84.28259|https://www.neonscience.org/field-sites/ornl |
+|OSBS   |Ordway-Swisher Biological Station NEON                      |Emergent Herbaceous Wetlands&#124;Evergreen Forest&#124;Woody Wetlands         | 29.68928|  -81.99343|https://www.neonscience.org/field-sites/osbs |
+|PUUM   |Pu'u Maka'ala Natural Area Reserve NEON                     |Evergreen Forest                                                               | 19.55309| -155.31731|https://www.neonscience.org/field-sites/puum |
+|RMNP   |Rocky Mountains NEON                                        |Evergreen Forest                                                               | 40.27590| -105.54596|https://www.neonscience.org/field-sites/rmnp |
+|SCBI   |Smithsonian Conservation Biology Institute NEON             |Deciduous Forest&#124;Evergreen Forest&#124;Pasture/Hay                        | 38.89292|  -78.13949|https://www.neonscience.org/field-sites/scbi |
+|SERC   |Smithsonian Environmental Research Center NEON              |Cultivated Crops&#124;Deciduous Forest                                         | 38.89013|  -76.56001|https://www.neonscience.org/field-sites/serc |
+|SJER   |San Joaquin Experimental Range NEON                         |Evergreen Forest&#124;Grassland/Herbaceous&#124;Shrub/Scrub                    | 37.10878| -119.73228|https://www.neonscience.org/field-sites/sjer |
+|SOAP   |Soaproot Saddle NEON                                        |Evergreen Forest&#124;Shrub/Scrub                                              | 37.03337| -119.26219|https://www.neonscience.org/field-sites/soap |
+|SRER   |Santa Rita Experimental Range NEON                          |Shrub/Scrub                                                                    | 31.91068| -110.83549|https://www.neonscience.org/field-sites/srer |
+|STEI   |Steigerwaldt-Chequamegon NEON                               |Deciduous Forest&#124;Mixed Forest&#124;Woody Wetlands                         | 45.50894|  -89.58637|https://www.neonscience.org/field-sites/stei |
+|STER   |North Sterling NEON                                         |Cultivated Crops                                                               | 40.46189| -103.02929|https://www.neonscience.org/field-sites/ster |
+|TALL   |Talladega National Forest NEON                              |Deciduous Forest&#124;Evergreen Forest&#124;Mixed Forest                       | 32.95047|  -87.39326|https://www.neonscience.org/field-sites/tall |
+|TEAK   |Lower Teakettle NEON                                        |Evergreen Forest&#124;Shrub/Scrub                                              | 37.00583| -119.00602|https://www.neonscience.org/field-sites/teak |
+|TOOL   |Toolik Field Station NEON                                   |Dwarf Scrub&#124;Shrub/Scrub                                                   | 68.66109| -149.37047|https://www.neonscience.org/field-sites/tool |
+|TREE   |Treehaven NEON                                              |Deciduous Forest&#124;Evergreen Forest&#124;Mixed Forest&#124;Woody Wetlands   | 45.49369|  -89.58571|https://www.neonscience.org/field-sites/tree |
+|UKFS   |University of Kansas Field Station NEON                     |Deciduous Forest&#124;Pasture/Hay                                              | 39.04043|  -95.19215|https://www.neonscience.org/field-sites/ukfs |
+|UNDE   |University of Notre Dame Environmental Research Center NEON |Deciduous Forest&#124;Mixed Forest&#124;Woody Wetlands                         | 46.23391|  -89.53725|https://www.neonscience.org/field-sites/unde |
+|WOOD   |Chase Lake National Wildlife Refuge NEON                    |Emergent Herbaceous Wetlands&#124;Grassland/Herbaceous                         | 47.12820|  -99.24133|https://www.neonscience.org/field-sites/wood |
+|WREF   |Wind River Experimental Forest NEON                         |Evergreen Forest                                                               | 45.82049| -121.95191|https://www.neonscience.org/field-sites/wref |
+|YELL   |Yellowstone National Park NEON                              |Evergreen Forest&#124;Grassland/Herbaceous&#124;Shrub/Scrub                    | 44.95348| -110.53914|https://www.neonscience.org/field-sites/yell |
 
 ### Target data calculation
 
@@ -89,7 +150,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ```
 
 ```
-## # A tibble: 2,389 x 4
+## # A tibble: 2,389 × 4
 ##    siteID time       abundance richness
 ##    <chr>  <date>         <dbl>    <dbl>
 ##  1 CPER   2013-07-01    4.16         13
@@ -116,7 +177,7 @@ The table has the following columns:
 
 The timeline is determined by the data latency provided by NEON. NEON carabid pitfall trap data is released weekly with a latency of at least 60 days after collection. Weekly forecasts were chosen to best match up with NEON’s weekly release of carabid data. 
 
-The challenge will begin June 30, 2021 at 11:59 Eastern Standard Time (UTC−05:00) and run through December 31, 2021. Subsequent forecasts are due at 11:59 EST on the final day of each month.
+The challenge will begin June 30, 2022 at 11:59 Eastern Standard Time (UTC−05:00) and run through December 31, 2022. Subsequent forecasts are due at 11:59 EST on the final day of each month.
 
 As an example, carabid pitfall trap data released in the last week of June would include data as recent as the last week of April. Thus, a model submitted in the last week of June could include forecasts from May onwards. Then, the forecast update submitted at the end of July can use new May data to help refine June forecasts, or forecasts following June, depending on what drivers are used. The July forecast update is due by 11:59 pm EST on July 31. Forecasts updates will not be considered for weeks where NEON validation data has already been released (i.e., no May forecast updates may be submitted on July 31) or for weeks when no NEON carabid data is available. 
 

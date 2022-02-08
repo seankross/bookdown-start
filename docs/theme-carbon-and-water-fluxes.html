@@ -32,7 +32,7 @@
   
 <link rel="prev" href="theme-aquatic-ecosystems.html"/>
 <link rel="next" href="theme-tick-populations.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -189,10 +189,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#data-targets-2"><i class="fa fa-check"></i><b>3.3</b> Data: Targets</a>
 <ul>
 <li class="chapter" data-level="3.3.1" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#amblyomma-americanum-nymphs"><i class="fa fa-check"></i><b>3.3.1</b> Amblyomma americanum nymphs</a></li>
-<li class="chapter" data-level="3.3.2" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#ixodes-scapularis-nymphs"><i class="fa fa-check"></i><b>3.3.2</b> Ixodes scapularis nymphs</a></li>
-<li class="chapter" data-level="3.3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#focal-sites-2"><i class="fa fa-check"></i><b>3.3.3</b> Focal sites</a></li>
-<li class="chapter" data-level="3.3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-data-calculation"><i class="fa fa-check"></i><b>3.3.4</b> Target data calculation</a></li>
-<li class="chapter" data-level="3.3.5" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-file"><i class="fa fa-check"></i><b>3.3.5</b> Target file</a></li>
+<li class="chapter" data-level="3.3.2" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#focal-sites-2"><i class="fa fa-check"></i><b>3.3.2</b> Focal sites</a></li>
+<li class="chapter" data-level="3.3.3" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-data-calculation"><i class="fa fa-check"></i><b>3.3.3</b> Target data calculation</a></li>
+<li class="chapter" data-level="3.3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#target-file"><i class="fa fa-check"></i><b>3.3.4</b> Target file</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#timeline-2"><i class="fa fa-check"></i><b>3.4</b> Timeline</a></li>
 <li class="chapter" data-level="3.5" data-path="theme-tick-populations.html"><a href="theme-tick-populations.html#design-team-3"><i class="fa fa-check"></i><b>3.5</b> Design team</a></li>
@@ -354,7 +353,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="theme-carbon-and-water-fluxes" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Theme: Carbon and Water Fluxes</h1>
 <p><strong>What:</strong> Net ecosystem exchange of CO2 and evapotranspiration in terrestrial ecosystems</p>
-<p><strong>Where</strong>: 12 NEON sites across the conterminous U.S. The images below show the flux tower at the center of each site.</p>
+<p><strong>Where</strong>: 10 NEON sites across the conterminous U.S. The images below show the flux tower at the center of each site.</p>
 <p><strong>When</strong>: Daily forecasts for 35-days in the future. Forecast submissions are accepted daily throughout 2022. The only requirement is that submissions are predictions of the future at the time the forecast is submitted.</p>
 <p><strong>Why:</strong> Carbon and water cycling are fundamental for climate and water regulation services provided by ecosystems</p>
 <p><strong>Who</strong>: Open to any individual or team that registers</p>
@@ -398,7 +397,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <div id="focal-sites-1" class="section level3" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Focal sites</h3>
 <p>Information on the sites can be found here:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="theme-carbon-and-water-fluxes.html#cb6-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-terrestrial/master/Terrestrial_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="theme-carbon-and-water-fluxes.html#cb4-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-terrestrial/master/Terrestrial_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
 <table style="width:100%;">
 <colgroup>
 <col width="3%" />
@@ -460,14 +459,6 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <td align="left"><a href="https://www.neonscience.org/field-sites/osbs" class="uri">https://www.neonscience.org/field-sites/osbs</a></td>
 </tr>
 <tr class="even">
-<td align="left">SCBI</td>
-<td align="left">Smithsonian Conservation Biology Institute NEON</td>
-<td align="left">Deciduous Forest|Evergreen Forest|Pasture/Hay</td>
-<td align="right">38.89292</td>
-<td align="right">-78.13949</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/scbi" class="uri">https://www.neonscience.org/field-sites/scbi</a></td>
-</tr>
-<tr class="odd">
 <td align="left">SJER</td>
 <td align="left">San Joaquin Experimental Range NEON</td>
 <td align="left">Evergreen Forest|Grassland/Herbaceous|Shrub/Scrub</td>
@@ -475,7 +466,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <td align="right">-119.73228</td>
 <td align="left"><a href="https://www.neonscience.org/field-sites/sjer" class="uri">https://www.neonscience.org/field-sites/sjer</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">SRER</td>
 <td align="left">Santa Rita Experimental Range NEON</td>
 <td align="left">Shrub/Scrub</td>
@@ -483,7 +474,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <td align="right">-110.83549</td>
 <td align="left"><a href="https://www.neonscience.org/field-sites/srer" class="uri">https://www.neonscience.org/field-sites/srer</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">TALL</td>
 <td align="left">Talladega National Forest NEON</td>
 <td align="left">Deciduous Forest|Evergreen Forest|Mixed Forest</td>
@@ -491,7 +482,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <td align="right">-87.39326</td>
 <td align="left"><a href="https://www.neonscience.org/field-sites/tall" class="uri">https://www.neonscience.org/field-sites/tall</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">UNDE</td>
 <td align="left">University of Notre Dame Environmental Research Center NEON</td>
 <td align="left">Deciduous Forest|Mixed Forest|Woody Wetlands</td>
@@ -499,21 +490,13 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <td align="right">-89.53725</td>
 <td align="left"><a href="https://www.neonscience.org/field-sites/unde" class="uri">https://www.neonscience.org/field-sites/unde</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">WREF</td>
 <td align="left">Wind River Experimental Forest NEON</td>
 <td align="left">Evergreen Forest</td>
 <td align="right">45.82049</td>
 <td align="right">-121.95191</td>
 <td align="left"><a href="https://www.neonscience.org/field-sites/wref" class="uri">https://www.neonscience.org/field-sites/wref</a></td>
-</tr>
-<tr class="even">
-<td align="left">YELL</td>
-<td align="left">Yellowstone National Park NEON</td>
-<td align="left">Evergreen Forest|Grassland/Herbaceous|Shrub/Scrub</td>
-<td align="right">44.95348</td>
-<td align="right">-110.53914</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/yell" class="uri">https://www.neonscience.org/field-sites/yell</a></td>
 </tr>
 </tbody>
 </table>
@@ -545,8 +528,8 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 </ul>
 <p>The observation uncertainty estimates for nee and le are derived from the PECAN project and can be used by <code>sd_nee &lt;- nee_sd_intercept + nee_sd_slopeP * nee</code>. They are not supplied by NEON.</p>
 <p>Here is the download link and format of the <code>terrestrial_30min</code> target file</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="theme-carbon-and-water-fluxes.html#cb7-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial_30min/terrestrial_30min-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 350,512 x 10
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="theme-carbon-and-water-fluxes.html#cb5-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial_30min/terrestrial_30min-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 876,760 × 10
 ##    time                siteID    nee      le nee_sd_intercept nee_sd_slopeP
 ##    &lt;dttm&gt;              &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;
 ##  1 2017-02-01 10:00:00 BART   -0.574 -0.413              1.15         0.204
@@ -559,7 +542,7 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 ##  8 2017-02-01 13:30:00 BART   NA     NA                  1.15         0.204
 ##  9 2017-02-01 14:00:00 BART   NA     NA                  1.15         0.204
 ## 10 2017-02-01 14:30:00 BART   NA     NA                  1.15         0.204
-## # … with 350,502 more rows, and 4 more variables: nee_sd_slopeN &lt;dbl&gt;,
+## # … with 876,750 more rows, and 4 more variables: nee_sd_slopeN &lt;dbl&gt;,
 ## #   le_sd_intercept &lt;dbl&gt;, le_sd_slopeP &lt;dbl&gt;, le_sd_slopeN &lt;dbl&gt;</code></pre>
 <p>The code used to generate the targets from NEON data can be found <a href="https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R">here</a></p>
 </div>
@@ -576,21 +559,21 @@ This forecasting challenge asks teams to forecast NEE, LE, and soil moisture at 
 <li><code>le</code>: W m<sup>-2</sup></li>
 </ul>
 <p>Here is the download link and format of the <code>terrestrial_daily</code> target file</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="theme-carbon-and-water-fluxes.html#cb9-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial_daily/terrestrial_daily-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 7,304 x 4
-##    time       siteID    nee    le
-##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
-##  1 2017-02-01 BART   NA     NA   
-##  2 2017-02-01 KONZ   NA     NA   
-##  3 2017-02-01 OSBS   NA     NA   
-##  4 2017-02-01 SRER   NA     NA   
-##  5 2017-02-02 BART    0.580  2.71
-##  6 2017-02-02 KONZ   NA     NA   
-##  7 2017-02-02 OSBS   NA     NA   
-##  8 2017-02-02 SRER   NA     NA   
-##  9 2017-02-03 BART    0.687  8.47
-## 10 2017-02-03 KONZ   NA     NA   
-## # … with 7,294 more rows</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="theme-carbon-and-water-fluxes.html#cb7-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial_daily/terrestrial_daily-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 18,270 × 4
+##    time       siteID   nee    le
+##    &lt;date&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;
+##  1 2017-02-01 BART      NA    NA
+##  2 2017-02-01 CLBJ      NA    NA
+##  3 2017-02-01 KONZ      NA    NA
+##  4 2017-02-01 ORNL      NA    NA
+##  5 2017-02-01 OSBS      NA    NA
+##  6 2017-02-01 SJER      NA    NA
+##  7 2017-02-01 SRER      NA    NA
+##  8 2017-02-01 TALL      NA    NA
+##  9 2017-02-01 UNDE      NA    NA
+## 10 2017-02-01 WREF      NA    NA
+## # … with 18,260 more rows</code></pre>
 <p>The code used to generate the targets from NEON data can be found <a href="https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R">here</a></p>
 </div>
 </div>
