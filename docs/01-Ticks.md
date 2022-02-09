@@ -132,6 +132,29 @@ August 31	|31-35|
 |September 31	|36-39|
 |October 31	|40-44|
 
+## Submissions
+
+Instructions for submitting forecasts are found here: [Submission Instructions]
+
+With the specific file format here: [Ticks]
+
+## Meterological inputs for modeling
+
+Information about forecasted meteorology that is available for you to use when generating your forecasts can be found here: [Meteorology Inputs] 
+
+## Useful functions
+
+Functions for validating, evaluating and submitting forecasts can be found here: [Helpful Functions]
+
+Functions for downloading and working with the meteorology forecasts can be be found here: [Access EFI snapshots of NOAA forecasts at NEON sites]
+
+## Null models
+
+Pending
+
+## FAQ
+
+Answers to frequency asks questions can be found here: [Frequently Asked Questions]
 
 ## Design team
 
