@@ -352,7 +352,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">3</span> Theme: Tick Populations</h1>
 <p><strong>What:</strong> <em>Amblyomma americanum</em> nymphal tick abundance per sampled area</p>
 <p><strong>Where:</strong> 9 NEON sites</p>
-<p><strong>When:</strong> Weekly forecasts for 34 weeks into the future starting March 31-October 31, 2021 with training data available January 31, 2021. Forecasts are submitted monthly and later submissions after the March 31 start are permissible.</p>
+<p><strong>When:</strong> Weekly forecasts for 4 weeks into the future starting March 31-September 30, 2022. Forecasts are submitted monthly and later submissions after the March 31 start are permissible.</p>
 <p><strong>Why:</strong> There is a correlation between tick population abundance and disease incidence, meaning forecasts for tick abundance have the potential to aid in our understanding of disease risk through time and space.</p>
 <p><strong>Who</strong>: Open to any individual or team that registers</p>
 <p><strong>How</strong>: <a href="https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ" target="_blank">REGISTER</a> your team and submit forecast. If you registered for the Round 1 (2021) and are using the same team and method then you do not need to re-register.</p>
@@ -362,11 +362,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We held a Q&amp;A session on March 24, 2021. You can find a recording from that session <a href="https://youtu.be/kyR0MoDCO1Q" target="_blank">HERE</a>.</p>
 <div id="overview-2" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Overview</h2>
-<p>Target species for the population forecasts are <em>Amblyomma americanum</em> nymphal ticks. <em>A. americanum</em> is a vector of ehrlichiosis, tularemia, and southern tick-associated rash illness. The species is present in the eastern United States, and have been collected at numerous NEON sites. There is a correlation between tick population abundance and disease incidence, meaning forecasts for tick abundance have the potential to aid in our understanding of disease risk through time and space.</p>
+<p>Target species for the population forecasts are <em>Amblyomma americanum</em> nymphal ticks. <em>A. americanum</em> is a vector of ehrlichiosis, tularemia, and southern tick-associated rash illness. The species is present in the eastern United States, and their populations are expanding. There is a correlation between tick population abundance and disease incidence, meaning forecasts for tick abundance have the potential to aid in our understanding of disease risk through time and space.</p>
 </div>
 <div id="challenge-2" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Challenge</h2>
-<p>The challenge is open to any individual, group, or institution that may want to participate. The goals of this challenge are to forecast total <em>Amblyomma americanum</em> nymphs each epidemiological week (Sun-Sat) per sampled area at a set of NEON plots within NEON sites. Due to challenges in data collected in 2020, this round of the forecasting challenge will simulate a true forecasting challenge by focusing on data from the 2019 field season.</p>
+<p>The challenge is open to any individual, group, or institution that may want to participate. The goals of this challenge are to forecast the density of <em>Amblyomma americanum</em> nymphs (ticks/1600m^2) each epidemiological week (Sun-Sat) at nine NEON sites. Due to the latency in the taxonomic data reported by NEON, the challenge will be for the 2021 field season.</p>
 <p>Teams must post information about any additional data they wish to use on the theme Slack channel so that other teams can potentially use the data as well.</p>
 </div>
 <div id="data-targets-2" class="section level2" number="3.3">
@@ -377,9 +377,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="amblyomma-americanum-nymphs" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Amblyomma americanum nymphs</h3>
 <p><strong>Definition</strong></p>
-<p>Total <em>Amblyomma americanum</em> nymphs per week per plot. Determined by the number of individuals caught and identified to species each epidemiological week at each plot. Each tick caught is identified to the lowest taxonomic level possible, and we are only interested in nymphal ticks identified to species (instead of only being identified to Family, Order, Genus etc.)</p>
+<p>The density of <em>Amblyomma americanum</em> nymphs per week. Density is defined as the total number of individuals caught in a week across the forested plots divided by the total area sampled in the forested plots during the week. Densities are presented as ticks per 1600m^2, as 1600m^2 is the size of an individual NEON tick plot.</p>
 <p><strong>Motivation</strong></p>
-<p>This species is a vector of disease, so forecasting tick abundance can potentially aid in assessing disease risk.</p>
+<p>We chose to use the density of <em>Amblyomma americanum</em> nymphs for several reasons. The first is that <em>Amblyomma americanum</em> is a vector of multiple pathogens, many of which cause human disease, and a forecast for their abundance could aid decisions in public health and personal protective measures. For simplicity, we chose to focus on one species for the abundance challenge, and the <em>Amblyomma americanum</em> nymphs are the most abundant tick observed in the NEON data. Most ticks are observed in to forested plots, and by standardizing the data to density of ticks observed per unit effort in the forested plots, we hope to avoid forecasters predicting sampling effort. We scaled the density to be representative of ticks per plot, which is more interpretable than ticks per square meter. Also, tick drags occur every three weeks. By having the challenge be for forecasting every week, participants won’t have to predict which weeks drags occur.</p>
 </div>
 <div id="focal-sites-2" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Focal sites</h3>
@@ -482,8 +482,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="target-data-calculation" class="section level3" number="3.3.3">
 <h3><span class="header-section-number">3.3.3</span> Target data calculation</h3>
-<p>The data used for this challenge is a subset of the full NEON tick data set. While ticks of multiple species have been identified at most NEON sites, not all species-by-site combinations have enough non-zero observations to build adequate population models. Therefore, the targets for this challenge are <em>A. americanum</em> nymphs, which represent the two most abundant species observed at NEON. Additionally, the plots that forecasts will be made are plots where these ticks have been identified at least three times each year from 2016 to 2018. The latency for taxonomic identifications of the NEON tick field data is roughly one year (meaning forecast for 2021 won’t be validated until 2022), and the 2020 field season was irregular due to the COVID-19 pandemic. Therefore, the target year of 2019 was chosen so that forecasts can be evaluated in a timely manner for a regular field season.</p>
-<p><strong>Use of 2019 data:</strong> The forecasting challenge is for the 2019 field season, thus tick observations and environmental covariates are known. However, in the spirit of keeping this as much of a “forecasting” challenge as possible, 2019 data (tick and environmental covariates) can only be used in the timeline described below in the timeline section. For example, if a forecast is submitted on May 31st, and a team is using temperature as a covariate in their model, it is up to the team to forecast temperature from May 31st through the end of the season. This policy is in place because if forecasts use the observed temperature from May 31 through the end of the season in their forecast, these forecasts will be overconfident.</p>
+<p>Tick drags occur every three weeks at the NEON sites used in this challenge. The sampling season at each site is determined by phenological milestones, beginning and ending within two weeks of green-up and senescence, respectively. The 1m^2 cloth is dragged for 160m (and at least 80m), and ticks are collected intermittently. They are then sent to a lab for taxonomic identification. Ticks are then identified by life stage and taxonomic rank. The target data is for <em>Amblyomma americanum</em> nymphs that were identified to the species level; i.e. ticks identified as being in the <em>Amblyomma</em> genus are not included.</p>
+<p><strong>Use of 2021 data:</strong> The forecasting challenge is for the 2021 field season, thus environmental covariates are known. However, in the spirit of keeping this as much of a “forecasting” challenge as possible, we ask that for four week forecast period teams use the NOAA GEFS forecasting data.</p>
 </div>
 <div id="target-file" class="section level3" number="3.3.4">
 <h3><span class="header-section-number">3.3.4</span> Target file</h3>
@@ -509,64 +509,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   airTempMin_degC &lt;lgl&gt;, airTempMin_variance &lt;lgl&gt;, airTempMax_degC &lt;lgl&gt;,
 ## #   airTempMax_variance &lt;lgl&gt;</code></pre>
 <ul>
-<li><code>Year</code>: Year of observation</li>
-<li><code>epiWeek</code>: The ISO week that starts on Sunday, consistent with CDC version of the epidemiological week (integer, WW)</li>
-<li><code>yearWeek</code>: (YYYYWW) Year week, combination of year and epidemiological week
-_ <code>time</code>: (YYYY-MM-DD), the first day of the epidemiological week, as defined by <code>MMWRweek::MMWRweek2Date(Year, epiWeek)</code></li>
-<li><code>amblyomma_americanum</code>: Count. If no observation in the associated yearWeek: NA</li>
+<li><code>time</code>: YYYY-MM-DD The first day (Sunday) of the MMWR week</li>
+<li><code>mmwrWeek</code>: The MMWR week that starts on Sunday, consistent with CDC version of the epidemiological week<br />
+</li>
 <li><code>siteID</code>: Site where ticks are observed (HARV)</li>
+<li><code>Amblyomma americanum</code>: Density (ticks / 1600m^2) of <em>Amblyomma americanum</em> ticks</li>
 </ul>
-<p>Environmental data (weekly relative humidity and air temperature) in the challenge data set are provided as a starting point for teams that may not want to look for other environmental data. The challenge design team does not recommend one of these variables over another (from NEON or otherwise) or guarantee that their use will improve forecast accuracy. Furthermore, the environmental data provided is only available for the core terrestrial sites (KONZ, ORNL, SCBI, TALL), and is from NEON’s Summary weather statistics data product <a href="https://data.neonscience.org/data-products/DP4.00001.001">DP4.00001.001</a>.</p>
 </div>
 </div>
 <div id="timeline-2" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Timeline</h2>
-<p>The timeline for this challenge will be monthly, which is how often new data will be released by the EFI RCN.</p>
-<p>The final data set containing the training data will be available no later than January 31st, 2021. The challenge will begin (first forecast submission) on March 31st, 2021 at 11:59 PM Eastern Standard Time, and will run through October 31st, 2021 (last forecast submission).</p>
-<p>2019 data will be released on the first of the month following a submission deadline, which gives teams a month to assimilate new data. For example, the forecasts submitted on March 31st, 2021 will be for every epidemiological week starting at the beginning of March 2019 through the end of November 2019. Then, on April 1st, 2021, tick counts from March 2019 will be released. The next forecast submission is April 30th, 2021, which will be for every epidemiological week starting at the beginning of April 2019 through the end of November 2019. The table below shows which epidemiological weeks are to be forecasted for each submission date.</p>
+<p>The challenge will begin on March 31, 2022 at 11:59 PM Eastern Standard Time, and will run through October 31, 2022. Each forecast will be for the four MMWR weeks during that month.</p>
+<p>For example, the forecast that is due on March 31, 2022 will be for MMWR weeks 10-13 of 2021 because the Sundays (the start of each MMWR week) in March 2021 correspond to MMWR weeks 10-13. Likewise, the forecast due April 30, 2022 will be for MMWR weeks 14-17 of 2021. A table of which weeks to forecast at each deadline can be found below.</p>
+<p>It is unclear when the provisional 2021 tick taxonomic data will be released. If any is released during the challenge, teams will be able to use it if the data is for weeks that have already been forecasted. For example, if the provisional 2021 data is released on July 15, 2022, teams can use the 2021 data up to MMWR week 26 to calibrate their models for the forecasts due July 31, 2022.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">2021 Forecast Submission date</th>
-<th align="center">2019 Target Epidemiological weeks</th>
+<th align="left">2022 Forecast Submission date</th>
+<th align="center">2021 Target Epidemiological weeks</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">March 31</td>
-<td align="center">10-44</td>
+<td align="center">10-13</td>
 </tr>
 <tr class="even">
 <td align="left">April 30</td>
-<td align="center">14-44</td>
+<td align="center">14-17</td>
 </tr>
 <tr class="odd">
 <td align="left">May 31</td>
-<td align="center">19-44</td>
+<td align="center">18-22</td>
 </tr>
 <tr class="even">
 <td align="left">June 30</td>
-<td align="center">23-44</td>
+<td align="center">23-26</td>
 </tr>
 <tr class="odd">
 <td align="left">July 31</td>
-<td align="center">28-44</td>
+<td align="center">27-30</td>
 </tr>
 <tr class="even">
 <td align="left">August 31</td>
-<td align="center">32-44</td>
+<td align="center">31-35</td>
 </tr>
 <tr class="odd">
 <td align="left">September 31</td>
-<td align="center">36-44</td>
+<td align="center">36-39</td>
 </tr>
 <tr class="even">
 <td align="left">October 31</td>
-<td align="center">41-44</td>
+<td align="center">40-44</td>
 </tr>
 </tbody>
 </table>
-<p>Evaluation will occur shortly after each forecast submission.</p>
 </div>
 <div id="design-team-2" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> Design team</h2>

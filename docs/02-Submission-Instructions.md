@@ -290,14 +290,12 @@ ncdf4::nc_open("images/phenology-2021-02-23-EFInull.nc")
 
 ### Ticks
 
-- `time`: YYYY-MM-DD of forecast (where the DD is the first day of the week that is forecasted). Defined by `MMWRweek::MMWRweek2Date(Year, epiWeek)`
+- `time`: YYYY-MM-DD of forecast (where the DD is the first day of the week (Sunday) that is forecasted). Defined by `MMWRweek::MMWRweek2Date(Year, mmwrWeek)`
 - `siteID`: NEON code for site
-- `plotID`: NEON plotID
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).        
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
-- `amblyomma_americanum`: Number of *Amblyomma americanum* nymphs per plot per week
-- `ixodes_scapularis`: Number of *Ixodes scapularis* nymphs per plot per week
+- `Amblyomma americanum`: Density of *Amblyomma americanum* nymphs 
 
 Here is an example of a csv forecast file that meets the standard for the ticks theme
 
