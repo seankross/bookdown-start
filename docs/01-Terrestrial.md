@@ -112,7 +112,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestr
 ```
 
 ```
-## # A tibble: 876,760 × 10
+## # A tibble: 877,240 × 10
 ##    time                siteID    nee      le nee_sd_intercept nee_sd_slopeP
 ##    <dttm>              <chr>   <dbl>   <dbl>            <dbl>         <dbl>
 ##  1 2017-02-01 10:00:00 BART   -0.574 -0.413              1.15         0.204
@@ -125,7 +125,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestr
 ##  8 2017-02-01 13:30:00 BART   NA     NA                  1.15         0.204
 ##  9 2017-02-01 14:00:00 BART   NA     NA                  1.15         0.204
 ## 10 2017-02-01 14:30:00 BART   NA     NA                  1.15         0.204
-## # … with 876,750 more rows, and 4 more variables: nee_sd_slopeN <dbl>,
+## # … with 877,230 more rows, and 4 more variables: nee_sd_slopeN <dbl>,
 ## #   le_sd_intercept <dbl>, le_sd_slopeP <dbl>, le_sd_slopeN <dbl>
 ```
 
@@ -148,7 +148,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestr
 ```
 
 ```
-## # A tibble: 18,270 × 4
+## # A tibble: 18,280 × 4
 ##    time       siteID   nee    le
 ##    <date>     <chr>  <dbl> <dbl>
 ##  1 2017-02-01 BART      NA    NA
@@ -161,7 +161,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestr
 ##  8 2017-02-01 TALL      NA    NA
 ##  9 2017-02-01 UNDE      NA    NA
 ## 10 2017-02-01 WREF      NA    NA
-## # … with 18,260 more rows
+## # … with 18,270 more rows
 ```
 
 The code used to generate the targets from NEON data can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R)
@@ -170,7 +170,7 @@ The code used to generate the targets from NEON data can be found [here](https:/
 
 Forecasts for a minimum of 35 days can be submitted daily by 6 pm ET throughout 2022. A minimum of 35 days in the future must be forecasted for each submission. For example, a forecast submitted on February 1 should be for at least February 1st – March 7th, but it could be for the full spring. New forecasts can be submitted daily as new weather forecasts and observations (e.g., NEE) become available. Processed NEE and LE data will be available daily by 11:59 pm ET for each day. The key is that submissions are predictions of the future.
 
-Daily submissions are allowed and encouraged as new observations and weather forecasts become available, therefore the automation of forecast generation may be ideal.  There are many ways to automate scripts that are written to download observations and metreology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html)){target="_blank"} that execute tasks at user specifics times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
+Daily submissions are allowed and encouraged as new observations and weather forecasts become available, therefore the automation of forecast generation may be ideal.  There are many ways to automate scripts that are written to download observations and metreology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html){target="_blank"}) that execute tasks at user specifics times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
 
 Cron jobs work on unix and mac systems.  An example of a script that executes a cron job using R can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/cron_automation.R){target="_blank"}.
 
