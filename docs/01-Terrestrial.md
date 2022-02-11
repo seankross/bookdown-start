@@ -112,7 +112,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestr
 ```
 
 ```
-## # A tibble: 877,240 × 10
+## # A tibble: 878,200 × 10
 ##    time                siteID    nee      le nee_sd_intercept nee_sd_slopeP
 ##    <dttm>              <chr>   <dbl>   <dbl>            <dbl>         <dbl>
 ##  1 2017-02-01 10:00:00 BART   -0.574 -0.413              1.15         0.204
@@ -125,7 +125,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestr
 ##  8 2017-02-01 13:30:00 BART   NA     NA                  1.15         0.204
 ##  9 2017-02-01 14:00:00 BART   NA     NA                  1.15         0.204
 ## 10 2017-02-01 14:30:00 BART   NA     NA                  1.15         0.204
-## # … with 877,230 more rows, and 4 more variables: nee_sd_slopeN <dbl>,
+## # … with 878,190 more rows, and 4 more variables: nee_sd_slopeN <dbl>,
 ## #   le_sd_intercept <dbl>, le_sd_slopeP <dbl>, le_sd_slopeN <dbl>
 ```
 
@@ -148,7 +148,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestr
 ```
 
 ```
-## # A tibble: 18,280 × 4
+## # A tibble: 18,300 × 4
 ##    time       siteID   nee    le
 ##    <date>     <chr>  <dbl> <dbl>
 ##  1 2017-02-01 BART      NA    NA
@@ -161,7 +161,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestr
 ##  8 2017-02-01 TALL      NA    NA
 ##  9 2017-02-01 UNDE      NA    NA
 ## 10 2017-02-01 WREF      NA    NA
-## # … with 18,270 more rows
+## # … with 18,290 more rows
 ```
 
 The code used to generate the targets from NEON data can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R)
@@ -217,7 +217,16 @@ Answers to frequency asks questions can be found here: [Frequently Asked Questio
 
 ## Design team 
 
-Pending
+George Burba, LI-COR Biosciences  
+Jamie Cleverly, Terrestrial Ecosystem Research Network (TERN)   
+Ankur Desai, University of Wisconsin, Madison   
+Mike Dietze, Boston University   
+Andy Fox, Joint Center for Satellite Data Assimilation   
+William Hammond, Oklahoma State University  
+Danica Lombardozzi, National Center for Atmospheric Research   
+Quinn Thomas, Virginia Tech  
+Jody Peters, University of Notre Dame
+Alex Young, SUNY - College of Environmental Science & Forestry  
 
 ## Partners
 
