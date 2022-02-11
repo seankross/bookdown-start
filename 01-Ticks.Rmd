@@ -136,9 +136,9 @@ Answers to frequency asks questions can be found here: [Frequently Asked Questio
 
 ## Design team
 
-John Foster, Boston University  
 Matt Bitters, University of Colorado, Boulder  
 Melissa Chen, University of Colorado, Boulder  
+John Foster, Boston University  
 Leah Johnson, Virginia Tech  
 Shannon LaDeau, Cary Institute of Ecosystem Studies  
 Cat Lippi, University of Florida  

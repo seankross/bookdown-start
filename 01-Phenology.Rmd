@@ -152,14 +152,17 @@ Answers to frequency asks questions can be found here: [Frequently Asked Questio
 
 ## Design team
 
-Kathryn Wheeler, Boston University   
 Min Chen, University of Wisconsin, Madison   
 Michael Dietze, Boston University  
+Kathy Gerst, National Phenology Network  
+Chris Jones, NC State University
 David LeBauer, University of Arizona   
 Dabasmita Pal, Michigan State University   
 Andrew Richardson, Northern Arizona University      
-Arun Ross, Michigan State University    
+Arun Ross, Michigan State University 
+Bijan Seyednasrollah, Northern Arizona University, PhenoCam Network   
 Quinn Thomas, Virginia Tech    
+Kathryn Wheeler, Boston University  
 Luke Zachmann, Conservation Science Partners    
 Kai Zhu, University of California - Santa Cruz    
 

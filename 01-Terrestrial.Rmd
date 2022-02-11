@@ -180,7 +180,16 @@ Answers to frequency asks questions can be found here: [Frequently Asked Questio
 
 ## Design team 
 
-Pending
+George Burba, LI-COR Biosciences  
+Jamie Cleverly, Terrestrial Ecosystem Research Network (TERN)   
+Ankur Desai, University of Wisconsin, Madison   
+Mike Dietze, Boston University   
+Andy Fox, Joint Center for Satellite Data Assimilation   
+William Hammond, Oklahoma State University  
+Danica Lombardozzi, National Center for Atmospheric Research   
+Quinn Thomas, Virginia Tech  
+Jody Peters, University of Notre Dame
+Alex Young, SUNY - College of Environmental Science & Forestry  
 
 ## Partners
 
