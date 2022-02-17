@@ -128,7 +128,7 @@ Functions for downloading and working with the meteorology forecasts can be be f
 
 ## Null models
 
-Pending
+The null model will be automatically generated each month, and is the historical mean for each week at each site. For weeks that don't have observations, the forecast is a linear interpolation between the preceding and following weeks.
 
 ## FAQ
 
