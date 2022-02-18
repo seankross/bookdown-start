@@ -1,6 +1,6 @@
 # Theme: Aquatic Ecosystems
 
-**What:** Freshwater surface water temperature and water quality
+**What:** Freshwater surface water temperature, oxygen, and chlorophyll-a.
 
 **Where:** 2 lakes and 3 river/stream NEON sites. 
 
