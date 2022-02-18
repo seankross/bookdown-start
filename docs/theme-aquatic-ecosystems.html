@@ -386,20 +386,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A file with previously released NEON data that has been processed into targets is provided below. The target script can be found <a href="https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R" target="_blank">here</a>. The same processing will be applied to new data that are used for forecast evaluation.</p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="theme-aquatic-ecosystems.html#cb1-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 12,112 × 10
+<pre><code>## # A tibble: 9,623 × 10
 ##    time       siteID oxygen temperature  chla oxygen_sd temperature_sd chla_sd
 ##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 2017-08-27 BARC       NA        31.4    NA        NA        0.00162      NA
 ##  2 2017-08-27 BARC       NA        31.5    NA        NA        0.00121      NA
-##  3 2017-08-27 BARC       NA        31.5    NA        NA        0.00108      NA
-##  4 2017-08-27 BARC       NA        31.5    NA        NA        0.00107      NA
-##  5 2017-08-28 BARC       NA        31.1    NA        NA        0.00155      NA
-##  6 2017-08-28 BARC       NA        31.1    NA        NA        0.00117      NA
-##  7 2017-08-28 BARC       NA        31.1    NA        NA        0.00107      NA
-##  8 2017-08-28 BARC       NA        31.1    NA        NA        0.00109      NA
-##  9 2017-08-29 BARC       NA        31.2    NA        NA        0.00211      NA
-## 10 2017-08-29 BARC       NA        31.1    NA        NA        0.00168      NA
-## # … with 12,102 more rows, and 2 more variables: depth_oxygen &lt;dbl&gt;,
+##  3 2017-08-28 BARC       NA        31.1    NA        NA        0.00155      NA
+##  4 2017-08-28 BARC       NA        31.1    NA        NA        0.00117      NA
+##  5 2017-08-29 BARC       NA        31.2    NA        NA        0.00211      NA
+##  6 2017-08-29 BARC       NA        31.1    NA        NA        0.00168      NA
+##  7 2017-08-30 BARC       NA        31.5    NA        NA        0.00208      NA
+##  8 2017-08-30 BARC       NA        31.4    NA        NA        0.00210      NA
+##  9 2017-08-31 BARC       NA        31.7    NA        NA        0.00193      NA
+## 10 2017-08-31 BARC       NA        31.7    NA        NA        0.00176      NA
+## # … with 9,613 more rows, and 2 more variables: depth_oxygen &lt;dbl&gt;,
 ## #   depth_temperature &lt;dbl&gt;</code></pre>
 <p>The target file has the following columns</p>
 <ul>

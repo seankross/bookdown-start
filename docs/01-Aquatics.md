@@ -56,20 +56,20 @@ readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.
 ```
 
 ```
-## # A tibble: 12,112 × 10
+## # A tibble: 9,623 × 10
 ##    time       siteID oxygen temperature  chla oxygen_sd temperature_sd chla_sd
 ##    <date>     <chr>   <dbl>       <dbl> <dbl>     <dbl>          <dbl>   <dbl>
 ##  1 2017-08-27 BARC       NA        31.4    NA        NA        0.00162      NA
 ##  2 2017-08-27 BARC       NA        31.5    NA        NA        0.00121      NA
-##  3 2017-08-27 BARC       NA        31.5    NA        NA        0.00108      NA
-##  4 2017-08-27 BARC       NA        31.5    NA        NA        0.00107      NA
-##  5 2017-08-28 BARC       NA        31.1    NA        NA        0.00155      NA
-##  6 2017-08-28 BARC       NA        31.1    NA        NA        0.00117      NA
-##  7 2017-08-28 BARC       NA        31.1    NA        NA        0.00107      NA
-##  8 2017-08-28 BARC       NA        31.1    NA        NA        0.00109      NA
-##  9 2017-08-29 BARC       NA        31.2    NA        NA        0.00211      NA
-## 10 2017-08-29 BARC       NA        31.1    NA        NA        0.00168      NA
-## # … with 12,102 more rows, and 2 more variables: depth_oxygen <dbl>,
+##  3 2017-08-28 BARC       NA        31.1    NA        NA        0.00155      NA
+##  4 2017-08-28 BARC       NA        31.1    NA        NA        0.00117      NA
+##  5 2017-08-29 BARC       NA        31.2    NA        NA        0.00211      NA
+##  6 2017-08-29 BARC       NA        31.1    NA        NA        0.00168      NA
+##  7 2017-08-30 BARC       NA        31.5    NA        NA        0.00208      NA
+##  8 2017-08-30 BARC       NA        31.4    NA        NA        0.00210      NA
+##  9 2017-08-31 BARC       NA        31.7    NA        NA        0.00193      NA
+## 10 2017-08-31 BARC       NA        31.7    NA        NA        0.00176      NA
+## # … with 9,613 more rows, and 2 more variables: depth_oxygen <dbl>,
 ## #   depth_temperature <dbl>
 ```
 
