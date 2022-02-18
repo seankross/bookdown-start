@@ -530,7 +530,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The observation uncertainty estimates for nee and le are derived from the <a href="https://pecanproject.github.io/" target="_blank">PEcAN project</a> and can be used by <code>sd_nee &lt;- nee_sd_intercept + nee_sd_slopeP * nee</code>. They are not supplied by NEON.</p>
 <p>Here is the download link and format of the <code>terrestrial_30min</code> target file:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="theme-carbon-and-water-fluxes.html#cb5-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial_30min/terrestrial_30min-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 878,200 × 10
+<pre><code>## # A tibble: 880,600 × 10
 ##    time                siteID    nee      le nee_sd_intercept nee_sd_slopeP
 ##    &lt;dttm&gt;              &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;
 ##  1 2017-02-01 10:00:00 BART   -0.574 -0.413              1.15         0.204
@@ -543,7 +543,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 2017-02-01 13:30:00 BART   NA     NA                  1.15         0.204
 ##  9 2017-02-01 14:00:00 BART   NA     NA                  1.15         0.204
 ## 10 2017-02-01 14:30:00 BART   NA     NA                  1.15         0.204
-## # … with 878,190 more rows, and 4 more variables: nee_sd_slopeN &lt;dbl&gt;,
+## # … with 880,590 more rows, and 4 more variables: nee_sd_slopeN &lt;dbl&gt;,
 ## #   le_sd_intercept &lt;dbl&gt;, le_sd_slopeP &lt;dbl&gt;, le_sd_slopeN &lt;dbl&gt;</code></pre>
 <p>The code used to generate the targets from NEON data can be found <a href="https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R">here</a></p>
 </div>
@@ -561,7 +561,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Here is the download link and format of the <code>terrestrial_daily</code> target file</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="theme-carbon-and-water-fluxes.html#cb7-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/terrestrial_daily/terrestrial_daily-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 18,300 × 4
+<pre><code>## # A tibble: 18,350 × 4
 ##    time       siteID   nee    le
 ##    &lt;date&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;
 ##  1 2017-02-01 BART      NA    NA
@@ -574,7 +574,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 2017-02-01 TALL      NA    NA
 ##  9 2017-02-01 UNDE      NA    NA
 ## 10 2017-02-01 WREF      NA    NA
-## # … with 18,290 more rows</code></pre>
+## # … with 18,340 more rows</code></pre>
 <p>The code used to generate the targets from NEON data can be found <a href="https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R">here</a></p>
 </div>
 </div>
