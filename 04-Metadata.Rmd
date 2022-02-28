@@ -172,13 +172,13 @@ model_metadata = list(
     ),
     drivers = list(
       status = "absent", 
-    )
+    ),
     parameters = list(
       status = "absent"
-    )
+    ),
     random_effects = list(
       status = "absent"
-    )
+    ),
     process_error = list(
       status = "data_driven",
       complexity = 2
