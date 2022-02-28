@@ -145,7 +145,7 @@ Metadata files should be uploaded with the forecast files.
 
 The [metadata standard](https://github.com/eco4cast/EFIstandards){target="_blank"}  has been designed by the Ecological Forecasting Initiative and is built off the widely used Ecological Metadata Language (EML).
 
-To help support metadata generation, we have created a function in the neon4cast package (`generate_metadata()`) and a guide for completing the metadata: [metadata]
+To help support metadata generation, we have created a function in the neon4cast package (`generate_metadata()`) and a guide for completing the metadata: [Metadata]
 
 The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., https://creativecommons.org/licenses/by/4.0/)
 
