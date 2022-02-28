@@ -41,7 +41,7 @@ Note: remember this theme is "terrestrial_30min"
 
 If you only forecast nee or le, you can exclude the other variable from the file
 
-Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc
+Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2022-02-15-hist30min.nc
 
 ### Terrestrial Daily
 
@@ -51,7 +51,7 @@ Note: remember this theme is "terrestrial_daily"
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).         
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
-- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `data_assimilation`: [Optional] set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `nee`: g C m<sup>-2</sup> day<sup>-1</sup> for daily forecasts)
 - `le`: latent heat (W m<sup>-2</sup>)
 
@@ -60,7 +60,7 @@ If you only forecast nee or le, you can exclude the other variable from the file
 Here is an example of a csv forecast file that meets the standard for the daily terrestrial theme
 
 ```{r}
-readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial_daily/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz")
+readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial_daily/terrestrial_daily-2022-02-15-climatology.csv.gz")
 ```
 
 
@@ -71,7 +71,7 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial_daily/terres
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).          
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
-- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `data_assimilation`: [Optional] set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `abundance`: abundance of beetles
 - `richness`: species richness of beetles 
 
@@ -87,7 +87,7 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2021-07-
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).          
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
-- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `data_assimilation`: [Optional] set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `temperature`: water temperature (C)
 - `oxygen`: dissolved oxygen (mg/L)
 - `chla`: chlorophyll-a (mg/L)
@@ -104,14 +104,14 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2022-0
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).    
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
-- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `data_assimilation`: [Optional] set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `gcc_90`: green chromatic coordinate
 - `rcc_90`: red chromatic coordinate
 
-Here is are examples of csv forecast files that meet the standard for the phenology theme. There will be an extra column called `rcc_90` when `rcc_90` is included in the forecast.
+Here is are examples of csv forecast files that meet the standard for the phenology theme
 
 ```{r}
-readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2021-08-09-PEG_FUSION_0.csv")
+readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2022-02-14-climatology.csv.gz")
 ```
 
 A netcdf file located at https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc
@@ -145,13 +145,7 @@ Metadata files should be uploaded with the forecast files.
 
 The [metadata standard](https://github.com/eco4cast/EFIstandards){target="_blank"}  has been designed by the Ecological Forecasting Initiative and is built off the widely used Ecological Metadata Language (EML).
 
-To help support metadata generation, we have created two helpful functions in the neon4cast package.  
-
-First, the `neon4cast::create_model_metadata(forecast_file)` function will open a file that has the same name as your forecast file but with a `yml` extension.  You will modify the fields in this file and save it.  The are comments in the yml to help you with the information and a document describing the the fields [here](https://shorturl.at/irMQW){target="_blank"} 
-
-Second, the `neon4cast::write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")` will use the information in your forecast file and the yml that you saved from `neon4cast::create_model_metadata()` to generate the xml file that you will submit.
-
-`neon4cast::write_metadata_eml` uses a function that you can use outside neon4cast::write_metadata_eml to valdiate the xml files.  While `neon4cast::write_metadata_eml` does the validation internally, you check the validity of their metadata before submission using the [validator script](https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R){target="_blank"}.
+To help support metadata generation, we have created a function in the neon4cast package (`generate_metadata()`) and a guide for completing the metadata: [metadata]
 
 The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., https://creativecommons.org/licenses/by/4.0/)
 
