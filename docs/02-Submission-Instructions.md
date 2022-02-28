@@ -115,18 +115,18 @@ Here is an example of a csv forecast file that meets the standard for the beetle
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI_avg_null.csv.gz")
+readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2021-07-01-cb_f2.csv.gz")
 ```
 
 ```
-## Rows: 441000 Columns: 5
+## Rows: 4888 Columns: 5
 ```
 
 ```
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
-## chr  (1): siteID
-## dbl  (3): ensemble, richness, abundance
+## chr  (2): siteID, statistic
+## dbl  (2): richness, abundance
 ## date (1): time
 ```
 
@@ -137,20 +137,20 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2020-EFI
 ```
 
 ```
-## # A tibble: 441,000 × 5
-##    siteID time       ensemble richness abundance
-##    <chr>  <date>        <dbl>    <dbl>     <dbl>
-##  1 SJER   2020-01-06        1     2.84   0.0243 
-##  2 SJER   2020-01-06        2     3.22   0.00783
-##  3 SJER   2020-01-06        3     2.05   0.0211 
-##  4 SJER   2020-01-06        4     1.04   0.0209 
-##  5 SJER   2020-01-06        5     2.58   0.0304 
-##  6 SJER   2020-01-06        6     4.00   0.0164 
-##  7 SJER   2020-01-06        7     2.91   0.0200 
-##  8 SJER   2020-01-06        8     3.17   0.0146 
-##  9 SJER   2020-01-06        9     3.67   0.0115 
-## 10 SJER   2020-01-06       10     2.41   0.0196 
-## # … with 440,990 more rows
+## # A tibble: 4,888 × 5
+##    time       siteID statistic richness abundance
+##    <date>     <chr>  <chr>        <dbl>     <dbl>
+##  1 2021-06-28 ABBY   mean         10.7      0.353
+##  2 2021-06-28 ABBY   sd            2.38     0.279
+##  3 2021-07-05 ABBY   mean         10.7      0.353
+##  4 2021-07-05 ABBY   sd            2.38     0.279
+##  5 2021-07-12 ABBY   mean         10.7      0.353
+##  6 2021-07-12 ABBY   sd            2.38     0.279
+##  7 2021-07-19 ABBY   mean         10.7      0.353
+##  8 2021-07-19 ABBY   sd            2.38     0.279
+##  9 2021-07-26 ABBY   mean         10.7      0.353
+## 10 2021-07-26 ABBY   sd            2.38     0.279
+## # … with 4,878 more rows
 ```
 
 ### Aquatics
