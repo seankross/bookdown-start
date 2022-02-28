@@ -171,7 +171,7 @@ model_metadata = list(
       status = "absent"
     ),
     drivers = list(
-      status = "absent", 
+      status = "absent"
     ),
     parameters = list(
       status = "absent"
