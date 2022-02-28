@@ -112,20 +112,20 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestr
 ```
 
 ```
-## # A tibble: 881,560 × 10
+## # A tibble: 886,360 × 10
 ##    time                siteID    nee      le nee_sd_intercept nee_sd_slopeP
 ##    <dttm>              <chr>   <dbl>   <dbl>            <dbl>         <dbl>
-##  1 2017-02-01 10:00:00 BART   -0.574 -0.413              1.15         0.204
-##  2 2017-02-01 10:30:00 BART    0.297 -0.127              1.15         0.204
-##  3 2017-02-01 11:00:00 BART   NA     NA                  1.15         0.204
-##  4 2017-02-01 11:30:00 BART   NA     NA                  1.15         0.204
-##  5 2017-02-01 12:00:00 BART    0.224 -0.0333             1.15         0.204
-##  6 2017-02-01 12:30:00 BART    2.12   1.44               1.15         0.204
-##  7 2017-02-01 13:00:00 BART    2.18   2.49               1.15         0.204
-##  8 2017-02-01 13:30:00 BART   NA     NA                  1.15         0.204
-##  9 2017-02-01 14:00:00 BART   NA     NA                  1.15         0.204
-## 10 2017-02-01 14:30:00 BART   NA     NA                  1.15         0.204
-## # … with 881,550 more rows, and 4 more variables: nee_sd_slopeN <dbl>,
+##  1 2017-02-01 10:00:00 BART   -0.574 -0.413              1.14         0.205
+##  2 2017-02-01 10:30:00 BART    0.297 -0.127              1.14         0.205
+##  3 2017-02-01 11:00:00 BART   NA     NA                  1.14         0.205
+##  4 2017-02-01 11:30:00 BART   NA     NA                  1.14         0.205
+##  5 2017-02-01 12:00:00 BART    0.224 -0.0333             1.14         0.205
+##  6 2017-02-01 12:30:00 BART    2.12   1.44               1.14         0.205
+##  7 2017-02-01 13:00:00 BART    2.18   2.49               1.14         0.205
+##  8 2017-02-01 13:30:00 BART   NA     NA                  1.14         0.205
+##  9 2017-02-01 14:00:00 BART   NA     NA                  1.14         0.205
+## 10 2017-02-01 14:30:00 BART   NA     NA                  1.14         0.205
+## # … with 886,350 more rows, and 4 more variables: nee_sd_slopeN <dbl>,
 ## #   le_sd_intercept <dbl>, le_sd_slopeP <dbl>, le_sd_slopeN <dbl>
 ```
 
@@ -148,7 +148,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestr
 ```
 
 ```
-## # A tibble: 18,370 × 4
+## # A tibble: 18,470 × 4
 ##    time       siteID   nee    le
 ##    <date>     <chr>  <dbl> <dbl>
 ##  1 2017-02-01 BART      NA    NA
@@ -161,7 +161,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestr
 ##  8 2017-02-01 TALL      NA    NA
 ##  9 2017-02-01 UNDE      NA    NA
 ## 10 2017-02-01 WREF      NA    NA
-## # … with 18,360 more rows
+## # … with 18,460 more rows
 ```
 
 The code used to generate the targets from NEON data can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R)

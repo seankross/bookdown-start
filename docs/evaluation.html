@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Evaluation | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Evaluation | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
@@ -31,9 +31,10 @@
   
   
 <link rel="prev" href="submission-instructions.html"/>
-<link rel="next" href="met-inputs.html"/>
+<link rel="next" href="met_inputs.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -283,11 +283,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4" data-path="evaluation.html"><a href="evaluation.html#forecast-submission-visualization-and-leaderboard"><i class="fa fa-check"></i><b>8.4</b> Forecast Submission Visualization and Leaderboard</a></li>
 <li class="chapter" data-level="8.5" data-path="evaluation.html"><a href="evaluation.html#references-3"><i class="fa fa-check"></i><b>8.5</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="met-inputs.html"><a href="met-inputs.html"><i class="fa fa-check"></i><b>9</b> Meteorology Inputs</a>
+<li class="chapter" data-level="9" data-path="met_inputs.html"><a href="met_inputs.html"><i class="fa fa-check"></i><b>9</b> Meteorology Inputs</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="met-inputs.html"><a href="met-inputs.html#noaa-global-ensemble-forecasting-system"><i class="fa fa-check"></i><b>9.1</b> NOAA Global Ensemble Forecasting System</a></li>
-<li class="chapter" data-level="9.2" data-path="met-inputs.html"><a href="met-inputs.html#noaa-global-ensemble-forecasting-system-stacked"><i class="fa fa-check"></i><b>9.2</b> NOAA Global Ensemble Forecasting System Stacked</a></li>
-<li class="chapter" data-level="9.3" data-path="met-inputs.html"><a href="met-inputs.html#neon-observed"><i class="fa fa-check"></i><b>9.3</b> NEON Observed</a></li>
+<li class="chapter" data-level="9.1" data-path="met_inputs.html"><a href="met_inputs.html#noaa-global-ensemble-forecasting-system"><i class="fa fa-check"></i><b>9.1</b> NOAA Global Ensemble Forecasting System</a></li>
+<li class="chapter" data-level="9.2" data-path="met_inputs.html"><a href="met_inputs.html#noaa-global-ensemble-forecasting-system-stacked"><i class="fa fa-check"></i><b>9.2</b> NOAA Global Ensemble Forecasting System Stacked</a></li>
+<li class="chapter" data-level="9.3" data-path="met_inputs.html"><a href="met_inputs.html#neon-observed"><i class="fa fa-check"></i><b>9.3</b> NEON Observed</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="helpful-functions.html"><a href="helpful-functions.html"><i class="fa fa-check"></i><b>10</b> Helpful Functions</a>
 <ul>
@@ -374,42 +374,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="caption">Equation 1 from Jordan, Kruger, and Lerch 2018.</p>
 </div>
 <p>First, create a random sample from a probability distribution. This is the “forecast” for a particular point in time. For simplicity, we will use a normal distribution with a mean of 8 and standard deviation of 1</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="evaluation.html#cb46-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="fl">1.0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="evaluation.html#cb38-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="fl">1.0</span>)</span></code></pre></div>
 <p>Second, we have our data point (i.e., the target). We will set it to zero as well</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="evaluation.html#cb47-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">8</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="evaluation.html#cb39-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">8</span></span></code></pre></div>
 <p>Now calculate CRPS using Equation 2</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="evaluation.html#cb48-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb48-2"><a href="evaluation.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
-<span id="cb48-3"><a href="evaluation.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
-<span id="cb48-4"><a href="evaluation.html#cb48-4" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s <span class="sc">+</span> <span class="fu">abs</span>(x[i] <span class="sc">-</span> x[j])</span>
-<span id="cb48-5"><a href="evaluation.html#cb48-5" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb48-6"><a href="evaluation.html#cb48-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb48-7"><a href="evaluation.html#cb48-7" aria-hidden="true" tabindex="-1"></a>crps_equation_2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">abs</span>(x <span class="sc">-</span> y)) <span class="sc">-</span> s <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">length</span>(x)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb48-8"><a href="evaluation.html#cb48-8" aria-hidden="true" tabindex="-1"></a>crps_equation_2</span></code></pre></div>
-<pre><code>## [1] 0.2341633</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="evaluation.html#cb40-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb40-2"><a href="evaluation.html#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
+<span id="cb40-3"><a href="evaluation.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
+<span id="cb40-4"><a href="evaluation.html#cb40-4" aria-hidden="true" tabindex="-1"></a>    s <span class="ot">&lt;-</span> s <span class="sc">+</span> <span class="fu">abs</span>(x[i] <span class="sc">-</span> x[j])</span>
+<span id="cb40-5"><a href="evaluation.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-6"><a href="evaluation.html#cb40-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-7"><a href="evaluation.html#cb40-7" aria-hidden="true" tabindex="-1"></a>crps_equation_2 <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">abs</span>(x <span class="sc">-</span> y)) <span class="sc">-</span> s <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> <span class="fu">length</span>(x)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb40-8"><a href="evaluation.html#cb40-8" aria-hidden="true" tabindex="-1"></a>crps_equation_2</span></code></pre></div>
+<pre><code>## [1] 0.2318087</code></pre>
 <p>Now calculate using the <code>crps_sample()</code> function in the <code>scoringRules</code> package</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="evaluation.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crps_sample</span>(<span class="at">y =</span> y, <span class="at">dat =</span> x)</span></code></pre></div>
-<pre><code>## [1] 0.2341633</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="evaluation.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crps_sample</span>(<span class="at">y =</span> y, <span class="at">dat =</span> x)</span></code></pre></div>
+<pre><code>## [1] 0.2318087</code></pre>
 </div>
 <div id="exploring-the-scoring-surface" class="section level3" number="8.2.2">
 <h3><span class="header-section-number">8.2.2</span> Exploring the scoring surface</h3>
 <p>Now lets see how the CRPS changes as the mean and standard deviation of the forecasted distribution change</p>
 <p>First, set vectors for the different mean and SD values we want to explore</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="evaluation.html#cb52-1" aria-hidden="true" tabindex="-1"></a>sample_mean <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">4</span>, <span class="dv">12</span>, <span class="fl">0.1</span>)</span>
-<span id="cb52-2"><a href="evaluation.html#cb52-2" aria-hidden="true" tabindex="-1"></a>sample_sd <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="fl">0.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="evaluation.html#cb44-1" aria-hidden="true" tabindex="-1"></a>sample_mean <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">4</span>, <span class="dv">12</span>, <span class="fl">0.1</span>)</span>
+<span id="cb44-2"><a href="evaluation.html#cb44-2" aria-hidden="true" tabindex="-1"></a>sample_sd <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="fl">0.1</span>)</span></code></pre></div>
 <p>Second, set our observed value to 8 for simplicity</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="evaluation.html#cb53-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">8</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="evaluation.html#cb45-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">8</span></span></code></pre></div>
 <p>Now calculate the CRPS at each combination of forest mean and SD</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="evaluation.html#cb54-1" aria-hidden="true" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="fu">length</span>(sample_mean), <span class="fu">length</span>(sample_sd)))</span>
-<span id="cb54-2"><a href="evaluation.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_mean)){</span>
-<span id="cb54-3"><a href="evaluation.html#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_sd)){</span>
-<span id="cb54-4"><a href="evaluation.html#cb54-4" aria-hidden="true" tabindex="-1"></a>    sample <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, sample_mean[i], sample_sd[j])</span>
-<span id="cb54-5"><a href="evaluation.html#cb54-5" aria-hidden="true" tabindex="-1"></a>    combined[i, j] <span class="ot">&lt;-</span> <span class="fu">crps_sample</span>(<span class="at">y =</span> y, <span class="at">dat =</span> sample)</span>
-<span id="cb54-6"><a href="evaluation.html#cb54-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb54-7"><a href="evaluation.html#cb54-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="evaluation.html#cb46-1" aria-hidden="true" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="fu">length</span>(sample_mean), <span class="fu">length</span>(sample_sd)))</span>
+<span id="cb46-2"><a href="evaluation.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_mean)){</span>
+<span id="cb46-3"><a href="evaluation.html#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_sd)){</span>
+<span id="cb46-4"><a href="evaluation.html#cb46-4" aria-hidden="true" tabindex="-1"></a>    sample <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, sample_mean[i], sample_sd[j])</span>
+<span id="cb46-5"><a href="evaluation.html#cb46-5" aria-hidden="true" tabindex="-1"></a>    combined[i, j] <span class="ot">&lt;-</span> <span class="fu">crps_sample</span>(<span class="at">y =</span> y, <span class="at">dat =</span> sample)</span>
+<span id="cb46-6"><a href="evaluation.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb46-7"><a href="evaluation.html#cb46-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Finally, visualize the scoring surface with the observed value represented by the red line</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="evaluation.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined),<span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>)</span>
-<span id="cb55-2"><a href="evaluation.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="evaluation.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined),<span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>)</span>
+<span id="cb47-2"><a href="evaluation.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="04-Evaluation_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>The contour surface highlights the trade-off between the mean and standard deviation.</p>
 </div>
@@ -421,55 +421,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 CRPS(N(\mu, \sigma^2) | y) = \sigma \left( \frac{y - \mu}{\sigma} \left( 2 \Phi\left(  \frac{y - \mu}{\sigma} \right) - 1 \right)  + 2 \phi \left(  \frac{y - \mu}{\sigma} \right) - \frac{1}{\sqrt{\pi}} \right)
 \end{align*}\]</span></p>
 <p>for <span class="math inline">\(\Phi(\cdot)\)</span> and <span class="math inline">\(\phi(\cdot)\)</span> the standard normal CDF and PDF, respectively. Therefore, if the forecast distribution is <strong>truly</strong> a normal distribution (often this isn’t true in forecasts that only report a mean and sd) a simplified score can be applied as follows:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="evaluation.html#cb56-1" aria-hidden="true" tabindex="-1"></a>sample_mean <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">4</span>, <span class="dv">12</span>, <span class="fl">0.1</span>)</span>
-<span id="cb56-2"><a href="evaluation.html#cb56-2" aria-hidden="true" tabindex="-1"></a>sample_sd <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="fl">0.1</span>)</span>
-<span id="cb56-3"><a href="evaluation.html#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-4"><a href="evaluation.html#cb56-4" aria-hidden="true" tabindex="-1"></a>combined_norm <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="fu">length</span>(sample_mean), <span class="fu">length</span>(sample_sd)))</span>
-<span id="cb56-5"><a href="evaluation.html#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_mean)){</span>
-<span id="cb56-6"><a href="evaluation.html#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_sd)){</span>
-<span id="cb56-7"><a href="evaluation.html#cb56-7" aria-hidden="true" tabindex="-1"></a>    combined_norm[i, j] <span class="ot">&lt;-</span> <span class="fu">crps_norm</span>(<span class="at">y =</span> y, <span class="at">mean =</span> sample_mean[i], <span class="at">sd =</span> sample_sd[j])</span>
-<span id="cb56-8"><a href="evaluation.html#cb56-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb56-9"><a href="evaluation.html#cb56-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="evaluation.html#cb48-1" aria-hidden="true" tabindex="-1"></a>sample_mean <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">4</span>, <span class="dv">12</span>, <span class="fl">0.1</span>)</span>
+<span id="cb48-2"><a href="evaluation.html#cb48-2" aria-hidden="true" tabindex="-1"></a>sample_sd <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="fl">0.1</span>)</span>
+<span id="cb48-3"><a href="evaluation.html#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="evaluation.html#cb48-4" aria-hidden="true" tabindex="-1"></a>combined_norm <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="cn">NA</span>, <span class="at">dim =</span> <span class="fu">c</span>(<span class="fu">length</span>(sample_mean), <span class="fu">length</span>(sample_sd)))</span>
+<span id="cb48-5"><a href="evaluation.html#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_mean)){</span>
+<span id="cb48-6"><a href="evaluation.html#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_sd)){</span>
+<span id="cb48-7"><a href="evaluation.html#cb48-7" aria-hidden="true" tabindex="-1"></a>    combined_norm[i, j] <span class="ot">&lt;-</span> <span class="fu">crps_norm</span>(<span class="at">y =</span> y, <span class="at">mean =</span> sample_mean[i], <span class="at">sd =</span> sample_sd[j])</span>
+<span id="cb48-8"><a href="evaluation.html#cb48-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb48-9"><a href="evaluation.html#cb48-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Finally, visualize the scoring surface with the observed value represented by
 the red line.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="evaluation.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>)</span>
-<span id="cb57-2"><a href="evaluation.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="evaluation.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>)</span>
+<span id="cb49-2"><a href="evaluation.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="04-Evaluation_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Note that at a given value of the sd, the lowest score is achieved at <span class="math inline">\(\mu = y\)</span> as shown for each of the blue lines where the minimum value of the score across each blue line is at the red line. This behavior makes sense because the CRPS is a score that rewards accuracy and precision. Thus, for any given level of precision (represented by the standard deviation), CRPS is optimized by producing the most accurate prediction of the distribution’s location.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="evaluation.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>)</span>
-<span id="cb58-2"><a href="evaluation.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb58-3"><a href="evaluation.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">2.5</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb58-4"><a href="evaluation.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">4.3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb58-5"><a href="evaluation.html#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">6.8</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="evaluation.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>)</span>
+<span id="cb50-2"><a href="evaluation.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb50-3"><a href="evaluation.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">2.5</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb50-4"><a href="evaluation.html#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">4.3</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb50-5"><a href="evaluation.html#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">6.8</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="04-Evaluation_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Interestingly, for a given mean <span class="math inline">\(\mu \neq y\)</span> we find a pattern that makes intuitive sense given the goal of CRPS to produce forecasts that are both accurate and precise. For a given amount of bias in the prediction (i.e., given a <span class="math inline">\(\mu \neq y\)</span>), the optimal score is achieved by a standard deviation that slightly larger than the bias.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="evaluation.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb59-2"><a href="evaluation.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="do">## plots for mu = 7</span></span>
-<span id="cb59-3"><a href="evaluation.html#cb59-3" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">7</span></span>
-<span id="cb59-4"><a href="evaluation.html#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS contour given mu = &quot;</span>, mu))</span>
-<span id="cb59-5"><a href="evaluation.html#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> mu, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb59-6"><a href="evaluation.html#cb59-6" aria-hidden="true" tabindex="-1"></a>min_sd <span class="ot">&lt;-</span> sample_sd[<span class="fu">which.min</span>(<span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd))]</span>
-<span id="cb59-7"><a href="evaluation.html#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb59-8"><a href="evaluation.html#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_sd, <span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd), <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS profile given mu = &quot;</span>, mu))</span>
-<span id="cb59-9"><a href="evaluation.html#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb59-10"><a href="evaluation.html#cb59-10" aria-hidden="true" tabindex="-1"></a><span class="do">## plots for mu = 11</span></span>
-<span id="cb59-11"><a href="evaluation.html#cb59-11" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">11</span></span>
-<span id="cb59-12"><a href="evaluation.html#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS contour given mu = &quot;</span>, mu))</span>
-<span id="cb59-13"><a href="evaluation.html#cb59-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> mu, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb59-14"><a href="evaluation.html#cb59-14" aria-hidden="true" tabindex="-1"></a>min_sd <span class="ot">&lt;-</span> sample_sd[<span class="fu">which.min</span>(<span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd))]</span>
-<span id="cb59-15"><a href="evaluation.html#cb59-15" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb59-16"><a href="evaluation.html#cb59-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_sd, <span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd), <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS profile given mu = &quot;</span>, mu))</span>
-<span id="cb59-17"><a href="evaluation.html#cb59-17" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="evaluation.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb51-2"><a href="evaluation.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="do">## plots for mu = 7</span></span>
+<span id="cb51-3"><a href="evaluation.html#cb51-3" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb51-4"><a href="evaluation.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS contour given mu = &quot;</span>, mu))</span>
+<span id="cb51-5"><a href="evaluation.html#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> mu, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb51-6"><a href="evaluation.html#cb51-6" aria-hidden="true" tabindex="-1"></a>min_sd <span class="ot">&lt;-</span> sample_sd[<span class="fu">which.min</span>(<span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd))]</span>
+<span id="cb51-7"><a href="evaluation.html#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb51-8"><a href="evaluation.html#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_sd, <span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd), <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS profile given mu = &quot;</span>, mu))</span>
+<span id="cb51-9"><a href="evaluation.html#cb51-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb51-10"><a href="evaluation.html#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="do">## plots for mu = 11</span></span>
+<span id="cb51-11"><a href="evaluation.html#cb51-11" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">11</span></span>
+<span id="cb51-12"><a href="evaluation.html#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="fu">contour</span>(<span class="at">x =</span> sample_mean, <span class="at">y =</span> sample_sd, <span class="at">z =</span> <span class="fu">as.matrix</span>(combined_norm), <span class="at">nlevels =</span> <span class="dv">20</span>, <span class="at">xlab =</span> <span class="st">&quot;Mean&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;SD&quot;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS contour given mu = &quot;</span>, mu))</span>
+<span id="cb51-13"><a href="evaluation.html#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> mu, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb51-14"><a href="evaluation.html#cb51-14" aria-hidden="true" tabindex="-1"></a>min_sd <span class="ot">&lt;-</span> sample_sd[<span class="fu">which.min</span>(<span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd))]</span>
+<span id="cb51-15"><a href="evaluation.html#cb51-15" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb51-16"><a href="evaluation.html#cb51-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_sd, <span class="fu">crps_norm</span>(y, <span class="at">mean =</span> mu, <span class="at">sd =</span> sample_sd), <span class="at">type =</span> <span class="st">&#39;l&#39;</span>, <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;CRPS profile given mu = &quot;</span>, mu))</span>
+<span id="cb51-17"><a href="evaluation.html#cb51-17" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> min_sd, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="04-Evaluation_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Next, we plot the relationship between a given value of <span class="math inline">\(\mu\)</span> and the <span class="math inline">\(\sigma\)</span> that produces the optimal CRPS. This looks like a linear relationship.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="evaluation.html#cb60-1" aria-hidden="true" tabindex="-1"></a>optimal_sd <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(sample_mean))</span>
-<span id="cb60-2"><a href="evaluation.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_mean)) {</span>
-<span id="cb60-3"><a href="evaluation.html#cb60-3" aria-hidden="true" tabindex="-1"></a>  optimal_sd[i] <span class="ot">&lt;-</span> sample_sd[<span class="fu">which.min</span>(<span class="fu">crps_norm</span>(y, <span class="at">mean =</span> sample_mean[i], <span class="at">sd =</span> sample_sd))]</span>
-<span id="cb60-4"><a href="evaluation.html#cb60-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb60-5"><a href="evaluation.html#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_mean, optimal_sd, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="evaluation.html#cb52-1" aria-hidden="true" tabindex="-1"></a>optimal_sd <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">length</span>(sample_mean))</span>
+<span id="cb52-2"><a href="evaluation.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sample_mean)) {</span>
+<span id="cb52-3"><a href="evaluation.html#cb52-3" aria-hidden="true" tabindex="-1"></a>  optimal_sd[i] <span class="ot">&lt;-</span> sample_sd[<span class="fu">which.min</span>(<span class="fu">crps_norm</span>(y, <span class="at">mean =</span> sample_mean[i], <span class="at">sd =</span> sample_sd))]</span>
+<span id="cb52-4"><a href="evaluation.html#cb52-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb52-5"><a href="evaluation.html#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_mean, optimal_sd, <span class="at">type =</span> <span class="st">&#39;l&#39;</span>)</span></code></pre></div>
 <p><img src="04-Evaluation_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>Let’s estimate the slope of the relationship. It looks like the optimal <span class="math inline">\(sd\)</span> for a normal distribution forecast that is biased by <span class="math inline">\(|y - \mu|\)</span> is <span class="math inline">\(sd = 1.2|y - \mu|\)</span> which makes sense as this would put the true value in a region of high probability.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="evaluation.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(<span class="fu">lm</span>(optimal_sd[sample_mean <span class="sc">&gt;</span> <span class="dv">0</span>] <span class="sc">~</span> sample_mean[sample_mean <span class="sc">&gt;</span> <span class="dv">0</span>]))</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="evaluation.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(<span class="fu">lm</span>(optimal_sd[sample_mean <span class="sc">&gt;</span> <span class="dv">0</span>] <span class="sc">~</span> sample_mean[sample_mean <span class="sc">&gt;</span> <span class="dv">0</span>]))</span></code></pre></div>
 <pre><code>##                  (Intercept) sample_mean[sample_mean &gt; 0] 
 ##                 2.430864e+00                -1.688326e-16</code></pre>
 </div>
@@ -502,11 +502,10 @@ the red line.</p>
         </div>
       </div>
 <a href="submission-instructions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="met-inputs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="met_inputs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -546,6 +545,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }

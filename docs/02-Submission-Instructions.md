@@ -41,7 +41,7 @@ Note: remember this theme is "terrestrial_30min"
 
 If you only forecast nee or le, you can exclude the other variable from the file
 
-Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2021-04-01-hist30min.nc
+Here is an example of a netcdf forecast file that meets the standard for the 30 minute terrestrial theme.  The file is located at https://data.ecoforecast.org/forecasts/terrestrial/terrestrial_30min-2022-02-15-hist30min.nc
 
 ### Terrestrial Daily
 
@@ -51,7 +51,7 @@ Note: remember this theme is "terrestrial_daily"
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).         
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
-- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `data_assimilation`: [Optional] set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `nee`: g C m<sup>-2</sup> day<sup>-1</sup> for daily forecasts)
 - `le`: latent heat (W m<sup>-2</sup>)
 
@@ -61,42 +61,36 @@ Here is an example of a csv forecast file that meets the standard for the daily 
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial_daily/terrestrial_daily-2020-10-01-EFInulldaily.csv.gz")
+readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial_daily/terrestrial_daily-2022-02-15-climatology.csv.gz")
 ```
 
 ```
-## Rows: 272000 Columns: 9
-```
-
-```
+## Rows: 720 Columns: 6
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
-## chr  (1): siteID
-## dbl  (7): ensemble, obs_flag, nee, le, vswc, forecast, data_assimilation
+## chr  (2): siteID, statistic
+## dbl  (3): forecast, nee, le
 ## date (1): time
-```
-
-```
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 ```
-## # A tibble: 272,000 × 9
-##    time       ensemble siteID obs_flag    nee     le   vswc forecast
-##    <date>        <dbl> <chr>     <dbl>  <dbl>  <dbl>  <dbl>    <dbl>
-##  1 2020-10-02        1 BART          2 -29.6  -114.  0.0220        1
-##  2 2020-10-02        2 BART          2 -21.1    49.9 0.191         1
-##  3 2020-10-02        3 BART          2  -5.70  344.  0.0792        1
-##  4 2020-10-02        4 BART          2   4.76  547.  0.0982        1
-##  5 2020-10-02        5 BART          2 -18.6    94.8 0.0883        1
-##  6 2020-10-02        6 BART          2  -4.32  375.  0.192         1
-##  7 2020-10-02        7 BART          2  -2.51  408.  0.127         1
-##  8 2020-10-02        8 BART          2 -10.5   255.  0.198         1
-##  9 2020-10-02        9 BART          2 -33.3  -184.  0.157         1
-## 10 2020-10-02       10 BART          2 -10.7   250.  0.109         1
-## # … with 271,990 more rows, and 1 more variable: data_assimilation <dbl>
+## # A tibble: 720 × 6
+##    time       siteID statistic forecast   nee    le
+##    <date>     <chr>  <chr>        <dbl> <dbl> <dbl>
+##  1 2022-02-15 BART   mean             1 0.630  2.80
+##  2 2022-02-15 BART   sd               1 0.243  6.87
+##  3 2022-02-16 BART   mean             1 0.584 10.7 
+##  4 2022-02-16 BART   sd               1 0.243  6.87
+##  5 2022-02-17 BART   mean             1 0.505  7.22
+##  6 2022-02-17 BART   sd               1 0.243  6.87
+##  7 2022-02-18 BART   mean             1 0.855  5.36
+##  8 2022-02-18 BART   sd               1 0.243  6.87
+##  9 2022-02-19 BART   mean             1 0.639 15.5 
+## 10 2022-02-19 BART   sd               1 0.243  6.87
+## # … with 710 more rows
 ```
 
 
@@ -107,7 +101,7 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/terrestrial_daily/terres
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).          
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
-- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `data_assimilation`: [Optional] set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `abundance`: abundance of beetles
 - `richness`: species richness of beetles 
 
@@ -120,17 +114,11 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2021-07-
 
 ```
 ## Rows: 4888 Columns: 5
-```
-
-```
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr  (2): siteID, statistic
 ## dbl  (2): richness, abundance
 ## date (1): time
-```
-
-```
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -159,50 +147,45 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2021-07-
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).          
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
-- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `data_assimilation`: [Optional] set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `temperature`: water temperature (C)
 - `oxygen`: dissolved oxygen (mg/L)
-- `temp`: water temperature (C)
+- `chla`: chlorophyll-a (mg/L)
 
 Here is an example of a csv forecast file that meets the standard for the aquatics theme
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz")
+readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2022-02-15-climatology.csv.gz")
 ```
 
 ```
-## Rows: 28000 Columns: 8
-```
-
-```
+## Rows: 288 Columns: 7
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
-## chr  (1): siteID
-## dbl  (6): ensemble, oxygen, temperature, obs_flag, forecast, data_assimilation
+## chr  (2): siteID, statistic
+## dbl  (4): forecast, oxygen, chla, temperature
 ## date (1): time
-```
-
-```
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 ```
-## # A tibble: 28,000 × 8
-##    time       ensemble siteID oxygen temperature obs_flag forecast
-##    <date>        <dbl> <chr>   <dbl>       <dbl>    <dbl>    <dbl>
-##  1 2021-03-01        1 BARC     8.98        19.1        2        1
-##  2 2021-03-01        2 BARC     8.67        21.6        2        1
-##  3 2021-03-01        3 BARC     8.73        28.9        2        1
-##  4 2021-03-01        4 BARC     8.12        28.2        2        1
-##  5 2021-03-01        5 BARC     8.18        17.6        2        1
-##  6 2021-03-01        6 BARC     8.70        34.1        2        1
-##  7 2021-03-01        7 BARC     8.83        14.9        2        1
-##  8 2021-03-01        8 BARC     8.25        23.7        2        1
-##  9 2021-03-01        9 BARC     8.47        15.0        2        1
-## 10 2021-03-01       10 BARC     8.68        26.3        2        1
-## # … with 27,990 more rows, and 1 more variable: data_assimilation <dbl>
+## # A tibble: 288 × 7
+##    time       siteID statistic forecast oxygen  chla temperature
+##    <date>     <chr>  <chr>        <dbl>  <dbl> <dbl>       <dbl>
+##  1 2022-02-15 BARC   mean             1  8.83   8.83       18.6 
+##  2 2022-02-15 BARC   sd               1  0.205  1.07        1.26
+##  3 2022-02-16 BARC   mean             1  8.82   8.82       18.7 
+##  4 2022-02-16 BARC   sd               1  0.205  1.07        1.26
+##  5 2022-02-17 BARC   mean             1  8.77   8.77       18.9 
+##  6 2022-02-17 BARC   sd               1  0.205  1.07        1.26
+##  7 2022-02-18 BARC   mean             1  8.78   8.78       19.5 
+##  8 2022-02-18 BARC   sd               1  0.205  1.07        1.26
+##  9 2022-02-19 BARC   mean             1  8.77   8.77       20.3 
+## 10 2022-02-19 BARC   sd               1  0.205  1.07        1.26
+## # … with 278 more rows
 ```
 
 ### Phenology
@@ -211,50 +194,44 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-0
 - `siteID`: NEON code for site
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).    
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
-- `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `data_assimilation`: [Optional] set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
 - `gcc_90`: green chromatic coordinate
 - `rcc_90`: red chromatic coordinate
 
-Here is are examples of csv forecast files that meet the standard for the phenology theme. There will be an extra column called `rcc_90` when `rcc_90` is included in the forecast.
+Here is are examples of csv forecast files that meet the standard for the phenology theme
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2021-08-09-PEG_FUSION_0.csv")
+readr::read_csv("https://data.ecoforecast.org/forecasts/phenology/phenology-2022-02-14-climatology.csv.gz")
 ```
 
 ```
-## Rows: 528 Columns: 5
-```
-
-```
+## Rows: 1296 Columns: 6
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr  (2): siteID, statistic
-## dbl  (2): gcc_90, rcc_90
+## dbl  (3): forecast, gcc_90, rcc_90
 ## date (1): time
-```
-
-```
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 ```
-## # A tibble: 528 × 5
-##    time       siteID statistic  gcc_90 rcc_90
-##    <date>     <chr>  <chr>       <dbl>  <dbl>
-##  1 2021-08-10 HARV   mean      0.418   0.409 
-##  2 2021-08-10 HARV   sd        0.00280 0.0129
-##  3 2021-08-11 HARV   mean      0.416   0.407 
-##  4 2021-08-11 HARV   sd        0.00125 0.0120
-##  5 2021-08-12 HARV   mean      0.418   0.408 
-##  6 2021-08-12 HARV   sd        0.00293 0.0129
-##  7 2021-08-13 HARV   mean      0.417   0.406 
-##  8 2021-08-13 HARV   sd        0.00307 0.0120
-##  9 2021-08-14 HARV   mean      0.418   0.406 
-## 10 2021-08-14 HARV   sd        0.00325 0.0104
-## # … with 518 more rows
+## # A tibble: 1,296 × 6
+##    time       siteID statistic forecast  gcc_90 rcc_90
+##    <date>     <chr>  <chr>        <dbl>   <dbl>  <dbl>
+##  1 2022-02-14 BART   mean             1 0.344   0.370 
+##  2 2022-02-14 BART   sd               1 0.00178 0.0104
+##  3 2022-02-15 BART   mean             1 0.347   0.353 
+##  4 2022-02-15 BART   sd               1 0.00178 0.0104
+##  5 2022-02-16 BART   mean             1 0.346   0.364 
+##  6 2022-02-16 BART   sd               1 0.00178 0.0104
+##  7 2022-02-17 BART   mean             1 0.344   0.374 
+##  8 2022-02-17 BART   sd               1 0.00178 0.0104
+##  9 2022-02-18 BART   mean             1 0.347   0.362 
+## 10 2022-02-18 BART   sd               1 0.00178 0.0104
+## # … with 1,286 more rows
 ```
 
 A netcdf file located at https://data.ecoforecast.org/forecasts/phenology/phenology-2021-02-23-EFInull.nc
@@ -295,7 +272,7 @@ ncdf4::nc_open("images/phenology-2021-02-23-EFInull.nc")
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).        
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
-- `Amblyomma americanum`: Density of *Amblyomma americanum* nymphs 
+- `amblyomma_americanum`: Density of *Amblyomma americanum* nymphs 
 
 Here is an example of a csv forecast file that meets the standard for the ticks theme
 
@@ -332,13 +309,7 @@ Metadata files should be uploaded with the forecast files.
 
 The [metadata standard](https://github.com/eco4cast/EFIstandards){target="_blank"}  has been designed by the Ecological Forecasting Initiative and is built off the widely used Ecological Metadata Language (EML).
 
-To help support metadata generation, we have created two helpful functions in the neon4cast package.  
-
-First, the `neon4cast::create_model_metadata(forecast_file)` function will open a file that has the same name as your forecast file but with a `yml` extension.  You will modify the fields in this file and save it.  The are comments in the yml to help you with the information and a document describing the the fields [here](https://shorturl.at/irMQW){target="_blank"} 
-
-Second, the `neon4cast::write_metadata_eml(forecast_file =  forecast_file ,metadata_yaml = metadata_yaml, forecast_issue_time = Sys.Date(), forecast_iteration_id = "1")` will use the information in your forecast file and the yml that you saved from `neon4cast::create_model_metadata()` to generate the xml file that you will submit.
-
-`neon4cast::write_metadata_eml` uses a function that you can use outside neon4cast::write_metadata_eml to valdiate the xml files.  While `neon4cast::write_metadata_eml` does the validation internally, you check the validity of their metadata before submission using the [validator script](https://github.com/eco4cast/EFIstandards/blob/master/R/forecast_validator.R){target="_blank"}.
+To help support metadata generation, we have created a function in the neon4cast package (`generate_metadata()`) and a guide for completing the metadata: [metadata]
 
 The license for the forecast output is required to be from the following Creative Commons License options: CC BY, CC BY-SA, CC BY-NC, CC BY-NC-SA. While we recommend a CC BY license, teams may use less permissive CC licenses if more appropriate. The license entry can be the CC option (i.e., CC BY) and a web link to the full CC license (e.g., https://creativecommons.org/licenses/by/4.0/)
 

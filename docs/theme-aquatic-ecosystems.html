@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Theme: Aquatic Ecosystems | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Theme: Aquatic Ecosystems | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
@@ -33,7 +33,8 @@
 <link rel="prev" href="index.html"/>
 <link rel="next" href="theme-carbon-and-water-fluxes.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -41,7 +42,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
 
 
 
@@ -283,11 +283,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4" data-path="evaluation.html"><a href="evaluation.html#forecast-submission-visualization-and-leaderboard"><i class="fa fa-check"></i><b>8.4</b> Forecast Submission Visualization and Leaderboard</a></li>
 <li class="chapter" data-level="8.5" data-path="evaluation.html"><a href="evaluation.html#references-3"><i class="fa fa-check"></i><b>8.5</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="met-inputs.html"><a href="met-inputs.html"><i class="fa fa-check"></i><b>9</b> Meteorology Inputs</a>
+<li class="chapter" data-level="9" data-path="met_inputs.html"><a href="met_inputs.html"><i class="fa fa-check"></i><b>9</b> Meteorology Inputs</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="met-inputs.html"><a href="met-inputs.html#noaa-global-ensemble-forecasting-system"><i class="fa fa-check"></i><b>9.1</b> NOAA Global Ensemble Forecasting System</a></li>
-<li class="chapter" data-level="9.2" data-path="met-inputs.html"><a href="met-inputs.html#noaa-global-ensemble-forecasting-system-stacked"><i class="fa fa-check"></i><b>9.2</b> NOAA Global Ensemble Forecasting System Stacked</a></li>
-<li class="chapter" data-level="9.3" data-path="met-inputs.html"><a href="met-inputs.html#neon-observed"><i class="fa fa-check"></i><b>9.3</b> NEON Observed</a></li>
+<li class="chapter" data-level="9.1" data-path="met_inputs.html"><a href="met_inputs.html#noaa-global-ensemble-forecasting-system"><i class="fa fa-check"></i><b>9.1</b> NOAA Global Ensemble Forecasting System</a></li>
+<li class="chapter" data-level="9.2" data-path="met_inputs.html"><a href="met_inputs.html#noaa-global-ensemble-forecasting-system-stacked"><i class="fa fa-check"></i><b>9.2</b> NOAA Global Ensemble Forecasting System Stacked</a></li>
+<li class="chapter" data-level="9.3" data-path="met_inputs.html"><a href="met_inputs.html#neon-observed"><i class="fa fa-check"></i><b>9.3</b> NEON Observed</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="helpful-functions.html"><a href="helpful-functions.html"><i class="fa fa-check"></i><b>10</b> Helpful Functions</a>
 <ul>
@@ -528,7 +528,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="meterological-inputs-for-modeling" class="section level2" number="1.7">
 <h2><span class="header-section-number">1.7</span> Meterological inputs for modeling</h2>
-<p>Information about forecasted meteorology that is available for you to use when generating your forecasts can be found here: <a href="met-inputs.html#met_inputs">Meteorology Inputs</a></p>
+<p>Information about forecasted meteorology that is available for you to use when generating your forecasts can be found here: <a href="met_inputs.html#met_inputs">Meteorology Inputs</a></p>
 </div>
 <div id="useful-functions" class="section level2" number="1.8">
 <h2><span class="header-section-number">1.8</span> Useful functions</h2>
@@ -577,7 +577,6 @@ Jake Zwart, United States Geological Survey</p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -617,6 +616,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
