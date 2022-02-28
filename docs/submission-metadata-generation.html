@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Theme: Tick Populations | NEON Ecological Forecasting Challenge</title>
+  <title>8 Submission Metadata Generation | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Theme: Tick Populations | NEON Ecological Forecasting Challenge" />
+  <meta property="og:title" content="8 Submission Metadata Generation | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://seankross.com/bookdown-start/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="eco4cast/neon4cast-docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Theme: Tick Populations | NEON Ecological Forecasting Challenge" />
+  <meta name="twitter:title" content="8 Submission Metadata Generation | NEON Ecological Forecasting Challenge" />
   
   <meta name="twitter:description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="theme-carbon-and-water-fluxes.html"/>
-<link rel="next" href="theme-phenology.html"/>
+<link rel="prev" href="submission-instructions.html"/>
+<link rel="next" href="evaluation.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -370,260 +370,181 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="theme-tick-populations" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Theme: Tick Populations</h1>
-<p><strong>What:</strong> <em>Amblyomma americanum</em> nymphal tick abundance per sampled area</p>
-<p><strong>Where:</strong> 9 NEON sites</p>
-<p><strong>When:</strong> Weekly forecasts for 4 weeks into the future starting March 31-September 30, 2022. Forecasts are submitted monthly and later submissions after the March 31 start are permissible.</p>
-<p><strong>Why:</strong> There is a correlation between tick population abundance and disease incidence, meaning forecasts for tick abundance have the potential to aid in our understanding of disease risk through time and space.</p>
-<p><strong>Who</strong>: Open to any individual or team that registers</p>
-<p><strong>How</strong>: <a href="https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ" target="_blank">REGISTER</a> your team and submit forecast. If you registered for the Round 1 (2021) and are using the same team and method then you do not need to re-register.</p>
-<p>The video below is an overview of the Tick Populations Challenge that was recorded for the <a href="https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/" target="_blank">2021 Early Career Annual Meeting</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lHH_nY52ZMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<p>We held a Q&amp;A session on March 24, 2021. You can find a recording from that session <a href="https://youtu.be/kyR0MoDCO1Q" target="_blank">HERE</a>.</p>
-<div id="overview-2" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Overview</h2>
-<p>Target species for the population forecasts are <em>Amblyomma americanum</em> nymphal ticks. <em>A. americanum</em> is a vector of ehrlichiosis, tularemia, and southern tick-associated rash illness. The species is present in the eastern United States, and their populations are expanding. There is a correlation between tick population abundance and disease incidence, meaning forecasts for tick abundance have the potential to aid in our understanding of disease risk through time and space.</p>
+<div id="submission-metadata-generation" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Submission Metadata Generation</h1>
+<p>The challenge organizer have created tools to assist in generating the metadata that describes a forecast submission</p>
+<div id="team-information" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Team information</h2>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="submission-metadata-generation.html#cb38-1" aria-hidden="true" tabindex="-1"></a>team_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">individualName =</span> <span class="fu">list</span>(<span class="at">givenName =</span> <span class="st">&quot;Quinn&quot;</span>, </span>
+<span id="cb38-2"><a href="submission-metadata-generation.html#cb38-2" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">surName =</span> <span class="st">&quot;Thomas&quot;</span>),</span>
+<span id="cb38-3"><a href="submission-metadata-generation.html#cb38-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">organizationName =</span> <span class="st">&quot;Virginia Tech&quot;</span>,</span>
+<span id="cb38-4"><a href="submission-metadata-generation.html#cb38-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">electronicMailAddress =</span> <span class="st">&quot;rqthomas@vt.edu&quot;</span>),</span>
+<span id="cb38-5"><a href="submission-metadata-generation.html#cb38-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">list</span>(<span class="at">individualName =</span> <span class="fu">list</span>(<span class="at">givenName =</span> <span class="st">&quot;Robert&quot;</span>, </span>
+<span id="cb38-6"><a href="submission-metadata-generation.html#cb38-6" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">surName =</span> <span class="st">&quot;Thomas&quot;</span>),</span>
+<span id="cb38-7"><a href="submission-metadata-generation.html#cb38-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">organizationName =</span> <span class="st">&quot;Virginia Tech&quot;</span>))</span></code></pre></div>
 </div>
-<div id="challenge-2" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Challenge</h2>
-<p>The challenge is open to any individual, group, or institution that may want to participate. The goals of this challenge are to forecast the density of <em>Amblyomma americanum</em> nymphs (ticks/1600m^2) each epidemiological week (Sun-Sat) at nine NEON sites. Due to the latency in the taxonomic data reported by NEON, the challenge will be for the 2021 field season.</p>
-<p>Teams must post information about any additional data they wish to use on the theme Slack channel so that other teams can potentially use the data as well.</p>
+<div id="model-description" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Model Description</h2>
+<div id="initial-conditions" class="section level3" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Initial conditions</h3>
+<p>Uncertainty in the initialization of state variables (Y). Initial condition uncertainty will be a common feature of any dynamic model, where the future state depends on the current state, such as population models, process-based biogeochemical pool &amp; flux models, and classic time-series analysis.</p>
 </div>
-<div id="data-targets-2" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Data: Targets</h2>
-<p>The challenge uses the following NEON data products:</p>
-<p><a href="https://data.neonscience.org/data-products/DP1.10093.001" target="_blank">DP1.10093.001</a>: Ticks sampled using drag cloths</p>
-<p>A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. This <a href="https://github.com/eco4cast/neon4cast-ticks/blob/master/02_ticks_targets.R" target="_blank">processing script</a> is available in the <a href="https://github.com/eco4cast/neon4cast-ticks" target="_blank">neon4cast-ticks</a> GitHub repository.</p>
-<div id="amblyomma-americanum-nymphs" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Amblyomma americanum nymphs</h3>
-<p><strong>Definition</strong></p>
-<p>The density of <em>Amblyomma americanum</em> nymphs per week. Density is defined as the total number of individuals caught in a week across the forested plots divided by the total area sampled in the forested plots during the week. Densities are presented as ticks per 1600m^2, as 1600m^2 is the size of an individual NEON tick plot.</p>
-<p><strong>Motivation</strong></p>
-<p>We chose to use the density of <em>Amblyomma americanum</em> nymphs for several reasons. The first is that <em>Amblyomma americanum</em> is a vector of multiple pathogens, many of which cause human disease, and a forecast for their abundance could aid decisions in public health and personal protective measures. For simplicity, we chose to focus on one species for the abundance challenge, and the <em>Amblyomma americanum</em> nymphs are the most abundant tick observed in the NEON data. Most ticks are observed in to forested plots, and by standardizing the data to density of ticks observed per unit effort in the forested plots, we hope to avoid forecasters predicting sampling effort. We scaled the density to be representative of ticks per plot, which is more interpretable than ticks per square meter. Also, tick drags occur every three weeks. By having the challenge be for forecasting every week, participants won’t have to predict which weeks drags occur.</p>
+<div id="drivers" class="section level3" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Drivers</h3>
+<p>Uncertainty in model drivers, covariates, and exogenous scenarios (X). Driver/covariate uncertainties may come directly from a data product, as a reported error estimate or through driver ensembles, or may be estimated based on sampling theory, cal/val documents, or some other source.</p>
+<p><code>complexity</code> = Number of different driver variables or covariates in a model. For example, in a multiple regression this would be the number of X’s. For a climate-driven model, this would be the number of climate inputs (temperature, precip, solar radiation, etc.).</p>
 </div>
-<div id="focal-sites-2" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Focal sites</h3>
-<p>Information on the sites can be found here:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="theme-tick-populations.html#cb9-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-ticks/master/Ticks_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
-<table style="width:100%;">
-<colgroup>
-<col width="3%" />
-<col width="25%" />
-<col width="37%" />
-<col width="4%" />
-<col width="5%" />
-<col width="23%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">siteID</th>
-<th align="left">site name</th>
-<th align="left">vegetation type</th>
-<th align="right">latitude</th>
-<th align="right">longtitude</th>
-<th align="left">NEON site URL</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">BLAN</td>
-<td align="left">Blandy Experimental Farm NEON</td>
-<td align="left">Deciduous Forest|Pasture/Hay</td>
-<td align="right">39.03370</td>
-<td align="right">-78.04179</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/blan" class="uri">https://www.neonscience.org/field-sites/blan</a></td>
-</tr>
-<tr class="even">
-<td align="left">KONZ</td>
-<td align="left">Konza Prairie Biological Station NEON</td>
-<td align="left">Deciduous Forest|Grassland/Herbaceous</td>
-<td align="right">39.10077</td>
-<td align="right">-96.56307</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/konz" class="uri">https://www.neonscience.org/field-sites/konz</a></td>
-</tr>
-<tr class="odd">
-<td align="left">LENO</td>
-<td align="left">Lenoir Landing NEON</td>
-<td align="left">Deciduous Forest|Woody Wetlands</td>
-<td align="right">31.85386</td>
-<td align="right">-88.16118</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/leno" class="uri">https://www.neonscience.org/field-sites/leno</a></td>
-</tr>
-<tr class="even">
-<td align="left">ORNL</td>
-<td align="left">Oak Ridge NEON</td>
-<td align="left">Deciduous Forest|Evergreen Forest|Pasture/Hay</td>
-<td align="right">35.96413</td>
-<td align="right">-84.28259</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/ornl" class="uri">https://www.neonscience.org/field-sites/ornl</a></td>
-</tr>
-<tr class="odd">
-<td align="left">OSBS</td>
-<td align="left">Ordway-Swisher Biological Station NEON</td>
-<td align="left">Emergent Herbaceous Wetlands|Evergreen Forest|Woody Wetlands</td>
-<td align="right">29.68928</td>
-<td align="right">-81.99343</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/osbs" class="uri">https://www.neonscience.org/field-sites/osbs</a></td>
-</tr>
-<tr class="even">
-<td align="left">SCBI</td>
-<td align="left">Smithsonian Conservation Biology Institute NEON</td>
-<td align="left">Deciduous Forest|Evergreen Forest|Pasture/Hay</td>
-<td align="right">38.89292</td>
-<td align="right">-78.13949</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/scbi" class="uri">https://www.neonscience.org/field-sites/scbi</a></td>
-</tr>
-<tr class="odd">
-<td align="left">SERC</td>
-<td align="left">Smithsonian Environmental Research Center NEON</td>
-<td align="left">Cultivated Crops|Deciduous Forest</td>
-<td align="right">38.89013</td>
-<td align="right">-76.56001</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/serc" class="uri">https://www.neonscience.org/field-sites/serc</a></td>
-</tr>
-<tr class="even">
-<td align="left">TALL</td>
-<td align="left">Talladega National Forest NEON</td>
-<td align="left">Deciduous Forest|Evergreen Forest|Mixed Forest</td>
-<td align="right">32.95047</td>
-<td align="right">-87.39326</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/tall" class="uri">https://www.neonscience.org/field-sites/tall</a></td>
-</tr>
-<tr class="odd">
-<td align="left">UKFS</td>
-<td align="left">University of Kansas Field Station NEON</td>
-<td align="left">Deciduous Forest|Pasture/Hay</td>
-<td align="right">39.04043</td>
-<td align="right">-95.19215</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/ukfs" class="uri">https://www.neonscience.org/field-sites/ukfs</a></td>
-</tr>
-</tbody>
-</table>
+<div id="parameters" class="section level3" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Parameters</h3>
+<p>Uncertainty in model parameters (). For most ecological processes the parameters (a.k.a. coefficients) in model equations are not physical constants but need to be estimated from data.</p>
+<p><code>complexity</code> = number of estimated parameters/coefficients in a model at a single point in space/time. For example, in a regression it would be the number of beta’s.</p>
 </div>
-<div id="target-data-calculation" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> Target data calculation</h3>
-<p>Tick drags occur every three weeks at the NEON sites used in this challenge. The sampling season at each site is determined by phenological milestones, beginning and ending within two weeks of green-up and senescence, respectively. The 1m^2 cloth is dragged for 160m (and at least 80m), and ticks are collected intermittently. They are then sent to a lab for taxonomic identification. Ticks are then identified by life stage and taxonomic rank. The target data is for <em>Amblyomma americanum</em> nymphs that were identified to the species level; i.e. ticks identified as being in the <em>Amblyomma</em> genus are not included.</p>
-<p><strong>Use of 2021 data:</strong> The forecasting challenge is for the 2021 field season, thus environmental covariates are known. However, in the spirit of keeping this as much of a “forecasting” challenge as possible, we ask that for four week forecast period teams use the NOAA GEFS forecasting data.</p>
+<div id="random-effects" class="section level3" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> Random effects</h3>
+<p><code>complexity</code> = number of random effect terms, which should be equivalent to the number of random effect variances estimated. For example, if you had a hierarchical univariate regression with a random intercept you would have two parameters (slope and intercept) and one random effect (intercept). At the moment, we are not recording the number of distinct observation units that the model was calibrated from. So, in our random intercept regression example, if this model was fit at 50 sites to be able to estimate the random intercept variance, that would affect the uncertainty about the mean and variance but that ‘50’ would not be part of the complexity dimensions.</p>
 </div>
-<div id="target-file" class="section level3" number="3.3.4">
-<h3><span class="header-section-number">3.3.4</span> Target file</h3>
-<p>Here is the format of the target file</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="theme-tick-populations.html#cb10-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 3,024 × 21
-##     Year epiWeek yearWeek plotID   siteID nlcdClass       decimalLatitude
-##    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;                     &lt;dbl&gt;
-##  1  2015      37   201537 BLAN_005 BLAN   deciduousForest            39.1
-##  2  2015      38   201538 BLAN_005 BLAN   deciduousForest            39.1
-##  3  2015      39   201539 BLAN_005 BLAN   deciduousForest            39.1
-##  4  2015      40   201540 BLAN_005 BLAN   deciduousForest            39.1
-##  5  2015      41   201541 BLAN_005 BLAN   deciduousForest            39.1
-##  6  2015      42   201542 BLAN_005 BLAN   deciduousForest            39.1
-##  7  2015      43   201543 BLAN_005 BLAN   deciduousForest            39.1
-##  8  2015      44   201544 BLAN_005 BLAN   deciduousForest            39.1
-##  9  2015      45   201545 BLAN_005 BLAN   deciduousForest            39.1
-## 10  2015      46   201546 BLAN_005 BLAN   deciduousForest            39.1
-## # … with 3,014 more rows, and 14 more variables: decimalLongitude &lt;dbl&gt;,
-## #   elevation &lt;dbl&gt;, totalSampledArea &lt;dbl&gt;, amblyomma_americanum &lt;lgl&gt;,
-## #   ixodes_scapularis &lt;lgl&gt;, time &lt;date&gt;, RHMin_precent &lt;lgl&gt;,
-## #   RHMin_variance &lt;lgl&gt;, RHMax_precent &lt;lgl&gt;, RHMax_variance &lt;lgl&gt;,
-## #   airTempMin_degC &lt;lgl&gt;, airTempMin_variance &lt;lgl&gt;, airTempMax_degC &lt;lgl&gt;,
-## #   airTempMax_variance &lt;lgl&gt;</code></pre>
-<ul>
-<li><code>time</code>: YYYY-MM-DD The first day (Sunday) of the MMWR week</li>
-<li><code>mmwrWeek</code>: The MMWR week that starts on Sunday, consistent with CDC version of the epidemiological week<br />
-</li>
-<li><code>siteID</code>: Site where ticks are observed (HARV)</li>
-<li><code>Amblyomma americanum</code>: Density (ticks / 1600m^2) of <em>Amblyomma americanum</em> ticks</li>
-</ul>
+<div id="process-error" class="section level3" number="8.2.5">
+<h3><span class="header-section-number">8.2.5</span> Process error</h3>
+<p>Dynamic uncertainty in the process model attributable to both model misspecification and stochasticity. Pragmatically, this is the portion of the residual error from one timestep to the next that is not attributable to any of the other uncertainties listed above, and which typically propagates into the future.</p>
+<p><code>complexity</code> = dimension of the error covariance matrix. So if we had a n x n covariance matrix, n is the value entered for <code>complexity</code>. Typically n should match the dimensionality of the initial_conditions unless there are state variables where process error is not being estimated or propagated</p>
+</div>
+<div id="observation-error" class="section level3" number="8.2.6">
+<h3><span class="header-section-number">8.2.6</span> Observation error</h3>
+<p>Uncertainty in the observations of the output variables. Note that many statistical modeling approaches do not formally partition errors in observations from errors in the modeling process, but simply lump these into a residual error. Because of this we make the pragmatic distinction and ask that residual errors that a forecast model do not directly propagate into the future be recorded as observation errors. Observation errors now may indeed affect the initial condition uncertainty in the next forecast, but we consider this to be indirect.</p>
+<p><code>complexity</code> = dimension of the error covariance matrix. So if we had a n x n covariance matrix, n is the value entered for <code>complexity</code>. Typically n should match the dimensionality of the initial_conditions unless there are state variables where process error is not being estimated or propagated</p>
+</div>
+<div id="progation" class="section level3" number="8.2.7">
+<h3><span class="header-section-number">8.2.7</span> Progation</h3>
+<p><code>propogation</code> = method for generating uncertainty in the model predictions to represent uncertainty in initial conditions</p>
+</div>
+<div id="assimilation" class="section level3" number="8.2.8">
+<h3><span class="header-section-number">8.2.8</span> assimilation</h3>
+<p><code>assimilation</code> = how data is used to estimate the uncertainty in initial conditions</p>
 </div>
 </div>
-<div id="timeline-2" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Timeline</h2>
-<p>The challenge will begin on March 31, 2022 at 11:59 PM Eastern Standard Time, and will run through October 31, 2022. Each forecast will be for the four MMWR weeks during that month.</p>
-<p>For example, the forecast that is due on March 31, 2022 will be for MMWR weeks 10-13 of 2021 because the Sundays (the start of each MMWR week) in March 2021 correspond to MMWR weeks 10-13. Likewise, the forecast due April 30, 2022 will be for MMWR weeks 14-17 of 2021. A table of which weeks to forecast at each deadline can be found below.</p>
-<p>It is unclear when the provisional 2021 tick taxonomic data will be released. If any is released during the challenge, teams will be able to use it if the data is for weeks that have already been forecasted. For example, if the provisional 2021 data is released on July 15, 2022, teams can use the 2021 data up to MMWR week 26 to calibrate their models for the forecasts due July 31, 2022.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">2022 Forecast Submission date</th>
-<th align="center">2021 Target Epidemiological weeks</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">March 31</td>
-<td align="center">10-13</td>
-</tr>
-<tr class="even">
-<td align="left">April 30</td>
-<td align="center">14-17</td>
-</tr>
-<tr class="odd">
-<td align="left">May 31</td>
-<td align="center">18-22</td>
-</tr>
-<tr class="even">
-<td align="left">June 30</td>
-<td align="center">23-26</td>
-</tr>
-<tr class="odd">
-<td align="left">July 31</td>
-<td align="center">27-30</td>
-</tr>
-<tr class="even">
-<td align="left">August 31</td>
-<td align="center">31-35</td>
-</tr>
-<tr class="odd">
-<td align="left">September 31</td>
-<td align="center">36-39</td>
-</tr>
-<tr class="even">
-<td align="left">October 31</td>
-<td align="center">40-44</td>
-</tr>
-</tbody>
-</table>
+<div id="example-r-list" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Example R “list”</h2>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="submission-metadata-generation.html#cb39-1" aria-hidden="true" tabindex="-1"></a>model_metadata <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb39-2"><a href="submission-metadata-generation.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">forecast =</span> <span class="fu">list</span>(</span>
+<span id="cb39-3"><a href="submission-metadata-generation.html#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_description =</span> <span class="fu">list</span>(</span>
+<span id="cb39-4"><a href="submission-metadata-generation.html#cb39-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">forecast_model_id =</span>  <span class="st">&quot;null&quot;</span>, <span class="co"># model identifier:</span></span>
+<span id="cb39-5"><a href="submission-metadata-generation.html#cb39-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&quot;State-space Bayesian null&quot;</span>, <span class="co">#Name or short description of model</span></span>
+<span id="cb39-6"><a href="submission-metadata-generation.html#cb39-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;empirical&quot;</span>,  <span class="co">#General type of model empirical, machine learning, process</span></span>
+<span id="cb39-7"><a href="submission-metadata-generation.html#cb39-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">repository =</span> <span class="st">&quot;https://github.com/...&quot;</span>  <span class="co"># put your GitHub Repository in here</span></span>
+<span id="cb39-8"><a href="submission-metadata-generation.html#cb39-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb39-9"><a href="submission-metadata-generation.html#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">initial_conditions =</span> <span class="fu">list</span>(</span>
+<span id="cb39-10"><a href="submission-metadata-generation.html#cb39-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;assimilates&quot;</span>, <span class="co">#options: absent, present, data_driven, propagates, assimilates</span></span>
+<span id="cb39-11"><a href="submission-metadata-generation.html#cb39-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">2</span>, <span class="co">#How many models states need initial conditions</span></span>
+<span id="cb39-12"><a href="submission-metadata-generation.html#cb39-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">propagation =</span> <span class="fu">list</span>(</span>
+<span id="cb39-13"><a href="submission-metadata-generation.html#cb39-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span>  <span class="st">&quot;ensemble&quot;</span>, <span class="co">#How does your model propogate initial conditions (&#39;ensemble&#39; is most common)</span></span>
+<span id="cb39-14"><a href="submission-metadata-generation.html#cb39-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">2000</span> <span class="co">#number of ensemble members</span></span>
+<span id="cb39-15"><a href="submission-metadata-generation.html#cb39-15" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb39-16"><a href="submission-metadata-generation.html#cb39-16" aria-hidden="true" tabindex="-1"></a>      <span class="co">#Leave everything below blank  UNLESS status = assimilates  \</span></span>
+<span id="cb39-17"><a href="submission-metadata-generation.html#cb39-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">assimilation =</span> <span class="fu">list</span>(</span>
+<span id="cb39-18"><a href="submission-metadata-generation.html#cb39-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;refit&quot;</span>, <span class="co">#description of assimilation method</span></span>
+<span id="cb39-19"><a href="submission-metadata-generation.html#cb39-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">reference =</span> <span class="cn">NA</span>, <span class="co">#reference for assimilation method</span></span>
+<span id="cb39-20"><a href="submission-metadata-generation.html#cb39-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">complexity =</span> <span class="dv">4</span> <span class="co">#number of states that are updated with assimilation</span></span>
+<span id="cb39-21"><a href="submission-metadata-generation.html#cb39-21" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb39-22"><a href="submission-metadata-generation.html#cb39-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb39-23"><a href="submission-metadata-generation.html#cb39-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">drivers =</span> <span class="fu">list</span>(</span>
+<span id="cb39-24"><a href="submission-metadata-generation.html#cb39-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span>, <span class="co">#options: absent, present, data_driven, propagates, assimilates</span></span>
+<span id="cb39-25"><a href="submission-metadata-generation.html#cb39-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">0</span>, <span class="co">#How many drivers are used?</span></span>
+<span id="cb39-26"><a href="submission-metadata-generation.html#cb39-26" aria-hidden="true" tabindex="-1"></a>      <span class="co">#Leave everything below blank if status = absent, present, or data_driven</span></span>
+<span id="cb39-27"><a href="submission-metadata-generation.html#cb39-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">propagation =</span> <span class="fu">list</span>( </span>
+<span id="cb39-28"><a href="submission-metadata-generation.html#cb39-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;ensemble&quot;</span>, <span class="co">#How does your model propogate driver (ensemble or MCMC is most common</span></span>
+<span id="cb39-29"><a href="submission-metadata-generation.html#cb39-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">2000</span>) <span class="co">#number of ensemble or MCMC members</span></span>
+<span id="cb39-30"><a href="submission-metadata-generation.html#cb39-30" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb39-31"><a href="submission-metadata-generation.html#cb39-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameters =</span> <span class="fu">list</span>(</span>
+<span id="cb39-32"><a href="submission-metadata-generation.html#cb39-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;present&quot;</span>, <span class="co">#options: absent, present, data_driven, propagates, assimilates</span></span>
+<span id="cb39-33"><a href="submission-metadata-generation.html#cb39-33" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">2</span>,</span>
+<span id="cb39-34"><a href="submission-metadata-generation.html#cb39-34" aria-hidden="true" tabindex="-1"></a>      <span class="co">#Leave everything below blank if status = absent, present, or data_driven</span></span>
+<span id="cb39-35"><a href="submission-metadata-generation.html#cb39-35" aria-hidden="true" tabindex="-1"></a>      <span class="at">propagation =</span> <span class="fu">list</span>(</span>
+<span id="cb39-36"><a href="submission-metadata-generation.html#cb39-36" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;ensemble&quot;</span>, <span class="co">#how does your model propogate parameter uncertainity?</span></span>
+<span id="cb39-37"><a href="submission-metadata-generation.html#cb39-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">2000</span>),</span>
+<span id="cb39-38"><a href="submission-metadata-generation.html#cb39-38" aria-hidden="true" tabindex="-1"></a>      <span class="co">#Leave everything below blank  UNLESS status = assimilates  </span></span>
+<span id="cb39-39"><a href="submission-metadata-generation.html#cb39-39" aria-hidden="true" tabindex="-1"></a>      <span class="at">assimilation =</span> <span class="fu">list</span>(</span>
+<span id="cb39-40"><a href="submission-metadata-generation.html#cb39-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;refit&quot;</span>,</span>
+<span id="cb39-41"><a href="submission-metadata-generation.html#cb39-41" aria-hidden="true" tabindex="-1"></a>        <span class="at">reference =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb39-42"><a href="submission-metadata-generation.html#cb39-42" aria-hidden="true" tabindex="-1"></a>        <span class="at">complexity=</span> <span class="dv">4</span></span>
+<span id="cb39-43"><a href="submission-metadata-generation.html#cb39-43" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb39-44"><a href="submission-metadata-generation.html#cb39-44" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb39-45"><a href="submission-metadata-generation.html#cb39-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">random_effects =</span> <span class="fu">list</span>(</span>
+<span id="cb39-46"><a href="submission-metadata-generation.html#cb39-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;present&quot;</span>, <span class="co">#options: absent, present, data_driven, propagates, assimilates</span></span>
+<span id="cb39-47"><a href="submission-metadata-generation.html#cb39-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">2</span>, </span>
+<span id="cb39-48"><a href="submission-metadata-generation.html#cb39-48" aria-hidden="true" tabindex="-1"></a>      <span class="co">#Leave everything below blank if status = absent, present, or data_driven</span></span>
+<span id="cb39-49"><a href="submission-metadata-generation.html#cb39-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">propagation =</span> <span class="fu">list</span>(</span>
+<span id="cb39-50"><a href="submission-metadata-generation.html#cb39-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;ensemble&quot;</span>, <span class="co">#How does your model propogate random effects (ensemble or MCMC is most common)</span></span>
+<span id="cb39-51"><a href="submission-metadata-generation.html#cb39-51" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">2000</span> <span class="co">#number of ensemble or MCMC members</span></span>
+<span id="cb39-52"><a href="submission-metadata-generation.html#cb39-52" aria-hidden="true" tabindex="-1"></a>      ),<span class="co">#Leave everything below blank  UNLESS status = assimilates</span></span>
+<span id="cb39-53"><a href="submission-metadata-generation.html#cb39-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">assimilation =</span> <span class="fu">list</span>(</span>
+<span id="cb39-54"><a href="submission-metadata-generation.html#cb39-54" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;refit&quot;</span>, <span class="co">#description of assimilation method</span></span>
+<span id="cb39-55"><a href="submission-metadata-generation.html#cb39-55" aria-hidden="true" tabindex="-1"></a>        <span class="at">reference =</span> <span class="st">&quot;none&quot;</span>, <span class="co">#reference for assimilation method</span></span>
+<span id="cb39-56"><a href="submission-metadata-generation.html#cb39-56" aria-hidden="true" tabindex="-1"></a>        <span class="at">complexity =</span> <span class="dv">4</span> <span class="co">#number of states that are updated with assimilation</span></span>
+<span id="cb39-57"><a href="submission-metadata-generation.html#cb39-57" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb39-58"><a href="submission-metadata-generation.html#cb39-58" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb39-59"><a href="submission-metadata-generation.html#cb39-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">process_error =</span> <span class="fu">list</span>(</span>
+<span id="cb39-60"><a href="submission-metadata-generation.html#cb39-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;assimilates&quot;</span>, <span class="co">#options: absent, present, data_driven, propagates, assimilates</span></span>
+<span id="cb39-61"><a href="submission-metadata-generation.html#cb39-61" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">2</span>, <span class="co">#Leave blank if status = absent</span></span>
+<span id="cb39-62"><a href="submission-metadata-generation.html#cb39-62" aria-hidden="true" tabindex="-1"></a>      <span class="co">#Leave everything below blank if status = absent, present, or data_driven</span></span>
+<span id="cb39-63"><a href="submission-metadata-generation.html#cb39-63" aria-hidden="true" tabindex="-1"></a>      <span class="at">propagation =</span> <span class="fu">list</span>(</span>
+<span id="cb39-64"><a href="submission-metadata-generation.html#cb39-64" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;ensemble&quot;</span>, <span class="co">#How does your model propogate random effects uncertainty (ensemble or MCMC is most common) </span></span>
+<span id="cb39-65"><a href="submission-metadata-generation.html#cb39-65" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">2000</span></span>
+<span id="cb39-66"><a href="submission-metadata-generation.html#cb39-66" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb39-67"><a href="submission-metadata-generation.html#cb39-67" aria-hidden="true" tabindex="-1"></a>      <span class="co">#Leave everything below blank  UNLESS status = assimilates</span></span>
+<span id="cb39-68"><a href="submission-metadata-generation.html#cb39-68" aria-hidden="true" tabindex="-1"></a>      <span class="at">assimilation =</span> <span class="fu">list</span>(</span>
+<span id="cb39-69"><a href="submission-metadata-generation.html#cb39-69" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;refit&quot;</span>,</span>
+<span id="cb39-70"><a href="submission-metadata-generation.html#cb39-70" aria-hidden="true" tabindex="-1"></a>        <span class="at">reference =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb39-71"><a href="submission-metadata-generation.html#cb39-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">complexity =</span> <span class="dv">4</span>,</span>
+<span id="cb39-72"><a href="submission-metadata-generation.html#cb39-72" aria-hidden="true" tabindex="-1"></a>        <span class="at">covariance =</span> <span class="cn">FALSE</span>, <span class="co">#TRUE OR FALSE</span></span>
+<span id="cb39-73"><a href="submission-metadata-generation.html#cb39-73" aria-hidden="true" tabindex="-1"></a>        <span class="at">localization =</span> <span class="cn">FALSE</span></span>
+<span id="cb39-74"><a href="submission-metadata-generation.html#cb39-74" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb39-75"><a href="submission-metadata-generation.html#cb39-75" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb39-76"><a href="submission-metadata-generation.html#cb39-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs_error =</span> <span class="fu">list</span>(</span>
+<span id="cb39-77"><a href="submission-metadata-generation.html#cb39-77" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;present&quot;</span>, <span class="co">#options: absent, present, data_driven, propagates, assimilates</span></span>
+<span id="cb39-78"><a href="submission-metadata-generation.html#cb39-78" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">2</span>, <span class="co">#Leave blank if status = absent</span></span>
+<span id="cb39-79"><a href="submission-metadata-generation.html#cb39-79" aria-hidden="true" tabindex="-1"></a>      <span class="co">#Leave everything below blank if status = absent, present, or data_driven</span></span>
+<span id="cb39-80"><a href="submission-metadata-generation.html#cb39-80" aria-hidden="true" tabindex="-1"></a>      <span class="at">propagation =</span> <span class="fu">list</span>(</span>
+<span id="cb39-81"><a href="submission-metadata-generation.html#cb39-81" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;ensemble&quot;</span>, <span class="co">#How does your model propogate observation error (ensemble or MCMC is most common)</span></span>
+<span id="cb39-82"><a href="submission-metadata-generation.html#cb39-82" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">2000</span> <span class="co">#number of ensemble or MCMC members</span></span>
+<span id="cb39-83"><a href="submission-metadata-generation.html#cb39-83" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb39-84"><a href="submission-metadata-generation.html#cb39-84" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb39-85"><a href="submission-metadata-generation.html#cb39-85" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb39-86"><a href="submission-metadata-generation.html#cb39-86" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>The metadata XML can be generated using the the <code>forecast_file</code> (path and filename of forecast), <code>team_list</code> (see above), and <code>mode1_metadata</code> (see above). The <code>neon4cast::generate_metadata()</code> function will take this information add additional metdata to complete the XML. The <code>forecast_file</code> must following the format described at <a href="submission-instructions.html#forecast-format">Forecast format</a></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="submission-metadata-generation.html#cb40-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">generate_metadata</span>(forecast_file, team_list, model_metadata){</span></code></pre></div>
 </div>
-<div id="submissions-2" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Submissions</h2>
-<p>Instructions for submitting forecasts are found here: <a href="submission-instructions.html#submission-instructions">Submission Instructions</a></p>
-<p>With the specific file format here: <a href="submission-instructions.html#ticks">Ticks</a></p>
-</div>
-<div id="meterological-inputs-for-modeling-2" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Meterological inputs for modeling</h2>
-<p>Information about forecasted meteorology that is available for you to use when generating your forecasts can be found here: <a href="met_inputs.html#met_inputs">Meteorology Inputs</a></p>
-</div>
-<div id="useful-functions-1" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Useful functions</h2>
-<p>Functions for validating, evaluating and submitting forecasts can be found here: <a href="helpful-functions.html#helpful-functions">Helpful Functions</a></p>
-<p>Functions for downloading and working with the meteorology forecasts can be be found here: <a href="helpful-functions.html#access-efi-snapshots-of-noaa-forecasts-at-neon-sites">Access EFI snapshots of NOAA forecasts at NEON sites</a></p>
-</div>
-<div id="null-models-2" class="section level2" number="3.8">
-<h2><span class="header-section-number">3.8</span> Null models</h2>
-<p>The null model will be automatically generated each month, and is the historical mean for each week at each site. For weeks that don’t have observations, the forecast is a linear interpolation between the preceding and following weeks.</p>
-</div>
-<div id="faq-2" class="section level2" number="3.9">
-<h2><span class="header-section-number">3.9</span> FAQ</h2>
-<p>Answers to frequency asks questions can be found here: <a href="frequently-asked-questions.html#frequently-asked-questions">Frequently Asked Questions</a></p>
-</div>
-<div id="design-team-2" class="section level2" number="3.10">
-<h2><span class="header-section-number">3.10</span> Design team</h2>
-<p>Matt Bitters, University of Colorado, Boulder<br />
-Melissa Chen, University of Colorado, Boulder<br />
-John Foster, Boston University<br />
-Leah Johnson, Virginia Tech<br />
-Shannon LaDeau, Cary Institute of Ecosystem Studies<br />
-Cat Lippi, University of Florida<br />
-Brett Melbourne, University of Colorado, Boulder<br />
-Wynne Moss, University of Colorado, Boulder<br />
-Sadie Ryan, University of Florida</p>
-</div>
-<div id="partners-2" class="section level2" number="3.11">
-<h2><span class="header-section-number">3.11</span> Partners</h2>
-<p>Data used in the challenge are collected by the National Ecological Observatory Network (NEON; <a href="https://www.neonscience.org/" class="uri">https://www.neonscience.org/</a>).</p>
+<div id="example" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> Example</h2>
+<p>Below is an example of the <code>model_metadata</code> for the terrestrial daily climatology model. It is a simple model that forecasts the carbon exchange (NEE) and evaporation (LE) is equal to the mean and standard deviation of the historical data for that day-of-year. Since it is a simple model, many of the descriptions of model uncertainty are <code>absent</code>.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="submission-metadata-generation.html#cb41-1" aria-hidden="true" tabindex="-1"></a>model_metadata <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb41-2"><a href="submission-metadata-generation.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">forecast =</span> <span class="fu">list</span>(</span>
+<span id="cb41-3"><a href="submission-metadata-generation.html#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_description =</span> <span class="fu">list</span>(</span>
+<span id="cb41-4"><a href="submission-metadata-generation.html#cb41-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">forecast_model_id =</span>  <span class="st">&quot;climatology&quot;</span>, </span>
+<span id="cb41-5"><a href="submission-metadata-generation.html#cb41-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&quot;Day-of-year mean&quot;</span>, </span>
+<span id="cb41-6"><a href="submission-metadata-generation.html#cb41-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;empirical&quot;</span>,  </span>
+<span id="cb41-7"><a href="submission-metadata-generation.html#cb41-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">repository =</span> <span class="st">&quot;https://github.com/eco4cast/neon4cast-terrestrial/blob/master/03_terrestrial_flux_daily_null.R&quot;</span> </span>
+<span id="cb41-8"><a href="submission-metadata-generation.html#cb41-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb41-9"><a href="submission-metadata-generation.html#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">initial_conditions =</span> <span class="fu">list</span>(</span>
+<span id="cb41-10"><a href="submission-metadata-generation.html#cb41-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb41-11"><a href="submission-metadata-generation.html#cb41-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb41-12"><a href="submission-metadata-generation.html#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">drivers =</span> <span class="fu">list</span>(</span>
+<span id="cb41-13"><a href="submission-metadata-generation.html#cb41-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb41-14"><a href="submission-metadata-generation.html#cb41-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb41-15"><a href="submission-metadata-generation.html#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameters =</span> <span class="fu">list</span>(</span>
+<span id="cb41-16"><a href="submission-metadata-generation.html#cb41-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb41-17"><a href="submission-metadata-generation.html#cb41-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb41-18"><a href="submission-metadata-generation.html#cb41-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">random_effects =</span> <span class="fu">list</span>(</span>
+<span id="cb41-19"><a href="submission-metadata-generation.html#cb41-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb41-20"><a href="submission-metadata-generation.html#cb41-20" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb41-21"><a href="submission-metadata-generation.html#cb41-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">process_error =</span> <span class="fu">list</span>(</span>
+<span id="cb41-22"><a href="submission-metadata-generation.html#cb41-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;data_driven&quot;</span>,</span>
+<span id="cb41-23"><a href="submission-metadata-generation.html#cb41-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">2</span></span>
+<span id="cb41-24"><a href="submission-metadata-generation.html#cb41-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb41-25"><a href="submission-metadata-generation.html#cb41-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs_error =</span> <span class="fu">list</span>(</span>
+<span id="cb41-26"><a href="submission-metadata-generation.html#cb41-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb41-27"><a href="submission-metadata-generation.html#cb41-27" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb41-28"><a href="submission-metadata-generation.html#cb41-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb41-29"><a href="submission-metadata-generation.html#cb41-29" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 
 </div>
 </div>
@@ -632,8 +553,8 @@ Sadie Ryan, University of Florida</p>
           </div>
         </div>
       </div>
-<a href="theme-carbon-and-water-fluxes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="theme-phenology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="submission-instructions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="evaluation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
