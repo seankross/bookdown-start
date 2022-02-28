@@ -88,13 +88,14 @@ readr::read_csv("https://data.ecoforecast.org/forecasts/beetles/beetles-2021-07-
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).          
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
+- `temperature`: water temperature (C)
 - `oxygen`: dissolved oxygen (mg/L)
-- `temp`: water temperature (C)
+- `chla`: chlorophyll-a (mg/L)
 
 Here is an example of a csv forecast file that meets the standard for the aquatics theme
 
 ```{r}
-readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2021-03-01-EFInull.csv.gz")
+readr::read_csv("https://data.ecoforecast.org/forecasts/aquatics/aquatics-2022-02-15-climatology.csv.gz")
 ```
 
 ### Phenology
@@ -126,7 +127,7 @@ ncdf4::nc_open("images/phenology-2021-02-23-EFInull.nc")
 - `ensemble` or `statistic`: if `ensemble` then integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample); if `statistic` then either required to be the string `mean` or `sd` (see note below about statistic column).        
 - `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `data_assimilation`: set as 0 for each row (0 = no data assimilation occurred because it is a forecast)
-- `Amblyomma americanum`: Density of *Amblyomma americanum* nymphs 
+- `amblyomma_americanum`: Density of *Amblyomma americanum* nymphs 
 
 Here is an example of a csv forecast file that meets the standard for the ticks theme
 
