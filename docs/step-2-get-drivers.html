@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Theme: Tick Populations | NEON Ecological Forecasting Challenge</title>
+  <title>13 Step 2: Get drivers | NEON Ecological Forecasting Challenge</title>
   <meta name="description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Theme: Tick Populations | NEON Ecological Forecasting Challenge" />
+  <meta property="og:title" content="13 Step 2: Get drivers | NEON Ecological Forecasting Challenge" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://seankross.com/bookdown-start/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="eco4cast/neon4cast-docs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Theme: Tick Populations | NEON Ecological Forecasting Challenge" />
+  <meta name="twitter:title" content="13 Step 2: Get drivers | NEON Ecological Forecasting Challenge" />
   
   <meta name="twitter:description" content="Documentation for the NEON Ecological Forecasting Challenge" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="theme-carbon-and-water-fluxes.html"/>
-<link rel="next" href="theme-phenology.html"/>
+<link rel="prev" href="example-forecast-workflow.html"/>
+<link rel="next" href="using-the-challenge-in-classes.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -390,255 +390,169 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="theme-tick-populations" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Theme: Tick Populations</h1>
-<p><strong>What:</strong> <em>Amblyomma americanum</em> nymphal tick abundance per sampled area</p>
-<p><strong>Where:</strong> 9 NEON sites</p>
-<p><strong>When:</strong> Weekly forecasts for 4 weeks into the future starting March 31-September 30, 2022. Forecasts are submitted monthly and later submissions after the March 31 start are permissible.</p>
-<p><strong>Why:</strong> There is a correlation between tick population abundance and disease incidence, meaning forecasts for tick abundance have the potential to aid in our understanding of disease risk through time and space.</p>
-<p><strong>Who</strong>: Open to any individual or team that registers</p>
-<p><strong>How</strong>: <a href="https://nd.qualtrics.com/jfe/form/SV_9MJ29y2xNrBOjqZ" target="_blank">REGISTER</a> your team and submit forecast. If you registered for the Round 1 (2021) and are using the same team and method then you do not need to re-register.</p>
-<p>The video below is an overview of the Tick Populations Challenge that was recorded for the <a href="https://ecoforecast.org/ecological-forecasting-early-career-annual-meeting/" target="_blank">2021 Early Career Annual Meeting</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lHH_nY52ZMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<p>We held a Q&amp;A session on March 24, 2021. You can find a recording from that session <a href="https://youtu.be/kyR0MoDCO1Q" target="_blank">HERE</a>.</p>
-<div id="overview-2" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Overview</h2>
-<p>Target species for the population forecasts are <em>Amblyomma americanum</em> nymphal ticks. <em>A. americanum</em> is a vector of ehrlichiosis, tularemia, and southern tick-associated rash illness. The species is present in the eastern United States, and their populations are expanding. There is a correlation between tick population abundance and disease incidence, meaning forecasts for tick abundance have the potential to aid in our understanding of disease risk through time and space.</p>
+<div id="step-2-get-drivers" class="section level1" number="13">
+<h1><span class="header-section-number">13</span> Step 2: Get drivers</h1>
+<div id="step-2.1-download-paste-noaa-forecast-stacked-together" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> Step 2.1: Download Paste NOAA forecast stacked together</h2>
+<p>To build the relations between air and water temperature, we need historical air temperature data to associate with historical water temperature data. Here we use a product that the Challenge organizers created that combines day 1 NOAA weather forecasts (i.e., when the forecasts are most accurate) together to generate an estimate of past weather. He we download this “stack” NOAA product for the set of NEON sites in the targets file.</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="step-2-get-drivers.html#cb97-1" aria-hidden="true" tabindex="-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">unique</span>(target<span class="sc">$</span>siteID)</span>
+<span id="cb97-2"><a href="step-2-get-drivers.html#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sites)){</span>
+<span id="cb97-3"><a href="step-2-get-drivers.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  neon4cast<span class="sc">::</span><span class="fu">get_stacked_noaa_s3</span>(<span class="st">&quot;.&quot;</span>,<span class="at">site =</span> sites[i], <span class="at">averaged =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb97-4"><a href="step-2-get-drivers.html#cb97-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="step-2.2-download-noaa-future-forecast" class="section level3" number="13.1.1">
+<h3><span class="header-section-number">13.1.1</span> Step 2.2: Download NOAA future forecast</h3>
+<p>We need NOAA Weather forecasts of the future. Fortunately, the Challenge organizers are downloading and subsetting the weather forecasts for each NEON site. Here we download the weather forecast (<code>date = forecast_date</code>) that started at mid-night UTC (<code>cycle=00</code>) for the set of sites in the target file.</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="step-2-get-drivers.html#cb98-1" aria-hidden="true" tabindex="-1"></a>sites <span class="ot">&lt;-</span> <span class="fu">unique</span>(target<span class="sc">$</span>siteID)</span>
+<span id="cb98-2"><a href="step-2-get-drivers.html#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sites)){</span>
+<span id="cb98-3"><a href="step-2-get-drivers.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  neon4cast<span class="sc">::</span><span class="fu">get_noaa_forecast_s3</span>(<span class="st">&quot;.&quot;</span>,<span class="at">model =</span> <span class="st">&quot;NOAAGEFS_1hr&quot;</span>, <span class="at">site =</span> sites[i], <span class="at">date =</span> forecast_date, <span class="at">cycle =</span> <span class="st">&quot;00&quot;</span>)</span>
+<span id="cb98-4"><a href="step-2-get-drivers.html#cb98-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
-<div id="challenge-2" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Challenge</h2>
-<p>The challenge is open to any individual, group, or institution that may want to participate. The goals of this challenge are to forecast the density of <em>Amblyomma americanum</em> nymphs (ticks/1600m^2) each epidemiological week (Sun-Sat) at nine NEON sites. Due to the latency in the taxonomic data reported by NEON, the challenge will be for the 2021 field season.</p>
-<p>Teams must post information about any additional data they wish to use on the theme Slack channel so that other teams can potentially use the data as well.</p>
+<div id="step-2.3-create-data-frames-of-drivers" class="section level3" number="13.1.2">
+<h3><span class="header-section-number">13.1.2</span> Step 2.3 Create data frames of drivers</h3>
+<p>The NOAA stacked and forecast files are netcdf files. Here we convert to data frames to used in our analyses.</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="step-2-get-drivers.html#cb99-1" aria-hidden="true" tabindex="-1"></a>noaa_past <span class="ot">&lt;-</span> neon4cast<span class="sc">::</span><span class="fu">stack_noaa</span>(<span class="at">dir =</span> <span class="st">&quot;drivers&quot;</span>, <span class="at">model =</span> <span class="st">&quot;NOAAGEFS_1hr_stacked&quot;</span>)</span>
+<span id="cb99-2"><a href="step-2-get-drivers.html#cb99-2" aria-hidden="true" tabindex="-1"></a>noaa_future <span class="ot">&lt;-</span> neon4cast<span class="sc">::</span><span class="fu">stack_noaa</span>(<span class="at">dir =</span> <span class="st">&quot;drivers&quot;</span>, <span class="at">model =</span> <span class="st">&quot;NOAAGEFS_1hr&quot;</span>, <span class="at">forecast_date =</span> forecast_date)</span></code></pre></div>
 </div>
-<div id="data-targets-2" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Data: Targets</h2>
-<p>The challenge uses the following NEON data products:</p>
-<p><a href="https://data.neonscience.org/data-products/DP1.10093.001" target="_blank">DP1.10093.001</a>: Ticks sampled using drag cloths</p>
-<p>A file with previously released NEON data that has been processed into “targets” is provided below. The same processing will be applied to new data that are used for forecast evaluation. This <a href="https://github.com/eco4cast/neon4cast-ticks/blob/master/02_ticks_targets.R" target="_blank">processing script</a> is available in the <a href="https://github.com/eco4cast/neon4cast-ticks" target="_blank">neon4cast-ticks</a> GitHub repository.</p>
-<div id="amblyomma-americanum-nymphs" class="section level3" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Amblyomma americanum nymphs</h3>
-<p><strong>Definition</strong></p>
-<p>The density of <em>Amblyomma americanum</em> nymphs per week. Density is defined as the total number of individuals caught in a week across the forested plots divided by the total area sampled in the forested plots during the week. Densities are presented as ticks per 1600m^2, as 1600m^2 is the size of an individual NEON tick plot.</p>
-<p><strong>Motivation</strong></p>
-<p>We chose to use the density of <em>Amblyomma americanum</em> nymphs for several reasons. The first is that <em>Amblyomma americanum</em> is a vector of multiple pathogens, many of which cause human disease, and a forecast for their abundance could aid decisions in public health and personal protective measures. For simplicity, we chose to focus on one species for the abundance challenge, and the <em>Amblyomma americanum</em> nymphs are the most abundant tick observed in the NEON data. Most ticks are observed in to forested plots, and by standardizing the data to density of ticks observed per unit effort in the forested plots, we hope to avoid forecasters predicting sampling effort. We scaled the density to be representative of ticks per plot, which is more interpretable than ticks per square meter. Also, tick drags occur every three weeks. By having the challenge be for forecasting every week, participants won’t have to predict which weeks drags occur.</p>
+<div id="step-2.4-aggregate-to-day-and-convert-units-of-drivers" class="section level3" number="13.1.3">
+<h3><span class="header-section-number">13.1.3</span> Step 2.4 Aggregate (to day) and convert units of drivers</h3>
+<p>Since we are forecasting daily mean water temperature and oxygen, we need to aggregate the 1 hr weather data to the daily time-scale. We also need to convert from Kelvin to Celsius.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="step-2-get-drivers.html#cb100-1" aria-hidden="true" tabindex="-1"></a>noaa_past_mean <span class="ot">&lt;-</span> noaa_past <span class="sc">%&gt;%</span> </span>
+<span id="cb100-2"><a href="step-2-get-drivers.html#cb100-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as_date</span>(time)) <span class="sc">%&gt;%</span> </span>
+<span id="cb100-3"><a href="step-2-get-drivers.html#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(date) <span class="sc">%&gt;%</span> </span>
+<span id="cb100-4"><a href="step-2-get-drivers.html#cb100-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">air_temperature =</span> <span class="fu">mean</span>(air_temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb100-5"><a href="step-2-get-drivers.html#cb100-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">time =</span> date) <span class="sc">%&gt;%</span> </span>
+<span id="cb100-6"><a href="step-2-get-drivers.html#cb100-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">air_temperature =</span> air_temperature <span class="sc">-</span> <span class="fl">273.15</span>)</span></code></pre></div>
+<p>For the future weather has 31 ensemble members (i.e., different trajectories of weather), that we want to use to generate uncertainty in our water temperature and oxygen forecasts. The aggregation below maintains the separate ensemble members (<code>group_by(date, ensemble)</code>).</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="step-2-get-drivers.html#cb101-1" aria-hidden="true" tabindex="-1"></a>noaa_future_mean <span class="ot">&lt;-</span> noaa_future <span class="sc">%&gt;%</span> </span>
+<span id="cb101-2"><a href="step-2-get-drivers.html#cb101-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as_date</span>(time)) <span class="sc">%&gt;%</span> </span>
+<span id="cb101-3"><a href="step-2-get-drivers.html#cb101-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(date, ensemble) <span class="sc">%&gt;%</span> </span>
+<span id="cb101-4"><a href="step-2-get-drivers.html#cb101-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">air_temperature =</span> <span class="fu">mean</span>(air_temperature, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb101-5"><a href="step-2-get-drivers.html#cb101-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">time =</span> date) <span class="sc">%&gt;%</span> </span>
+<span id="cb101-6"><a href="step-2-get-drivers.html#cb101-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ensemble =</span> <span class="fu">as.numeric</span>(stringr<span class="sc">::</span><span class="fu">str_sub</span>(ensemble, <span class="at">start =</span> <span class="dv">4</span>, <span class="at">end =</span> <span class="dv">6</span>)),</span>
+<span id="cb101-7"><a href="step-2-get-drivers.html#cb101-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">air_temperature =</span> air_temperature <span class="sc">-</span> <span class="fl">273.15</span>)</span></code></pre></div>
 </div>
-<div id="focal-sites-2" class="section level3" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> Focal sites</h3>
-<p>Information on the sites can be found here:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="theme-tick-populations.html#cb9-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-ticks/master/Ticks_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
-<table style="width:100%;">
-<colgroup>
-<col width="3%" />
-<col width="25%" />
-<col width="37%" />
-<col width="4%" />
-<col width="5%" />
-<col width="23%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">siteID</th>
-<th align="left">site name</th>
-<th align="left">vegetation type</th>
-<th align="right">latitude</th>
-<th align="right">longtitude</th>
-<th align="left">NEON site URL</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">BLAN</td>
-<td align="left">Blandy Experimental Farm NEON</td>
-<td align="left">Deciduous Forest|Pasture/Hay</td>
-<td align="right">39.03370</td>
-<td align="right">-78.04179</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/blan" class="uri">https://www.neonscience.org/field-sites/blan</a></td>
-</tr>
-<tr class="even">
-<td align="left">KONZ</td>
-<td align="left">Konza Prairie Biological Station NEON</td>
-<td align="left">Deciduous Forest|Grassland/Herbaceous</td>
-<td align="right">39.10077</td>
-<td align="right">-96.56307</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/konz" class="uri">https://www.neonscience.org/field-sites/konz</a></td>
-</tr>
-<tr class="odd">
-<td align="left">LENO</td>
-<td align="left">Lenoir Landing NEON</td>
-<td align="left">Deciduous Forest|Woody Wetlands</td>
-<td align="right">31.85386</td>
-<td align="right">-88.16118</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/leno" class="uri">https://www.neonscience.org/field-sites/leno</a></td>
-</tr>
-<tr class="even">
-<td align="left">ORNL</td>
-<td align="left">Oak Ridge NEON</td>
-<td align="left">Deciduous Forest|Evergreen Forest|Pasture/Hay</td>
-<td align="right">35.96413</td>
-<td align="right">-84.28259</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/ornl" class="uri">https://www.neonscience.org/field-sites/ornl</a></td>
-</tr>
-<tr class="odd">
-<td align="left">OSBS</td>
-<td align="left">Ordway-Swisher Biological Station NEON</td>
-<td align="left">Emergent Herbaceous Wetlands|Evergreen Forest|Woody Wetlands</td>
-<td align="right">29.68928</td>
-<td align="right">-81.99343</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/osbs" class="uri">https://www.neonscience.org/field-sites/osbs</a></td>
-</tr>
-<tr class="even">
-<td align="left">SCBI</td>
-<td align="left">Smithsonian Conservation Biology Institute NEON</td>
-<td align="left">Deciduous Forest|Evergreen Forest|Pasture/Hay</td>
-<td align="right">38.89292</td>
-<td align="right">-78.13949</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/scbi" class="uri">https://www.neonscience.org/field-sites/scbi</a></td>
-</tr>
-<tr class="odd">
-<td align="left">SERC</td>
-<td align="left">Smithsonian Environmental Research Center NEON</td>
-<td align="left">Cultivated Crops|Deciduous Forest</td>
-<td align="right">38.89013</td>
-<td align="right">-76.56001</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/serc" class="uri">https://www.neonscience.org/field-sites/serc</a></td>
-</tr>
-<tr class="even">
-<td align="left">TALL</td>
-<td align="left">Talladega National Forest NEON</td>
-<td align="left">Deciduous Forest|Evergreen Forest|Mixed Forest</td>
-<td align="right">32.95047</td>
-<td align="right">-87.39326</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/tall" class="uri">https://www.neonscience.org/field-sites/tall</a></td>
-</tr>
-<tr class="odd">
-<td align="left">UKFS</td>
-<td align="left">University of Kansas Field Station NEON</td>
-<td align="left">Deciduous Forest|Pasture/Hay</td>
-<td align="right">39.04043</td>
-<td align="right">-95.19215</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/ukfs" class="uri">https://www.neonscience.org/field-sites/ukfs</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="target-data-calculation" class="section level3" number="3.3.3">
-<h3><span class="header-section-number">3.3.3</span> Target data calculation</h3>
-<p>Tick drags occur every three weeks at the NEON sites used in this challenge. The sampling season at each site is determined by phenological milestones, beginning and ending within two weeks of green-up and senescence, respectively. The 1m^2 cloth is dragged for 160m (and at least 80m), and ticks are collected intermittently. They are then sent to a lab for taxonomic identification. Ticks are then identified by life stage and taxonomic rank. The target data is for <em>Amblyomma americanum</em> nymphs that were identified to the species level; i.e. ticks identified as being in the <em>Amblyomma</em> genus are not included.</p>
-<p><strong>Use of 2021 data:</strong> The forecasting challenge is for the 2021 field season, thus environmental covariates are known. However, in the spirit of keeping this as much of a “forecasting” challenge as possible, we ask that for four week forecast period teams use the NOAA GEFS forecasting data.</p>
-</div>
-<div id="target-file" class="section level3" number="3.3.4">
-<h3><span class="header-section-number">3.3.4</span> Target file</h3>
-<p>Here is the format of the target file</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="theme-tick-populations.html#cb10-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 477 × 4
-##    time       mmwrWeek siteID `Amblyomma americanum`
-##    &lt;date&gt;        &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;
-##  1 2015-04-19       16 BLAN                     0   
-##  2 2015-05-10       19 BLAN                     9.82
-##  3 2015-05-31       22 BLAN                    10   
-##  4 2015-06-07       23 BLAN                    19.4 
-##  5 2015-06-21       25 BLAN                     3.14
-##  6 2015-07-12       28 BLAN                     3.66
-##  7 2015-08-02       31 BLAN                     0   
-##  8 2015-08-23       34 BLAN                     0   
-##  9 2015-09-13       37 BLAN                     0   
-## 10 2015-10-11       41 BLAN                     0   
-## # … with 467 more rows</code></pre>
-<ul>
-<li><code>time</code>: YYYY-MM-DD The first day (Sunday) of the MMWR week</li>
-<li><code>mmwrWeek</code>: The MMWR week that starts on Sunday, consistent with CDC version of the epidemiological week<br />
-</li>
-<li><code>siteID</code>: Site where ticks are observed (HARV)</li>
-<li><code>Amblyomma americanum</code>: Density (ticks / 1600m^2) of <em>Amblyomma americanum</em> ticks</li>
-</ul>
+<div id="step-2.5-merge-in-past-noaa-data-into-the-targets-file-matching-by-date." class="section level3" number="13.1.4">
+<h3><span class="header-section-number">13.1.4</span> Step 2.5: Merge in past NOAA data into the targets file, matching by date.</h3>
+<p>Before building our linear model we need merge in the historical air temperature to match with the historical water temperature</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="step-2-get-drivers.html#cb102-1" aria-hidden="true" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="fu">left_join</span>(target, noaa_past_mean, <span class="at">by =</span> <span class="st">&quot;time&quot;</span>)</span></code></pre></div>
 </div>
 </div>
-<div id="timeline-2" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Timeline</h2>
-<p>The challenge will begin on March 31, 2022 at 11:59 PM Eastern Standard Time, and will run through October 31, 2022. Each forecast will be for the four MMWR weeks during that month.</p>
-<p>For example, the forecast that is due on March 31, 2022 will be for MMWR weeks 10-13 of 2021 because the Sundays (the start of each MMWR week) in March 2021 correspond to MMWR weeks 10-13. Likewise, the forecast due April 30, 2022 will be for MMWR weeks 14-17 of 2021. A table of which weeks to forecast at each deadline can be found below.</p>
-<p>It is unclear when the provisional 2021 tick taxonomic data will be released. If any is released during the challenge, teams will be able to use it if the data is for weeks that have already been forecasted. For example, if the provisional 2021 data is released on July 15, 2022, teams can use the 2021 data up to MMWR week 26 to calibrate their models for the forecasts due July 31, 2022.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">2022 Forecast Submission date</th>
-<th align="center">2021 Target Epidemiological weeks</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">March 31</td>
-<td align="center">10-13</td>
-</tr>
-<tr class="even">
-<td align="left">April 30</td>
-<td align="center">14-17</td>
-</tr>
-<tr class="odd">
-<td align="left">May 31</td>
-<td align="center">18-22</td>
-</tr>
-<tr class="even">
-<td align="left">June 30</td>
-<td align="center">23-26</td>
-</tr>
-<tr class="odd">
-<td align="left">July 31</td>
-<td align="center">27-30</td>
-</tr>
-<tr class="even">
-<td align="left">August 31</td>
-<td align="center">31-35</td>
-</tr>
-<tr class="odd">
-<td align="left">September 31</td>
-<td align="center">36-39</td>
-</tr>
-<tr class="even">
-<td align="left">October 31</td>
-<td align="center">40-44</td>
-</tr>
-</tbody>
-</table>
+<div id="step-3.0-generate-forecasts-for-each-site" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> Step 3.0: Generate forecasts for each site</h2>
+<p>We generate a forecast for each site.</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="step-2-get-drivers.html#cb103-1" aria-hidden="true" tabindex="-1"></a>forecast <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb103-2"><a href="step-2-get-drivers.html#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-3"><a href="step-2-get-drivers.html#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(sites)){</span>
+<span id="cb103-4"><a href="step-2-get-drivers.html#cb103-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb103-5"><a href="step-2-get-drivers.html#cb103-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get site information for elevation</span></span>
+<span id="cb103-6"><a href="step-2-get-drivers.html#cb103-6" aria-hidden="true" tabindex="-1"></a>  site_info <span class="ot">&lt;-</span> site_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(field_site_id <span class="sc">==</span> sites[i]) </span>
+<span id="cb103-7"><a href="step-2-get-drivers.html#cb103-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb103-8"><a href="step-2-get-drivers.html#cb103-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Fit linear model based on past data: water temperature = m * air temperature + b</span></span>
+<span id="cb103-9"><a href="step-2-get-drivers.html#cb103-9" aria-hidden="true" tabindex="-1"></a>  fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(target<span class="sc">$</span>temperature<span class="sc">~</span>target<span class="sc">$</span>air_temperature)</span>
+<span id="cb103-10"><a href="step-2-get-drivers.html#cb103-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb103-11"><a href="step-2-get-drivers.html#cb103-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#use linear regression to forecast water temperature for each ensemble member</span></span>
+<span id="cb103-12"><a href="step-2-get-drivers.html#cb103-12" aria-hidden="true" tabindex="-1"></a>  forecasted_temperature <span class="ot">&lt;-</span> fit<span class="sc">$</span>coefficients[<span class="dv">1</span>] <span class="sc">+</span> fit<span class="sc">$</span>coefficients[<span class="dv">2</span>] <span class="sc">*</span> noaa_future_mean<span class="sc">$</span>air_temperature</span>
+<span id="cb103-13"><a href="step-2-get-drivers.html#cb103-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb103-14"><a href="step-2-get-drivers.html#cb103-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">#use forecasted temperature to predict oxygen by assuming that oxygen is saturated.  </span></span>
+<span id="cb103-15"><a href="step-2-get-drivers.html#cb103-15" aria-hidden="true" tabindex="-1"></a>  forecasted_oxygen <span class="ot">&lt;-</span> rMR<span class="sc">::</span><span class="fu">Eq.Ox.conc</span>(forecasted_temperature, <span class="at">elevation.m =</span> ,site_info<span class="sc">$</span>field_mean_elevation_m, </span>
+<span id="cb103-16"><a href="step-2-get-drivers.html#cb103-16" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">bar.press =</span> <span class="cn">NULL</span>, </span>
+<span id="cb103-17"><a href="step-2-get-drivers.html#cb103-17" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">bar.units =</span> <span class="cn">NULL</span>,</span>
+<span id="cb103-18"><a href="step-2-get-drivers.html#cb103-18" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">out.DO.meas =</span> <span class="st">&quot;mg/L&quot;</span>,</span>
+<span id="cb103-19"><a href="step-2-get-drivers.html#cb103-19" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">salinity =</span> <span class="dv">0</span>, </span>
+<span id="cb103-20"><a href="step-2-get-drivers.html#cb103-20" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">salinity.units =</span> <span class="st">&quot;pp.thou&quot;</span>)</span>
+<span id="cb103-21"><a href="step-2-get-drivers.html#cb103-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb103-22"><a href="step-2-get-drivers.html#cb103-22" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Build site level dataframe.  Note we are not forecasting chla</span></span>
+<span id="cb103-23"><a href="step-2-get-drivers.html#cb103-23" aria-hidden="true" tabindex="-1"></a>  site_forecast <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">time =</span> noaa_future_mean<span class="sc">$</span>time,</span>
+<span id="cb103-24"><a href="step-2-get-drivers.html#cb103-24" aria-hidden="true" tabindex="-1"></a>                          <span class="at">siteID =</span> sites[i],</span>
+<span id="cb103-25"><a href="step-2-get-drivers.html#cb103-25" aria-hidden="true" tabindex="-1"></a>                          <span class="at">ensemble =</span> noaa_future_mean<span class="sc">$</span>ensemble,</span>
+<span id="cb103-26"><a href="step-2-get-drivers.html#cb103-26" aria-hidden="true" tabindex="-1"></a>                          <span class="at">forecast =</span> <span class="dv">1</span>,</span>
+<span id="cb103-27"><a href="step-2-get-drivers.html#cb103-27" aria-hidden="true" tabindex="-1"></a>                          <span class="at">temperature =</span> forecasted_temperature,</span>
+<span id="cb103-28"><a href="step-2-get-drivers.html#cb103-28" aria-hidden="true" tabindex="-1"></a>                          <span class="at">oxygen =</span> forecasted_oxygen,</span>
+<span id="cb103-29"><a href="step-2-get-drivers.html#cb103-29" aria-hidden="true" tabindex="-1"></a>                          <span class="at">chla =</span> <span class="cn">NA</span>)</span>
+<span id="cb103-30"><a href="step-2-get-drivers.html#cb103-30" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Bind with other sites</span></span>
+<span id="cb103-31"><a href="step-2-get-drivers.html#cb103-31" aria-hidden="true" tabindex="-1"></a>  forecast <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(forecast, site_forecast)</span>
+<span id="cb103-32"><a href="step-2-get-drivers.html#cb103-32" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Use ggplot to visualize the forecast for each variable and site. The spread in forecast is due to uncertainty in the weather forecast, where each line is associated with a different NOAA GEFS weather forecast ensemble member.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="step-2-get-drivers.html#cb104-1" aria-hidden="true" tabindex="-1"></a>forecast <span class="sc">%&gt;%</span> </span>
+<span id="cb104-2"><a href="step-2-get-drivers.html#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>chla) <span class="sc">%&gt;%</span> </span>
+<span id="cb104-3"><a href="step-2-get-drivers.html#cb104-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">&quot;temperature&quot;</span>,<span class="st">&quot;oxygen&quot;</span>), <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;values&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb104-4"><a href="step-2-get-drivers.html#cb104-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> values, <span class="at">group =</span> ensemble)) <span class="sc">+</span></span>
+<span id="cb104-5"><a href="step-2-get-drivers.html#cb104-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb104-6"><a href="step-2-get-drivers.html#cb104-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(variable<span class="sc">~</span>siteID, <span class="at">scale =</span><span class="st">&quot;free&quot;</span>)</span></code></pre></div>
+<p><img src="04-WorkflowExample_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Forecast output file name in standards requires for Challenge. “csv.gz” means that it will be compressed</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="step-2-get-drivers.html#cb105-1" aria-hidden="true" tabindex="-1"></a>forecast_file <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;aquatics&quot;</span>,<span class="st">&quot;-&quot;</span>,<span class="fu">min</span>(forecast<span class="sc">$</span>time),<span class="st">&quot;-&quot;</span>,team_name,<span class="st">&quot;.csv.gz&quot;</span>)</span></code></pre></div>
+<p>Write csv to disk</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="step-2-get-drivers.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(forecast, forecast_file)</span></code></pre></div>
+<p>Confirm that output file meets standard for Challenge</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="step-2-get-drivers.html#cb107-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">forecast_output_validator</span>(forecast_file)</span></code></pre></div>
+<pre><code>## aquatics-2022-02-15-air2waterSat.csv.gz</code></pre>
+<pre><code>## ✔ file name is correct
+## ✔ target variables found
+## ✔ file has ensemble members
+## ✔ file has siteID column
+## ✔ file has time column
+## ✔ file has correct time column</code></pre>
+<pre><code>## [1] TRUE</code></pre>
 </div>
-<div id="submissions-2" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Submissions</h2>
-<p>Instructions for submitting forecasts are found here: <a href="submission-instructions.html#submission-instructions">Submission Instructions</a></p>
-<p>With the specific file format here: <a href="submission-instructions.html#ticks">Ticks</a></p>
+<div id="step-4-generate-metadata" class="section level2" number="13.3">
+<h2><span class="header-section-number">13.3</span> Step 4: Generate metadata</h2>
+<p>First we need to create a “list” in R that describes the forecast model. We only have one source of uncertainty (driver). It is propagated (i.e., represented in the forecasted output) using 31 ensemble members.</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="step-2-get-drivers.html#cb111-1" aria-hidden="true" tabindex="-1"></a>model_metadata <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb111-2"><a href="step-2-get-drivers.html#cb111-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">forecast =</span> <span class="fu">list</span>(</span>
+<span id="cb111-3"><a href="step-2-get-drivers.html#cb111-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_description =</span> <span class="fu">list</span>(</span>
+<span id="cb111-4"><a href="step-2-get-drivers.html#cb111-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">forecast_model_id =</span>  <span class="st">&quot;air2waterSat&quot;</span>,  <span class="co">#What goes here</span></span>
+<span id="cb111-5"><a href="step-2-get-drivers.html#cb111-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&quot;Air temperature to water temperature linear regression plus assume saturated oxygen&quot;</span>, </span>
+<span id="cb111-6"><a href="step-2-get-drivers.html#cb111-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;empirical&quot;</span>,  </span>
+<span id="cb111-7"><a href="step-2-get-drivers.html#cb111-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">repository =</span> <span class="st">&quot;https://github.com/rqthomas/neon4cast-example&quot;</span> </span>
+<span id="cb111-8"><a href="step-2-get-drivers.html#cb111-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb111-9"><a href="step-2-get-drivers.html#cb111-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">initial_conditions =</span> <span class="fu">list</span>(</span>
+<span id="cb111-10"><a href="step-2-get-drivers.html#cb111-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb111-11"><a href="step-2-get-drivers.html#cb111-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb111-12"><a href="step-2-get-drivers.html#cb111-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">drivers =</span> <span class="fu">list</span>(</span>
+<span id="cb111-13"><a href="step-2-get-drivers.html#cb111-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;propagates&quot;</span>,</span>
+<span id="cb111-14"><a href="step-2-get-drivers.html#cb111-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">1</span>, <span class="co">#Just temperature</span></span>
+<span id="cb111-15"><a href="step-2-get-drivers.html#cb111-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">propagation =</span> <span class="fu">list</span>( </span>
+<span id="cb111-16"><a href="step-2-get-drivers.html#cb111-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;ensemble&quot;</span>, </span>
+<span id="cb111-17"><a href="step-2-get-drivers.html#cb111-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">31</span>) </span>
+<span id="cb111-18"><a href="step-2-get-drivers.html#cb111-18" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb111-19"><a href="step-2-get-drivers.html#cb111-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameters =</span> <span class="fu">list</span>(</span>
+<span id="cb111-20"><a href="step-2-get-drivers.html#cb111-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb111-21"><a href="step-2-get-drivers.html#cb111-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb111-22"><a href="step-2-get-drivers.html#cb111-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">random_effects =</span> <span class="fu">list</span>(</span>
+<span id="cb111-23"><a href="step-2-get-drivers.html#cb111-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb111-24"><a href="step-2-get-drivers.html#cb111-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb111-25"><a href="step-2-get-drivers.html#cb111-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">process_error =</span> <span class="fu">list</span>(</span>
+<span id="cb111-26"><a href="step-2-get-drivers.html#cb111-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb111-27"><a href="step-2-get-drivers.html#cb111-27" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb111-28"><a href="step-2-get-drivers.html#cb111-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs_error =</span> <span class="fu">list</span>(</span>
+<span id="cb111-29"><a href="step-2-get-drivers.html#cb111-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb111-30"><a href="step-2-get-drivers.html#cb111-30" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb111-31"><a href="step-2-get-drivers.html#cb111-31" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb111-32"><a href="step-2-get-drivers.html#cb111-32" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Using the <code>team_list</code> and <code>model_metadata</code> above, we can create the metadata file. The function <code>neon4cast::generate_metadata</code> adds additional information to complete the metadata (i.e., geographic information about the site, etc.)</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="step-2-get-drivers.html#cb112-1" aria-hidden="true" tabindex="-1"></a>metadata_file <span class="ot">&lt;-</span> neon4cast<span class="sc">::</span><span class="fu">generate_metadata</span>(forecast_file, team_list, model_metadata)</span></code></pre></div>
+<pre><code>## Rows: 9 Columns: 6
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (6): attributeName, attributeDefinition, unit, formatString, definition,...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre><code>## Warning in readChar(path, nchar): truncating string with embedded nuls</code></pre>
+<pre><code>## Automatically calculated file size using file.size(&quot;aquatics-2022-02-15-air2waterSat.csv.gz&quot;)
+## Automatically calculated authentication size using digest::digest(&quot;aquatics-2022-02-15-air2waterSat.csv.gz&quot;, algo = &quot;md5&quot;, file = TRUE)
+## • Checking Validity of EML file...✔ EML is valid✔ additionalMetadata found✔ timestep parsable✔ forecast_horizon parsable✔ forecast_issue_time found✔ forecast_iteration_id found✔ forecast_project_id found✔ metadata_standard_version found✔ model_description found✔ forecast_model_id found✔ name found✔ type found✔ repository found✔ initial_conditions found✔ status found✔ initial_conditions status/uncertainty class valid: absent✔ parameters found✔ status found✔ parameters status/uncertainty class valid: absent✔ drivers found✔ status found✔ drivers status/uncertainty class valid: propagates✔ complexity valid✔ type found✔ drivers propagation type valid: ensemble✔ size valid✔ random_effects found✔ status found✔ random_effects status/uncertainty class valid: absent✔ process_error found✔ status found✔ process_error status/uncertainty class valid: absent✔ obs_error found✔ status found✔ obs_error status/uncertainty class valid: absent</code></pre>
 </div>
-<div id="meterological-inputs-for-modeling-2" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Meterological inputs for modeling</h2>
-<p>Information about forecasted meteorology that is available for you to use when generating your forecasts can be found here: <a href="met_inputs.html#met_inputs">Meteorology Inputs</a></p>
-</div>
-<div id="useful-functions-1" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Useful functions</h2>
-<p>Functions for validating, evaluating and submitting forecasts can be found here: <a href="helpful-functions.html#helpful-functions">Helpful Functions</a></p>
-<p>Functions for downloading and working with the meteorology forecasts can be be found here: <a href="helpful-functions.html#access-efi-snapshots-of-noaa-forecasts-at-neon-sites">Access EFI snapshots of NOAA forecasts at NEON sites</a></p>
-</div>
-<div id="null-models-2" class="section level2" number="3.8">
-<h2><span class="header-section-number">3.8</span> Null models</h2>
-<p>The null model will be automatically generated each month, and is the historical mean for each week at each site. For weeks that don’t have observations, the forecast is a linear interpolation between the preceding and following weeks.</p>
-</div>
-<div id="faq-2" class="section level2" number="3.9">
-<h2><span class="header-section-number">3.9</span> FAQ</h2>
-<p>Answers to frequency asks questions can be found here: <a href="frequently-asked-questions.html#frequently-asked-questions">Frequently Asked Questions</a></p>
-</div>
-<div id="design-team-2" class="section level2" number="3.10">
-<h2><span class="header-section-number">3.10</span> Design team</h2>
-<p>Matt Bitters, University of Colorado, Boulder<br />
-Melissa Chen, University of Colorado, Boulder<br />
-John Foster, Boston University<br />
-Leah Johnson, Virginia Tech<br />
-Shannon LaDeau, Cary Institute of Ecosystem Studies<br />
-Cat Lippi, University of Florida<br />
-Brett Melbourne, University of Colorado, Boulder<br />
-Wynne Moss, University of Colorado, Boulder<br />
-Sadie Ryan, University of Florida</p>
-</div>
-<div id="partners-2" class="section level2" number="3.11">
-<h2><span class="header-section-number">3.11</span> Partners</h2>
-<p>Data used in the challenge are collected by the National Ecological Observatory Network (NEON; <a href="https://www.neonscience.org/" class="uri">https://www.neonscience.org/</a>).</p>
+<div id="step-5-submit-forecast" class="section level2" number="13.4">
+<h2><span class="header-section-number">13.4</span> Step 5: Submit forecast!</h2>
+<p>Now we can submit the forecast output and the metadata file to the Challenge using the <code>neon4cast::submit()</code> function</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="step-2-get-drivers.html#cb116-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">submit</span>(<span class="at">forecast_file =</span> forecast_file,</span>
+<span id="cb116-2"><a href="step-2-get-drivers.html#cb116-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">metadata =</span> metadata_file,</span>
+<span id="cb116-3"><a href="step-2-get-drivers.html#cb116-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ask =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>You can check on the status of your submission using</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="step-2-get-drivers.html#cb117-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">check_submission</span>(forecast_file)</span></code></pre></div>
+<p>On following day after submission, you can see the forecast on the dashboard at <a href="https://shiny.ecoforecast.org">shiny.ecoforecast.org</a></p>
 
 </div>
 </div>
@@ -647,8 +561,8 @@ Sadie Ryan, University of Florida</p>
           </div>
         </div>
       </div>
-<a href="theme-carbon-and-water-fluxes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="theme-phenology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="example-forecast-workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="using-the-challenge-in-classes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
