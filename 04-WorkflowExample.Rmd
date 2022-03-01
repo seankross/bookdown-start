@@ -33,9 +33,6 @@ Sys.setenv("AWS_DEFAULT_REGION" = "data",
            "AWS_S3_ENDPOINT" = "ecoforecast.org")
 
 dir.create("drivers", showWarnings = FALSE)
-
-
-
 ```
 
 Define the date that the forecast starts.  For demonstration purposes, we are setting the date to `2022-02-15`.  In a real-time application, use `forecast_date <- Sys.Date()`
@@ -193,7 +190,7 @@ forecast_file <- paste0("aquatics","-",min(forecast$time),"-",team_name,".csv.gz
 
 Write csv to disk
 
-```{r eval = FALSE}
+```{r}
 write_csv(forecast, forecast_file)
 ```
 
@@ -260,7 +257,7 @@ neon4cast::submit(forecast_file = forecast_file,
 
 You can check on the status of your submission using
 
-```{r}
+```{r eval = FALSE}
 neon4cast::check_submission(forecast_file)
 ```
 
