@@ -86,25 +86,20 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 ```
 
 ```
-## # A tibble: 3,024 × 21
-##     Year epiWeek yearWeek plotID   siteID nlcdClass       decimalLatitude
-##    <dbl>   <dbl>    <dbl> <chr>    <chr>  <chr>                     <dbl>
-##  1  2015      37   201537 BLAN_005 BLAN   deciduousForest            39.1
-##  2  2015      38   201538 BLAN_005 BLAN   deciduousForest            39.1
-##  3  2015      39   201539 BLAN_005 BLAN   deciduousForest            39.1
-##  4  2015      40   201540 BLAN_005 BLAN   deciduousForest            39.1
-##  5  2015      41   201541 BLAN_005 BLAN   deciduousForest            39.1
-##  6  2015      42   201542 BLAN_005 BLAN   deciduousForest            39.1
-##  7  2015      43   201543 BLAN_005 BLAN   deciduousForest            39.1
-##  8  2015      44   201544 BLAN_005 BLAN   deciduousForest            39.1
-##  9  2015      45   201545 BLAN_005 BLAN   deciduousForest            39.1
-## 10  2015      46   201546 BLAN_005 BLAN   deciduousForest            39.1
-## # … with 3,014 more rows, and 14 more variables: decimalLongitude <dbl>,
-## #   elevation <dbl>, totalSampledArea <dbl>, amblyomma_americanum <lgl>,
-## #   ixodes_scapularis <lgl>, time <date>, RHMin_precent <lgl>,
-## #   RHMin_variance <lgl>, RHMax_precent <lgl>, RHMax_variance <lgl>,
-## #   airTempMin_degC <lgl>, airTempMin_variance <lgl>, airTempMax_degC <lgl>,
-## #   airTempMax_variance <lgl>
+## # A tibble: 477 × 4
+##    time       mmwrWeek siteID `Amblyomma americanum`
+##    <date>        <dbl> <chr>                   <dbl>
+##  1 2015-04-19       16 BLAN                     0   
+##  2 2015-05-10       19 BLAN                     9.82
+##  3 2015-05-31       22 BLAN                    10   
+##  4 2015-06-07       23 BLAN                    19.4 
+##  5 2015-06-21       25 BLAN                     3.14
+##  6 2015-07-12       28 BLAN                     3.66
+##  7 2015-08-02       31 BLAN                     0   
+##  8 2015-08-23       34 BLAN                     0   
+##  9 2015-09-13       37 BLAN                     0   
+## 10 2015-10-11       41 BLAN                     0   
+## # … with 467 more rows
 ```
 
 
