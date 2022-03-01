@@ -17,6 +17,23 @@
       "Hash": "dcd1743af4336156873e3ce3c950b8b9",
       "Requirements": []
     },
+    "EFIstandards": {
+      "Package": "EFIstandards",
+      "Version": "0.1.1",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "EFIstandards",
+      "RemoteUsername": "eco4cast",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "1d0ab267eee61a1e0cd59b4a11d0e88698d89754",
+      "Hash": "dd33785c15b82982e475327a5c7993ad",
+      "Requirements": [
+        "EML",
+        "udunits2",
+        "usethis"
+      ]
+    },
     "EML": {
       "Package": "EML",
       "Version": "2.0.5",
@@ -1635,6 +1652,14 @@
       "Requirements": [
         "cpp11"
       ]
+    },
+    "udunits2": {
+      "Package": "udunits2",
+      "Version": "0.13.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e1f2b3eb2b5e36c9c210699edb435ff4",
+      "Requirements": []
     },
     "usethis": {
       "Package": "usethis",
