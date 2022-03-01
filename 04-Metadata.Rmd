@@ -151,7 +151,7 @@ model_metadata = list(
 The metadata XML can be generated using the the `forecast_file` (path and filename of forecast), `team_list` (see above), and `mode1_metadata` (see above).  The `neon4cast::generate_metadata()` function will take this information add additional metdata to complete the XML.  The `forecast_file` must following the format described at [Forecast format]
 
 ```{r eval = FALSE}
-neon4cast::generate_metadata(forecast_file, team_list, model_metadata){
+neon4cast::generate_metadata(forecast_file, team_list, model_metadata)
 ```
 
 ## Example
