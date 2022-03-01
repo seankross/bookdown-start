@@ -5,3 +5,6 @@ _bookdown_files
 .DS_Store
 *.rds
 .Rapp.history
+drivers
+aquatics-2022-02-15-air2waterSat.csv.gz
+aquatics-2022-02-15-air2waterSat.xml

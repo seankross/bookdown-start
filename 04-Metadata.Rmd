@@ -58,90 +58,93 @@ Uncertainty in the observations of the output variables. Note that many statisti
 
 ## Example R "list"
 
-```{r}
+```{r eval = FALSE}
                   
 model_metadata = list(
   forecast = list(
     model_description = list(
-      forecast_model_id =  "null", # model identifier:
-      name = "State-space Bayesian null", #Name or short description of model
-      type = "empirical",  #General type of model empirical, machine learning, process
-      repository = "https://github.com/..."  # put your GitHub Repository in here
+      forecast_model_id =   # model identifier:
+      name =  #Name or short description of model
+      type =  #General type of model empirical, machine learning, process
+      repository =  # put your GitHub Repository in here
     ),
     initial_conditions = list(
-      status = "assimilates", #options: absent, present, data_driven, propagates, assimilates
-      complexity = 2, #How many models states need initial conditions
+      status = , #options: absent, present, data_driven, propagates, assimilates
+      complexity = , #How many models states need initial conditions; delete if status = absent
+     #Delete list below if status = absent, present, or data_driven
       propagation = list(
-        type =  "ensemble", #How does your model propogate initial conditions ('ensemble' is most common)
-        size = 2000 #number of ensemble members
+        type =  , #How does your model propogate initial conditions ('ensemble' is most common)
+        size =  #number of ensemble members
       ),
-      #Leave everything below blank  UNLESS status = assimilates  \
+      #Delete list below UNLESS status = assimilates
       assimilation = list(
-        type = "refit", #description of assimilation method
-        reference = NA, #reference for assimilation method
-        complexity = 4 #number of states that are updated with assimilation
+        type = , #description of assimilation method
+        reference = , #reference for assimilation method
+        complexity =  #number of states that are updated with assimilation
       )
     ),
     drivers = list(
-      status = "absent", #options: absent, present, data_driven, propagates, assimilates
-      complexity = 0, #How many drivers are used?
-      #Leave everything below blank if status = absent, present, or data_driven
+      status = , #options: absent, present, data_driven, propagates, assimilates
+      complexity = , #How many drivers are used? Delete if status = absent
+      #Delete list below if status = absent, present, or data_driven
       propagation = list( 
-        type = "ensemble", #How does your model propogate driver (ensemble or MCMC is most common
-        size = 2000) #number of ensemble or MCMC members
+        type = , #How does your model propogate driver (ensemble or MCMC is most common
+        size = #number of ensemble or MCMC members
+        ) 
     ),
     parameters = list(
-      status = "present", #options: absent, present, data_driven, propagates, assimilates
-      complexity = 2,
-      #Leave everything below blank if status = absent, present, or data_driven
+      status = , #options: absent, present, data_driven, propagates, assimilates
+      complexity = , #How many parameters are included?; Delete if status = absent
+      #Delete list below below blank if status = absent, present, or data_driven
       propagation = list(
-        type = "ensemble", #how does your model propogate parameter uncertainity?
-        size = 2000),
-      #Leave everything below blank  UNLESS status = assimilates  
+        type = , #how does your model propogate parameter uncertainity?
+        size = ),
+      #Delete list below UNLESS status = assimilates  
       assimilation = list(
-        type = "refit",
-        reference = "none",
-        complexity= 4
+        type = , #description of assimilation method
+        reference = , #reference for assimilation method
+        complexity =  #number of states that are updated with assimilation
       )
     ),
     random_effects = list(
-      status = "present", #options: absent, present, data_driven, propagates, assimilates
-      complexity = 2, 
-      #Leave everything below blank if status = absent, present, or data_driven
+      status = , #options: absent, present, data_driven, propagates, assimilates
+      complexity = ,  #Delete if status = absent
+      #Delete list below if status = absent, present, or data_driven
       propagation = list(
-        type = "ensemble", #How does your model propogate random effects (ensemble or MCMC is most common)
-        size = 2000 #number of ensemble or MCMC members
-      ),#Leave everything below blank  UNLESS status = assimilates
+        type = , #How does your model propogate random effects (ensemble or MCMC is most common)
+        size =  #number of ensemble or MCMC members
+      ),
+      #Delete list below NLESS status = assimilates
       assimilation = list(
-        type = "refit", #description of assimilation method
-        reference = "none", #reference for assimilation method
-        complexity = 4 #number of states that are updated with assimilation
+        type = , #description of assimilation method
+        reference = , #reference for assimilation method
+        complexity =  #number of states that are updated with assimilation
       )
     ),
     process_error = list(
-      status = "assimilates", #options: absent, present, data_driven, propagates, assimilates
-      complexity = 2, #Leave blank if status = absent
-      #Leave everything below blank if status = absent, present, or data_driven
+      status = , #options: absent, present, data_driven, propagates, assimilates
+      complexity = , #Delete if status = absent
+      #Delete the list below below blank if status = absent, present, or data_driven
       propagation = list(
-        type = "ensemble", #How does your model propogate random effects uncertainty (ensemble or MCMC is most common) 
-        size = 2000
+        type = , #How does your model propagate random effects uncertainty (ensemble or MCMC is most common) 
+        size =  #How many ensemble or MCMC members
       ),
-      #Leave everything below blank  UNLESS status = assimilates
+      #Delete the list below UNLESS status = assimilates
       assimilation = list(
-        type = "refit",
-        reference = "none",
-        complexity = 4,
-        covariance = FALSE, #TRUE OR FALSE
-        localization = FALSE
+        type = , #Name of data assilimilation method
+        reference = , #Reference for data assimilation method
+        complexity = , #Number of states assimilate
+        covariance = , #TRUE OR FALSE
+        localization =  #TRUE OR FALSE
       )
     ),
     obs_error = list(
-      status = "present", #options: absent, present, data_driven, propagates, assimilates
-      complexity = 2, #Leave blank if status = absent
-      #Leave everything below blank if status = absent, present, or data_driven
+      status = , #options: absent, present, data_driven, propagates, assimilates
+      complexity = , #Delete if status = absent
+      #Delete the list below below blank if status = absent, present, or data_driven
       propagation = list(
-        type = "ensemble", #How does your model propogate observation error (ensemble or MCMC is most common)
-        size = 2000 #number of ensemble or MCMC members
+        type = , #How does your model propagate random effects uncertainty (ensemble or MCMC is most common) 
+        size =  #How many ensemble or MCMC members
       )
     )
   )
