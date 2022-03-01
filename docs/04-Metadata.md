@@ -153,7 +153,7 @@ The metadata XML can be generated using the the `forecast_file` (path and filena
 
 
 ```r
-neon4cast::generate_metadata(forecast_file, team_list, model_metadata){
+neon4cast::generate_metadata(forecast_file, team_list, model_metadata)
 ```
 
 ## Example
