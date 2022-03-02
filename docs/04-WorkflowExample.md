@@ -392,4 +392,8 @@ neon4cast::check_submission(forecast_file)
 
 On following day after submission, you can see the forecast on the dashboard at [shiny.ecoforecast.org](https://shiny.ecoforecast.org) 
 
+## Example on github
+
+The example code above can be found on GitHub as a template repository at [https://github.com/eco4cast/neon4cast-example.git].  See the Readme for more information about using the template
+
 
