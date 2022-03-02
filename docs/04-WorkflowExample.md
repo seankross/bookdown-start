@@ -141,9 +141,9 @@ site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4ca
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
-# Step 2: Get drivers
+## Step 2: Get drivers
 
-## Step 2.1: Download Paste NOAA forecast stacked together
+### Step 2.1: Download Paste NOAA forecast stacked together
 
 To build the relations between air and water temperature, we need historical air temperature data to associate with historical water temperature data.  Here we use a product that the Challenge organizers created that combines day 1 NOAA weather forecasts (i.e., when the forecasts are most accurate) together to generate an estimate of past weather.  He we download this "stack" NOAA product for the set of NEON sites in the targets file.
 
