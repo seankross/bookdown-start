@@ -163,6 +163,7 @@ step-2.5-merge-in-past-noaa-data-into-the-targets-file-matching-by-date.
 step-3.0-generate-forecasts-for-each-site
 step-4-generate-metadata
 step-5-submit-forecast
+example-on-github
 using-the-challenge-in-classes
 frequently-asked-questions
 my-model-uses-meterology-inputs.-where-can-i-find-forecasts-of-weather-to-use-in-my-ecological-forecast
