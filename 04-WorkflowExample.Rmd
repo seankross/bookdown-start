@@ -28,7 +28,7 @@ library(tidyverse)
 library(neon4cast)
 library(lubridate)
 library(rMR)
-library(EFIstandards)
+#library(EFIstandards)
 
 Sys.setenv("AWS_DEFAULT_REGION" = "data",
            "AWS_S3_ENDPOINT" = "ecoforecast.org")
@@ -197,7 +197,7 @@ write_csv(forecast, forecast_file)
 
 Confirm that output file meets standard for Challenge
 
-```{r}
+```{r eval = FALSE}
 neon4cast::forecast_output_validator(forecast_file)
 ```
 
@@ -242,7 +242,7 @@ model_metadata = list(
 
 Using the `team_list` and `model_metadata` above, we can create the metadata file.  The function `neon4cast::generate_metadata` adds additional information to complete the metadata (i.e., geographic information about the site, etc.)
 
-```{r}
+```{r eval = FALSE}
 metadata_file <- neon4cast::generate_metadata(forecast_file, team_list, model_metadata)
 ```
 
