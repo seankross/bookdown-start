@@ -428,7 +428,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="example-forecast-workflow.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rMR)</span></code></pre></div>
 <pre><code>## Loading required package: biglm</code></pre>
 <pre><code>## Loading required package: DBI</code></pre>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="example-forecast-workflow.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(EFIstandards)</span>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="example-forecast-workflow.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(EFIstandards)</span></span>
 <span id="cb90-2"><a href="example-forecast-workflow.html#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb90-3"><a href="example-forecast-workflow.html#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="st">&quot;AWS_DEFAULT_REGION&quot;</span> <span class="ot">=</span> <span class="st">&quot;data&quot;</span>,</span>
 <span id="cb90-4"><a href="example-forecast-workflow.html#cb90-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;AWS_S3_ENDPOINT&quot;</span> <span class="ot">=</span> <span class="st">&quot;ecoforecast.org&quot;</span>)</span>
@@ -450,7 +450,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">12.3</span> Step 1: Download latest target data and site description data</h2>
 <p>These targets are updated when new data is available from NEON.</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="example-forecast-workflow.html#cb93-1" aria-hidden="true" tabindex="-1"></a>target <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz&quot;</span>, <span class="at">guess_max =</span> <span class="fl">1e6</span>)</span></code></pre></div>
-<pre><code>## Rows: 9623 Columns: 10
+<pre><code>## Rows: 9763 Columns: 10
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr  (1): siteID
@@ -568,72 +568,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="example-forecast-workflow.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(forecast, forecast_file)</span></code></pre></div>
 <p>Confirm that output file meets standard for Challenge</p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="example-forecast-workflow.html#cb107-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">forecast_output_validator</span>(forecast_file)</span></code></pre></div>
-<pre><code>## aquatics-2022-02-15-air2waterSat.csv.gz</code></pre>
-<pre><code>## ✔ file name is correct
-## ✔ target variables found
-## ✔ file has ensemble members
-## ✔ file has siteID column
-## ✔ file has time column
-## ✔ file has correct time column</code></pre>
-<pre><code>## [1] TRUE</code></pre>
 </div>
 <div id="step-4-generate-metadata" class="section level2" number="12.6">
 <h2><span class="header-section-number">12.6</span> Step 4: Generate metadata</h2>
 <p>First we need to create a “list” in R that describes the forecast model. We only have one source of uncertainty (driver). It is propagated (i.e., represented in the forecasted output) using 31 ensemble members.</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="example-forecast-workflow.html#cb111-1" aria-hidden="true" tabindex="-1"></a>model_metadata <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb111-2"><a href="example-forecast-workflow.html#cb111-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">forecast =</span> <span class="fu">list</span>(</span>
-<span id="cb111-3"><a href="example-forecast-workflow.html#cb111-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_description =</span> <span class="fu">list</span>(</span>
-<span id="cb111-4"><a href="example-forecast-workflow.html#cb111-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">forecast_model_id =</span>  <span class="st">&quot;air2waterSat&quot;</span>,  <span class="co">#What goes here</span></span>
-<span id="cb111-5"><a href="example-forecast-workflow.html#cb111-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&quot;Air temperature to water temperature linear regression plus assume saturated oxygen&quot;</span>, </span>
-<span id="cb111-6"><a href="example-forecast-workflow.html#cb111-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;empirical&quot;</span>,  </span>
-<span id="cb111-7"><a href="example-forecast-workflow.html#cb111-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">repository =</span> <span class="st">&quot;https://github.com/rqthomas/neon4cast-example&quot;</span> </span>
-<span id="cb111-8"><a href="example-forecast-workflow.html#cb111-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb111-9"><a href="example-forecast-workflow.html#cb111-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">initial_conditions =</span> <span class="fu">list</span>(</span>
-<span id="cb111-10"><a href="example-forecast-workflow.html#cb111-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
-<span id="cb111-11"><a href="example-forecast-workflow.html#cb111-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb111-12"><a href="example-forecast-workflow.html#cb111-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">drivers =</span> <span class="fu">list</span>(</span>
-<span id="cb111-13"><a href="example-forecast-workflow.html#cb111-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;propagates&quot;</span>,</span>
-<span id="cb111-14"><a href="example-forecast-workflow.html#cb111-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">1</span>, <span class="co">#Just temperature</span></span>
-<span id="cb111-15"><a href="example-forecast-workflow.html#cb111-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">propagation =</span> <span class="fu">list</span>( </span>
-<span id="cb111-16"><a href="example-forecast-workflow.html#cb111-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;ensemble&quot;</span>, </span>
-<span id="cb111-17"><a href="example-forecast-workflow.html#cb111-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">31</span>) </span>
-<span id="cb111-18"><a href="example-forecast-workflow.html#cb111-18" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb111-19"><a href="example-forecast-workflow.html#cb111-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameters =</span> <span class="fu">list</span>(</span>
-<span id="cb111-20"><a href="example-forecast-workflow.html#cb111-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
-<span id="cb111-21"><a href="example-forecast-workflow.html#cb111-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb111-22"><a href="example-forecast-workflow.html#cb111-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">random_effects =</span> <span class="fu">list</span>(</span>
-<span id="cb111-23"><a href="example-forecast-workflow.html#cb111-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
-<span id="cb111-24"><a href="example-forecast-workflow.html#cb111-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb111-25"><a href="example-forecast-workflow.html#cb111-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">process_error =</span> <span class="fu">list</span>(</span>
-<span id="cb111-26"><a href="example-forecast-workflow.html#cb111-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
-<span id="cb111-27"><a href="example-forecast-workflow.html#cb111-27" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb111-28"><a href="example-forecast-workflow.html#cb111-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs_error =</span> <span class="fu">list</span>(</span>
-<span id="cb111-29"><a href="example-forecast-workflow.html#cb111-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
-<span id="cb111-30"><a href="example-forecast-workflow.html#cb111-30" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb111-31"><a href="example-forecast-workflow.html#cb111-31" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb111-32"><a href="example-forecast-workflow.html#cb111-32" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="example-forecast-workflow.html#cb108-1" aria-hidden="true" tabindex="-1"></a>model_metadata <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb108-2"><a href="example-forecast-workflow.html#cb108-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">forecast =</span> <span class="fu">list</span>(</span>
+<span id="cb108-3"><a href="example-forecast-workflow.html#cb108-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_description =</span> <span class="fu">list</span>(</span>
+<span id="cb108-4"><a href="example-forecast-workflow.html#cb108-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">forecast_model_id =</span>  <span class="st">&quot;air2waterSat&quot;</span>,  <span class="co">#What goes here</span></span>
+<span id="cb108-5"><a href="example-forecast-workflow.html#cb108-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="st">&quot;Air temperature to water temperature linear regression plus assume saturated oxygen&quot;</span>, </span>
+<span id="cb108-6"><a href="example-forecast-workflow.html#cb108-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> <span class="st">&quot;empirical&quot;</span>,  </span>
+<span id="cb108-7"><a href="example-forecast-workflow.html#cb108-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">repository =</span> <span class="st">&quot;https://github.com/rqthomas/neon4cast-example&quot;</span> </span>
+<span id="cb108-8"><a href="example-forecast-workflow.html#cb108-8" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb108-9"><a href="example-forecast-workflow.html#cb108-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">initial_conditions =</span> <span class="fu">list</span>(</span>
+<span id="cb108-10"><a href="example-forecast-workflow.html#cb108-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb108-11"><a href="example-forecast-workflow.html#cb108-11" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb108-12"><a href="example-forecast-workflow.html#cb108-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">drivers =</span> <span class="fu">list</span>(</span>
+<span id="cb108-13"><a href="example-forecast-workflow.html#cb108-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;propagates&quot;</span>,</span>
+<span id="cb108-14"><a href="example-forecast-workflow.html#cb108-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">complexity =</span> <span class="dv">1</span>, <span class="co">#Just temperature</span></span>
+<span id="cb108-15"><a href="example-forecast-workflow.html#cb108-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">propagation =</span> <span class="fu">list</span>( </span>
+<span id="cb108-16"><a href="example-forecast-workflow.html#cb108-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">&quot;ensemble&quot;</span>, </span>
+<span id="cb108-17"><a href="example-forecast-workflow.html#cb108-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="dv">31</span>) </span>
+<span id="cb108-18"><a href="example-forecast-workflow.html#cb108-18" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb108-19"><a href="example-forecast-workflow.html#cb108-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">parameters =</span> <span class="fu">list</span>(</span>
+<span id="cb108-20"><a href="example-forecast-workflow.html#cb108-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb108-21"><a href="example-forecast-workflow.html#cb108-21" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb108-22"><a href="example-forecast-workflow.html#cb108-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">random_effects =</span> <span class="fu">list</span>(</span>
+<span id="cb108-23"><a href="example-forecast-workflow.html#cb108-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb108-24"><a href="example-forecast-workflow.html#cb108-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb108-25"><a href="example-forecast-workflow.html#cb108-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">process_error =</span> <span class="fu">list</span>(</span>
+<span id="cb108-26"><a href="example-forecast-workflow.html#cb108-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb108-27"><a href="example-forecast-workflow.html#cb108-27" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb108-28"><a href="example-forecast-workflow.html#cb108-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">obs_error =</span> <span class="fu">list</span>(</span>
+<span id="cb108-29"><a href="example-forecast-workflow.html#cb108-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">status =</span> <span class="st">&quot;absent&quot;</span></span>
+<span id="cb108-30"><a href="example-forecast-workflow.html#cb108-30" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb108-31"><a href="example-forecast-workflow.html#cb108-31" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb108-32"><a href="example-forecast-workflow.html#cb108-32" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Using the <code>team_list</code> and <code>model_metadata</code> above, we can create the metadata file. The function <code>neon4cast::generate_metadata</code> adds additional information to complete the metadata (i.e., geographic information about the site, etc.)</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="example-forecast-workflow.html#cb112-1" aria-hidden="true" tabindex="-1"></a>metadata_file <span class="ot">&lt;-</span> neon4cast<span class="sc">::</span><span class="fu">generate_metadata</span>(forecast_file, team_list, model_metadata)</span></code></pre></div>
-<pre><code>## Rows: 9 Columns: 6
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr (6): attributeName, attributeDefinition, unit, formatString, definition,...
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre><code>## Warning in readChar(path, nchar): truncating string with embedded nuls</code></pre>
-<pre><code>## Automatically calculated file size using file.size(&quot;aquatics-2022-02-15-air2waterSat.csv.gz&quot;)
-## Automatically calculated authentication size using digest::digest(&quot;aquatics-2022-02-15-air2waterSat.csv.gz&quot;, algo = &quot;md5&quot;, file = TRUE)
-## • Checking Validity of EML file...✔ EML is valid✔ additionalMetadata found✔ timestep parsable✔ forecast_horizon parsable✔ forecast_issue_time found✔ forecast_iteration_id found✔ forecast_project_id found✔ metadata_standard_version found✔ model_description found✔ forecast_model_id found✔ name found✔ type found✔ repository found✔ initial_conditions found✔ status found✔ initial_conditions status/uncertainty class valid: absent✔ parameters found✔ status found✔ parameters status/uncertainty class valid: absent✔ drivers found✔ status found✔ drivers status/uncertainty class valid: propagates✔ complexity valid✔ type found✔ drivers propagation type valid: ensemble✔ size valid✔ random_effects found✔ status found✔ random_effects status/uncertainty class valid: absent✔ process_error found✔ status found✔ process_error status/uncertainty class valid: absent✔ obs_error found✔ status found✔ obs_error status/uncertainty class valid: absent</code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="example-forecast-workflow.html#cb109-1" aria-hidden="true" tabindex="-1"></a>metadata_file <span class="ot">&lt;-</span> neon4cast<span class="sc">::</span><span class="fu">generate_metadata</span>(forecast_file, team_list, model_metadata)</span></code></pre></div>
 </div>
 <div id="step-5-submit-forecast" class="section level2" number="12.7">
 <h2><span class="header-section-number">12.7</span> Step 5: Submit forecast!</h2>
 <p>Now we can submit the forecast output and the metadata file to the Challenge using the <code>neon4cast::submit()</code> function</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="example-forecast-workflow.html#cb116-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">submit</span>(<span class="at">forecast_file =</span> forecast_file,</span>
-<span id="cb116-2"><a href="example-forecast-workflow.html#cb116-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">metadata =</span> metadata_file,</span>
-<span id="cb116-3"><a href="example-forecast-workflow.html#cb116-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ask =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="example-forecast-workflow.html#cb110-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">submit</span>(<span class="at">forecast_file =</span> forecast_file,</span>
+<span id="cb110-2"><a href="example-forecast-workflow.html#cb110-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">metadata =</span> metadata_file,</span>
+<span id="cb110-3"><a href="example-forecast-workflow.html#cb110-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ask =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>You can check on the status of your submission using</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="example-forecast-workflow.html#cb117-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">check_submission</span>(forecast_file)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="example-forecast-workflow.html#cb111-1" aria-hidden="true" tabindex="-1"></a>neon4cast<span class="sc">::</span><span class="fu">check_submission</span>(forecast_file)</span></code></pre></div>
 <p>On following day after submission, you can see the forecast on the dashboard at <a href="https://shiny.ecoforecast.org">shiny.ecoforecast.org</a></p>
 </div>
 <div id="example-on-github" class="section level2" number="12.8">
