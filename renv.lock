@@ -1354,7 +1354,7 @@
       "Package": "renv",
       "Version": "0.15.3",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "318c703b833089e1bc0c6a198362ca19",
       "Requirements": []
     },
