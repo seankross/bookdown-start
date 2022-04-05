@@ -2,7 +2,7 @@ bookdown::gitbook:
   css: style.css
   split_by: chapter
   config:
-    toc:
+    toc: true
       collapse: subsection
       before: |
         <li><a href="./">A Minimal Bookdown Book</a></li>
