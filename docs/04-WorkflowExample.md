@@ -33,16 +33,16 @@ library(tidyverse)
 ```
 
 ```
-## ✔ ggplot2 3.3.5     ✔ purrr   0.3.4
-## ✔ tibble  3.1.6     ✔ dplyr   1.0.8
-## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
-## ✔ readr   2.1.2     ✔ forcats 0.5.1
+## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+## ✓ tibble  3.1.6     ✓ dplyr   1.0.8
+## ✓ tidyr   1.2.0     ✓ stringr 1.4.0
+## ✓ readr   2.1.2     ✓ forcats 0.5.1
 ```
 
 ```
 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
 ```
 
 ```r
@@ -74,7 +74,7 @@ library(rMR)
 ```
 
 ```r
-library(EFIstandards)
+#library(EFIstandards)
 
 Sys.setenv("AWS_DEFAULT_REGION" = "data",
            "AWS_S3_ENDPOINT" = "ecoforecast.org")
@@ -111,7 +111,7 @@ target <- readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatic
 ```
 
 ```
-## Rows: 9623 Columns: 10
+## Rows: 9763 Columns: 10
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: ","
 ## chr  (1): siteID
@@ -288,23 +288,6 @@ Confirm that output file meets standard for Challenge
 neon4cast::forecast_output_validator(forecast_file)
 ```
 
-```
-## aquatics-2022-02-15-air2waterSat.csv.gz
-```
-
-```
-## ✔ file name is correct
-## ✔ target variables found
-## ✔ file has ensemble members
-## ✔ file has siteID column
-## ✔ file has time column
-## ✔ file has correct time column
-```
-
-```
-## [1] TRUE
-```
-
 ## Step 4: Generate metadata
 
 First we need to create a "list" in R that describes the forecast model.  We only have one source of uncertainty (driver).  It is propagated (i.e., represented in the forecasted output) using 31 ensemble members.
@@ -350,26 +333,6 @@ Using the `team_list` and `model_metadata` above, we can create the metadata fil
 
 ```r
 metadata_file <- neon4cast::generate_metadata(forecast_file, team_list, model_metadata)
-```
-
-```
-## Rows: 9 Columns: 6
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: ","
-## chr (6): attributeName, attributeDefinition, unit, formatString, definition,...
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-```
-
-```
-## Warning in readChar(path, nchar): truncating string with embedded nuls
-```
-
-```
-## Automatically calculated file size using file.size("aquatics-2022-02-15-air2waterSat.csv.gz")
-## Automatically calculated authentication size using digest::digest("aquatics-2022-02-15-air2waterSat.csv.gz", algo = "md5", file = TRUE)
-## • Checking Validity of EML file...✔ EML is valid✔ additionalMetadata found✔ timestep parsable✔ forecast_horizon parsable✔ forecast_issue_time found✔ forecast_iteration_id found✔ forecast_project_id found✔ metadata_standard_version found✔ model_description found✔ forecast_model_id found✔ name found✔ type found✔ repository found✔ initial_conditions found✔ status found✔ initial_conditions status/uncertainty class valid: absent✔ parameters found✔ status found✔ parameters status/uncertainty class valid: absent✔ drivers found✔ status found✔ drivers status/uncertainty class valid: propagates✔ complexity valid✔ type found✔ drivers propagation type valid: ensemble✔ size valid✔ random_effects found✔ status found✔ random_effects status/uncertainty class valid: absent✔ process_error found✔ status found✔ process_error status/uncertainty class valid: absent✔ obs_error found✔ status found✔ obs_error status/uncertainty class valid: absent
 ```
 
 ## Step 5: Submit forecast!

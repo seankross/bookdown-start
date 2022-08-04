@@ -329,14 +329,14 @@ Teams will submit their forecast netCDF or csv files manually through the challe
 Sys.setenv("AWS_DEFAULT_REGION" = "data",
            "AWS_S3_ENDPOINT" = "ecoforecast.org")
 
-aws.s3::put_object(object = "theme_name-forecast-year-month-day-team_name.csv", bucket = "submissions")
-aws.s3::put_object(object = "theme_name-year-month-day-team_name_ID.xml", bucket = "submissions")
+aws.s3::put_object(object = "theme_name-year-month-day-team_name.csv", bucket = "submissions")
+aws.s3::put_object(object = "theme_name-year-month-day-team_name.xml", bucket = "submissions")
 ```
 - Finally, we have developed a function called submit in the `neon4cast` package handles submission process. Internally it performs the `aws.s3` commands in option two and executes the submission \@ref(neon4cast-submit):
 
 ```r
 neon4cast::submit(forecast_file = "theme_name-forecast-year-month-day-team_name.csv",
-                  metadata = "theme_name-year-month-day-team_name_ID.xml")
+                  metadata = "theme_name-year-month-day-team_name.xml")
 ```
 
 Submissions need to adhere to the forecast format that is provided above, including the file naming convention. Our cyberinfastructure automatically evaluates forecasts and relies on the expected formatting. Contact eco4cast.initiative@gmail.com if you experience technical issues with submitting.

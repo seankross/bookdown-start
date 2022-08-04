@@ -87,18 +87,18 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 
 ```
 ## # A tibble: 477 × 4
-##    time       mmwrWeek siteID `Amblyomma americanum`
-##    <date>        <dbl> <chr>                   <dbl>
-##  1 2015-04-19       16 BLAN                     0   
-##  2 2015-05-10       19 BLAN                     9.82
-##  3 2015-05-31       22 BLAN                    10   
-##  4 2015-06-07       23 BLAN                    19.4 
-##  5 2015-06-21       25 BLAN                     3.14
-##  6 2015-07-12       28 BLAN                     3.66
-##  7 2015-08-02       31 BLAN                     0   
-##  8 2015-08-23       34 BLAN                     0   
-##  9 2015-09-13       37 BLAN                     0   
-## 10 2015-10-11       41 BLAN                     0   
+##    time       mmwrWeek siteID amblyomma_americanum
+##    <date>        <dbl> <chr>                 <dbl>
+##  1 2015-04-19       16 BLAN                   0   
+##  2 2015-05-10       19 BLAN                   9.82
+##  3 2015-05-31       22 BLAN                  10   
+##  4 2015-06-07       23 BLAN                  19.4 
+##  5 2015-06-21       25 BLAN                   3.14
+##  6 2015-07-12       28 BLAN                   3.66
+##  7 2015-08-02       31 BLAN                   0   
+##  8 2015-08-23       34 BLAN                   0   
+##  9 2015-09-13       37 BLAN                   0   
+## 10 2015-10-11       41 BLAN                   0   
 ## # … with 467 more rows
 ```
 
