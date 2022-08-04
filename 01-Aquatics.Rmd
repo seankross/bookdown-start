@@ -60,8 +60,8 @@ readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatic
 The target file has the following columns   
 
 - `time`: date of observation    
-- `siteID`: NEON site code    
-- `variable`: variable (water temperature (°C), dissolved oxygen (mg/L), chlorophyll-a (mg/L)
+- `site_id`: NEON site code    
+- `variable`: variable (`temperature`, `oxygen`, `chla`)
 - `observation`: daily mean value
 - `sample_error`: standard error of observations associated with daily mean values
 - `measure_error`: daily mean expected uncertainty for the measurements, as reported by NEON
@@ -131,7 +131,7 @@ Through a collaboration with NEON, the new data will be available within 24-28 h
 
 ## Submissions
 
-The required names for forecasted variables are in the targets file: `oxygen`, `temperature`, and `chla`. 
+The required names for forecasted variables: `oxygen`, `temperature`, and `chla`. 
 
 Instructions for submitting forecasts are found here: [Submission Instructions]
 

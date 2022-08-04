@@ -107,12 +107,11 @@ d <- readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-t
 ```
 The target file has the following columns:
 
-- `time`: YYYY-MM-DD    
-- `siteID`: NEON site code (e.g., BART)   
-- `gcc_90`: 90th percentile GCC for the ROI   
-- `gcc_sd`: standard deviation of the 90th percentile   
-- `rcc_90`: 90th percentile RCC for the ROI (see Fall Phenology for more information about this variable)
-- `rcc_sd`: standard deviation of the 90th percentile (see Fall Phenology for more information about this variable)   
+- `time`: date of observation    
+- `site_id`: NEON site code    
+- `variable`: variable (`gcc_90` or `rcc_90`)
+- `observation`: daily value
+- `sd`: standard deviation of the observation value
 
 ## Timeline
 
@@ -123,6 +122,8 @@ Daily submissions are allowed and encouraged as new observations and weather for
 Cron jobs work on unix and mac systems.  An example of a script that executes a cron job using R can be found [here](https://github.com/eco4cast/neon4cast-phenology/blob/master/cron_automation.R){target="_blank"}.
 
 ## Submissions
+
+The required names for forecasted variables: `gcc_90`, and `rcc_90`.
 
 Instructions for submitting forecasts are found here: [Submission Instructions]
 
