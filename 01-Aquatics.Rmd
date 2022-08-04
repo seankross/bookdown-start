@@ -54,7 +54,7 @@ A file with previously released NEON data that has been processed into targets i
 Here is the format of the target file
 
 ```{r message = FALSE}
-readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz")
+readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatics-targets.csv.gz")
 ```
 
 The target file has the following columns   
@@ -63,8 +63,8 @@ The target file has the following columns
 - `siteID`: NEON site code    
 - `variable`: variable (water temperature (°C), dissolved oxygen (mg/L), chlorophyll-a (mg/L)
 - `observation`: daily mean value
-- `sample.sd`: standard deviation of observations associated with daily mean values
-- `measure.error`: daily mean expected uncertainty for the measurements, as reported by NEON
+- `sample_error`: standard error of observations associated with daily mean values
+- `measure_error`: daily mean expected uncertainty for the measurements, as reported by NEON
 
 ### Surface Mean Daily Dissolved Oxygen Concentration
 
@@ -127,8 +127,7 @@ Cron jobs work on unix and mac systems.  An example of a script that executes a 
 
 ## Observed data latency
 
-NEON data officially releases the temperature, oxygen, and chlorophyll-a data on their data portal and API in monthly data packages.  Data for a given month is scheduled to be released around the 15th of the following month. 
-In addition, the NEON forecasting challenge has been granted access to NEON's provisional data accessed through Google Cloud Platform to provide additional data with a latency of 24 - 48 hrs. This provisional data is replaced with NEON portal data when it becomes available. 
+Through a collabration with NEON, the new data will be avaiable within 24-28 hrs of being collected for use in model training and forecast evaluation
 
 ## Submissions
 
@@ -158,6 +157,7 @@ Answers to frequency asks questions can be found here: [Frequently Asked Questio
 
 ## Design Team
 
+Freya Olsson, Virginia Tech
 James Guinnip, Kansas State University  
 Sarah Burnet, University of Idaho  
 Ryan McClure, Virginia Tech  
