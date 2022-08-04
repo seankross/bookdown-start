@@ -155,7 +155,7 @@ site and makes this data available. These helper functions provide
 convenient access for downloading and stacking the individual forecast
 files.
 
-See [met_inputs] for the functions
+See [Meteorology Inputs] for the functions
 
 ### Submit a forecast {#neon4cast-submit}
 

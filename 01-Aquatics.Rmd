@@ -101,7 +101,7 @@ Phytoplankton biomass are the base of the aquatic food-web and an important indi
 Information on the sites can be found here:
 
 ```{r message = FALSE}
-site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20220727.csv")
+site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20210928.csv")
 ```
 
 ```{r echo = FALSE}
@@ -127,9 +127,11 @@ Cron jobs work on unix and mac systems.  An example of a script that executes a 
 
 ## Observed data latency
 
-Through a collabration with NEON, the new data will be avaiable within 24-28 hrs of being collected for use in model training and forecast evaluation
+Through a collaboration with NEON, the new data will be available within 24-28 hrs of being collected for use in model training and forecast evaluation
 
 ## Submissions
+
+The required names for forecasted variables are in the targets file: `oxygen`, `temperature`, and `chla`. 
 
 Instructions for submitting forecasts are found here: [Submission Instructions]
 
