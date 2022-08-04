@@ -40,7 +40,7 @@ convenience, we read this in as a timeseries object, noting that the
 time is in the ‘time’ column, and timeseries are replicated over sites.
 
 ``` r
-aquatic <- read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz") %>% 
+aquatic <- read_csv("https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatics-targets.csv.gz") %>% 
   as_tsibble(index=time, key=siteID)
 ```
 
@@ -155,31 +155,7 @@ site and makes this data available. These helper functions provide
 convenient access for downloading and stacking the individual forecast
 files.
 
-``` r
-aq_sites <- unique(aquatic$siteID)
-download_noaa(aq_sites)
-noaa_fc <- stack_noaa()
-noaa_fc
-#> # A tibble: 8,590 x 18
-#>    model interval siteID startDate endDate ensemble air_temperature air_pressure
-#>    <chr> <chr>    <chr>  <chr>     <chr>   <chr>              <dbl>        <dbl>
-#>  1 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            295.      101473.
-#>  2 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            291.      101595.
-#>  3 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            289.      101595.
-#>  4 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            302.      101602.
-#>  5 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            296.      101479.
-#>  6 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            292.      101553.
-#>  7 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            290.      101461.
-#>  8 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            302.      101408.
-#>  9 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            296.      101281.
-#> 10 NOAA… 6hr      BARC   2021-03-… 2021-0… ens00.nc            291.      101360.
-#> # … with 8,580 more rows, and 10 more variables: relative_humidity <dbl>,
-#> #   surface_downwelling_longwave_flux_in_air <dbl>,
-#> #   surface_downwelling_shortwave_flux_in_air <dbl>, precipitation_flux <dbl>,
-#> #   specific_humidity <dbl>, cloud_area_fraction <dbl>, wind_speed <dbl>,
-#> #   time <dbl>, latitude <dbl>, longitude <dbl>
-```
-
+See [met_inputs] for the functions
 
 ### Submit a forecast {#neon4cast-submit}
 
