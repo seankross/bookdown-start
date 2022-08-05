@@ -150,7 +150,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ```
 
 ```
-## # A tibble: 3,178 × 4
+## # A tibble: 3,234 × 4
 ##    siteID time       abundance richness
 ##    <chr>  <date>         <dbl>    <dbl>
 ##  1 ABBY   2016-09-12    1.05         14
@@ -163,7 +163,8 @@ readr::read_csv("https://data.ecoforecast.org/targets/beetles/beetles-targets.cs
 ##  8 ABBY   2017-07-10    0.148        15
 ##  9 ABBY   2017-07-24    0.105        14
 ## 10 ABBY   2017-08-07    0.116        16
-## # … with 3,168 more rows
+## # … with 3,224 more rows
+## # ℹ Use `print(n = ...)` to see more rows
 ```
 
 The table has the following columns:  

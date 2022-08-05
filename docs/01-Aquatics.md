@@ -2,7 +2,7 @@
 
 **What:** Freshwater surface water temperature, oxygen, and chlorophyll-a.
 
-**Where:** 2 lakes and 3 river/stream NEON sites. 
+**Where:** 7 lakes and 16 river/stream NEON sites. 
 
 **When:**  Forecasts produced daily with a 35-day forecast horizon. Forecast submissions are accepted daily throughout 2022.  The only requirement is that submissions are predictions of the future at the time the forecast is submitted.
 
@@ -32,9 +32,9 @@ chlorophyll-a is a metric of phytoplankton biomass. Phytoplankton biomass are th
 
 ## Challenge
 
-This design challenge asks teams to produce forecasts of mean daily surface water temperature, dissolved oxygen, and/or chlorophyll-a in 2 NEON lake and/or 3 NEON river/stream sites for 35-days in the future.  
+This design challenge asks teams to produce forecasts of mean daily surface water temperature and/or dissolved oxygen in 7 NEON lake and/or 16 NEON river/stream sites for 35-days in the future. Additionally, forecasts of chlorophyll-a are invited for the 7 lakes and 3 non-wadeable river NEON sites. 
 
-You can chose to submit to either the lakes or the streams or both.  You can also chose to submit any of the three focal variables (temperature, oxygen, and chlorophyll).
+You can chose to submit to either the lakes, rivers or streams or all three. You can also chose to submit any of the three focal variables (temperature, oxygen, and chlorophyll).
 
 Teams are asked to submit their 35-day forecasts of NEON surface mean daily surface water temperature, dissolved oxygen, and/or chlorophyll-a along with uncertainty estimates and metadata. NEON surface water temperature, dissolved oxygen, and chlorophyll-a collected prior to the current date will be provided and may be used to build and improve the forecast models. Other data can be used as long as teams provide access (minimum of URL, but ideally a script) to all teams in the challenge.
 
@@ -43,8 +43,9 @@ Teams are asked to submit their 35-day forecasts of NEON surface mean daily surf
 The R script for generating the evaluation and training data (i.e., targets) can be found at: https://github.com/eco4cast/neon4cast-aquatics
 
 The challenge uses the following NEON data products:
-- [DP1.20264.001](https://data.neonscience.org/data-products/DP1.20264.001){target="_blank"}: Temperature at specific depth in surface water
-- [DP1.20288.001](https://data.neonscience.org/data-products/DP1.20288.001){target="_blank"}: Water quality (includes oxygen and chlorophyll-a)   
+- [DP1.20264.001](https://data.neonscience.org/data-products/DP1.20264.001){target="_blank"}: Temperature at specific depth in surface water for lakes
+- [DP1.20288.001](https://data.neonscience.org/data-products/DP1.20288.001){target="_blank"}: Water quality (includes oxygen and chlorophyll-a)  
+- [DP1.20035.001](https://data.neonscience.org/data-products/DP1.20053.001){target ="_blank"}: Temperature in surface waters for streams
 
 A file with previously released NEON data that has been processed into targets is provided below. The target script can be found [here](https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R){target="_blank"}. The same processing will be applied to new data that are used for forecast evaluation. 
 
@@ -52,45 +53,42 @@ Here is the format of the target file
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz")
+readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatics-targets.csv.gz")
 ```
 
 ```
-## # A tibble: 9,763 × 10
-##    time       siteID oxygen temperature  chla oxygen_sd temperature_sd chla_sd
-##    <date>     <chr>   <dbl>       <dbl> <dbl>     <dbl>          <dbl>   <dbl>
-##  1 2017-08-27 BARC       NA        31.4    NA        NA        0.00162      NA
-##  2 2017-08-27 BARC       NA        31.5    NA        NA        0.00121      NA
-##  3 2017-08-28 BARC       NA        31.1    NA        NA        0.00155      NA
-##  4 2017-08-28 BARC       NA        31.1    NA        NA        0.00117      NA
-##  5 2017-08-29 BARC       NA        31.2    NA        NA        0.00211      NA
-##  6 2017-08-29 BARC       NA        31.1    NA        NA        0.00168      NA
-##  7 2017-08-30 BARC       NA        31.5    NA        NA        0.00208      NA
-##  8 2017-08-30 BARC       NA        31.4    NA        NA        0.00210      NA
-##  9 2017-08-31 BARC       NA        31.7    NA        NA        0.00193      NA
-## 10 2017-08-31 BARC       NA        31.7    NA        NA        0.00176      NA
-## # … with 9,753 more rows, and 2 more variables: depth_oxygen <dbl>,
-## #   depth_temperature <dbl>
+## # A tibble: 10,491 × 10
+##    time       siteID oxygen temperature  chla oxygen_sd temper…¹ chla_sd depth…²
+##    <date>     <chr>   <dbl>       <dbl> <dbl>     <dbl>    <dbl>   <dbl>   <dbl>
+##  1 2017-08-27 BARC       NA        31.4    NA        NA  0.00162      NA      NA
+##  2 2017-08-27 BARC       NA        31.5    NA        NA  0.00121      NA      NA
+##  3 2017-08-28 BARC       NA        31.1    NA        NA  0.00155      NA      NA
+##  4 2017-08-28 BARC       NA        31.1    NA        NA  0.00117      NA      NA
+##  5 2017-08-29 BARC       NA        31.2    NA        NA  0.00211      NA      NA
+##  6 2017-08-29 BARC       NA        31.1    NA        NA  0.00168      NA      NA
+##  7 2017-08-30 BARC       NA        31.5    NA        NA  0.00208      NA      NA
+##  8 2017-08-30 BARC       NA        31.4    NA        NA  0.00210      NA      NA
+##  9 2017-08-31 BARC       NA        31.7    NA        NA  0.00193      NA      NA
+## 10 2017-08-31 BARC       NA        31.7    NA        NA  0.00176      NA      NA
+## # … with 10,481 more rows, 1 more variable: depth_temperature <dbl>, and
+## #   abbreviated variable names ¹​temperature_sd, ²​depth_oxygen
+## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
 The target file has the following columns   
 
 - `time`: date of observation    
-- `siteID`: NEON site code    
-- `oxygen`: oxygen (mg/L)   
-- `temperature`: temperature (Celsius)   
-- `chla`: chlorophyll-a (mg/L)
-- `oxygen_sd`: standard deviation of oxygen observation as reported by NEON    
-- `temperature_sd`: standard deviation of temperature observation as reported by NEON   
-- `chla_sd`: standard deviation of temperature observation as reported by NEON   
-- `depth_oxygen`: depth in meters of oxygen and chlorophyll observation   
-- `depth_temperature`: depth in meters of temperature observation
+- `site_id`: NEON site code    
+- `variable`: variable (`temperature`, `oxygen`, `chla`)
+- `observation`: daily mean value
+- `sample_error`: standard error of observations associated with daily mean values
+- `measure_error`: daily mean expected uncertainty for the measurements, as reported by NEON
 
 ### Surface Mean Daily Dissolved Oxygen Concentration
 
 **Definition**
 
-Dissolved oxygen (DO) is the concentration of oxygen dissolved in water. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L<sup>-1</sup>. We have adapted the available NEON DO data to output the mean daily DO concentration in mg L<sup>-1</sup> from a water quality sonde deployed 1m below the water surface at a lake site (BARC and CRAM) and a water quality sonde deployed in a stream site (COMO, MCDI, POSE). Common DO concentrations range between 0 and 12 mg L<sup>-1</sup> and DO concentrations less than 2 mg L<sup>-1</sup> are considered hypoxic. 
+Dissolved oxygen (DO) is the concentration of oxygen dissolved in water. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L<sup>-1</sup>. We have adapted the available NEON DO data to output the mean daily DO concentration in mg L<sup>-1</sup> from a water quality sonde(s) deployed in the top 1 m of the water column across all sites. Where multiple depths have observations within this depth range an average was taken. Common DO concentrations range between 0 and 12 mg L<sup>-1</sup> and DO concentrations less than 2 mg L<sup>-1</sup> are considered hypoxic. 
 
 **Motivation**
 
@@ -100,7 +98,7 @@ Dissolved oxygen concentration is a critically important variable in limnology. 
 
 **Definition**
 
-Water temperature is the temperature of the water. NEON’s 30-minute time resolution from deployed water temperature sondes in the freshwater sites reports this in degrees Celsius (°C). We have adapted the available NEON water temperature data to output the mean daily water temperature in °C from temperature thermisters deployed 0-1m below the water surface at the lake sites (BARC and CRAM) and a water temperature sonde deployed in a stream site (COMO, MCDI, POSE). Common water temperatures in lakes and streams range between 4 and 35 °C.
+Water temperature is the temperature of the water. NEON’s 30-minute time resolution from deployed water temperature sondes in the freshwater sites reports this in degrees Celsius (°C). We have adapted the available NEON water temperature data to output the mean daily water temperature in °C from temperature thermisters deployed 0-1m below the water surface at the lake sites and a water temperature sonde deployed in the stream sites. Where multiple depths have observations within this depth range an average was taken. Common water temperatures in lakes and streams range between 4 and 35 °C.
 
 **Motivation**
 
@@ -110,7 +108,7 @@ In streams and rivers, forecasting water temperature can be meaningful for prote
 
 **Definition**
 
-chlorophyll-a (chla) is the concentration of chlorophyll-a in the water column, as measured using florescence. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L<sup>-1</sup>. We have adapted the available NEON chla data to output the mean daily chla concentration in mg L<sup>-1</sup> from a water quality sonde deployed ~-0.3 - 1m below the water surface at a lake site (BARC and CRAM) and a water quality sonde deployed in a stream site (COMO, MCDI, POSE).
+chlorophyll-a (chla) is the concentration of chlorophyll-a in the water column, as measured using florescence. NEON’s 30-minute time resolution from deployed water quality sondes among the freshwater sites reports this concentration as mg L<sup>-1</sup>. We have adapted the available NEON chla data to output the mean daily chla concentration in mg L<sup>-1</sup> from a water quality sonde deployed in the top 1 m of the water column at a lake sites and water quality sondes deployed in the non-wadeable river sites (BLWA, FLNT, TOMB). No ongoing measurements of chla are available in the wadeable streams and therefore cannot be forecasted in this challenge. 
 
 **Motivation**
 
@@ -136,7 +134,7 @@ site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4ca
 
 ## Timeline
 
-Forecasts for a minimum of 35 days can be submitted daily by 11:59 pm UTC throughout 2022. A minimum of 35 days in the future must be forecasted for each submission. For example, a forecast submitted on February 1 should be for at least February 1st – March 7th. New forecasts can be submitted daily as new weather forecasts and observations (e.g., new flux data is released by NEON) become available. The key is that submissions are predictions of the future.
+Forecasts for a minimum of 35 days can be submitted daily by 11:59 pm UTC throughout 2022. A minimum of 35 days in the future must be forecasted for each submission. For example, a forecast submitted on February 1 should be for at least February 1st – March 7th. New forecasts can be submitted daily as new weather forecasts and observations (e.g., new temperature and water quality data is released by NEON) become available. The key is that submissions are predictions of the future.
 
 Even that daily submissions are allowed and encouraged as new observations and weather forecasts become available, the automation of forecast generation may be ideal.  There are many ways to automate scripts that are written to download observations and meteorology drivers, generate forecasts, and submit forecasts. Two tools that many have used are cron jobs (see the R package [cronR](https://cran.r-project.org/web/packages/cronR/index.html){target="_blank"}) that execute tasks at user specified times and [github actions](https://youtu.be/dMrUlXi4_Bo){target="_blank"}.  See more at [Frequently Asked Questions]    
 
@@ -144,9 +142,11 @@ Cron jobs work on unix and mac systems.  An example of a script that executes a 
 
 ## Observed data latency
 
-NEON data officially releases the temperature, oxygen, and chlorophyll-a data on their data portal and API in monthly data packages.  Data for a given month is scheduled to be released around the 15th of the following month. As a result there will be a gap of 2 weeks - 6 weeks between the last available observation and the start of your forecast.  
+Through a collaboration with NEON, the new data will be available within 24-28 hrs of being collected for use in model training and forecast evaluation
 
 ## Submissions
+
+The required names for forecasted variables: `oxygen`, `temperature`, and `chla`. 
 
 Instructions for submitting forecasts are found here: [Submission Instructions]
 
@@ -174,6 +174,7 @@ Answers to frequency asks questions can be found here: [Frequently Asked Questio
 
 ## Design Team
 
+Freya Olsson, Virginia Tech
 James Guinnip, Kansas State University  
 Sarah Burnet, University of Idaho  
 Ryan McClure, Virginia Tech  
