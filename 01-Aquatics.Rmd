@@ -101,7 +101,7 @@ Phytoplankton biomass are the base of the aquatic food-web and an important indi
 Information on the sites can be found here:
 
 ```{r message = FALSE}
-site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20210928.csv")
+site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20220727.csv")
 ```
 
 ```{r echo = FALSE}
