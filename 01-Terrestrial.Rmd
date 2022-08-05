@@ -92,22 +92,19 @@ To create the data for evaluation (and training) for NEE and LE we extract NEE a
 The table with the half-hour NEE and LE has the following columns
 
 - `time`: YYYY-MM-DD HH:MM for the start of the 30-minute period in UTC  
-- `siteID`: NEON site code (e.g., BART)     
-- `nee`:  umol CO2 m<sup>-2</sup> s<sup>-1</sup>   
-- `le`: W m<sup>-2</sup>   
-- `nee_sd_intercept`: intercept in the nee observation uncertainty standard deviation   
-- `nee_sd_slopeP`: slope in the relationship between nee and observation uncertainty standard deviation for positive values of nee   
-- `nee_sd_slopeN`: slope in the relationship between nee and observation uncertainty standard deviation for negative values of nee   
-- `le_sd_intercept`: intercept in the le observation uncertainty standard deviation   
-- `le_sd_slopeP`:slope in the relationship between le and observation uncertainty standard deviation for positive values of le  
-- `le_sd_slopeN`: slope in the relationship between le and observation uncertainty standard deviation for negative values of le   
+- `site_id`: NEON site code (e.g., BART)     
+- `variable`:  `nee` (umol CO2 m<sup>-2</sup> s<sup>-1</sup>) or `le` W m<sup>-2</sup>  
+- `observation`: value for variable
+- `sd_intercept`: intercept in the nee observation uncertainty standard deviation   
+- `sd_slopeP`: slope in the relationship between nee and observation uncertainty standard deviation for positive values of nee   
+- `sd_slopeN`: slope in the relationship between nee and observation uncertainty standard deviation for negative values of variable   
 
-The observation uncertainty estimates for nee and le are derived from the [PEcAN project](https://pecanproject.github.io/){target="_blank"} and can be used by `sd_nee <- nee_sd_intercept + nee_sd_slopeP * nee`.  They are not supplied by NEON.
+The observation uncertainty estimates for nee and le are derived from the [PEcAN project](https://pecanproject.github.io/){target="_blank"} and can be used by `sd <- sd_intercept + sd_slopeP * observation`.  They are not supplied by NEON.
 
 Here is the download link and format of the `terrestrial_30min` target file:
 
 ```{r message = FALSE}
-readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestrial_30min-targets.csv.gz", guess_max = 1e6)
+readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/terrestrial_30min/terrestrial_30min-targets.csv.gz", guess_max = 1e6)
 ```
 
 The code used to generate the targets from NEON data can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R)
@@ -117,14 +114,14 @@ The code used to generate the targets from NEON data can be found [here](https:/
 To evaluate the models that produce daily flux forecasts, we select only days with at least 24 of 48 half hours that pass the quality control flags.  For these days, we average the half-hours and convert carbon to daily units (gC/m2/day).  The daily data table has the following columns.
 
 - `time`: YYYY-MM-DD (the day is determined using UTC time)  
-- `siteID`: NEON site code (e.g., BART)  
-- `nee`: g C m<sup>-2</sup> day<sup>-1</sup>  
-- `le`:  W m<sup>-2</sup>  
+- `site_id`: NEON site code (e.g., BART)  
+- `variable`: `nee` (g C m<sup>-2</sup> day<sup>-1</sup>) or `le` (W m<sup>-2</sup>)
+- `observation`: value for variable
 
 Here is the download link and format of the `terrestrial_daily` target file
 
 ```{r message = FALSE}
-readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestrial_daily-targets.csv.gz", guess_max = 1e6)
+readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/terrestrial_daily/terrestrial_daily-targets.csv.gz", guess_max = 1e6)
 ```
 
 The code used to generate the targets from NEON data can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R)
@@ -149,6 +146,8 @@ The reduction of the latency from monthly to 5-days allows this theme to forecas
 
 ## Submissions
 
+The required names for forecasted variables: `nee`, and `le`.
+
 Instructions for submitting forecasts are found here: [Submission Instructions]
 
 The specific file format for the terrestrial_daily theme is here: [Terrestrial daily]
@@ -158,6 +157,7 @@ The specific file format for the terrestrial_30min theme is here: [Terrestrial 3
 ## Meterological inputs for modeling
 
 Information about forecasted meteorology that is available for you to use when generating your forecasts can be found here: [Meteorology Inputs] 
+
 ## Useful functions
 
 Functions for validating, evaluating and submitting forecasts can be found here: [Helpful Functions]

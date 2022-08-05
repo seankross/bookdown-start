@@ -32,19 +32,17 @@ There are two key options for the format.  First, the file can be either in a cs
 - `time`: The start of the forecast
 - `site_id`: NEON code for site
 - `ensemble` integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample);
-- `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `variable`: standardized variable name from the theme
 - `predicted`: forecasted value
 
 The time unit (i.e., date or date-time) should correspond to the time unit of the theme specific target file
 
-### Ensemble CSV
+### Distribution CSV
 
 - `time`: The start of the forecast
 - `site_id`: NEON code for site
 - `family` name of probability distribution that is described by the parameter values in the parameter column; only `normal` is currently allowed
 - `parameter` required to be the string `mean` or `sd` (see note below about statistic column).     
-- `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 - `variable`: standardized variable name from the theme
 - `predicted`: forecasted value for mean or standard deviation
 
@@ -57,7 +55,6 @@ A netcdf should have the following variables
 - `time`: The start of the forecast
 - `site_id`: NEON code for site
 - `ensemble` integer value for forecast replicate within the year and month (i.e. ensemble member or MCMC sample);
-- `forecast`: set as 1 for each row (1 = variables were forecasted; a 0 would designate a hindcast which does not apply to submissions to the challenge)
 
 and include additional variables with names that correspond to the theme-specific standardized variables.  For example, a netcdf from the aquatics theme would have `temperature`, `oxygen`, and `chla` variables.  
 
@@ -106,7 +103,7 @@ Submissions need to adhere to the forecast format that is provided above, includ
 
 You can check the status of your submission using the following function in the `neon4cast` package
 
-```{r}
+```{r eval = FALSE}
 neon4cast::check_submission("phenology-2022-02-07-persistence.nc")
 ```
 
