@@ -58,7 +58,7 @@ team_list <- list(list(individualName = list(givenName = "Quinn",
 These targets are updated when new data is available from NEON.
 
 ```{r}
-target <- readr::read_csv("https://data.ecoforecast.org/targets/aquatics/aquatics-targets.csv.gz", guess_max = 1e6)
+target <- readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatics-targets.csv.gz", guess_max = 1e6)
 ```
 
 A table is available with NEON site descriptions.  The calculation of oxygen saturation requires the elevation of each site, which is included in the site description table.
