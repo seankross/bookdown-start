@@ -86,7 +86,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 ```
 
 ```
-## # A tibble: 477 × 4
+## # A tibble: 528 × 4
 ##    time       mmwrWeek siteID amblyomma_americanum
 ##    <date>        <dbl> <chr>                 <dbl>
 ##  1 2015-04-19       16 BLAN                   0   
@@ -99,7 +99,8 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 ##  8 2015-08-23       34 BLAN                   0   
 ##  9 2015-09-13       37 BLAN                   0   
 ## 10 2015-10-11       41 BLAN                   0   
-## # … with 467 more rows
+## # … with 518 more rows
+## # ℹ Use `print(n = ...)` to see more rows
 ```
 
 

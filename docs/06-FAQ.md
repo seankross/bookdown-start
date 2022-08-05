@@ -51,7 +51,16 @@ neon4cast::check_submission("phenology-2022-02-07-persistence.nc")
 ```
 
 ```
-## Submission was successfully processed
+## Client error: (404) Not Found
+## Client error: (404) Not Found
+```
+
+```
+## Client error: (403) Forbidden
+```
+
+```
+## Submissions is not present on server.  Try uploading again.
 ```
 
 We run a validator script when processing the submissions. If your submission does not meet the file standards above, you can run a function that provides information describing potential issues.  The forecast file needs to be in your local working directory or you need to provide a full path to the file
