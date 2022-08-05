@@ -112,7 +112,7 @@ Here is the format of the target file
 
 
 ```r
-d <- readr::read_csv("https://data.ecoforecast.org/targets/phenology/phenology-targets.csv.gz", guess_max = 1e6)
+d <- readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/phenology/phenology-targets.csv.gz", guess_max = 1e6)
 ```
 The target file has the following columns:
 

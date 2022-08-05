@@ -29,6 +29,7 @@ timeline-1
 flux-data-latency
 submissions-1
 meterological-inputs-for-modeling-1
+useful-functions-1
 null-models-1
 faq-1
 design-team-1
@@ -44,7 +45,7 @@ target-file
 timeline-2
 submissions-2
 meterological-inputs-for-modeling-2
-useful-functions-1
+useful-functions-2
 null-models-2
 faq-2
 design-team-2
@@ -61,7 +62,7 @@ target-file-1
 timeline-3
 submissions-3
 meterological-inputs-for-modeling-3
-useful-functions-2
+useful-functions-3
 null-models-3
 faq-3
 design-team-3
@@ -94,7 +95,7 @@ submission-instructions
 forecast-format
 examples-of-the-forecast-file-format.
 ensemble-csv
-ensemble-csv-1
+distribution-csv
 netcdf
 metadata-format
 submission-process

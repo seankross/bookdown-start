@@ -92,43 +92,38 @@ To create the data for evaluation (and training) for NEE and LE we extract NEE a
 The table with the half-hour NEE and LE has the following columns
 
 - `time`: YYYY-MM-DD HH:MM for the start of the 30-minute period in UTC  
-- `siteID`: NEON site code (e.g., BART)     
-- `nee`:  umol CO2 m<sup>-2</sup> s<sup>-1</sup>   
-- `le`: W m<sup>-2</sup>   
-- `nee_sd_intercept`: intercept in the nee observation uncertainty standard deviation   
-- `nee_sd_slopeP`: slope in the relationship between nee and observation uncertainty standard deviation for positive values of nee   
-- `nee_sd_slopeN`: slope in the relationship between nee and observation uncertainty standard deviation for negative values of nee   
-- `le_sd_intercept`: intercept in the le observation uncertainty standard deviation   
-- `le_sd_slopeP`:slope in the relationship between le and observation uncertainty standard deviation for positive values of le  
-- `le_sd_slopeN`: slope in the relationship between le and observation uncertainty standard deviation for negative values of le   
+- `site_id`: NEON site code (e.g., BART)     
+- `variable`:  `nee` (umol CO2 m<sup>-2</sup> s<sup>-1</sup>) or `le` W m<sup>-2</sup>  
+- `observation`: value for variable
+- `sd_intercept`: intercept in the nee observation uncertainty standard deviation   
+- `sd_slopeP`: slope in the relationship between nee and observation uncertainty standard deviation for positive values of nee   
+- `sd_slopeN`: slope in the relationship between nee and observation uncertainty standard deviation for negative values of variable   
 
-The observation uncertainty estimates for nee and le are derived from the [PEcAN project](https://pecanproject.github.io/){target="_blank"} and can be used by `sd_nee <- nee_sd_intercept + nee_sd_slopeP * nee`.  They are not supplied by NEON.
+The observation uncertainty estimates for nee and le are derived from the [PEcAN project](https://pecanproject.github.io/){target="_blank"} and can be used by `sd <- sd_intercept + sd_slopeP * observation`.  They are not supplied by NEON.
 
 Here is the download link and format of the `terrestrial_30min` target file:
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_30min/terrestrial_30min-targets.csv.gz", guess_max = 1e6)
+readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/terrestrial_30min/terrestrial_30min-targets.csv.gz", guess_max = 1e6)
 ```
 
 ```
-## # A tibble: 958,840 × 10
-##    time                siteID    nee      le nee_sd_in…¹ nee_s…² nee_s…³ le_sd…⁴
-##    <dttm>              <chr>   <dbl>   <dbl>       <dbl>   <dbl>   <dbl>   <dbl>
-##  1 2017-02-01 10:00:00 BART   -0.574 -0.413         1.14   0.205  -0.129    10.2
-##  2 2017-02-01 10:30:00 BART    0.297 -0.127         1.14   0.205  -0.129    10.2
-##  3 2017-02-01 11:00:00 BART   NA     NA             1.14   0.205  -0.129    10.2
-##  4 2017-02-01 11:30:00 BART   NA     NA             1.14   0.205  -0.129    10.2
-##  5 2017-02-01 12:00:00 BART    0.224 -0.0333        1.14   0.205  -0.129    10.2
-##  6 2017-02-01 12:30:00 BART    2.12   1.44          1.14   0.205  -0.129    10.2
-##  7 2017-02-01 13:00:00 BART    2.18   2.49          1.14   0.205  -0.129    10.2
-##  8 2017-02-01 13:30:00 BART   NA     NA             1.14   0.205  -0.129    10.2
-##  9 2017-02-01 14:00:00 BART   NA     NA             1.14   0.205  -0.129    10.2
-## 10 2017-02-01 14:30:00 BART   NA     NA             1.14   0.205  -0.129    10.2
-## # … with 958,830 more rows, 2 more variables: le_sd_slopeP <dbl>,
-## #   le_sd_slopeN <dbl>, and abbreviated variable names ¹​nee_sd_intercept,
-## #   ²​nee_sd_slopeP, ³​nee_sd_slopeN, ⁴​le_sd_intercept
-## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+## # A tibble: 1,922,480 × 7
+##    time                site_id variable observed sd_intercept sd_slopeP sd_slo…¹
+##    <dttm>              <chr>   <chr>       <dbl>        <dbl>     <dbl>    <dbl>
+##  1 2017-02-01 10:00:00 BART    nee        -0.574         1.14     0.205   -0.132
+##  2 2017-02-01 10:30:00 BART    nee         0.297         1.14     0.205   -0.132
+##  3 2017-02-01 11:00:00 BART    nee        NA             1.14     0.205   -0.132
+##  4 2017-02-01 11:30:00 BART    nee        NA             1.14     0.205   -0.132
+##  5 2017-02-01 12:00:00 BART    nee         0.224         1.14     0.205   -0.132
+##  6 2017-02-01 12:30:00 BART    nee         2.12          1.14     0.205   -0.132
+##  7 2017-02-01 13:00:00 BART    nee         2.18          1.14     0.205   -0.132
+##  8 2017-02-01 13:30:00 BART    nee        NA             1.14     0.205   -0.132
+##  9 2017-02-01 14:00:00 BART    nee        NA             1.14     0.205   -0.132
+## 10 2017-02-01 14:30:00 BART    nee        NA             1.14     0.205   -0.132
+## # … with 1,922,470 more rows, and abbreviated variable name ¹​sd_slopeN
+## # ℹ Use `print(n = ...)` to see more rows
 ```
 
 The code used to generate the targets from NEON data can be found [here](https://github.com/eco4cast/neon4cast-terrestrial/blob/master/02_terrestrial_targets.R)
@@ -138,32 +133,32 @@ The code used to generate the targets from NEON data can be found [here](https:/
 To evaluate the models that produce daily flux forecasts, we select only days with at least 24 of 48 half hours that pass the quality control flags.  For these days, we average the half-hours and convert carbon to daily units (gC/m2/day).  The daily data table has the following columns.
 
 - `time`: YYYY-MM-DD (the day is determined using UTC time)  
-- `siteID`: NEON site code (e.g., BART)  
-- `nee`: g C m<sup>-2</sup> day<sup>-1</sup>  
-- `le`:  W m<sup>-2</sup>  
+- `site_id`: NEON site code (e.g., BART)  
+- `variable`: `nee` (g C m<sup>-2</sup> day<sup>-1</sup>) or `le` (W m<sup>-2</sup>)
+- `observation`: value for variable
 
 Here is the download link and format of the `terrestrial_daily` target file
 
 
 ```r
-readr::read_csv("https://data.ecoforecast.org/targets/terrestrial_daily/terrestrial_daily-targets.csv.gz", guess_max = 1e6)
+readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/terrestrial_daily/terrestrial_daily-targets.csv.gz", guess_max = 1e6)
 ```
 
 ```
-## # A tibble: 19,980 × 4
-##    time       siteID   nee    le
-##    <date>     <chr>  <dbl> <dbl>
-##  1 2017-02-01 BART      NA    NA
-##  2 2017-02-01 CLBJ      NA    NA
-##  3 2017-02-01 KONZ      NA    NA
-##  4 2017-02-01 ORNL      NA    NA
-##  5 2017-02-01 OSBS      NA    NA
-##  6 2017-02-01 SJER      NA    NA
-##  7 2017-02-01 SRER      NA    NA
-##  8 2017-02-01 TALL      NA    NA
-##  9 2017-02-01 UNDE      NA    NA
-## 10 2017-02-01 WREF      NA    NA
-## # … with 19,970 more rows
+## # A tibble: 40,060 × 4
+##    time       site_id variable observed
+##    <date>     <chr>   <chr>       <dbl>
+##  1 2017-02-01 BART    le             NA
+##  2 2017-02-01 BART    nee            NA
+##  3 2017-02-01 CLBJ    le             NA
+##  4 2017-02-01 CLBJ    nee            NA
+##  5 2017-02-01 KONZ    le             NA
+##  6 2017-02-01 KONZ    nee            NA
+##  7 2017-02-01 ORNL    le             NA
+##  8 2017-02-01 ORNL    nee            NA
+##  9 2017-02-01 OSBS    le             NA
+## 10 2017-02-01 OSBS    nee            NA
+## # … with 40,050 more rows
 ## # ℹ Use `print(n = ...)` to see more rows
 ```
 
@@ -189,6 +184,8 @@ The reduction of the latency from monthly to 5-days allows this theme to forecas
 
 ## Submissions
 
+The required names for forecasted variables: `nee`, and `le`.
+
 Instructions for submitting forecasts are found here: [Submission Instructions]
 
 The specific file format for the terrestrial_daily theme is here: [Terrestrial daily]
@@ -198,6 +195,7 @@ The specific file format for the terrestrial_30min theme is here: [Terrestrial 3
 ## Meterological inputs for modeling
 
 Information about forecasted meteorology that is available for you to use when generating your forecasts can be found here: [Meteorology Inputs] 
+
 ## Useful functions
 
 Functions for validating, evaluating and submitting forecasts can be found here: [Helpful Functions]
