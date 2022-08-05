@@ -410,7 +410,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A file with previously released NEON data that has been processed into targets is provided below. The target script can be found <a href="https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R" target="_blank">here</a>. The same processing will be applied to new data that are used for forecast evaluation.</p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="theme-aquatic-ecosystems.html#cb1-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatics-targets.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 10,491 × 10
+<pre><code>## # A tibble: 10,708 × 10
 ##    time       siteID oxygen temperature  chla oxygen_sd temper…¹ chla_sd depth…²
 ##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 2017-08-27 BARC       NA        31.4    NA        NA  0.00162      NA      NA
@@ -423,7 +423,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 2017-08-30 BARC       NA        31.4    NA        NA  0.00210      NA      NA
 ##  9 2017-08-31 BARC       NA        31.7    NA        NA  0.00193      NA      NA
 ## 10 2017-08-31 BARC       NA        31.7    NA        NA  0.00176      NA      NA
-## # … with 10,481 more rows, 1 more variable: depth_temperature &lt;dbl&gt;, and
+## # … with 10,698 more rows, 1 more variable: depth_temperature &lt;dbl&gt;, and
 ## #   abbreviated variable names ¹​temperature_sd, ²​depth_oxygen
 ## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
 <p>The target file has the following columns</p>
@@ -461,15 +461,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="focal-sites" class="section level3 hasAnchor" number="1.3.4">
 <h3><span class="header-section-number">1.3.4</span> Focal sites<a href="theme-aquatic-ecosystems.html#focal-sites" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Information on the sites can be found here:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="theme-aquatic-ecosystems.html#cb3-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20210928.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="theme-aquatic-ecosystems.html#cb3-1" aria-hidden="true" tabindex="-1"></a>site_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20220727.csv&quot;</span>)</span></code></pre></div>
 <table>
 <colgroup>
-<col width="6%" />
-<col width="19%" />
-<col width="14%" />
-<col width="8%" />
-<col width="10%" />
-<col width="41%" />
+<col width="5%" />
+<col width="23%" />
+<col width="16%" />
+<col width="7%" />
+<col width="9%" />
+<col width="37%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -483,12 +483,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">ARIK</td>
+<td align="left">Arikaree River NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">39.75821</td>
+<td align="right">-102.44715</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/arik" class="uri">https://ww.neonscience.org/field-sites/arik</a></td>
+</tr>
+<tr class="even">
 <td align="left">BARC</td>
 <td align="left">Lake Barco NEON</td>
 <td align="left">Lake</td>
 <td align="right">29.67598</td>
 <td align="right">-82.00841</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/barc" class="uri">https://www.neonscience.org/field-sites/barc</a></td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/barc" class="uri">https://ww.neonscience.org/field-sites/barc</a></td>
+</tr>
+<tr class="odd">
+<td align="left">BLWA</td>
+<td align="left">Black Warrior River NEON</td>
+<td align="left">Non-wadeable River</td>
+<td align="right">32.54153</td>
+<td align="right">-87.79815</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/blwa" class="uri">https://ww.neonscience.org/field-sites/blwa</a></td>
 </tr>
 <tr class="even">
 <td align="left">COMO</td>
@@ -496,7 +512,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">Wadeable Stream</td>
 <td align="right">40.03496</td>
 <td align="right">-105.54416</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/como" class="uri">https://www.neonscience.org/field-sites/como</a></td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/como" class="uri">https://ww.neonscience.org/field-sites/como</a></td>
 </tr>
 <tr class="odd">
 <td align="left">CRAM</td>
@@ -504,15 +520,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">Lake</td>
 <td align="right">46.20967</td>
 <td align="right">-89.47369</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/cram" class="uri">https://www.neonscience.org/field-sites/cram</a></td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/cram" class="uri">https://ww.neonscience.org/field-sites/cram</a></td>
 </tr>
 <tr class="even">
+<td align="left">FLNT</td>
+<td align="left">Flint River NEON</td>
+<td align="left">Non-wadeable River</td>
+<td align="right">31.18542</td>
+<td align="right">-84.43740</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/flnt" class="uri">https://ww.neonscience.org/field-sites/flnt</a></td>
+</tr>
+<tr class="odd">
+<td align="left">HOPB</td>
+<td align="left">Lower Hop Brook NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">42.47194</td>
+<td align="right">-72.32953</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/hopb" class="uri">https://ww.neonscience.org/field-sites/hopb</a></td>
+</tr>
+<tr class="even">
+<td align="left">KING</td>
+<td align="left">Kings Creek NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">39.10506</td>
+<td align="right">-96.60383</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/king" class="uri">https://ww.neonscience.org/field-sites/king</a></td>
+</tr>
+<tr class="odd">
+<td align="left">LECO</td>
+<td align="left">LeConte Creek NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">35.69043</td>
+<td align="right">-83.50379</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/leco" class="uri">https://ww.neonscience.org/field-sites/leco</a></td>
+</tr>
+<tr class="even">
+<td align="left">LEWI</td>
+<td align="left">Lewis Run NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">39.09564</td>
+<td align="right">-77.98322</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/lewi" class="uri">https://ww.neonscience.org/field-sites/lewi</a></td>
+</tr>
+<tr class="odd">
+<td align="left">LIRO</td>
+<td align="left">Little Rock Lake NEON</td>
+<td align="left">Lake</td>
+<td align="right">45.99827</td>
+<td align="right">-89.70477</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/liro" class="uri">https://ww.neonscience.org/field-sites/liro</a></td>
+</tr>
+<tr class="even">
+<td align="left">MAYF</td>
+<td align="left">Mayfield Creek NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">32.96037</td>
+<td align="right">-87.40769</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/mayf" class="uri">https://ww.neonscience.org/field-sites/mayf</a></td>
+</tr>
+<tr class="odd">
 <td align="left">MCDI</td>
 <td align="left">McDiffett Creek NEON</td>
 <td align="left">Wadeable Stream</td>
 <td align="right">38.94586</td>
 <td align="right">-96.44302</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/mcdi" class="uri">https://www.neonscience.org/field-sites/mcdi</a></td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/mcdi" class="uri">https://ww.neonscience.org/field-sites/mcdi</a></td>
+</tr>
+<tr class="even">
+<td align="left">MCRA</td>
+<td align="left">McRae Creek NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">44.25960</td>
+<td align="right">-122.16555</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/mcra" class="uri">https://ww.neonscience.org/field-sites/mcra</a></td>
 </tr>
 <tr class="odd">
 <td align="left">POSE</td>
@@ -520,7 +600,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="left">Wadeable Stream</td>
 <td align="right">38.89431</td>
 <td align="right">-78.14726</td>
-<td align="left"><a href="https://www.neonscience.org/field-sites/pose" class="uri">https://www.neonscience.org/field-sites/pose</a></td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/pose" class="uri">https://ww.neonscience.org/field-sites/pose</a></td>
+</tr>
+<tr class="even">
+<td align="left">PRIN</td>
+<td align="left">Pringle Creek NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">33.37852</td>
+<td align="right">-97.78231</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/prin" class="uri">https://ww.neonscience.org/field-sites/prin</a></td>
+</tr>
+<tr class="odd">
+<td align="left">PRLA</td>
+<td align="left">Prairie Lake NEON</td>
+<td align="left">Lake</td>
+<td align="right">47.15909</td>
+<td align="right">-99.11388</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/prla" class="uri">https://ww.neonscience.org/field-sites/prla</a></td>
+</tr>
+<tr class="even">
+<td align="left">PRPO</td>
+<td align="left">Prairie Pothole NEON</td>
+<td align="left">Lake</td>
+<td align="right">47.12984</td>
+<td align="right">-99.25315</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/prpo" class="uri">https://ww.neonscience.org/field-sites/prpo</a></td>
+</tr>
+<tr class="odd">
+<td align="left">SUGG</td>
+<td align="left">Lake Suggs NEON</td>
+<td align="left">Lake</td>
+<td align="right">29.68778</td>
+<td align="right">-82.01775</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/sugg" class="uri">https://ww.neonscience.org/field-sites/sugg</a></td>
+</tr>
+<tr class="even">
+<td align="left">TOMB</td>
+<td align="left">Lower Tombigbee River NEON</td>
+<td align="left">Non-wadeable River</td>
+<td align="right">31.85343</td>
+<td align="right">-88.15887</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/tomb" class="uri">https://ww.neonscience.org/field-sites/tomb</a></td>
+</tr>
+<tr class="odd">
+<td align="left">TOOK</td>
+<td align="left">Toolik Lake NEON</td>
+<td align="left">Lake</td>
+<td align="right">68.63069</td>
+<td align="right">-149.61064</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/took" class="uri">https://ww.neonscience.org/field-sites/took</a></td>
+</tr>
+<tr class="even">
+<td align="left">WALK</td>
+<td align="left">Walker Branch NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">35.95738</td>
+<td align="right">-84.27925</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/walk" class="uri">https://ww.neonscience.org/field-sites/walk</a></td>
+</tr>
+<tr class="odd">
+<td align="left">WLOU</td>
+<td align="left">West St Louis Creek NEON</td>
+<td align="left">Wadeable Stream</td>
+<td align="right">39.89137</td>
+<td align="right">-105.91540</td>
+<td align="left"><a href="https://ww.neonscience.org/field-sites/wlou" class="uri">https://ww.neonscience.org/field-sites/wlou</a></td>
 </tr>
 </tbody>
 </table>

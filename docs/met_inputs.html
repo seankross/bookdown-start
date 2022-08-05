@@ -475,7 +475,7 @@ UGRD -&gt; northward_wind (m/s)</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="met_inputs.html#cb51-1" aria-hidden="true" tabindex="-1"></a>weather_stage3 <span class="sc">|&gt;</span> </span>
 <span id="cb51-2"><a href="met_inputs.html#cb51-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">filter</span>(site_id <span class="sc">==</span> <span class="st">&quot;BART&quot;</span>) <span class="sc">|&gt;</span></span>
 <span id="cb51-3"><a href="met_inputs.html#cb51-3" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">collect</span>()</span></code></pre></div>
-<pre><code>## # A tibble: 4,036,448 × 12
+<pre><code>## # A tibble: 4,042,400 × 12
 ##    site_id predicted variable height horizon ensem…¹ start_time          forec…²
 ##    &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;dbl&gt;   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  
 ##  1 BART       95390. air_pre… surfa…       0       1 2020-09-25 00:00:00 anl    
@@ -488,7 +488,7 @@ UGRD -&gt; northward_wind (m/s)</p>
 ##  8 BART       95422. air_pre… surfa…       0       8 2020-09-25 00:00:00 anl    
 ##  9 BART       95369. air_pre… surfa…       0       9 2020-09-25 00:00:00 anl    
 ## 10 BART       95377. air_pre… surfa…       0      10 2020-09-25 00:00:00 anl    
-## # … with 4,036,438 more rows, 4 more variables: time &lt;dttm&gt;, longitude &lt;dbl&gt;,
+## # … with 4,042,390 more rows, 4 more variables: time &lt;dttm&gt;, longitude &lt;dbl&gt;,
 ## #   latitude &lt;dbl&gt;, start_date &lt;date&gt;, and abbreviated variable names
 ## #   ¹​ensemble, ²​forecast_valid
 ## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>

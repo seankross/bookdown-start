@@ -57,7 +57,7 @@ readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatic
 ```
 
 ```
-## # A tibble: 10,491 × 10
+## # A tibble: 10,708 × 10
 ##    time       siteID oxygen temperature  chla oxygen_sd temper…¹ chla_sd depth…²
 ##    <date>     <chr>   <dbl>       <dbl> <dbl>     <dbl>    <dbl>   <dbl>   <dbl>
 ##  1 2017-08-27 BARC       NA        31.4    NA        NA  0.00162      NA      NA
@@ -70,7 +70,7 @@ readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatic
 ##  8 2017-08-30 BARC       NA        31.4    NA        NA  0.00210      NA      NA
 ##  9 2017-08-31 BARC       NA        31.7    NA        NA  0.00193      NA      NA
 ## 10 2017-08-31 BARC       NA        31.7    NA        NA  0.00176      NA      NA
-## # … with 10,481 more rows, 1 more variable: depth_temperature <dbl>, and
+## # … with 10,698 more rows, 1 more variable: depth_temperature <dbl>, and
 ## #   abbreviated variable names ¹​temperature_sd, ²​depth_oxygen
 ## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
@@ -120,17 +120,35 @@ Information on the sites can be found here:
 
 
 ```r
-site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20210928.csv")
+site_data <- readr::read_csv("https://raw.githubusercontent.com/eco4cast/neon4cast-aquatics/master/Aquatic_NEON_Field_Site_Metadata_20220727.csv")
 ```
 
 
-|siteID |site name            |waterbody type  | latitude| longtitude|NEON site URL                                |
-|:------|:--------------------|:---------------|--------:|----------:|:--------------------------------------------|
-|BARC   |Lake Barco NEON      |Lake            | 29.67598|  -82.00841|https://www.neonscience.org/field-sites/barc |
-|COMO   |Como Creek NEON      |Wadeable Stream | 40.03496| -105.54416|https://www.neonscience.org/field-sites/como |
-|CRAM   |Crampton Lake NEON   |Lake            | 46.20967|  -89.47369|https://www.neonscience.org/field-sites/cram |
-|MCDI   |McDiffett Creek NEON |Wadeable Stream | 38.94586|  -96.44302|https://www.neonscience.org/field-sites/mcdi |
-|POSE   |Posey Creek NEON     |Wadeable Stream | 38.89431|  -78.14726|https://www.neonscience.org/field-sites/pose |
+|siteID |site name                  |waterbody type     | latitude| longtitude|NEON site URL                               |
+|:------|:--------------------------|:------------------|--------:|----------:|:-------------------------------------------|
+|ARIK   |Arikaree River NEON        |Wadeable Stream    | 39.75821| -102.44715|https://ww.neonscience.org/field-sites/arik |
+|BARC   |Lake Barco NEON            |Lake               | 29.67598|  -82.00841|https://ww.neonscience.org/field-sites/barc |
+|BLWA   |Black Warrior River NEON   |Non-wadeable River | 32.54153|  -87.79815|https://ww.neonscience.org/field-sites/blwa |
+|COMO   |Como Creek NEON            |Wadeable Stream    | 40.03496| -105.54416|https://ww.neonscience.org/field-sites/como |
+|CRAM   |Crampton Lake NEON         |Lake               | 46.20967|  -89.47369|https://ww.neonscience.org/field-sites/cram |
+|FLNT   |Flint River NEON           |Non-wadeable River | 31.18542|  -84.43740|https://ww.neonscience.org/field-sites/flnt |
+|HOPB   |Lower Hop Brook NEON       |Wadeable Stream    | 42.47194|  -72.32953|https://ww.neonscience.org/field-sites/hopb |
+|KING   |Kings Creek NEON           |Wadeable Stream    | 39.10506|  -96.60383|https://ww.neonscience.org/field-sites/king |
+|LECO   |LeConte Creek NEON         |Wadeable Stream    | 35.69043|  -83.50379|https://ww.neonscience.org/field-sites/leco |
+|LEWI   |Lewis Run NEON             |Wadeable Stream    | 39.09564|  -77.98322|https://ww.neonscience.org/field-sites/lewi |
+|LIRO   |Little Rock Lake NEON      |Lake               | 45.99827|  -89.70477|https://ww.neonscience.org/field-sites/liro |
+|MAYF   |Mayfield Creek NEON        |Wadeable Stream    | 32.96037|  -87.40769|https://ww.neonscience.org/field-sites/mayf |
+|MCDI   |McDiffett Creek NEON       |Wadeable Stream    | 38.94586|  -96.44302|https://ww.neonscience.org/field-sites/mcdi |
+|MCRA   |McRae Creek NEON           |Wadeable Stream    | 44.25960| -122.16555|https://ww.neonscience.org/field-sites/mcra |
+|POSE   |Posey Creek NEON           |Wadeable Stream    | 38.89431|  -78.14726|https://ww.neonscience.org/field-sites/pose |
+|PRIN   |Pringle Creek NEON         |Wadeable Stream    | 33.37852|  -97.78231|https://ww.neonscience.org/field-sites/prin |
+|PRLA   |Prairie Lake NEON          |Lake               | 47.15909|  -99.11388|https://ww.neonscience.org/field-sites/prla |
+|PRPO   |Prairie Pothole NEON       |Lake               | 47.12984|  -99.25315|https://ww.neonscience.org/field-sites/prpo |
+|SUGG   |Lake Suggs NEON            |Lake               | 29.68778|  -82.01775|https://ww.neonscience.org/field-sites/sugg |
+|TOMB   |Lower Tombigbee River NEON |Non-wadeable River | 31.85343|  -88.15887|https://ww.neonscience.org/field-sites/tomb |
+|TOOK   |Toolik Lake NEON           |Lake               | 68.63069| -149.61064|https://ww.neonscience.org/field-sites/took |
+|WALK   |Walker Branch NEON         |Wadeable Stream    | 35.95738|  -84.27925|https://ww.neonscience.org/field-sites/walk |
+|WLOU   |West St Louis Creek NEON   |Wadeable Stream    | 39.89137| -105.91540|https://ww.neonscience.org/field-sites/wlou |
 
 ## Timeline
 
