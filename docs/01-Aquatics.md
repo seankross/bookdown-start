@@ -45,7 +45,7 @@ The R script for generating the evaluation and training data (i.e., targets) can
 The challenge uses the following NEON data products:
 - [DP1.20264.001](https://data.neonscience.org/data-products/DP1.20264.001){target="_blank"}: Temperature at specific depth in surface water for lakes
 - [DP1.20288.001](https://data.neonscience.org/data-products/DP1.20288.001){target="_blank"}: Water quality (includes oxygen and chlorophyll-a)  
-- [DP1.20035.001](https://data.neonscience.org/data-products/DP1.20053.001){target ="_blank"}: Temperature in surface waters for streams
+- [DP1.20035.001](https://data.neonscience.org/data-products/DP1.20053.001){target="_blank"}: Temperature in surface waters for streams
 
 A file with previously released NEON data that has been processed into targets is provided below. The target script can be found [here](https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R){target="_blank"}. The same processing will be applied to new data that are used for forecast evaluation. 
 
@@ -178,6 +178,33 @@ Information about forecasted meteorology that is available for you to use when g
 Functions for validating, evaluating and submitting forecasts can be found here: [Helpful Functions]
 
 Functions for downloading and working with the meteorology forecasts can be be found here: [Access EFI snapshots of NOAA forecasts at NEON sites]
+
+## Expanded observations data
+
+In addition to the daily surface aggregated targets file, a disaggregated targets file is also provided. This data provides teams with additional data with increased spatial and temporal resolution and included hourly profiles of water temperatures collated from NEON data products and additional data published [here](https://portal.edirepository.org/nis/mapbrowse?packageid=edi.1071.1){target="_blank"}. These data are to aid teams in building forecasts and will not be used in forecast evaluation. The format of these data is:
+
+
+```r
+readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatics-expanded-observations.csv.gz")
+```
+
+```
+## # A tibble: 1,038,696 × 6
+##    time                site_id depth observed sample_error measure_error
+##    <dttm>              <chr>   <dbl>    <dbl>        <dbl>         <dbl>
+##  1 2017-08-19 00:00:00 SUGG      0       29.6       0.0400       0.00919
+##  2 2017-08-19 00:00:00 SUGG      0.3     29.6       0.0350       0.00742
+##  3 2017-08-19 00:00:00 SUGG      0.6     29.6       0.0300       0.00707
+##  4 2017-08-19 00:00:00 SUGG      0.8     29.6       0.0250       0.00742
+##  5 2017-08-19 00:00:00 SUGG      1       29.6       0.0150       0.00813
+##  6 2017-08-19 01:00:00 SUGG      0       29.5       0.0200       0.00707
+##  7 2017-08-19 01:00:00 SUGG      0.3     29.5       0.0250       0.00636
+##  8 2017-08-19 01:00:00 SUGG      0.6     29.5       0.0250       0.00601
+##  9 2017-08-19 01:00:00 SUGG      0.8     29.5       0.0250       0.00601
+## 10 2017-08-19 01:00:00 SUGG      1       29.5       0.0200       0.00636
+## # … with 1,038,686 more rows
+## # ℹ Use `print(n = ...)` to see more rows
+```
 
 ## Null models
 
