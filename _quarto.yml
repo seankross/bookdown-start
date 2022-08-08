@@ -1,0 +1,34 @@
+project:
+  type: book
+
+book:
+  title: "NEON Ecological Forecasting Challenge"
+  author: "Ecological Forecasting Initative Research Coordination Network"
+  date: now
+  chapters:
+    - index.qmd
+    - Aquatics.qmd
+    - Terrestrial.qmd
+    - Ticks.qmd
+    - Phenology.qmd
+    - Beetles.qmd
+    - Participation.qmd
+    - Submission-Instructions.qmd
+    - Metadata.qmd
+    - Evaluation.qmd
+    - Shared-Forecast-Drivers.qmd
+    - Helpful-Functions.qmd
+    - UseInCourse.qmd
+    - FAQ.qmd
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

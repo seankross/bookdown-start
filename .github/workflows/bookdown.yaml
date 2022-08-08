@@ -1,53 +1,36 @@
+# Workflow derived from https://github.com/r-lib/actions/tree/master/examples
+# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
 on:
   push:
     branches:
       - main
-      - master
+  workflow_dispatch:
 
-name: bookdown
-
+name: Update & Deploy dashboard
 jobs:
-  build:
-    runs-on: macOS-latest
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+  build-deploy:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v1
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install pandoc
+      - name: Linux-specific system dependencies
+        run: sudo apt-get update && sudo apt-get -y install libudunits2-dev libproj-dev libgeos-dev libgdal-dev
+
+
+      - uses: r-lib/actions/setup-renv@v2
+      - name: preload
         run: |
-          brew install pandoc
-
-      - name: Cache Renv packages
-        uses: actions/cache@v2
-        with:
-          path: $HOME/.local/share/renv
-          key: r-${{ hashFiles('renv.lock') }}
-          restore-keys: r-
-
-      - name: Cache bookdown results
-        uses: actions/cache@v2
-        with:
-          path: _bookdown_files
-          key: bookdown-${{ hashFiles('**/*Rmd') }}
-          restore-keys: bookdown-
-
-      - name: Install packages
+          R -e 'source("cache.R")' || true
+      - name: Render book to all format
+        # Add any command line argument needed
         run: |
-          R -e 'install.packages("renv")'
-          R -e 'renv::restore()'
-
-      - name: Build site
-        run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
-
+          quarto render
       - name: Commit results
         run: |
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git add docs
-          git commit docs -m 'rebuild site' || echo "No changes"
+          git commit docs/* -m 'Re-build site' || echo "No changes to commit"
           git push origin || echo "No changes to commit"

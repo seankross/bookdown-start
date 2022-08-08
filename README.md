@@ -1,1 +1,0 @@
-# NEON Ecological Forecasting Challenge

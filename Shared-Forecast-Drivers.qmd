@@ -1,0 +1,122 @@
+# Meteorology Inputs
+
+We are downloading, subsetting, and processing forecasted meteorology drivers for each NEON site. Currently, we have NOAA's Global Ensemble Forecasting System (GEFS) V12 output available at the native time resolution and a 1 hr time resolution for each NEON site.
+
+The following are important considerations when using the NOAA GEFS forecasts
+
+-   There are 31 ensemble members for each forecast.
+-   For forecasts generated at four times per day, organized by "cycle" that correspond to the hour in UTC that the forecast was initiated: 00, 06, 12, and 18 cycles
+-   For the midnight (00) UTC, the forecasts extend 35-days in the future for the ensemble members 01 - 30. Ensemble member 31 only extends 16-days in the future.
+-   For forecasts generated at 06, 12, and 18 UTC, the forecasts extend 16-days in the future but we are not currently downloading the full forecasts for these cycles.\
+-   We are constantly downloading and processing the forecasts.
+
+The following meteorological variables are included:\
+- air temperature\
+- air pressure\
+- wind speed\
+- precipitation\
+- downwelling longwave radiation\
+- downwelling shortwave radiation\
+- relative humidity
+
+The weather forecasts are available through an s3 bucket (see NOAA Global Ensemble Forecasting System below) and we provide an R functions code in the [neon4cast package](https://github.com/eco4cast/neon4cast) for downloading all the ensemble members for particular location, forecast cycle (00, 06, 12, or 18), and NEON site
+
+```{r eval = FALSE}
+remotes::install_github("eco4cast/neon4cast")
+```
+
+## NOAA Global Ensemble Forecasting System
+
+### Stage 1
+
+At each site, 31 ensemble member forecasts are provided at 3 hr intervals for the first 10 days, and 6 hr intervals for up to 35 days (840 hr horizon). Ensemble member 31 only extends 16-days in the future
+
+Forecasts include the following variables: - TMP - temperature (C) - RH - Relative humidity (%) - PRES - Atmospheric pressure (Pa) - UGRD - U-component of wind speed (m/s) - VGRD - V-component of wind speed (m/s) - APCP - Total precipitation in interval (kg/m\^2) - DSWRF - Downward shortwave radiation flux in interval (W/m\^2) - DLWRF - Downward longwave radiation flux in interval (W/m\^2)
+
+GEFS forecasts are issued four times a day, as indicated by the `start_date` and `cycle`. Only forecasts at midnight, `cycle = "00"` extend for the full 840 hour horizon. Other cycles 06, 12, 18 are provided only 16-day ahead, as mostly being of interest for short-term forecasts. (Though users should note that other NOAA products provide more much accurate and higher resolution short term forecasts than GEFS - though without uncertainity from ensenble members)
+
+All variables are given at height 2m above ground, surface, or 10 m above ground as indicated in height column. See https://www.nco.ncep.noaa.gov/pmb/products/gens/ for more details on GEFS variables and intervals.
+
+Common ways to filter the data before running `collect()` include `start_date`, `site_id`, `variable`, and `horizon`.
+
+```{r eval = FALSE}
+weather <- neon4cast::noaa_stage1()
+# 5.7M rows of data:
+weather |> 
+dplyr::filter(start_date == "2022-04-01") |>
+dplyr::collect()
+```
+
+Note: that `noaa_stage1()` defaults to the `00` cycle.
+
+### Stage 2
+
+Stage 2 is a processed version of Stage 1 and involves the following transforms of the data that may be useful for some modeling approaches:
+
+-   Fluxes are standardized to per second rates
+-   Variables are renamed to match CF conventions
+-   Fluxes and states are interpolated to 1 hour intervals
+
+TMP -\> air_temperature (K) PRES -\> air_pressure (Pa) RH -\> relative_humidity (proportion) DLWRF -\> surface_downwelling_longwave_flux_in_air (W/m\^2) DSWRF -\> surface_downwelling_shortwave_flux_in_air (W/m\^2) APCP -\> precipitation_flux (kg/(m\^2 s)) VGRD -\> eastward_wind (m/s) UGRD -\> northward_wind (m/s)
+
+```{r}
+weather_1hr <- neon4cast::noaa_stage2()
+weather_1hr |> 
+dplyr::filter(start_date == "2022-04-01" & site_id == "BART") |>
+dplyr::collect()
+```
+
+Note: that `noaa_stage2()` defaults to the `00` cycle.
+
+### Stage 3
+
+Stage 3 processing presents a 'nowcast' product by combining the most recent predictions from each available cycle. Product uses CF variable names and 1 hr interval. The resulting produce is single time-series for each ensemble member, rather than a set of time series from all the forecasts. Stage 3 can be viewed as the "historical" weather for site as simulated by NOAA GEFS. Stage 3 is useful for model training because it ensures that the magnitude and variability of the weather data used to train your model is similar to that in the NOAA GEFS weather forecast you may use as inputs to your forecast.
+
+Stage 3 uses CF variable names and 1 hr interval (same at Stage 2)
+
+```{r}
+weather_stage3 <- neon4cast::noaa_stage3()
+weather_stage3 |> 
+dplyr::filter(site_id == "BART") |>
+dplyr::collect()
+```
+
+## NEON Observed
+
+The observed weather at each NEON site as also available in the monthly released data products by NEON. We are downloading these data and providing through the following function
+
+```{r eval = FALSE}
+neon <- arrow::s3_bucket("neon4cast-targets/neon",
+                  endpoint_override = "data.ecoforecast.org",
+                  anonymous = TRUE)
+```
+
+The list of data tables that are available can be found using this command.
+
+```{r eval = FALSE}
+neon$ls()
+```
+
+And here is an example for accessing the triple aspirated temperature data product. See the data product (i.e., DP1.00003.001) in NEON data portal for more information about the table names.
+
+```{r eval = FALSE}
+taat <- arrow::open_dataset(neon$path("TAAT_30min-basic-DP1.00003.001")) 
+```
+
+Here is an example showing how to download particular subsets of the data table.
+
+```{r eval = FALSE}
+neon_temp <- taat |>
+  mutate(time = as.Date(startDateTime)) |>
+  group_by(siteID, time) |>
+  summarise(mean_tmp = mean(tempTripleMean, na.rm = TRUE),
+            min_tmp = min(tempTripleMinimum, na.rm = TRUE),
+            max_tmp = max(tempTripleMaximum, na.rm = TRUE)) |>
+  rename(site_id = siteID) |>
+  collect()
+
+```
+
+## Downloading and processing of NOAA GEFS
+
+The code used to download and process the NOAA GEFS forecast from Amazon Web Services Registry of Open Data is available in the `gefs4cast` package found at [github.com/eco4cast/gef4cast](https://github.com/eco4cast/gef4cast)
