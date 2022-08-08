@@ -57,22 +57,21 @@ readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatic
 ```
 
 ```
-## # A tibble: 10,708 × 10
-##    time       siteID oxygen temperature  chla oxygen_sd temper…¹ chla_sd depth…²
-##    <date>     <chr>   <dbl>       <dbl> <dbl>     <dbl>    <dbl>   <dbl>   <dbl>
-##  1 2017-08-27 BARC       NA        31.4    NA        NA  0.00162      NA      NA
-##  2 2017-08-27 BARC       NA        31.5    NA        NA  0.00121      NA      NA
-##  3 2017-08-28 BARC       NA        31.1    NA        NA  0.00155      NA      NA
-##  4 2017-08-28 BARC       NA        31.1    NA        NA  0.00117      NA      NA
-##  5 2017-08-29 BARC       NA        31.2    NA        NA  0.00211      NA      NA
-##  6 2017-08-29 BARC       NA        31.1    NA        NA  0.00168      NA      NA
-##  7 2017-08-30 BARC       NA        31.5    NA        NA  0.00208      NA      NA
-##  8 2017-08-30 BARC       NA        31.4    NA        NA  0.00210      NA      NA
-##  9 2017-08-31 BARC       NA        31.7    NA        NA  0.00193      NA      NA
-## 10 2017-08-31 BARC       NA        31.7    NA        NA  0.00176      NA      NA
-## # … with 10,698 more rows, 1 more variable: depth_temperature <dbl>, and
-## #   abbreviated variable names ¹​temperature_sd, ²​depth_oxygen
-## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
+## # A tibble: 71,624 × 7
+##    time       site_id variable observation sample_error measure_error observed
+##    <date>     <chr>   <chr>          <dbl>        <dbl>         <dbl>    <dbl>
+##  1 2016-03-05 ARIK    oxygen            NA           NA            NA       NA
+##  2 2016-03-06 ARIK    oxygen            NA           NA            NA       NA
+##  3 2016-03-07 ARIK    oxygen            NA           NA            NA       NA
+##  4 2016-03-08 ARIK    oxygen            NA           NA            NA       NA
+##  5 2016-03-09 ARIK    oxygen            NA           NA            NA       NA
+##  6 2016-03-10 ARIK    oxygen            NA           NA            NA       NA
+##  7 2016-03-11 ARIK    oxygen            NA           NA            NA       NA
+##  8 2016-03-12 ARIK    oxygen            NA           NA            NA       NA
+##  9 2016-03-13 ARIK    oxygen            NA           NA            NA       NA
+## 10 2016-03-14 ARIK    oxygen            NA           NA            NA       NA
+## # … with 71,614 more rows
+## # ℹ Use `print(n = ...)` to see more rows
 ```
 
 The target file has the following columns   
@@ -80,7 +79,7 @@ The target file has the following columns
 - `time`: date of observation    
 - `site_id`: NEON site code    
 - `variable`: variable (`temperature`, `oxygen`, `chla`)
-- `observation`: daily mean value
+- `observed`: daily mean value
 - `sample_error`: standard error of observations associated with daily mean values
 - `measure_error`: daily mean expected uncertainty for the measurements, as reported by NEON
 

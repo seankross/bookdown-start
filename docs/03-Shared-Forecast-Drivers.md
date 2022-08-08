@@ -146,7 +146,7 @@ dplyr::collect()
 ```
 
 ```
-## # A tibble: 4,042,400 × 12
+## # A tibble: 4,060,256 × 12
 ##    site_id predicted variable height horizon ensem…¹ start_time          forec…²
 ##    <chr>       <dbl> <chr>    <chr>    <dbl>   <int> <dttm>              <chr>  
 ##  1 BART       95390. air_pre… surfa…       0       1 2020-09-25 00:00:00 anl    
@@ -159,7 +159,7 @@ dplyr::collect()
 ##  8 BART       95422. air_pre… surfa…       0       8 2020-09-25 00:00:00 anl    
 ##  9 BART       95369. air_pre… surfa…       0       9 2020-09-25 00:00:00 anl    
 ## 10 BART       95377. air_pre… surfa…       0      10 2020-09-25 00:00:00 anl    
-## # … with 4,042,390 more rows, 4 more variables: time <dttm>, longitude <dbl>,
+## # … with 4,060,246 more rows, 4 more variables: time <dttm>, longitude <dbl>,
 ## #   latitude <dbl>, start_date <date>, and abbreviated variable names
 ## #   ¹​ensemble, ²​forecast_valid
 ## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names

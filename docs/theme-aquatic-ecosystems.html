@@ -410,22 +410,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A file with previously released NEON data that has been processed into targets is provided below. The target script can be found <a href="https://github.com/eco4cast/neon4cast-aquatics/blob/master/02_generate_targets_aquatics.R" target="_blank">here</a>. The same processing will be applied to new data that are used for forecast evaluation.</p>
 <p>Here is the format of the target file</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="theme-aquatic-ecosystems.html#cb1-1" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;https://data.ecoforecast.org/neon4cast-targets/aquatics/aquatics-targets.csv.gz&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 10,708 × 10
-##    time       siteID oxygen temperature  chla oxygen_sd temper…¹ chla_sd depth…²
-##    &lt;date&gt;     &lt;chr&gt;   &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-##  1 2017-08-27 BARC       NA        31.4    NA        NA  0.00162      NA      NA
-##  2 2017-08-27 BARC       NA        31.5    NA        NA  0.00121      NA      NA
-##  3 2017-08-28 BARC       NA        31.1    NA        NA  0.00155      NA      NA
-##  4 2017-08-28 BARC       NA        31.1    NA        NA  0.00117      NA      NA
-##  5 2017-08-29 BARC       NA        31.2    NA        NA  0.00211      NA      NA
-##  6 2017-08-29 BARC       NA        31.1    NA        NA  0.00168      NA      NA
-##  7 2017-08-30 BARC       NA        31.5    NA        NA  0.00208      NA      NA
-##  8 2017-08-30 BARC       NA        31.4    NA        NA  0.00210      NA      NA
-##  9 2017-08-31 BARC       NA        31.7    NA        NA  0.00193      NA      NA
-## 10 2017-08-31 BARC       NA        31.7    NA        NA  0.00176      NA      NA
-## # … with 10,698 more rows, 1 more variable: depth_temperature &lt;dbl&gt;, and
-## #   abbreviated variable names ¹​temperature_sd, ²​depth_oxygen
-## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
+<pre><code>## # A tibble: 71,624 × 7
+##    time       site_id variable observation sample_error measure_error observed
+##    &lt;date&gt;     &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;        &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;
+##  1 2016-03-05 ARIK    oxygen            NA           NA            NA       NA
+##  2 2016-03-06 ARIK    oxygen            NA           NA            NA       NA
+##  3 2016-03-07 ARIK    oxygen            NA           NA            NA       NA
+##  4 2016-03-08 ARIK    oxygen            NA           NA            NA       NA
+##  5 2016-03-09 ARIK    oxygen            NA           NA            NA       NA
+##  6 2016-03-10 ARIK    oxygen            NA           NA            NA       NA
+##  7 2016-03-11 ARIK    oxygen            NA           NA            NA       NA
+##  8 2016-03-12 ARIK    oxygen            NA           NA            NA       NA
+##  9 2016-03-13 ARIK    oxygen            NA           NA            NA       NA
+## 10 2016-03-14 ARIK    oxygen            NA           NA            NA       NA
+## # … with 71,614 more rows
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
 <p>The target file has the following columns</p>
 <ul>
 <li><code>time</code>: date of observation<br />
@@ -433,7 +432,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>site_id</code>: NEON site code<br />
 </li>
 <li><code>variable</code>: variable (<code>temperature</code>, <code>oxygen</code>, <code>chla</code>)</li>
-<li><code>observation</code>: daily mean value</li>
+<li><code>observed</code>: daily mean value</li>
 <li><code>sample_error</code>: standard error of observations associated with daily mean values</li>
 <li><code>measure_error</code>: daily mean expected uncertainty for the measurements, as reported by NEON</li>
 </ul>

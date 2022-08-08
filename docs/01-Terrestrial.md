@@ -109,7 +109,7 @@ readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/terrestrial_30mi
 ```
 
 ```
-## # A tibble: 1,922,480 × 7
+## # A tibble: 1,927,280 × 7
 ##    time                site_id variable observed sd_intercept sd_slopeP sd_slo…¹
 ##    <dttm>              <chr>   <chr>       <dbl>        <dbl>     <dbl>    <dbl>
 ##  1 2017-02-01 10:00:00 BART    nee        -0.574         1.14     0.205   -0.132
@@ -122,7 +122,7 @@ readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/terrestrial_30mi
 ##  8 2017-02-01 13:30:00 BART    nee        NA             1.14     0.205   -0.132
 ##  9 2017-02-01 14:00:00 BART    nee        NA             1.14     0.205   -0.132
 ## 10 2017-02-01 14:30:00 BART    nee        NA             1.14     0.205   -0.132
-## # … with 1,922,470 more rows, and abbreviated variable name ¹​sd_slopeN
+## # … with 1,927,270 more rows, and abbreviated variable name ¹​sd_slopeN
 ## # ℹ Use `print(n = ...)` to see more rows
 ```
 
@@ -135,7 +135,7 @@ To evaluate the models that produce daily flux forecasts, we select only days wi
 - `time`: YYYY-MM-DD (the day is determined using UTC time)  
 - `site_id`: NEON site code (e.g., BART)  
 - `variable`: `nee` (g C m<sup>-2</sup> day<sup>-1</sup>) or `le` (W m<sup>-2</sup>)
-- `observation`: value for variable
+- `observed`: value for variable
 
 Here is the download link and format of the `terrestrial_daily` target file
 
@@ -145,7 +145,7 @@ readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/terrestrial_dail
 ```
 
 ```
-## # A tibble: 40,060 × 4
+## # A tibble: 40,160 × 4
 ##    time       site_id variable observed
 ##    <date>     <chr>   <chr>       <dbl>
 ##  1 2017-02-01 BART    le             NA
@@ -158,7 +158,7 @@ readr::read_csv("https://data.ecoforecast.org/neon4cast-targets/terrestrial_dail
 ##  8 2017-02-01 ORNL    nee            NA
 ##  9 2017-02-01 OSBS    le             NA
 ## 10 2017-02-01 OSBS    nee            NA
-## # … with 40,050 more rows
+## # … with 40,150 more rows
 ## # ℹ Use `print(n = ...)` to see more rows
 ```
 

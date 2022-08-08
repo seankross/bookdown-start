@@ -107,7 +107,7 @@ readr::read_csv("https://data.ecoforecast.org/targets/ticks/ticks-targets.csv.gz
 - `time`: YYYY-MM-DD The first day (Sunday) of the MMWR week
 - `mmwrWeek`: The MMWR week that starts on Sunday, consistent with CDC version of the epidemiological week  
 - `siteID`: Site where ticks are observed (HARV)
-- `Amblyomma americanum`:  Density (ticks / 1600m^2) of *Amblyomma americanum* ticks
+- `amblyomma_americanum`:  Density (ticks / 1600m^2) of *Amblyomma americanum* ticks
 
 ## Timeline
 
