@@ -62,7 +62,7 @@ The target file has the following columns
 - `time`: date of observation    
 - `site_id`: NEON site code    
 - `variable`: variable (`temperature`, `oxygen`, `chla`)
-- `observation`: daily mean value
+- `observed`: daily mean value
 - `sample_error`: standard error of observations associated with daily mean values
 - `measure_error`: daily mean expected uncertainty for the measurements, as reported by NEON
 

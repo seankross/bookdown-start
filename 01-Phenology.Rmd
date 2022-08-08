@@ -110,7 +110,7 @@ The target file has the following columns:
 - `time`: date of observation    
 - `site_id`: NEON site code    
 - `variable`: variable (`gcc_90` or `rcc_90`)
-- `observation`: daily value
+- `observed`: daily value
 - `sd`: standard deviation of the observation value
 
 ## Timeline
